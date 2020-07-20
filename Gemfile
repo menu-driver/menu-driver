@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
+gem 'pry', '~> 0.13.1'
+gem 'httparty', '~> 0.18.1'
+gem 'awesome_print', '~> 2.0.0.pre2'
+gem 'rspec', '~> 3.9'
+gem 'vcr', '~> 6.0'
+gem 'webmock', '~> 3.8', '>= 3.8.3'

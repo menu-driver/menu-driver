@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://publishing-api.singleplatform.com/locations/hakkasan-mayfair/menus/?client=c3sbrpbtkbs5gverurfkxpemc&format=short&signature=r1Eb3t%2BSw34hbWVGhLmQRI5tFa8=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 20 Jul 2020 22:17:36 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Allow:
+      - GET, HEAD, OPTIONS
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - Origin, Accept
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":200,"data":[{"id":3808555,"location_id":"hakkasan-mayfair","name":"A
+        la Carte","description":"","menu_type":"Menu","footnote":"","attribution_image":"http:\/\/a.singleplatform.com\/DirectBusinessIntegration\/hakkasan-mayfair\/provided_by_2.png?sp_dt=20200720","attribution_image_link":"http:\/\/www.singleplatform.com\/partner-lp?ref=DirectBusinessIntegration&sp_channel=viral&sp_source=publisher&sp_campaign=sp&sp_dt=20200720","secure_attribution_image":"https:\/\/a.singleplatform.com\/DirectBusinessIntegration\/hakkasan-mayfair\/provided_by_2.png?sp_dt=20200720","secure_attribution_image_link":"https:\/\/www.singleplatform.com\/partner-lp?ref=DirectBusinessIntegration&sp_channel=viral&sp_source=publisher&sp_campaign=sp&sp_dt=20200720","entries":[{"id":182263955,"name":"Hakkasan
+        signature Peking duck","description":"whole duck, pancakes, baby cucumber
+        and spring onion; second course choice of XO sauce, black bean sauce or ginger
+        and spring onion","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":110},"order_num":1}],"attributes":{},"photos":[{"photo_id":"897562a08b335bed66cbf50803ede9227528905f","title":"","type":"Product","url":"https:\/\/photos.singleplatform.com\/897562a08b335bed66cbf50803ede9227528905f.jpg","source":"singleplatform"}],"additions":[]},{"id":182263956,"name":"Royal
+        sweetcorn soup","description":"lobster, gai lan","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":17},"order_num":0}],"attributes":{},"photos":[{"photo_id":"59b8411d2e929d9c9529504fb624a0a7093c8bec","title":"","type":"Product","url":"https:\/\/photos.singleplatform.com\/59b8411d2e929d9c9529504fb624a0a7093c8bec.jpg","source":"singleplatform"}],"additions":[]},{"id":182263960,"name":"Classic
+        steamed dim sum","description":"langoustine har gau with Prunier caviar, halibut
+        shui mai with water chestnut, king crab with peppercorn sauce, wild mushroom
+        ''vg''","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":39},"order_num":0}],"attributes":{},"photos":[{"photo_id":"83209f014a0bfedaf900e9b23a400918cfb8bde0","title":"","type":"Product","url":"https:\/\/photos.singleplatform.com\/83209f014a0bfedaf900e9b23a400918cfb8bde0.jpg","source":"singleplatform"}],"additions":[]},{"id":189444238,"name":"24
+        hours slow roasted Iberico pork char siu","description":"With rich, dark meat,
+        the Iberico black pig has earned a reputation as the ''Wagyu'' of the pork
+        world. Prepared with black garlic glaze, crackling and a mustard dressing","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":28},"order_num":0}],"attributes":{},"photos":[],"additions":[]},{"id":182263971,"name":"Crispy
+        duck salad","description":"pomelo, pine nut, shallot","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":27},"order_num":0}],"attributes":{},"photos":[],"additions":[]}]}]}'
+  recorded_at: Mon, 20 Jul 2020 22:17:36 GMT
+recorded_with: VCR 6.0.0
