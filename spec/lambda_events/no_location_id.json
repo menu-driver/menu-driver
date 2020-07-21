@@ -1,11 +1,10 @@
 {
-  "body": "{\"location_id\": \"hakkasan-mayfair\"}",
+  "body": "{\"message\": \"hi\"}",
   "resource": "/{proxy+}",
   "path": "/path/to/resource",
   "httpMethod": "POST",
   "isBase64Encoded": false,
   "queryStringParameters": {
-    "foo": "bar"
   },
   "pathParameters": {
     "proxy": "/path/to/resource"
