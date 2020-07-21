@@ -3,3 +3,5 @@
 .rspec
 .coveralls.yml
 coverage/**/*
+.aws-sam
+.bundle/**/*
