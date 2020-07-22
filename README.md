@@ -78,3 +78,18 @@ To run an individual spec:
     rspec spec/single_platform_spec.rb -e "gets JSON through an HTTP request" -f d
 
 That runs the same `MenusDataFunction` that's invoked in above examples through SAM Local, both triggered as a function with an event passed to it through a JSON file, and also accessed through HTTP.  Running the spec through RSpec calls the same code for getting the same menu data for the same location, but it also checks the result.  The actual HTTP call to the actual API is mocked through VCR, so it won't really call the Single Platform API.
+
+## Deploy
+
+If you don't already have a `samconfig.toml` file for your deployment preferences, then create one with:
+
+    sam build
+    sam deploy -g
+
+SAM will ask you for your Single Platform secrets, for setting up the parameters.  It will write out a config file for deploying.
+
+For future deployments, don't use the `-g` option:
+
+    sam deploy
+
+For a CI/CD system like CodeShip, set up the deployment script to create the `sameconfig.toml` file, using the file that you create in development using the `-g` option.  You'll need to edit things like the stack name that include the environment (git branch).
