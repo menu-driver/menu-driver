@@ -1,0 +1,204 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Scan
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 7042d856689bc8f4a4be2e0f6a48af644a2bcd5e73facac64d63794b3b1ee6ae
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=65a1e27743cca1d4ccd42a1a8037447f8b971b75239ba893fed708a108e1df67
+      Content-Length:
+      - '26'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2425500777'
+      X-Amzn-Requestid:
+      - 49522905-1e1d-4e2b-926f-cbd81f69ad2e
+      Content-Length:
+      - '4444'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJJdGVtcyI6W3siZGF0YSI6eyJMIjpbeyJNIjp7ImF0dHJpYnV0aW9uX2ltYWdlIjp7IlMiOiJodHRwOi8vYS5zaW5nbGVwbGF0Zm9ybS5jb20vRGlyZWN0QnVzaW5lc3NJbnRlZ3JhdGlvbi9oYWtrYXNhbi1tYXlmYWlyL3Byb3ZpZGVkX2J5XzIucG5nP3NwX2R0PTIwMjAwNzIxIn0sImVudHJpZXMiOnsiTCI6W3siTSI6eyJhZGRpdGlvbnMiOnsiTCI6W119LCJuYW1lIjp7IlMiOiLljJfkuqzniYfnmq7puK0gSGFra2FzYW4gc2lnbmF0dXJlIFBla2luZyBkdWNrIn0sImRlc2NyaXB0aW9uIjp7IlMiOiJXaG9sZSBkdWNrLCBwYW5jYWtlcywgMzBnIG9mIGNhdmlhciwgc2Vjb25kIGNvdXJzZSwgY2hvaWNlIG9mIFhPIHNhdWNlLCBibGFjayBiZWFuIHNhdWNlIG9yIGdpbmdlciBhbmQgc3ByaW5nIG9uaW9uLiBUaGUgYXdhcmQtd2lubmluZyBJcmlzaCBkdWNrIHByb2R1Y2VzIGEgdGVuZGVyIGR1Y2sgZnVsbCBvZiBmbGF2b3VyIGFuZCBjb25zaXN0ZW50IGluIHF1YWxpdHkuIFRoaXMgdW5pcXVlIGR1Y2sgaXMgdGhlIHNlY3JldCB0byB0aGUgc3VjY2VzcyBvZiBvdXIgc3VwcmVtZSBzaWduYXR1cmUgUGVraW5nIGR1Y2sgZGlzaCwgd2l0aCBpdHMgc3VjY3VsZW50IG1lYXQgYW5kIGNyaXNweSBza2luIn0sImF0dHJpYnV0ZXMiOnsiTSI6e319LCJpZCI6eyJOIjoiMTgyMjYzOTU1In0sIm9yZGVyX251bSI6eyJOIjoiMCJ9LCJjaG9pY2VzIjp7IkwiOlt7Ik0iOnsibmFtZSI6eyJTIjoiIn0sInVuaXQiOnsiUyI6IiJ9LCJjYWxvcmllcyI6eyJNIjp7Im1heCI6eyJTIjoiIn0sIm1pbiI6eyJTIjoiIn19fSwib3JkZXJfbnVtIjp7Ik4iOiIxIn0sInByaWNlcyI6eyJNIjp7Im1heCI6eyJTIjoiIn0sIm1pbiI6eyJOIjoiMTEwIn19fX19XX0sInBob3RvcyI6eyJMIjpbeyJNIjp7InNvdXJjZSI6eyJTIjoic2luZ2xlcGxhdGZvcm0ifSwicGhvdG9faWQiOnsiUyI6Ijg5NzU2MmEwOGIzMzViZWQ2NmNiZjUwODAzZWRlOTIyNzUyODkwNWYifSwidGl0bGUiOnsiUyI6IiJ9LCJ0eXBlIjp7IlMiOiJQcm9kdWN0In0sInVybCI6eyJTIjoiaHR0cHM6Ly9waG90b3Muc2luZ2xlcGxhdGZvcm0uY29tLzg5NzU2MmEwOGIzMzViZWQ2NmNiZjUwODAzZWRlOTIyNzUyODkwNWYuanBnIn19fV19fX0seyJNIjp7ImFkZGl0aW9ucyI6eyJMIjpbXX0sIm5hbWUiOnsiUyI6Ium+meeah+eyn+exs+e+uSBSb3lhbCBzd2VldGNvcm4gc291cCJ9LCJkZXNjcmlwdGlvbiI6eyJTIjoibG9ic3RlciwgZ2FpIGxhbiJ9LCJhdHRyaWJ1dGVzIjp7Ik0iOnt9fSwiaWQiOnsiTiI6IjE4MjI2Mzk1NiJ9LCJvcmRlcl9udW0iOnsiTiI6IjAifSwiY2hvaWNlcyI6eyJMIjpbeyJNIjp7Im5hbWUiOnsiUyI6IiJ9LCJ1bml0Ijp7IlMiOiIifSwiY2Fsb3JpZXMiOnsiTSI6eyJtYXgiOnsiUyI6IiJ9LCJtaW4iOnsiUyI6IiJ9fX0sIm9yZGVyX251bSI6eyJOIjoiMCJ9LCJwcmljZXMiOnsiTSI6eyJtYXgiOnsiUyI6IiJ9LCJtaW4iOnsiTiI6IjE3In19fX19XX0sInBob3RvcyI6eyJMIjpbeyJNIjp7InNvdXJjZSI6eyJTIjoic2luZ2xlcGxhdGZvcm0ifSwicGhvdG9faWQiOnsiUyI6IjU5Yjg0MTFkMmU5MjlkOWM5NTI5NTA0ZmI2MjRhMGE3MDkzYzhiZWMifSwidGl0bGUiOnsiUyI6IiJ9LCJ0eXBlIjp7IlMiOiJQcm9kdWN0In0sInVybCI6eyJTIjoiaHR0cHM6Ly9waG90b3Muc2luZ2xlcGxhdGZvcm0uY29tLzU5Yjg0MTFkMmU5MjlkOWM5NTI5NTA0ZmI2MjRhMGE3MDkzYzhiZWMuanBnIn19fV19fX0seyJNIjp7ImFkZGl0aW9ucyI6eyJMIjpbXX0sIm5hbWUiOnsiUyI6Iue7j+WFuOiSuOeCueWbm+mDqOabsiBDbGFzc2ljIHN0ZWFtZWQgZGltIHN1bSJ9LCJkZXNjcmlwdGlvbiI6eyJTIjoi5bCP6b6Z6Jm+6Jm+6aW6IGxhbmdvdXN0aW5lIGhhciBnYXUgd2l0aCBQcnVuaWVyIGNhdmlhcjsg5q+U55uu6bG86ams6LmE54On5Y2WIGhhbGlidXQgc2h1aSBtYWkgd2l0aCB3YXRlciBjaGVzdG51dDsg6IOh5qSS5bid546L6J+56JK46aW6IGtpbmcgY3JhYiB3aXRoIHBlcHBlcmNvcm4gc2F1Y2U7IOaegeWTgemHjuiPjOmluiB3aWxkIG11c2hyb29tICd2ZycifSwiYXR0cmlidXRlcyI6eyJNIjp7fX0sImlkIjp7Ik4iOiIxODIyNjM5NjAifSwib3JkZXJfbnVtIjp7Ik4iOiIwIn0sImNob2ljZXMiOnsiTCI6W3siTSI6eyJuYW1lIjp7IlMiOiIifSwidW5pdCI6eyJTIjoiIn0sImNhbG9yaWVzIjp7Ik0iOnsibWF4Ijp7IlMiOiIifSwibWluIjp7IlMiOiIifX19LCJvcmRlcl9udW0iOnsiTiI6IjAifSwicHJpY2VzIjp7Ik0iOnsibWF4Ijp7IlMiOiIifSwibWluIjp7Ik4iOiIzOSJ9fX19fV19LCJwaG90b3MiOnsiTCI6W3siTSI6eyJzb3VyY2UiOnsiUyI6InNpbmdsZXBsYXRmb3JtIn0sInBob3RvX2lkIjp7IlMiOiI4MzIwOWYwMTRhMGJmZWRhZjkwMGU5YjIzYTQwMDkxOGNmYjhiZGUwIn0sInRpdGxlIjp7IlMiOiIifSwidHlwZSI6eyJTIjoiUHJvZHVjdCJ9LCJ1cmwiOnsiUyI6Imh0dHBzOi8vcGhvdG9zLnNpbmdsZXBsYXRmb3JtLmNvbS84MzIwOWYwMTRhMGJmZWRhZjkwMGU5YjIzYTQwMDkxOGNmYjhiZGUwLmpwZyJ9fX1dfX19LHsiTSI6eyJhZGRpdGlvbnMiOnsiTCI6W119LCJuYW1lIjp7IlMiOiLmhaLng6Topb/nj63niZnpu5Hmr5vnjKrlj4nng6cgMjQgaG91cnMgc2xvdyByb2FzdGVkIEliZXJpY28gcG9yayBjaGFyIHNpdSJ9LCJkZXNjcmlwdGlvbiI6eyJTIjoiQmxhY2sgZ2FybGljIGdsYXplLCBjcmFja2xpbmcsIG11c3RhcmQgZHJlc3NpbmcuIFdpdGggcmljaCwgZGFyayBtZWF0LCB0aGUgSWJlcmljbyBibGFjayBwaWcgaGFzIGVhcm5lZCBhIHJlcHV0YXRpb24gYXMgdGhlICdXYWd5dScgb2YgdGhlIHBvcmsgd29ybGQuIFRoZSBleHRyZW1lIG1hcmJsaW5nIG9mIGZhdCBnaXZlcyB0aGUgcG9yayBhIHN3ZWV0LCBidXR0ZXJ5IGZsYXZvdXIgYW5kIGEgZGVsaWNhdGUgdGV4dHVyZSwgZWxldmF0aW5nIGRpc2hlcyB0byBuZXcgaGVpZ2h0cyJ9LCJhdHRyaWJ1dGVzIjp7Ik0iOnt9fSwiaWQiOnsiTiI6IjE4OTQ0NDIzOCJ9LCJvcmRlcl9udW0iOnsiTiI6IjAifSwiY2hvaWNlcyI6eyJMIjpbeyJNIjp7Im5hbWUiOnsiUyI6IiJ9LCJ1bml0Ijp7IlMiOiIifSwiY2Fsb3JpZXMiOnsiTSI6eyJtYXgiOnsiUyI6IiJ9LCJtaW4iOnsiUyI6IiJ9fX0sIm9yZGVyX251bSI6eyJOIjoiMCJ9LCJwcmljZXMiOnsiTSI6eyJtYXgiOnsiUyI6IiJ9LCJtaW4iOnsiTiI6IjI4In19fX19XX0sInBob3RvcyI6eyJMIjpbXX19fSx7Ik0iOnsiYWRkaXRpb25zIjp7IkwiOltdfSwibmFtZSI6eyJTIjoi6aaZ6YWl6bit5rKZ5ouJIENyaXNweSBkdWNrIHNhbGFkIn0sImRlc2NyaXB0aW9uIjp7IlMiOiJ3aXRoIHBvbWVsbywgcGluZSBudXQgYW5kIHNoYWxsb3QifSwiYXR0cmlidXRlcyI6eyJNIjp7fX0sImlkIjp7Ik4iOiIxODIyNjM5NzEifSwib3JkZXJfbnVtIjp7Ik4iOiIwIn0sImNob2ljZXMiOnsiTCI6W3siTSI6eyJuYW1lIjp7IlMiOiIifSwidW5pdCI6eyJTIjoiIn0sImNhbG9yaWVzIjp7Ik0iOnsibWF4Ijp7IlMiOiIifSwibWluIjp7IlMiOiIifX19LCJvcmRlcl9udW0iOnsiTiI6IjAifSwicHJpY2VzIjp7Ik0iOnsibWF4Ijp7IlMiOiIifSwibWluIjp7Ik4iOiIyNSJ9fX19fV19LCJwaG90b3MiOnsiTCI6W119fX1dfSwibWVudV90eXBlIjp7IlMiOiJNZW51In0sImF0dHJpYnV0aW9uX2ltYWdlX2xpbmsiOnsiUyI6Imh0dHA6Ly93d3cuc2luZ2xlcGxhdGZvcm0uY29tL3BhcnRuZXItbHA/cmVmPURpcmVjdEJ1c2luZXNzSW50ZWdyYXRpb24mc3BfY2hhbm5lbD12aXJhbCZzcF9zb3VyY2U9cHVibGlzaGVyJnNwX2NhbXBhaWduPXNwJnNwX2R0PTIwMjAwNzIxIn0sIm5hbWUiOnsiUyI6IkEgbGEgQ2FydGUifSwiZGVzY3JpcHRpb24iOnsiUyI6IiJ9LCJzZWN1cmVfYXR0cmlidXRpb25faW1hZ2UiOnsiUyI6Imh0dHBzOi8vYS5zaW5nbGVwbGF0Zm9ybS5jb20vRGlyZWN0QnVzaW5lc3NJbnRlZ3JhdGlvbi9oYWtrYXNhbi1tYXlmYWlyL3Byb3ZpZGVkX2J5XzIucG5nP3NwX2R0PTIwMjAwNzIxIn0sImlkIjp7Ik4iOiIzODA4NTU1In0sImZvb3Rub3RlIjp7IlMiOiIndicgLSBWZWdldGFyaWFuOyAndmcnIC0gVmVnYW47ICdnJyAtIE1hZGUgd2l0aCBpbmdyZWRpZW50cyBub3QgY29udGFpbmluZyBnbHV0ZW4gIn0sInNlY3VyZV9hdHRyaWJ1dGlvbl9pbWFnZV9saW5rIjp7IlMiOiJodHRwczovL3d3dy5zaW5nbGVwbGF0Zm9ybS5jb20vcGFydG5lci1scD9yZWY9RGlyZWN0QnVzaW5lc3NJbnRlZ3JhdGlvbiZzcF9jaGFubmVsPXZpcmFsJnNwX3NvdXJjZT1wdWJsaXNoZXImc3BfY2FtcGFpZ249c3Amc3BfZHQ9MjAyMDA3MjEifSwibG9jYXRpb25faWQiOnsiUyI6Imhha2thc2FuLW1heWZhaXIifX19XX0sImlkIjp7IlMiOiJoYWtrYXNhbi1tYXlmYWlyezpmb3JtYXQ9Plwic2hvcnRcIn0ifX1dLCJDb3VudCI6MSwiU2Nhbm5lZENvdW50IjoxfQ==
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Key":{"id":{"S":"hakkasan-mayfair{:format=>\"short\"}"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.DeleteItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 3e15d91f92c7b0bc308e2ae66cb489f80b2b72bcec1dd869686b663e7962327b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=c03d6fdf718dac7abaff46634f40e0a3b016498d4f1c06faf3f2bb82da55ac12
+      Content-Length:
+      - '84'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      X-Amzn-Requestid:
+      - '0968e04d-312b-468a-b569-d4b8f11c9fbd'
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Key":{"id":{"S":"hakkasan-mayfair{}"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 5f799d07a8586efd534339bc891725ef2fa8b16d8c9993dd0c8219c51a71825f
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=e87302c85c24247ca2ed1298257560340f5c79ab42b1a3b8c942896d428582e2
+      Content-Length:
+      - '66'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      X-Amzn-Requestid:
+      - d948fcf1-935f-4483-bc06-07f6c6a5d41f
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Item":{"id":{"S":"hakkasan-mayfair{}"},"data":{"NULL":true}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.PutItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 4475089ef8a76414247cbfc1c08f3cadf3a0ffacb84a77b5849ff0bc3c5145ef
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=365948ec7ead4953043006a3923946907834ebf13f2f4a6c8c7c44af61ff346e
+      Content-Length:
+      - '88'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      X-Amzn-Requestid:
+      - 59b8bbc4-d697-482c-b791-d0b7b1836e34
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+recorded_with: VCR 6.0.0

@@ -24,21 +24,21 @@ namespace :dynamodb do
   desc "Create DynamoDB tables."
   task :create_tables do
     puts system <<-EOC
-      aws dynamodb create-table --endpoint-url http://localhost:8000 --table-name menus --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
+      aws dynamodb create-table --endpoint-url http://localhost:8000 --table-name MenusTable --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
     EOC
   end
   
   desc "Delete DynamoDB tables."
   task :delete_tables do
     puts system <<-EOC
-      aws dynamodb delete-table --endpoint-url http://localhost:8000 --table-name menus
+      aws dynamodb delete-table --endpoint-url http://localhost:8000 --table-name MenusTable
     EOC
   end
 
-  desc "Scan DynamoDB 'menus' table."
+  desc "Scan DynamoDB 'MenusTable' table."
   task :scan_menus do
     puts system <<-EOC
-      aws dynamodb scan --endpoint-url http://localhost:8000 --table-name menus
+      aws dynamodb scan --endpoint-url http://localhost:8000 --table-name MenusTable
     EOC
   end
 

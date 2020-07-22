@@ -15,12 +15,26 @@ Resources:
       CodeUri: ./
       Handler: lambda.menus_data
       Runtime: ruby2.5
+      Policies:
+        - DynamoDBCrudPolicy:
+          TableName: !Ref MenusTable
       Events:
         Data:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             Path: /menus_data
             Method: get
+
+  MenusTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: MenusTable
+      PrimaryKey: 
+        Name: id
+        Type: String
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

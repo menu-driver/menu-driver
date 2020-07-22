@@ -1,0 +1,253 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Scan
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 7042d856689bc8f4a4be2e0f6a48af644a2bcd5e73facac64d63794b3b1ee6ae
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=65a1e27743cca1d4ccd42a1a8037447f8b971b75239ba893fed708a108e1df67
+      Content-Length:
+      - '26'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2579969497'
+      X-Amzn-Requestid:
+      - 19fc3938-ac54-4fa0-96a0-85da3d96bf90
+      Content-Length:
+      - '93'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: '{"Items":[{"data":{"NULL":true},"id":{"S":"hakkasan-mayfair{}"}}],"Count":1,"ScannedCount":1}'
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Key":{"id":{"S":"hakkasan-mayfair{}"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.DeleteItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 5f799d07a8586efd534339bc891725ef2fa8b16d8c9993dd0c8219c51a71825f
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=507a33500b5a9bcd0c0f69badda976a1985726d22731ea85ab4018d63fb22491
+      Content-Length:
+      - '66'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      X-Amzn-Requestid:
+      - 985bde3e-5d15-4970-b20b-9a7d676b0684
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Key":{"id":{"S":"hakkasan-mayfair{}"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 5f799d07a8586efd534339bc891725ef2fa8b16d8c9993dd0c8219c51a71825f
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=e87302c85c24247ca2ed1298257560340f5c79ab42b1a3b8c942896d428582e2
+      Content-Length:
+      - '66'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      X-Amzn-Requestid:
+      - 9d66aea5-feec-4a74-80cc-4e03e2858c3a
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Item":{"id":{"S":"hakkasan-mayfair{}"},"data":{"NULL":true}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.PutItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 4475089ef8a76414247cbfc1c08f3cadf3a0ffacb84a77b5849ff0bc3c5145ef
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=365948ec7ead4953043006a3923946907834ebf13f2f4a6c8c7c44af61ff346e
+      Content-Length:
+      - '88'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '2745614147'
+      X-Amzn-Requestid:
+      - 54267ca2-ea76-4703-a136-ce6cd609c587
+      Content-Length:
+      - '2'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:8000/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"MenusTable","Key":{"id":{"S":"hakkasan-mayfair{}"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.1 ruby/2.5.7 x86_64-linux aws-sdk-dynamodb/1.51.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      Host:
+      - 127.0.0.1:8000
+      X-Amz-Date:
+      - 20200722T175202Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEKn//////////wEaCXVzLWVhc3QtMSJHMEUCID6eCPhDR8VR7XNcK2MTsB1DOIsikJyUNWYVmCr5zSeDAiEAkyILII7mg+KAC9981wMdFSXSw8Vp/GXDxz+9UQbauJkqpgMIYhAAGgw0MjA4MzY0Mjg1NzEiDJuuev5wGxpi5Oh+uiqDA4jq/tU+/D18u8pZ2bLtAJtBBkcm7eftG69IlQmWflvcgfgRRHxn3vzIRgsn1NyrECfN8lg/ujiT3it5lA4P4PAHtoVsti++okbn4WuN7PI+kaIWVqxckZmNstQsbl9Hd/E9T9KvJ5Knt0vkCD6oimtoLMXtUy7voDonUvvlbUJyNwZ9uGTUAWiVei5MDf6nSvgFrSptlsJ+outUeiZRpsEJUqXSKRef1wAhCVmAc4Y177XspJTiGZStvHJInfJWdNz04KFu9GagSQixHfwVlFoQoe1nPpjOlrUD9CPrbdQk0PbR3u7CHTqc9RzfwcXGqhWboBruo8Q4aC42kAm6KvaSjmhprh3s/J7gkBwDCUQ5I92Ck2QUhkRomHkxdgZZebjgXsLEBecnncGl5jaLfA3feJ+mWrTCcQENhh+Iufe3Q2tbhwM1y+tvrw3z5eCul1gwdNOa31+z2DcNw8hHLtf5oVCq+GLmgvTBe3kr+AoS9q+Ao8Mkn0q6Jq+/H8uFjEe34TC13uD4BTqOAodeFjBH/d0lbDfqKlaUeVanErlQ3HqBd2jZx6xv0TkynKWcnHNzHH1FAKQDFVAPueJqlxZdMCyJY7AOKw/bjfSP3ItI6qM85KpDVc0ESLxdSVnbjM7wdlzfKtI9/IatKrndWRU4FSE+eE8DXT8V8iMKVvy7bNf6y+HhCXTcNnkjMu74uDrqJGk0GoSnCabY8VcCYUDdfZzF8cJd8/RcfPLxHuOhf8+e6X7PrBtrCA1u6aEdtdbpaVNX28Gq6HM96Y/DVC558duS3C3H+SsL7rkalusOfUZTr4x4bhErU6Fc9wRdJQ0hWZ6M2KymCV/SCq2+Tdu4jgNQiDXkRp9GPrqqittGqxanVn3A+J7LFw==
+      X-Amz-Content-Sha256:
+      - 5f799d07a8586efd534339bc891725ef2fa8b16d8c9993dd0c8219c51a71825f
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNUVR45AWU/20200722/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-target,
+        Signature=e87302c85c24247ca2ed1298257560340f5c79ab42b1a3b8c942896d428582e2
+      Content-Length:
+      - '66'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      X-Amz-Crc32:
+      - '1136764402'
+      X-Amzn-Requestid:
+      - 9ea7fe0b-1f4c-45b8-bbf3-62bd092586c6
+      Content-Length:
+      - '63'
+      Server:
+      - Jetty(8.1.12.v20130726)
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"data":{"NULL":true},"id":{"S":"hakkasan-mayfair{}"}}}'
+  recorded_at: Wed, 22 Jul 2020 17:52:02 GMT
+recorded_with: VCR 6.0.0
