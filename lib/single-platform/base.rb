@@ -6,7 +6,7 @@ class SinglePlatform
   end
 
   def dynamodb
-    @dynamodb ||= SinglePlatform::DynamoDB.new.connection
+    @dynamodb ||= SinglePlatform::DynamoDB.new
   end
 
   def build_signed_url(uri_path:, **args)
