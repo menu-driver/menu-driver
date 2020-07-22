@@ -5,3 +5,4 @@
 coverage/**/*
 .aws-sam
 .bundle/**/*
+samconfig.toml

@@ -3,10 +3,23 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
   menu-driver
 
+Parameters:
+  Environment:
+    Type: String
+  SinglePlatformClientID:
+    Type: String
+  SinglePlatformClientSecret:
+    Type: String
+
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
-    Timeout: 3
+    Timeout: 10
+    Environment:
+      Variables:
+        MENUS_TABLE_NAME: !Ref MenusTable
+        SP_CLIENT_ID: !Ref 'SinglePlatformClientID'
+        SP_CLIENT_SECRET: !Ref 'SinglePlatformClientSecret'
 
 Resources:
   MenusDataFunction:
@@ -15,9 +28,7 @@ Resources:
       CodeUri: ./
       Handler: lambda.menus_data
       Runtime: ruby2.5
-      Policies:
-        - DynamoDBCrudPolicy:
-          TableName: !Ref MenusTable
+      Policies: AmazonDynamoDBFullAccess
       Events:
         Data:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -28,7 +39,7 @@ Resources:
   MenusTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      TableName: MenusTable
+      TableName: !Join ['-', ['MenuDriver', !Ref 'Environment']]
       PrimaryKey: 
         Name: id
         Type: String
@@ -45,7 +56,7 @@ Outputs:
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/menus_data/"
   MenusDataFunction:
     Description: "menus_data Lambda Function ARN"
-    Value: !GetAtt DataFunction.Arn
+    Value: !GetAtt MenusDataFunction.Arn
   DataFunctionIamRole:
     Description: "Implicit IAM Role created for menus_data function"
     Value: !GetAtt MenusDataFunction.Arn
