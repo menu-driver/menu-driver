@@ -6,6 +6,7 @@ class SinglePlatform
   end
 
   def dynamodb
+    $logger.warn("HI I'M REALLY CHATTY!!")
     @dynamodb ||= SinglePlatform::DynamoDB.new
   end
 

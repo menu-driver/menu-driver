@@ -1,6 +1,9 @@
 require 'dotenv/load'
 require 'pry'
 
+require 'logger-setup'
+$logger.level = Logger::FATAL
+
 require 'vcr'
 
 VCR.configure do |config|

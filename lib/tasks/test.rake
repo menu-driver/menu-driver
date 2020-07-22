@@ -1,4 +1,6 @@
 desc "Run tests with RSpec."
 task :test do
-  puts system('rspec -f d --color')
+  command = 'rspec -f d --color'
+  puts 'running: ' + command
+  puts system(command)
 end

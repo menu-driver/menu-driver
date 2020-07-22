@@ -6,6 +6,8 @@ require 'awesome_print'
 require 'hash_dot'
 require 'aws-sdk'
 
+require 'logger-setup'
+
 require 'single-platform/base'
 require 'single-platform/menus'
 require 'single-platform/dynamodb'

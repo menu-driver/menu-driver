@@ -50,12 +50,13 @@ class SinglePlatform::DynamoDB
       begin
         connection.get_item(params)
       rescue  Aws::DynamoDB::Errors::ServiceError => error
-        # puts "Error finding menu for location_id: #{location_id}"
-        # puts error.message
+        $logger.error "Error finding menu for location_id: #{location_id} -- " +
+          error.message
+        nil
       end
 
     if response.nil? or response.item.nil?
-      # puts "Could not find menu for location_id: #{location_id}"
+      $logger.info  "Could not find menu for location_id: #{location_id}"
 
       # Call the block passed by the caller to compute the data.
       data = yield
@@ -71,8 +72,7 @@ class SinglePlatform::DynamoDB
         }
         connection.put_item(params)
       rescue  Aws::DynamoDB::Errors::ServiceError => error
-        puts 'Unable to add menu data:'
-        # puts error.message
+        $logger.error 'Unable to add menu data: ' + error.message
       end
 
       return data

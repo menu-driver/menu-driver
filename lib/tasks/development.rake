@@ -8,7 +8,9 @@ namespace :develop do
   
   desc "Stop the development environment."
   task :stop do
-    puts system('pkill -f "sam local";')
+    command = 'pkill -f "sam local";'
+    puts 'running: ' + command
+    system(command)
   end
 
   desc "Stop and restart the development environment."
