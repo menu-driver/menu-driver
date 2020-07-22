@@ -21,7 +21,10 @@ require 'single-platform'
 #     Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
 def menus_data(event:, context:)
 
-  location_id = event['queryStringParameters']['location_id']
+  location_id =
+    if event['queryStringParameters']
+      event['queryStringParameters']['location_id']
+    end
   
   unless location_id
     {

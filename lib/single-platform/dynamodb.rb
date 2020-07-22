@@ -59,13 +59,15 @@ class SinglePlatform::DynamoDB
         nil
       end
     
-    $logger.debug "DynamoDB response: #{params.ai}"
+    $logger.debug "DynamoDB responded."
 
     if response.nil? or response.item.nil?
-      $logger.info  "Could not find menu for location_id: #{location_id}"
+      $logger.info  "Could not find cached menu data for location_id: #{location_id}"
 
       # Call the block passed by the caller to compute the data.
       data = yield
+  
+      $logger.info "Caching menu data for location_id: #{location_id}"
   
       # Cache that data in DynamoDB.
       begin
@@ -73,9 +75,16 @@ class SinglePlatform::DynamoDB
           table_name: self.class.menus_table_name,
           item: {
             id: cache_key,
-            data: data
+            # Don't include all of the data in the logs.
+            data: '...'
           }
         }
+
+        $logger.debug "Preparing to put_item: #{params.ai}"
+        
+        # Add the data.
+        params[:item][:data] = data
+
         connection.put_item(params)
       rescue Aws::DynamoDB::Errors::ServiceError => error
         $logger.error 'Unable to add menu data: ' + error.message
@@ -84,6 +93,8 @@ class SinglePlatform::DynamoDB
       return data
     end
 
+    $logger.debug "Returning data."
+        
     response.item.to_dot.data
 
   end
