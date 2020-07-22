@@ -1,5 +1,3 @@
-require 'aws-sdk'
-
 class SinglePlatform::DynamoDB
 
   def connection
@@ -7,14 +5,19 @@ class SinglePlatform::DynamoDB
     options = {}
     # Use a local DynamoDB 'normally', unless running in an "AWS execution
     # environmnet" (Lambda) and not in SAM Local.
-    options.merge!(endpoint: 'http://127.0.0.1:8000') unless
-      (ENV['AWS_EXECUTION_ENV'] && !ENV['AWS_SAM_LOCAL'])
+    options.merge!(endpoint: 'http://127.0.0.1:8000') unless ENV['AWS_EXECUTION_ENV']
+    options[:endpoint] = 'http://dynamodb:8000' if ENV['AWS_SAM_LOCAL']
+
+    $logger.debug "DynamoDB options: #{options.ai}"
+
     @connection ||= Aws::DynamoDB::Client.new(options)
 
   end
 
   def self.menus_table_name
-    ENV['MENUS_TABLE_NAME'] || 'MenusTable'
+    menus_table_name = ENV['MENUS_TABLE_NAME'] || 'MenusTable'
+    $logger.debug "DynamoDB table name: #{menus_table_name}"
+    menus_table_name
   end
   
   def purge_menus_cache
@@ -48,12 +51,15 @@ class SinglePlatform::DynamoDB
   
     response =
       begin
+        $logger.debug "Preparing to get_item: #{params.ai}"
         connection.get_item(params)
-      rescue  Aws::DynamoDB::Errors::ServiceError => error
+      rescue Aws::DynamoDB::Errors::ServiceError => error
         $logger.error "Error finding menu for location_id: #{location_id} -- " +
           error.message
         nil
       end
+    
+    $logger.debug "DynamoDB response: #{params.ai}"
 
     if response.nil? or response.item.nil?
       $logger.info  "Could not find menu for location_id: #{location_id}"
@@ -71,7 +77,7 @@ class SinglePlatform::DynamoDB
           }
         }
         connection.put_item(params)
-      rescue  Aws::DynamoDB::Errors::ServiceError => error
+      rescue Aws::DynamoDB::Errors::ServiceError => error
         $logger.error 'Unable to add menu data: ' + error.message
       end
 

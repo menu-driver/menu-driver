@@ -4,7 +4,7 @@ require 'erb'
 require 'httparty'
 require 'awesome_print'
 require 'hash_dot'
-require 'aws-sdk'
+require 'aws-sdk-dynamodb'
 
 require 'logger-setup'
 

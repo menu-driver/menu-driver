@@ -1,5 +1,3 @@
-require 'dotenv/load'
-
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 require 'single-platform'
 
