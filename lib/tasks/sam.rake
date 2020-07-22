@@ -18,7 +18,7 @@ namespace :sam do
   task :deploy do
     environment = `git branch`.gsub(/^\*\s*/,'')
     command = <<-EOC
-      sam deploy -g --parameter-overrides "SinglePlatformClientID=#{ENV['SP_CLIENT_ID']},SinglePlatformClientSecret=#{ENV['SP_CLIENT_SECRET']},Environment=#{environment}"
+      sam deploy --parameter-overrides "SinglePlatformClientID=#{ENV['SP_CLIENT_ID']},SinglePlatformClientSecret=#{ENV['SP_CLIENT_SECRET']},Environment=#{environment}"
     EOC
     puts 'running: ' + command
     puts system command
