@@ -4,7 +4,7 @@ class SinglePlatform::DynamoDB
 
   def initialize
     options = {}
-    options.merge!(endpoint: 'http://127.0.0.1:8000') unless ENV['AWS_REGION']
+    options.merge!(endpoint: 'http://127.0.0.1:8000') unless (ENV['AWS_EXECUTION_ENV'] && !ENV['AWS_SAM_LOCAL'])
     @connection = Aws::DynamoDB::Client.new(options)
   end
   
