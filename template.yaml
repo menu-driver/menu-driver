@@ -4,7 +4,7 @@ Description: >
   menu-driver
 
 Parameters:
-  Environment:
+  Stack:
     Type: String
   SinglePlatformClientID:
     Type: String
@@ -15,11 +15,12 @@ Parameters:
 Globals:
   Function:
     Timeout: 30
+    MemorySize: 256
     Environment:
       Variables:
-        MENUS_TABLE_NAME: !Ref MenusTable
-        SP_CLIENT_ID: !Ref 'SinglePlatformClientID'
-        SP_CLIENT_SECRET: !Ref 'SinglePlatformClientSecret'
+        STACK: !Ref 'Stack'
+        SINGLE_PLATFORM_CLIENT_ID: !Ref 'SinglePlatformClientId'
+        SINGLE_PLATFORM_CLIENT_SECRET: !Ref 'SinglePlatformClientSecret'
 
 Resources:
   MenusDataFunction:
@@ -28,7 +29,6 @@ Resources:
       CodeUri: ./
       Handler: lambda.menus_data
       Runtime: ruby2.5
-      Policies: AmazonDynamoDBFullAccess
       Events:
         Data:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -39,7 +39,7 @@ Resources:
   MenusTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      TableName: !Join ['-', ['MenuDriver', !Ref 'Environment']]
+      TableName: !Join ['-', ['menu-driver', !Ref 'Stack']]
       PrimaryKey: 
         Name: id
         Type: String

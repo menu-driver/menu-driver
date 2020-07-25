@@ -1,11 +1,23 @@
-require 'dotenv/load'
 require 'pry'
 
 require 'logger-setup'
 $logger.level = Logger::FATAL
+$logger.level = Logger::DEBUG if ENV['DEBUG']
 
+# Get environment variables from the samconfig.toml file.
+# Sort of like using dotenv, but the environment variables come from the
+# 'parameter_overrides' setting in the SAM configuration file instead of from
+# a .env file.
+require 'toml'
+TOML.load_file('samconfig.toml')['default']['deploy']['parameters'
+  ]['parameter_overrides'].
+  split(' ').each do |variable|
+    parts = variable.split '='
+    ENV[parts[0].gsub(/(?<!^)[A-Z]/) do "_#$&" end.upcase] = parts[1]
+  end
+
+# Mocking / stubbing
 require 'vcr'
-
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
@@ -13,9 +25,9 @@ VCR.configure do |config|
   config.default_cassette_options = { :record => :new_episodes }
 end
 
+# Test coverage.
 require 'simplecov'
 require 'coveralls'
-
 SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter

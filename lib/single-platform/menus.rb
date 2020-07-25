@@ -1,13 +1,5 @@
 class SinglePlatform
 
-  def menus(location_id:, **args)
-
-    dynamodb.cache_menus(location_id:location_id, **args) do
-      fetch_menus_from_api(location_id:location_id, **args)
-    end
-
-  end
-  
   def fetch_menus_from_api(location_id:, **args)
     
     $logger.info "Fetching menu data from Single Platform API."

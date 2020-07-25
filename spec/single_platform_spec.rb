@@ -3,21 +3,16 @@ require_relative '../lib/single-platform'
 
 describe "Single Platform" do
 
-  # Delete all entries in the menu data.
-  before(:each) do
-    SinglePlatform::DynamoDB.new.purge_menus_cache
-  end
-
   context "gets menu data", :vcr do
 
     it 'gets JSON through an HTTP request' do
 
       single_platform = SinglePlatform.new(
-        client_id: ENV['SP_CLIENT_ID'],
-        secret:    ENV['SP_CLIENT_SECRET']
+        client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
+        secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
       )
     
-      menus = single_platform.menus(
+      menus = single_platform.fetch_menus_from_api(
         location_id:'hakkasan-mayfair')
 
       expect(menus.count).to eq 17
@@ -29,11 +24,11 @@ describe "Single Platform" do
     it 'gets JSON for the "short" format' do
 
       single_platform = SinglePlatform.new(
-        client_id: ENV['SP_CLIENT_ID'],
-        secret:    ENV['SP_CLIENT_SECRET']
+        client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
+        secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
       )
     
-      menus = single_platform.menus(
+      menus = single_platform.fetch_menus_from_api(
         location_id: 'hakkasan-mayfair',
         
         # Added this extra parameter.

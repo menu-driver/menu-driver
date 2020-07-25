@@ -10,34 +10,90 @@ Serverless microservice built with Ruby for hosting web restaurant menus based o
 
 Make sure that you're using Ruby 2.5, the version that the AWS runtime will use when this runs in Lambda.  There is an `.rvmrc` file for locking the Ruby version to 2.5.7.  You might need to install [RVM](https://rvm.io/rvm/install).
 
-### Set up Single Platform secrets
+### Set up AWS resources for development
 
-You'll need the credentials for a  Single Platform account in your `.env` file:
+SAM Local cannot manage local S3 buckets or DynamoDB tables for development.
+You have to either set up local simulations manually, or you can use actual
+cloud AWS services for development instead of trying to simulate them.
 
-    SP_CLIENT_ID=XXXXXX
-    SP_CLIENT_SECRET=XXXXXX
+You can simulate AWS services locally using Localstack or whatever.  But it's
+a lot of work.  Maintaining a simulation of AWS becomes part of your job for
+your project.  But why?  Why not just work on your project, and let AWS
+provide AWS services?
 
-### Set up local DynamoDB tables
+For developement, this project uses real AWS services intead of trying to
+simulate them locally.  So that all of the code in this project is about the
+project, and so that you don't have to learn how to run a local simulation of
+AWS to work on this code.
 
-SAM Local cannot manage local DynamoDB tables for development.  You have to set them up manually.
+To use SAM to set up development resources in the cloud:
 
-First, you will need [DynamoDB Local](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html).  This will install it:
+    sam build && rake sam:deploy
 
-    rake dynamodb:setup
+You won't have a value in your `samconfig.toml` SAM [configuration file](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html) for the `s3_bucket`, so the Rake task will invoke the ["guided"](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html) deployment feature in `sam deploy`.
 
-You should only need to do that one time.
+SAM will ask you a series of questions so that it can build a configuration file.  This is where you give it your Single Platform API secrets.
 
-If you have already done that once and downloaded the DynamoDB container before, then you can run the existing container with:
+You should see something like this:
 
-    rake dynamodb:start
+    $ sam deploy -g
+    
+    Configuring SAM deploy
+    ======================
+    
+            Looking for samconfig.toml :  Found
+            Reading default arguments  :  Success
+    
+            Setting default arguments for 'sam deploy'
+            =========================================
+            Stack Name [menu-driver-development]: 
 
-To scan the current contents of your ```menus``` table:
+The stack name will be pre-filled for you.  You don't want to override that.  Every time you run the Rake task to deploy, Ruby logic will set up the stack name and S3 prefix values and also the parameter override for the "Stack" parameter.  Anything you specify here will be overwritten by that process.
 
-    rake dynamodb:scan_menus
+Next, it will ask you for the AWS region you'd like you use, and a few other options.  Whatever you tell it will be recorded in the `samconfig.toml` file and will be used for future deployments.
 
-### AWS SAM CLI
+You will reach a point where it will ask you for the value for the Stack parameter:
 
-Make sure that you have the [SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html) from Amazon Web Services.
+        Setting default arguments for 'sam deploy'
+        =========================================
+        Stack Name [menu-driver-test]: 
+        AWS Region [us-east-1]: 
+        Parameter StackName []:
+
+Plese type `development`.  I wish that I could pre-fill that for you but the guided deployment feature of SAM doesn't seem to have a way to do that.  Sorry.  For future deployments, Ruby logic in the `sam:deploy` Rake task will automatically update the stack name in the configuration file based on the `CLOUD_STACK` environment variable.
+
+After that, it will ask you for your Single Platform secrets:
+
+        Setting default arguments for 'sam deploy'
+        =========================================
+        Stack Name [menu-driver-development]: 
+        AWS Region [us-east-1]: 
+        Parameter StackName []: development
+        Parameter SinglePlatformClientID []:
+
+Your secrets will be recorded in the `samconfig.toml` file, and if you need to update them in the future then edit that file.  There is only one copy of the secets in your project and it's in that SAM configuration file.
+
+SAM should deploy to the `menu-driver-development` stack in CloudFormation.  More importantly, SAM will set up the S3 bucket used for deployments for you and record the location of that bucket in your SAM config file.  The next time that you deploy, just use:
+
+    rake sam:deploy
+
+Or, to build first:
+
+    sam build && rake sam:deploy
+
+That wraps `sam deploy` in the Ruby logic for setting up the stack name and other things that depend on the current `CLOUD_STACK`.
+
+### Deploying other stacks
+
+You will also need a test stack for running tests:
+
+    CLOUD_STACK=test rake sam:deploy
+
+To deploy a stack for each Git branch of the project from a CI server:
+
+    CLOUD_STACK=some_git_branch_name rake sam:deploy
+
+### Running the code
 
 Invoke individual Lambda functions using the canned Lambda events in the specs:
 
@@ -47,7 +103,7 @@ That will invoke the Lambda function that will load your Single Platform credent
 
 You can start the AWS SAM CLI's HTTP server for local development with:
 
-    rake server:start
+    rake sam:local:start
 
 Then you can send HTTP requests:
 
@@ -55,41 +111,18 @@ Then you can send HTTP requests:
 
 That will do the exact same thing as the previous example of calling the `MenusDataFunction` directly.
 
-### Rake tasks for starting, stopping, restarting
-
-These Rake tasks help with starting an managing a development environment:
-
-    rake develop:start
-    
-    rake develop:restart
-    
-    rake develop:stop
-
 ## Tests
+
+You may have already deployed a test stack above, but if you haven't then do that by deploying a CloudFormation stack for `menu-driver-test` with:
+
+    CLOUD_STACK=test rake sam:deploy
 
 To run the tests:
 
     rake test
-
-Some of the tests depend on DynamoDB, so make sure that you `rake develop:start` or `rake dynamodb:start` first.
 
 To run an individual spec:
 
     rspec spec/single_platform_spec.rb -e "gets JSON through an HTTP request" -f d
 
 That runs the same `MenusDataFunction` that's invoked in above examples through SAM Local, both triggered as a function with an event passed to it through a JSON file, and also accessed through HTTP.  Running the spec through RSpec calls the same code for getting the same menu data for the same location, but it also checks the result.  The actual HTTP call to the actual API is mocked through VCR, so it won't really call the Single Platform API.
-
-## Deploy
-
-If you don't already have a `samconfig.toml` file for your deployment preferences, then create one with:
-
-    sam build
-    sam deploy -g
-
-SAM will ask you for your Single Platform secrets, for setting up the parameters.  It will write out a config file for deploying.
-
-For future deployments, don't use the `-g` option:
-
-    sam deploy
-
-For a CI/CD system like CodeShip, set up the deployment script to create the `sameconfig.toml` file, using the file that you create in development using the `-g` option.  You'll need to edit things like the stack name that include the environment (git branch).

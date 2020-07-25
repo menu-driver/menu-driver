@@ -5,10 +5,6 @@ class SinglePlatform
     @secret = secret
   end
 
-  def dynamodb
-    @dynamodb ||= SinglePlatform::DynamoDB.new
-  end
-
   def build_signed_url(uri_path:, **args)
     args.update({"client" => @client_id})
     path =

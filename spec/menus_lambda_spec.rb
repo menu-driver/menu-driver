@@ -3,11 +3,6 @@ require_relative '../lambda'
 
 describe "Lambda handler" do
 
-  # Delete all entries in the menu data.
-  before(:each) do
-    SinglePlatform::DynamoDB.new.purge_menus_cache
-  end
-
   context "gets menu data", :vcr do
 
     it 'requires a location_id parameter' do
