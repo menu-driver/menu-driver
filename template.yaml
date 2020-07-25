@@ -4,9 +4,9 @@ Description: >
   menu-driver
 
 Parameters:
-  Stack:
+  StackName:
     Type: String
-  SinglePlatformClientID:
+  SinglePlatformClientId:
     Type: String
   SinglePlatformClientSecret:
     Type: String
@@ -18,7 +18,7 @@ Globals:
     MemorySize: 256
     Environment:
       Variables:
-        STACK: !Ref 'Stack'
+        STACK_NAME: !Ref 'StackName'
         SINGLE_PLATFORM_CLIENT_ID: !Ref 'SinglePlatformClientId'
         SINGLE_PLATFORM_CLIENT_SECRET: !Ref 'SinglePlatformClientSecret'
 
@@ -39,7 +39,7 @@ Resources:
   MenusTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      TableName: !Join ['-', ['menu-driver', !Ref 'Stack']]
+      TableName: !Join ['-', ['menu-driver', !Ref 'StackName']]
       PrimaryKey: 
         Name: id
         Type: String

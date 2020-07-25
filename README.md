@@ -8,7 +8,7 @@ Serverless microservice built with Ruby for hosting web restaurant menus based o
 
 ### Use the same Ruby version as AWS
 
-Make sure that you're using Ruby 2.5, the version that the AWS runtime will use when this runs in Lambda.  There is an `.rvmrc` file for locking the Ruby version to 2.5.7.  You might need to install [RVM](https://rvm.io/rvm/install).
+Make sure that you're using Ruby 2.5, the version that the AWS runtime will use when this runs in Lambda.  There is an `.rvmrc` file for locking the Ruby version to 2.5.0.  You might need to install [RVM](https://rvm.io/rvm/install).
 
 ### Set up AWS resources for development
 
@@ -60,7 +60,7 @@ You will reach a point where it will ask you for the value for the Stack paramet
         AWS Region [us-east-1]: 
         Parameter StackName []:
 
-Plese type `development`.  I wish that I could pre-fill that for you but the guided deployment feature of SAM doesn't seem to have a way to do that.  Sorry.  For future deployments, Ruby logic in the `sam:deploy` Rake task will automatically update the stack name in the configuration file based on the `CLOUD_STACK` environment variable.
+Plese type `development`.  I wish that I could pre-fill that for you but the guided deployment feature of SAM doesn't seem to have a way to do that.  Sorry.  For future deployments, Ruby logic in the `sam:deploy` Rake task will automatically update the stack name in the configuration file based on the `CLOUD_STACK` environment variable, or passed as an argument.
 
 After that, it will ask you for your Single Platform secrets:
 
@@ -81,17 +81,15 @@ Or, to build first:
 
     sam build && rake sam:deploy
 
-That wraps `sam deploy` in the Ruby logic for setting up the stack name and other things that depend on the current `CLOUD_STACK`.
-
 ### Deploying other stacks
 
-You will also need a test stack for running tests:
+The Rake task wraps `sam deploy` in the Ruby logic for setting up the stack name and other things based either on a name from the `CLOUD_STACK` environment variable, or a parameter passed to the Rake task:
 
-    CLOUD_STACK=test rake sam:deploy
+    CLOUD_STACK=main rake sam:deploy
 
-To deploy a stack for each Git branch of the project from a CI server:
+or:
 
-    CLOUD_STACK=some_git_branch_name rake sam:deploy
+    rake sam:deploy[main]
 
 ### Running the code
 
@@ -115,7 +113,7 @@ That will do the exact same thing as the previous example of calling the `MenusD
 
 You may have already deployed a test stack above, but if you haven't then do that by deploying a CloudFormation stack for `menu-driver-test` with:
 
-    CLOUD_STACK=test rake sam:deploy
+    rake sam:deploy[test]
 
 To run the tests:
 

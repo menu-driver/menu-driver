@@ -6,10 +6,10 @@ require 'pry'
 namespace :sam do
 
   desc 'Deploy to AWS with secrets, to the stack name set in CLOUD_STACK (or "development")'
-  task :deploy do
+  task :deploy, [:stack] do |task, args|
 
-    current_stack = ENV['CLOUD_STACK'] || 'development'
-    
+    current_stack = ENV['CLOUD_STACK'] || args[:stack] || 'development'
+
     # If there is a config file alredy then massage it to adjust it
     # for the current CLOUD_STACK context.
     if File.exist? filename = 'samconfig.toml'
@@ -23,7 +23,7 @@ namespace :sam do
           's3_prefix' => "menu-driver-#{current_stack}"
         }}}})
       config['default']['deploy']['parameters']['parameter_overrides'].
-        gsub!(/Stack\=\S+/, 'Stack=' + current_stack)
+        gsub!(/StackName\=\S+/, 'StackName=' + current_stack)
   
       # Write it back to the same file.
       File.write(
