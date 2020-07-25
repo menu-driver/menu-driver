@@ -31,7 +31,7 @@ def menus_data(event:, context:)
       statusCode: 400,
       body: {
         message: "Please provide the Single Platform location ID in the query string parameter \"location_id\"",
-      }.to_json
+      }
     }
   else
 
@@ -40,15 +40,26 @@ def menus_data(event:, context:)
           client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
           secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
         )
-      
-    menus = single_platform.fetch_menus_from_api(
+
+    menus_html = single_platform.generate_menus_html(
       location_id: location_id)
 
+    $logger.info "Storing HTML menu for location: #{location_id}"
+
+    s3 = Aws::S3::Resource.new
+    s3_object = s3.bucket('menu-driver-'+ENV['STACK_NAME']).object(location_id)
+    s3_object.put(body:menus_html, content_type: 'text/html')
+
+    # s3.bucket('my.bucket.com').object('key')
+    #   .public_url(virtual_host: true)
+    # #=> "http://my.bucket.com/key"
+
     {
-      statusCode: 200,
-      body: {
-        message: menus
-      }.to_json
+      statusCode: 302,
+      headers: {
+        'Location': s3_object.public_url
+      },
+      body: nil
     }
   end
 end

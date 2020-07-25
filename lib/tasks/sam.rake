@@ -1,6 +1,7 @@
 # Load secrets from the samconfig.toml file that SAM will use for deployment.
 require 'toml'
 require 'deep_merge'
+require 'sam-parameter-environment'
 require 'pry'
 
 namespace :sam do
@@ -38,7 +39,7 @@ namespace :sam do
       # If there is not already a SAM config file, then do a "guided" deployment
       # to create one.
       command = "sam deploy -g --stack-name menu-driver-#{current_stack}" +
-        " --parameter-overrides=\"Stack=#{current_stack}\""
+        " --parameter-overrides=\"StackName=#{current_stack}\""
       puts 'running: ' + command
       puts system command
       
@@ -47,10 +48,12 @@ namespace :sam do
 
   namespace :local do
 
+    SamParameterEnvironment.load
+
     desc "Start the SAM Local HTTP server."
     task :start do
       command = <<-EOC
-        sam local start-api -p 8080 --docker-network menu-driver --parameter-overrides "SinglePlatformClientID=#{ENV['SP_CLIENT_ID']},SinglePlatformClientSecret=#{ENV['SP_CLIENT_SECRET']},Stack=development" &
+        sam local start-api -p 8080 --docker-network menu-driver --parameter-overrides "SinglePlatformClientID=#{ENV['SINGLE_PLATFORM_CLIENT_ID']},SinglePlatformClientSecret=#{ENV['SINGLE_PLATFORM_CLIENT_SECRET']},StackName=development" &
       EOC
       puts 'running: ' + command
       puts system command

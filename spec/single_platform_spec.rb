@@ -14,7 +14,7 @@ describe "Single Platform" do
 
     it 'gets JSON through an HTTP request' do
 
-      menus = @single_platform.fetch_menus_from_api(
+      menus = @single_platform.fetch_menus_data_from_api(
         location_id:'hakkasan-mayfair')
 
       expect(menus.count).to eq 17
@@ -25,7 +25,7 @@ describe "Single Platform" do
 
     it 'gets JSON for the "short" format' do
 
-      menus = @single_platform.fetch_menus_from_api(
+      menus = @single_platform.fetch_menus_data_from_api(
         location_id: 'hakkasan-mayfair',
         
         # Added this extra parameter.

@@ -29,6 +29,7 @@ Resources:
       CodeUri: ./
       Handler: lambda.menus_data
       Runtime: ruby2.5
+      Policies: AmazonS3FullAccess
       Events:
         Data:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -36,16 +37,28 @@ Resources:
             Path: /menus_data
             Method: get
 
-  MenusTable:
-    Type: AWS::Serverless::SimpleTable
+  MenusBucket:
+    Type: AWS::S3::Bucket
     Properties:
-      TableName: !Join ['-', ['menu-driver', !Ref 'StackName']]
-      PrimaryKey: 
-        Name: id
-        Type: String
-      ProvisionedThroughput: 
-        ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
+      BucketName: !Join ['-', ['menu-driver', !Ref 'StackName']]
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: 404.html
+
+  MenusBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref MenusBucket
+      PolicyDocument:
+        Id: PublicReadPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Sub arn:aws:s3:::${MenusBucket}/*
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

@@ -15,13 +15,16 @@ describe "Lambda handler" do
           
       expect(response[:statusCode]).to eq 400
 
-      message = JSON.parse(response[:body]).to_dot.message
+      message = response[:body].to_dot.message
 
       expect(message).to match(/location id/i)
 
     end
 
-    it 'relays menu data in JSON format' do
+    it 'redirects to the HTML menu on S3 after generating it' do
+
+      expect_any_instance_of(Aws::S3::Object).
+        to receive(:put)
 
       response = 
         menus_data(
@@ -29,13 +32,9 @@ describe "Lambda handler" do
             File.read('spec/lambda_events/location_id_hakkasan_mayfair.json')),
           context:{})
           
-      expect(response[:statusCode]).to eq 200
-
-      menus = JSON.parse(response[:body]).to_dot.message
-
-      expect(menus.count).to eq 17
-      expect(menus.first.name).to eq 'A la Carte'
-      expect(menus.first.sections.count).to eq 11
+      expect(response[:statusCode]).to eq 302
+      expect(URI(response[:headers][:Location]).path).
+        to eq '/hakkasan-mayfair'
 
     end
 

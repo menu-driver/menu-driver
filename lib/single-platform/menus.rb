@@ -1,6 +1,6 @@
 class SinglePlatform
 
-  def fetch_menus_from_api(location_id:, **args)
+  def fetch_menus_data_from_api(location_id:, **args)
     
     $logger.info "Fetching menu data from Single Platform API."
     
@@ -20,5 +20,15 @@ class SinglePlatform
     JSON.parse(response.body).to_dot.data
 
   end
+  
+  def generate_menus_html(location_id:, **args)
+    
+    $logger.info "Generating HTML menu file for location: #{location_id}"
 
+    menus_data = fetch_menus_data_from_api(location_id:location_id, **args)
+
+    '<html>HTML menu!</html>'
+
+  end
+  
 end
