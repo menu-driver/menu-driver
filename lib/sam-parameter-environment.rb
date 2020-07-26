@@ -1,3 +1,5 @@
+require 'toml'
+
 module SamParameterEnvironment
 
 # Get environment variables from the samconfig.toml file.
@@ -5,7 +7,7 @@ module SamParameterEnvironment
 # 'parameter_overrides' setting in the SAM configuration file instead of from
 # a .env file.
   def self.load
-    require 'toml'
+    return unless File.exist? 'samconfig.toml'
     TOML.load_file('samconfig.toml')['default']['deploy']['parameters'
       ]['parameter_overrides'].
       split(' ').each do |variable|
