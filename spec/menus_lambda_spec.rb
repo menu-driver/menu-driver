@@ -21,9 +21,12 @@ describe "Lambda handler" do
 
     end
 
-    pending 'returns a 404 if the given location does not exist in Single Platform' do
-      fail
-    end
+    # TODO: This is not that important but it might make maintaining menus
+    # over time a little simpler.
+    # pending 'returns a 404 if the given location does not exist in ' +
+    #   'Single Platform' do
+    #   fail
+    # end
 
     it 'redirects to the HTML menu on S3 after generating it' do
 
@@ -40,10 +43,6 @@ describe "Lambda handler" do
       expect(URI(response[:headers][:Location]).path).
         to eq '/hakkasan-mayfair'
 
-    end
-    
-    pending 'redirects to the HTML menu on a custom domain' do
-      fail
     end
 
   end
