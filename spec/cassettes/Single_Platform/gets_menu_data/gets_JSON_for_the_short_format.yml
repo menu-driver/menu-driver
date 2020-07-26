@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 26 Jul 2020 15:18:05 GMT
+      - Sun, 26 Jul 2020 15:25:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -56,5 +56,5 @@ http_interactions:
         of fat gives the pork a sweet, buttery flavour and a delicate texture, elevating
         dishes to new heights","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":28},"order_num":0}],"attributes":{},"photos":[],"additions":[]},{"id":182263971,"name":"Crispy
         duck salad","description":"with pomelo, pine nut and shallot","order_num":0,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":27},"order_num":0}],"attributes":{},"photos":[],"additions":[]}]}]}'
-  recorded_at: Sun, 26 Jul 2020 15:18:05 GMT
+  recorded_at: Sun, 26 Jul 2020 15:25:26 GMT
 recorded_with: VCR 6.0.0

@@ -6,13 +6,13 @@ require 'pry'
 
 namespace :sam do
 
-  desc 'Deploy to AWS with secrets, to the stack name set in CLOUD_STACK (or "development")'
+  desc 'Deploy to AWS with secrets, to the stack name set in STACK_NAME (or "development")'
   task :deploy, [:stack] do |task, args|
 
-    current_stack = ENV['CLOUD_STACK'] || args[:stack] || 'development'
+    current_stack = ENV['STACK_NAME'] || args[:stack] || 'development'
 
     # If there is a config file alredy then massage it to adjust it
-    # for the current CLOUD_STACK context.
+    # for the current STACK_NAME context.
     if File.exist? filename = 'samconfig.toml'
       # Read the SAM deployment configuration file into a hash.
       config = TOML.load_file(filename)

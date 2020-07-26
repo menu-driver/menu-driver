@@ -60,7 +60,7 @@ You will reach a point where it will ask you for the value for the Stack paramet
         AWS Region [us-east-1]: 
         Parameter StackName []:
 
-Plese type `development`.  I wish that I could pre-fill that for you but the guided deployment feature of SAM doesn't seem to have a way to do that.  Sorry.  For future deployments, Ruby logic in the `sam:deploy` Rake task will automatically update the stack name in the configuration file based on the `CLOUD_STACK` environment variable, or passed as an argument.
+Plese type `development`.  I wish that I could pre-fill that for you but the guided deployment feature of SAM doesn't seem to have a way to do that.  Sorry.  For future deployments, Ruby logic in the `sam:deploy` Rake task will automatically update the stack name in the configuration file based on the `STACK_NAME` environment variable, or passed as an argument.
 
 After that, it will ask you for your Single Platform secrets:
 
@@ -83,9 +83,9 @@ Or, to build first:
 
 ### Deploying other stacks
 
-The Rake task wraps `sam deploy` in the Ruby logic for setting up the stack name and other things based either on a name from the `CLOUD_STACK` environment variable, or a parameter passed to the Rake task:
+The Rake task wraps `sam deploy` in the Ruby logic for setting up the stack name and other things based either on a name from the `STACK_NAME` environment variable, or a parameter passed to the Rake task:
 
-    CLOUD_STACK=main rake sam:deploy
+    STACK_NAME=main rake sam:deploy
 
 or:
 

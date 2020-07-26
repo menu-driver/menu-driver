@@ -10,7 +10,7 @@ $logger.level = Logger::DEBUG if ENV['DEBUG']
 # in external API calls that will be mocked.  And then your tests
 # will fail if the stage name doesn't match when your tests run
 # in the CI environment.
-ENV['CLOUD_STACK'] = 'test'
+ENV['STACK_NAME'] = 'test'
 
 require 'sam-parameter-environment'
 SamParameterEnvironment.load

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 26 Jul 2020 15:17:59 GMT
+      - Sun, 26 Jul 2020 15:25:22 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1519,5 +1519,5 @@ http_interactions:
         fried rice with preserved olive leaf ''vg''","description":"","order_num":2,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":14},"order_num":0}],"attributes":{},"photos":[],"additions":[]},{"id":184182825,"name":"Singapore
         vermicelli","description":"prawn, squid","order_num":3,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":15},"order_num":0}],"attributes":{},"photos":[],"additions":[]},{"id":184182826,"name":"Hakka
         noodle","description":"shimeji mushroom, beansprout and katsuobushi","order_num":4,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":15},"order_num":0}],"attributes":{},"photos":[],"additions":[]}]}],"attribution_image":"http:\/\/a.singleplatform.com\/DirectBusinessIntegration\/hakkasan-mayfair\/provided_by_2.png?sp_dt=20200725","attribution_image_link":"http:\/\/www.singleplatform.com\/partner-lp?ref=DirectBusinessIntegration&sp_channel=viral&sp_source=publisher&sp_campaign=sp&sp_dt=20200725","secure_attribution_image":"https:\/\/a.singleplatform.com\/DirectBusinessIntegration\/hakkasan-mayfair\/provided_by_2.png?sp_dt=20200725","secure_attribution_image_link":"https:\/\/www.singleplatform.com\/partner-lp?ref=DirectBusinessIntegration&sp_channel=viral&sp_source=publisher&sp_campaign=sp&sp_dt=20200725"}]}'
-  recorded_at: Sun, 26 Jul 2020 15:17:59 GMT
+  recorded_at: Sun, 26 Jul 2020 15:25:22 GMT
 recorded_with: VCR 6.0.0
