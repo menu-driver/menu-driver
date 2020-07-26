@@ -4,6 +4,14 @@ require 'logger-setup'
 $logger.level = Logger::FATAL
 $logger.level = Logger::DEBUG if ENV['DEBUG']
 
+# Any time the tests are run, for any branch, they need to use
+# the same name for the stack.  Otherwise the S3 bucket name
+# and possibly other things will be generated from that and used
+# in external API calls that will be mocked.  And then your tests
+# will fail if the stage name doesn't match when your tests run
+# in the CI environment.
+ENV['CLOUD_STACK'] = 'test'
+
 require 'sam-parameter-environment'
 SamParameterEnvironment.load
 

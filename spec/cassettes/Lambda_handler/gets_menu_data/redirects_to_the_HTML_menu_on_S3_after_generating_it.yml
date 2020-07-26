@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 25 Jul 2020 21:38:30 GMT
+      - Sun, 26 Jul 2020 15:18:02 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1519,59 +1519,5 @@ http_interactions:
         fried rice with preserved olive leaf ''vg''","description":"","order_num":2,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":14},"order_num":0}],"attributes":{},"photos":[],"additions":[]},{"id":184182825,"name":"Singapore
         vermicelli","description":"prawn, squid","order_num":3,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":15},"order_num":0}],"attributes":{},"photos":[],"additions":[]},{"id":184182826,"name":"Hakka
         noodle","description":"shimeji mushroom, beansprout and katsuobushi","order_num":4,"choices":[{"name":"","unit":"","calories":{"max":"","min":""},"prices":{"max":"","min":15},"order_num":0}],"attributes":{},"photos":[],"additions":[]}]}],"attribution_image":"http:\/\/a.singleplatform.com\/DirectBusinessIntegration\/hakkasan-mayfair\/provided_by_2.png?sp_dt=20200725","attribution_image_link":"http:\/\/www.singleplatform.com\/partner-lp?ref=DirectBusinessIntegration&sp_channel=viral&sp_source=publisher&sp_campaign=sp&sp_dt=20200725","secure_attribution_image":"https:\/\/a.singleplatform.com\/DirectBusinessIntegration\/hakkasan-mayfair\/provided_by_2.png?sp_dt=20200725","secure_attribution_image_link":"https:\/\/www.singleplatform.com\/partner-lp?ref=DirectBusinessIntegration&sp_channel=viral&sp_source=publisher&sp_campaign=sp&sp_dt=20200725"}]}'
-  recorded_at: Sat, 25 Jul 2020 21:38:30 GMT
-- request:
-    method: put
-    uri: https://menu-driver-development.s3.amazonaws.com/hakkasan-mayfair
-    body:
-      encoding: UTF-8
-      string: "<html></html>"
-    headers:
-      Content-Type:
-      - text/html
-      Accept-Encoding:
-      - ''
-      User-Agent:
-      - aws-sdk-ruby3/3.104.1 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
-      Expect:
-      - 100-continue
-      Content-Md5:
-      - yDMBQlsq0dSWRzpf89nsyg==
-      Host:
-      - menu-driver-development.s3.amazonaws.com
-      X-Amz-Date:
-      - 20200725T213830Z
-      X-Amz-Security-Token:
-      - IQoJb3JpZ2luX2VjEPb//////////wEaCXVzLWVhc3QtMSJHMEUCIBG4R/Do0ww5dhLB8T16udy6ZCrD8sO5ggwd0XwVfOcJAiEA+Mxksori5rKRkOZaOxsdn+Wo95TQXOJdmouquY1RxXMqrwMIr///////////ARAAGgw0MjA4MzY0Mjg1NzEiDOTTnAr6Z5fwOx27EyqDA9aDsOHVszycKkYOnwxDsmgbzLP8QNnjnjivJJVv2vLtvik47KAg/FBJll1SjQlsp2tjslInubVaYEru0P4Yoo7FtoJx/1fr1vfo7lFnx2EjhywD968LgzAlaGZU45G3XtS8X6/sqNkAFBWQKsUZafhufOsdk6HhwRCk09WZrL+qDN6+eMsH4dUz7aUzM/XL+r9Ug04LWaz0DvAlV3vCeK9HCryafSxocPkhlnB75P/zZF2ev2kF6mPbqObzd7xLf0AmEOngs3SRR+wQrRaFlljz/nr7LGMSM4NNAe6Nzx+HgQsKjGClM9d7e/9M+8R2Xcnnmc0+W0Gh/MFmL6Ztx2UmKOSTpqDfhqjU5MtqdQgxPy3r6HSeMcU8D+9nVyOq1kI5mU15XQNDLWJLkm1FCPcFseX0DbMtZ5gvNtQ67BfuKLmnVrGdE+c3pQkbly/ftIJMTABilyVkTGpE7Wncqz7EDyh9W4ypAj/0sEK6qIaLNUgBsJSPfQWsdtTPcURw5+wuGDDOpfH4BTqOAjAP/TZg+4b3c6SRxb0p2+4i4Oi6/0sZE7LJHpI86MXkltUZwZIyswhTvg+exbwU14PodhbVODnQFKx7H2KjPmVEFDiAudpqgNIPm1t7QyutcvKHd8sLnrGHadn28pqT6Q5lmw+agrpCavmy+28JmfLnNruhS+1RJNxcGK9vYM8Z23Izz9nED4cXJ1QktOae8r4I/8YyR86Z55k9Ye8Mg/3QObPXkmj2J5mrzX7N4P2u6KbXqP54XmQGfn2qDBVGkD2t2ZJLHBUg7/NqWQ1Y+aLFdIfu1OgVoVUhmj5OHqQ1L/Ocvg6xs0xD1jzwBjyL8/ynJMdsKXo7SDfyIGrmXPGFAk8hDe22R2jVtNO8BA==
-      X-Amz-Content-Sha256:
-      - b633a587c652d02386c4f16f8c6f6aab7352d97f16367c3c40576214372dd628
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNW53LRIBN/20200725/us-east-1/s3/aws4_request,
-        SignedHeaders=content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=fcfeb7b2c89fdd0eff803e67427d4396a6c57fceba74d035db508b222a78bff1
-      Content-Length:
-      - '13'
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amz-Id-2:
-      - wNJrlaIcOoBc47alRNdrE0PAgXHzFtgtseAnjf1cYJ91rvOjnMgaHHdvnxZ/QtWAN0yhXZmMMzI=
-      X-Amz-Request-Id:
-      - 2DEA827917797A63
-      Date:
-      - Sat, 25 Jul 2020 21:38:31 GMT
-      Etag:
-      - '"c83301425b2ad1d496473a5ff3d9ecca"'
-      Content-Length:
-      - '0'
-      Server:
-      - AmazonS3
-    body:
-      encoding: UTF-8
-      string: ''
-  recorded_at: Sat, 25 Jul 2020 21:38:30 GMT
+  recorded_at: Sun, 26 Jul 2020 15:18:02 GMT
 recorded_with: VCR 6.0.0
