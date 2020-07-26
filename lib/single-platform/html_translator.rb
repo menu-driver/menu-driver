@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 class SinglePlatform
 
   def generate_menus_html(location_id:, **args)

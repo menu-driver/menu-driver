@@ -16,7 +16,6 @@ describe "HTML translator" do
       @location_id = 'hakkasan-mayfair'
       @menus_html =
         @single_platform.generate_menus_html(location_id:@location_id)
-      # puts "HTML: #{@menus_html}"
     end
 
     it 'has the location ID in the HTML page title', type: :feature do
@@ -48,6 +47,7 @@ describe "HTML translator" do
     end
 
     it 'includes the menu section item ID as the HTML ID for a menu section item', type: :feature do
+
       expect(@menus_html).to have_selector('.menu .section .item#189551749')
     end
 
@@ -62,9 +62,50 @@ describe "HTML translator" do
   end
 
   context 'proxies third-party HTML content', :vcr do
-    
-    pending 'includes HTML element from another site in generated HTML' do
-      fail
+
+    let(:alternate_template) do
+      <<-ERB
+      <html>
+        <head>
+          <title><%= location_id %></title>
+        </head>
+        <body>
+        
+          <div class="from-template">From the template.</div>
+
+          <% for menu in menus %>
+            <div class="menu" id="<%= menu.id %>">
+              <%= menu.name %>
+            </div>
+          <% end %>
+          
+          <%= Nokogiri::HTML(open("https://hakkasangroup.com/")).css('footer').to_s %>
+
+        </body>
+      </html>
+ERB
+    end
+
+    before(:each) do
+      allow(File).to receive(:read).with('themes/default/menus.html').and_return(alternate_template)
+
+      @location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(location_id:@location_id)
+    end
+
+    it 'includes stuff from the template ', type: :feature do
+      expect(@menus_html).to have_title(@location_id)
+      expect(@menus_html).to have_selector('.from-template', text: 'From the template.')
+    end
+
+    it 'includes stuff from the data', type: :feature do
+      expect(@menus_html).to have_selector('.menu#3808555')
+    end
+
+    it 'includes stuff from the third-party site', type: :feature do
+      expect(@menus_html).to have_selector('footer')
+      expect(@menus_html).to have_selector('section.footer-hakkasan-logo')
     end
 
   end
