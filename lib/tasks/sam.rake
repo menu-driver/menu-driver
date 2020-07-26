@@ -32,13 +32,14 @@ namespace :sam do
         TOML::Generator.new(config).body
       )
   
-      system 'sam deploy'
+      system 'sam build --use-container && sam deploy'
 
     else
       
       # If there is not already a SAM config file, then do a "guided" deployment
       # to create one.
-      command = "sam deploy -g --stack-name menu-driver-#{current_stack}" +
+      command = 'sam build --use-container && ' +
+        "sam deploy -g --stack-name menu-driver-#{current_stack}" +
         " --parameter-overrides=\"StackName=#{current_stack}\""
       puts 'running: ' + command
       puts system command

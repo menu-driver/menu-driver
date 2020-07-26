@@ -15,10 +15,14 @@ describe "Lambda handler" do
           
       expect(response[:statusCode]).to eq 400
 
-      message = response[:body].to_dot.message
+      message = JSON.parse(response[:body]).to_dot.message
 
       expect(message).to match(/location id/i)
 
+    end
+
+    pending 'returns a 404 if the given location does not exist in Single Platform' do
+      fail
     end
 
     it 'redirects to the HTML menu on S3 after generating it' do
@@ -36,6 +40,10 @@ describe "Lambda handler" do
       expect(URI(response[:headers][:Location]).path).
         to eq '/hakkasan-mayfair'
 
+    end
+    
+    pending 'redirects to the HTML menu on a custom domain' do
+      fail
     end
 
   end

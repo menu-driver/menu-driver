@@ -1,3 +1,5 @@
+require 'erb'
+
 class SinglePlatform
 
   def fetch_menus_data_from_api(location_id:, **args)
@@ -13,22 +15,13 @@ class SinglePlatform
 
     response = HTTParty.get(api_url)
     
-    $logger.debug "Single Platform API response: #{response.ai}"
+    # $logger.debug "Single Platform API response: #{response.ai}"
+    # $logger.debug "Single Platform raw data: #{response.body}"
 
     # Return the 'data' from the JSON response body,
     # set up with hash_dot for easy access.
     JSON.parse(response.body).to_dot.data
 
   end
-  
-  def generate_menus_html(location_id:, **args)
-    
-    $logger.info "Generating HTML menu file for location: #{location_id}"
 
-    menus_data = fetch_menus_data_from_api(location_id:location_id, **args)
-
-    '<html>HTML menu!</html>'
-
-  end
-  
 end

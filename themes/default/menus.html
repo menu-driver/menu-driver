@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title><%= location_id %></title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <% for menu in menus %>
+      <div class="menu" id="<%= menu.id %>">
+        <div class="name"><%= menu.name %></div>
+        <div class="description"><%= menu.description %></div>
+        
+        <% for section in menu.sections %>
+        
+          <div class="section" id="<%= section.id %>">
+            <div class="name"><%= section.name %></div>
+            <div class="description"><%= section.description %></div>
+  
+            <% for item in section.items %>
+            
+              <div class="item" id="<%= item.id %>">
+                <div class="name"><%= item.name %></div>
+                <% if item.choices.count > 0 %>
+                  <div class="price"><%= item.choices.first.prices['min'] %></div>
+                <% end %>
+              </div>
+            
+            <% end %>
+            
+          </div>
+        
+        <% end %>
+        
+      </div>
+    <% end %>
+  </body>
+</html>
