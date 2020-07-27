@@ -46,5 +46,38 @@ describe "Lambda handler" do
     end
 
   end
+  
+  context 'parameters', :vcr do
+
+    it 'passes URL query parameters to the HTML generator' do
+
+      expect_any_instance_of(SinglePlatform).
+        to receive(:generate_menus_html)#.with(hash_including('passthrough' => 'SIERRA'))
+
+      menus_data(
+        event:JSON.parse(
+          File.read('spec/lambda_events/location_id_hakkasan_mayfair_with_passthrough_parameter.json')),
+        context:{})
+
+    end
+
+    it 'includes the URL query parameters in the output HTML file name' do
+      
+      expect_any_instance_of(Aws::S3::Object).
+        to receive(:put)
+
+      response = 
+        menus_data(
+          event:JSON.parse(
+            File.read('spec/lambda_events/location_id_hakkasan_mayfair_with_passthrough_parameter.json')),
+          context:{})
+          
+      expect(response[:statusCode]).to eq 302
+      expect(URI(response[:headers][:Location]).path).
+        to eq '/hakkasan-mayfair%3Fpassthrough%3DSIERRA'
+
+    end
+
+  end
 
 end

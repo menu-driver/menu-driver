@@ -1,5 +1,7 @@
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 require 'single-platform'
+require 'addressable/uri'
+require 'erb'
 
 # AWS Lambda function handler.
 #
@@ -47,13 +49,29 @@ def menus_data(event:, context:)
           secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
         )
 
-    menus_html = single_platform.generate_menus_html(
-      location_id: location_id)
+    # Combine URL query string parameters with the
+    # parameters to the HTML generation method.
+    options = {
+      location_id: location_id
+    }.merge(event['queryStringParameters'].transform_keys{|key| key.to_sym })
+
+    menus_html = single_platform.generate_menus_html(options)
 
     $logger.info "Storing HTML menu for location: #{location_id}"
 
+    # Build an output file name that includes any URL query parameters.
+    output_file_name = location_id
+
+    extra_parameters = event['queryStringParameters'].
+      reject{|parameter| parameter.eql? 'location_id' }
+    if extra_parameters.count > 0
+      uri = Addressable::URI.new
+      uri.query_values = extra_parameters
+      output_file_name = [output_file_name, uri.query].join('?')
+    end
+
     s3 = Aws::S3::Resource.new
-    s3_object = s3.bucket('menu-driver-'+ENV['STACK_NAME']).object(location_id)
+    s3_object = s3.bucket('menu-driver-'+ENV['STACK_NAME']).object(output_file_name)
     s3_object.put(body:menus_html, content_type: 'text/html')
 
     $logger.info "Redirecting to HTML at: #{s3_object.public_url}"

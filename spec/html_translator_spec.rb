@@ -53,6 +53,39 @@ describe "HTML translator" do
 
   end
 
+  context 'parameters', :vcr do
+
+    let(:alternate_template) do
+      <<-ERB
+      <html>
+        <head>
+          <title>ALTERNATE TEMPLATE</title>
+        </head>
+        <body>
+          <div id="passthrough"><%= args[:passthrough] %></div>
+        </body>
+      </html>
+ERB
+    end
+
+    before(:each) do
+      allow(File).to receive(:read).with('themes/alternate.theme/menus.html').and_return(alternate_template)
+    end
+
+    it 'uses a different theme template when a theme parameter is provided.', type: :feature do
+
+      menus_html =
+        @single_platform.generate_menus_html(
+          location_id:   'hakkasan-mayfair',
+          theme:         'alternate',
+          'passthrough': 'SIERRA'
+        )
+        
+      expect(menus_html).to have_selector('#passthrough', text:'SIERRA')
+    end
+
+  end
+
   context 'theme switcher', :vcr do
 
     let(:alternate_template) do
