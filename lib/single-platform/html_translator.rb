@@ -9,8 +9,11 @@ class SinglePlatform
 
     menus = fetch_menus_data_from_api(location_id:location_id, **args)
 
+    # Select the theme name.
+    theme_name = args[:theme] || 'default'
+
     # Get the HTML (ERB) template.
-    template = File.read('themes/default/menus.html')
+    template = File.read("themes/#{theme_name}.theme/menus.html")
 
     renderer = ERB.new(template)
 
