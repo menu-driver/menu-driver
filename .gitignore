@@ -6,3 +6,7 @@ coverage/**/*
 .aws-sam
 .bundle/**/*
 samconfig.toml
+themes/**/*
+!themes/default/
+.gitmodules
+spec/*
