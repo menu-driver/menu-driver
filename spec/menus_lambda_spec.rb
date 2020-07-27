@@ -52,7 +52,7 @@ describe "Lambda handler" do
     it 'passes URL query parameters to the HTML generator' do
 
       expect_any_instance_of(SinglePlatform).
-        to receive(:generate_menus_html)#.with(hash_including('passthrough' => 'SIERRA'))
+        to receive(:generate_menus_html).with(hash_including(:passthrough => 'SIERRA'))
 
       menus_data(
         event:JSON.parse(
