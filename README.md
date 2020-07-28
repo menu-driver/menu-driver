@@ -93,11 +93,24 @@ or:
 
 ### Running the code
 
+#### Directly
+
+You can generate menu HTML and store it on S3 using the Single Platform
+configuration information stored in your ````samconfig.toml```` without using any SAM or Lambda stuff.  You have to do a SAM build every time you want to see different output if you run the code through SAM Local.  If all that you really want is to generate HTML while you're working on menu templates, then run the HTML generation code directly with this Rake task:
+
+    rake generate[hakkasan-mayfair]
+
+Give it the location in the brackets as a Rake argument.
+
+#### Invoke the Lambda function through SAM Local
+
 Invoke individual Lambda functions using the canned Lambda events in the specs:
 
     sam local invoke MenusDataFunction --event spec/lambda_events/location_id_hakkasan_mayfair.json
 
 That will invoke the Lambda function that will load your Single Platform credentials using dotenv, and will then connect with the Single Platform API to get the raw menu data for the location specified in the `event.json` file (Hakkasan Mayfair) and then it will return the data in JSON format.
+
+#### Send an HTTP request to the Lambda function in SAM Local
 
 You can start the AWS SAM CLI's HTTP server for local development with:
 
