@@ -167,4 +167,51 @@ ERB
 
   end
 
+  context 'supports SCSS styles', :vcr do
+
+    let(:alternate_template) do
+      <<-ERB
+<html>
+  <head>
+    <title><%= location_id %></title>
+    <meta charset="UTF-8">
+    <style>
+<%= SassC::Engine.new(File.read('themes/default.theme/styles.scss')).render %></style>
+  </head>
+  <body>
+    The body is not the point in this one.
+  </body>
+</html>
+ERB
+    end
+
+    let(:alternate_scss) do
+      <<-SCSS
+.menu {
+  .section {
+    .item {
+      .name {
+        color: red;
+      }
+    }
+  }
+}
+SCSS
+    end
+
+    before(:each) do
+      allow(File).to receive(:read).with('themes/default.theme/menus.html').and_return(alternate_template)
+      expect(File).to receive(:read).with('themes/default.theme/styles.scss').and_return(alternate_scss)
+
+      @location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(location_id:@location_id)
+    end
+
+    it 'includes CSS generated from include SCSS in the output HTML', type: :feature do
+      expect(@menus_html).to include(".menu .section .item .name {\n  color: red; }")
+    end
+
+  end
+
 end

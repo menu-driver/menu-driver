@@ -1,5 +1,8 @@
 require 'open-uri'
+
+# These are available to the ERB template code.
 require 'nokogiri'
+require 'sassc'
 
 class SinglePlatform
 
