@@ -18,12 +18,22 @@ class SinglePlatform
     s3 = Aws::S3::Resource.new
     s3_object = s3.bucket('menu-driver-'+ENV['STACK_NAME']).
       object(output_file_name)
-    s3_object.put(body:menus_html, content_type: 'text/html')
+    s3_object.put(body:gzip(menus_html),
+      content_type: 'text/html',
+      content_encoding: 'gzip')
 
     $logger.info "Public URL of generated menu: #{s3_object.public_url}"
 
     s3_object
 
   end
-  
+
+end
+
+def gzip(data)
+  sio = StringIO.new
+  gz = Zlib::GzipWriter.new(sio)
+  gz.write(data)
+  gz.close
+  sio.string
 end
