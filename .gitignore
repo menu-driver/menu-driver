@@ -9,4 +9,3 @@ samconfig.toml
 themes/**/*/
 !themes/default.theme/
 .gitmodules
-spec/*
