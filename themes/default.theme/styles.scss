@@ -1,0 +1,214 @@
+%serif-font {
+  font-family: 'Spectral', serif;
+  font-weight: 700;
+}
+%sans-serif-font {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
+$colors: (
+  'primary': #5ad485,
+  'background': #e1e1e1,
+  'gray': #999,
+  'border': #ccc
+);
+
+$border-width: 0.3rem;
+
+html{ font-size: 125%; }
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+
+$type-settings: (
+  -1: (
+    font-size: 0.75rem,
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: 1rem,
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: 1.333rem,
+    line-height: $base-line-height * 2
+  ),
+  2: (
+    font-size: 1.778rem,
+    line-height: $base-line-height * 2
+  )
+);
+
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'line-height');
+}
+
+@mixin type-setting($level) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}
+
+@function menus-color($name) {
+  @return map-get($colors, $name);
+};
+
+.heading-2 {
+  @include type-setting(-1);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 4px;
+  color: menus-color('gray');
+}
+
+.heading-1 {
+  @include type-setting(2);
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 1 * $base-line-height 0;
+}
+
+div {
+  @include type-setting(0);
+  margin: 0 0 $base-line-height 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  background-color: menus-color('background');
+}
+
+.menu-driver {
+  padding: $base-line-height;
+  @extend %sans-serif-font;
+  
+  .menu > .name {
+      @extend %serif-font;
+      @include type-setting(2);
+    }
+  .menu {
+    padding: $base-line-height - $border-width;
+    margin-bottom: $base-line-height;
+    border: $border-width solid menus-color('border');
+
+    .section > .name {
+        @extend %serif-font;
+        @include type-setting(1);
+      }
+    .section {
+      .name {
+        margin-bottom: 0;
+      }
+      .item {
+        @include type-setting(0);
+        margin-bottom: $base-line-height;
+        display: flex;
+        
+        .about {
+          flex: 1 100%;
+          padding-right: $base-line-height;
+          margin-bottom: 0;
+            
+          .name, .description, .choices {
+            margin-bottom: 0;
+          }
+          .description {
+            @include type-setting(-1);
+          }
+        }
+        .choices {
+          .choice {
+            display: flex;
+            .name {
+              flex: 1 100%;
+              margin-right: $base-line-height;
+              @include type-setting(-1);
+            }
+          }
+        }
+      }
+      .item.multiple-prices {
+        flex-wrap: wrap;
+        @include type-setting(-1);
+        
+        .choices {
+          width: 100%;
+          margin-top: $base-line-height;
+        }
+      }
+    }
+  }
+  
+  .baseline-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  .guide {
+    margin-bottom: 5 * $base-line-height;
+    
+    &, &:before, &:after {    
+      height: $base-line-height;
+      width: 100%;
+      outline: 1px solid grey;
+    }
+    
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 200%;
+    }
+    
+    &:after {
+      top: 400%;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+      width: 50%;
+    }
+    .item:nth-child(even) {
+      padding-left: 1.5 * $base-line-height;
+    }
+    .item:nth-child(odd) {
+      padding-right: 1.5 * $base-line-height;
+    }
+  }
+}
