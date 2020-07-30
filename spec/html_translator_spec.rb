@@ -22,12 +22,12 @@ describe "HTML translator" do
       expect(@menus_html).to have_title(@location_id)
     end
 
-    it 'creates HTML elements each menu', type: :feature do
-      expect(@menus_html).to have_css('.menu', count:17)
+    it 'creates HTML element for each menu', type: :feature do
+      expect(@menus_html).to have_css('.menu', minimum:3)
     end
 
     it 'includes the menu ID as the HTML ID for a menu', type: :feature do
-      expect(@menus_html).to have_selector('.menu#3808555')
+      expect(@menus_html).to have_selector('.menu#menu-3808555')
     end
 
     it 'includes the menu name as an HTML element', type: :feature do
@@ -35,7 +35,7 @@ describe "HTML translator" do
     end
     
     it 'includes the menu section ID as the HTML ID for a menu section', type: :feature do
-      expect(@menus_html).to have_selector('.menu .section#33726089')
+      expect(@menus_html).to have_selector('.menu .section#section-33726089')
     end
 
     it 'includes the menu section name as an HTML element', type: :feature do
@@ -48,7 +48,7 @@ describe "HTML translator" do
 
     it 'includes the menu section item ID as the HTML ID for a menu section item', type: :feature do
 
-      expect(@menus_html).to have_selector('.menu .section .item#189551749')
+      expect(@menus_html).to have_selector('.menu .section .item#item-189551749')
     end
 
   end

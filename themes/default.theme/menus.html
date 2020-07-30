@@ -32,66 +32,156 @@
 <%= SassC::Engine.new(File.read('themes/default.theme/reset.scss')).render %>
 <%= SassC::Engine.new(File.read('themes/default.theme/styles.scss')).render %></style>
   </head>
-  <body class="menu-driver">
+  <body>
     
-    <div class="baseline-grid">
-      <% 100.times do %>
-        <div class="guide"></div>
-      <% end %>
-    </div>
-    
-    <ul class="menus">
-    <% for menu in menus %>
-      <li class="menu" id="<%= menu.id %>">
-        <div class="name"><%= menu.name %></div>
-        <div class="description"><%= menu.description %></div>
-        
-        <ul class="sections">
-        <% for section in menu.sections %>
-          <li class="section" id="<%= section.id %>">
-            <div class="name"><%= section.name %></div>
-            <% if section.description %>
-              <div class="description"><%= section.description %></div>
-            <% end %>
+    <header>
+      Header
+      <div>Select Location, etc</div>
+    </header>
   
-            <ul class="items">
-            <% for item in section.items %>
-              <li class="item<%= ' multiple-prices' if item.choices.count > 1 %>" id="<%= item.id %>">
-                <div class="about">
-                  <div class="name"><%= item.name %></div>
-                  <% if item.description %>
-                    <div class="description"><%= item.description %></div>
-                  <% end %>
-                </div>
+    <div class="menu-driver">
 
-                <% if item.choices.count > 0 %>
-                <ul class="choices">
-                  <% for choice in item.choices %>
-                    <li class="choice">
-                      <% if choice.name %>
-                        <div class="name">
-                          <%= choice.name %>
-                        </div>
-                      <% end %>
-                      <div class="price">
-                        <%= choice.prices['min'] %>
-                      </div>
-                    </li>
-                  <% end %>
-                </ul>
-                <% end %>
-
-              </li>
-            <% end %>
-            </ul>
-            
+      <nav class="menu-nav">
+        <ul class="menus">
+        <% for menu in menus %>
+          <li>
+            <a href="#m<%= menu.id %>" data-menu="menu-<%= menu.id %>"><%= menu.name %></a>
           </li>
         <% end %>
         </ul>
-        
-      </li>
-    <% end %>
-    </ul>
+      </nav>
 
+      <% if true %> 
+      <div class="baseline-grid">
+        <% 100.times do %>
+          <div class="guide"></div>
+        <% end %>
+      </div>
+      <% end %>
+      
+      <ul class="menus">
+      <% for menu in menus %>
+        <li class="menu" id="menu-<%= menu.id %>">
+          <a class="anchor" id="m<%= menu.id %>"></a>
+          <div class="name"><%= menu.name %></div>
+          <div class="description"><%= menu.description %></div>
+          
+          <ul class="sections">
+          <% for section in menu.sections %>
+            <li class="section" id="section-<%= section.id %>">
+              <div class="name"><%= section.name %></div>
+              <% if section.description %>
+                <div class="description"><%= section.description %></div>
+              <% end %>
+    
+              <ul class="items">
+              <% for item in section.items %>
+                <li class="item<%= ' multiple-prices' if item.choices.count > 1 %>" id="item-<%= item.id %>">
+                  <div class="about">
+                    <div class="name"><%= item.name %></div>
+                    <% if item.description %>
+                      <div class="description"><%= item.description %></div>
+                    <% end %>
+                  </div>
+  
+                  <% if item.choices.count > 0 %>
+                  <ul class="choices">
+                    <% for choice in item.choices %>
+                      <li class="choice">
+                        <% if choice.name %>
+                          <div class="name">
+                            <%= choice.name %>
+                          </div>
+                        <% end %>
+                        <div class="price">
+                          <%= choice.prices['min'] %>
+                        </div>
+                      </li>
+                    <% end %>
+                  </ul>
+                  <% end %>
+  
+                </li>
+              <% end %>
+              </ul>
+              
+            </li>
+          <% end %>
+          </ul>
+          
+        </li>
+      <% end %>
+      </ul>
+
+    </div><!-- .menu-driver -->
+
+    <script>
+      let mainNavLinks = document.querySelectorAll("nav ul li a");
+      let mainSections = document.querySelectorAll("menus menu");
+      
+      let lastId;
+      let cur = [];
+      
+      function setCurrentNav() {
+        let fromTop = window.scrollY;
+
+        console.log("mainNavLinks: " + JSON.stringify(mainNavLinks));
+      
+        mainNavLinks.forEach(link => {
+          let menu =
+            document.querySelector(
+              "#" + link.getAttribute("data-menu"));
+
+          if (
+            menu.offsetTop <= fromTop &&
+            menu.offsetTop + menu.offsetHeight > fromTop
+          ) {
+            link.classList.add("current");
+            // document.getElementById('sp3808555').scrollIntoView({behavior: "smooth"})
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      }
+      
+      /* Do it when... */
+      window.addEventListener("scroll", event => {
+        setCurrentNav();
+      });
+      
+      /* Do it now. */
+      setCurrentNav();
+      
+      /* Set height of menu list for wide screens so that it can scroll. */
+      var elements = document.getElementsByClassName('menu-nav');
+      var windowheight = window.innerHeight + "px";
+      
+      fullheight(elements);
+      function fullheight(elements) {
+        /* This 1024 must match the breakpoint in the CSS for going
+           from a top nav to a side nav. */
+        if(window.innerWidth >= 768) {
+          for(let el in elements){
+            if(elements.hasOwnProperty(el)){
+              elements[el].style.height = windowheight;
+            }
+          }
+        } else {
+          for(let el in elements){
+            if(elements.hasOwnProperty(el)){
+              elements[el].style.height = null;
+            }
+          }
+        }
+      }
+      
+      /* Do it when. */
+      window.onresize = function(event){
+       fullheight(elements);
+      }
+      
+      /* Do it now. */
+      fullheight(elements);
+    </script>
   </body>
 </html>
