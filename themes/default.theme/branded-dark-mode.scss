@@ -1,0 +1,51 @@
+/* Anything that will be toggled for dark mode needs its own name. */
+$brand-color: #e1e1e1;
+$brand-background-color: #000033;
+$menu-color: #000033;
+$menu-color-dark: #e1e1e1;
+$menu-background-color: #e6e6e6;
+$menu-background-color-dark: #101043;
+$border-color: #777;
+$border-color-dark: #444;
+
+$colors: (
+  'brand': $brand-color,
+  'brand-background': $brand-background-color,
+  'menu': $menu-color,
+  'menu-dark': $menu-color-dark,
+  'menu-background': $menu-background-color,
+  'menu-background-dark': $menu-background-color,
+  'border-color': $border-color,
+  'border-color-dark': $border-color-dark
+);
+@function menus-color($name) {
+  @return map-get($colors, $name);
+};
+
+body {
+  /* Do not toggle these colors for dark mode. */
+  /* Dark mode adjusts elements more narrowly. */
+  color: menus-color('brand');
+  background-color: menus-color('brand-background');
+}
+nav {
+  background-color: menus-color('brand-background');
+
+  ul {
+    li {
+      a.current {
+        background-color: menus-color('border-color');
+      }
+    }
+  }
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --menu-color: #{$menu-color-dark};
+    --menu-background-color: #{$menu-background-color-dark};
+    --border-color: #{$border-color-dark};
+  }
+}

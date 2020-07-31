@@ -1,3 +1,5 @@
+require 'addressable'
+
 class SinglePlatform
 
   def generate_html_menus(location_id:, **args)

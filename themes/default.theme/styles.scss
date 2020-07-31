@@ -7,18 +7,24 @@
   font-weight: 400;
 }
 
+$brand-color: #000033;
+$brand-background-color: #e1e1e1;
+$menu-color: #000033;
+$menu-background-color: #e6e6e6;
+$border-color: #CCC;
+
 $colors: (
-  'primary': #5ad485,
-  'background': #e1e1e1,
-  'menu-background': #e6e6e6,
-  'gray': #999,
-  'border': #ccc
+  'brand': $brand-color,
+  'brand-background': $brand-background-color,
+  'menu': $menu-color,
+  'menu-background': $menu-background-color,
+  'border-color': $border-color
 );
 
 $border-width: 0.1rem;
 
 $base-font-size: 1rem;
-$base-line-height: 1.125 * $base-font-size;
+$base-line-height: 1.1 * $base-font-size;
 
 $type-settings: (
   -1: (
@@ -38,6 +44,12 @@ $type-settings: (
     line-height: $base-line-height * 2
   )
 );
+
+body {
+  --menu-color: #{$menu-color};
+  --menu-background-color: #{$menu-background-color};
+  --border-color: #{$border-color};
+}
 
 @function type-scale($level) {
   @return map-get(
@@ -97,7 +109,11 @@ html, body {
 body {
   align-items: center;
   justify-content: center;
-  background-color: menus-color('background');
+  
+  /* Do not toggle these colors for dark mode. */
+  /* Dark mode adjusts elements more narrowly. */
+  color: menus-color('brand');
+  background-color: menus-color('brand-background');
 }
 
 .menu-driver {
@@ -111,9 +127,10 @@ body {
     }
   .menu {
     padding: $base-line-height - $border-width;
-    border: $border-width solid menus-color('border');
+    border: $border-width solid var(--border-color);
     margin-bottom: $base-line-height;
-    background-color: menus-color('menu-background');
+    color: var(--menu-color);
+    background-color: var(--menu-background-color);
 
     .section > .name {
         @extend %serif-font;
@@ -207,13 +224,13 @@ nav {
   height: $base-line-height * 3;
   margin-left: -$base-line-height;
   margin-right: -$base-line-height;
-  border-top: $border-width solid menus-color('border');
+  border-top: $border-width solid var(--border-color);
   padding-top: $base-line-height - ($border-width * 2);
-  border-bottom: $border-width solid menus-color('border');
+  border-bottom: $border-width solid var(--border-color);
   @include type-setting(0);
   overflow: auto;
   margin-bottom: $base-line-height;
-  background-color: menus-color('background');
+  background-color: menus-color('brand-background');
 
   ul {
     flex-wrap: nowrap;
@@ -229,7 +246,7 @@ nav {
         text-decoration: none;
       }
       a.current {
-        background-color: menus-color('border');
+        background-color: var(--border-color);
       }
       a, a:visited, a:hover, a:active {
         color: inherit;
@@ -263,7 +280,7 @@ header {
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 767px),
+@media // only screen and (min-width: 600px) and (max-width: 767px),
   only screen and (min-width: 1024px) {
   .items {
     display: flex;
