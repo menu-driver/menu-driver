@@ -4,23 +4,6 @@ require 'addressable/uri'
 require 'erb'
 
 # AWS Lambda function handler.
-#
-# Parameters
-# ----------
-# event: Hash, required
-#     API Gateway Lambda Proxy Input Format
-#     Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
-#
-# context: object, required
-#     Lambda Context runtime methods and attributes
-#     Context doc: https://docs.aws.amazon.com/lambda/latest/dg/ruby-context.html
-#
-# Returns
-# ------
-# API Gateway Lambda Proxy Output Format: dict
-#     'statusCode' and 'body' are required
-#     # api-gateway-simple-proxy-for-lambda-output-format
-#     Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
 def menus_data(event:, context:)
 
   $logger.info 'Starting HTML menu generation...'
@@ -53,13 +36,9 @@ def menus_data(event:, context:)
     s3_object = SinglePlatform.new(
           client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
           secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
-        ).generate_html_menus(location_id:location_id, **options)
+        ).publish_menu_content(location_id:location_id, **options)
 
     $logger.info "Redirecting to HTML at: #{s3_object.public_url}"
-
-    # s3.bucket('my.bucket.com').object('key')
-    #   .public_url(virtual_host: true)
-    # #=> "http://my.bucket.com/key"
 
     {
       statusCode: 302,

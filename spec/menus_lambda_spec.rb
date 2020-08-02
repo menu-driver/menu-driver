@@ -30,9 +30,6 @@ describe "Lambda handler" do
 
     it 'redirects to the HTML menu on S3 after generating it' do
 
-      expect_any_instance_of(Aws::S3::Object).
-        to receive(:put)
-
       response = 
         menus_data(
           event:JSON.parse(
@@ -41,7 +38,7 @@ describe "Lambda handler" do
           
       expect(response[:statusCode]).to eq 302
       expect(URI(response[:headers][:Location]).path).
-        to eq '/hakkasan-mayfair'
+        to eq '/hakkasan-mayfair/index.html'
 
     end
 
@@ -62,9 +59,6 @@ describe "Lambda handler" do
     end
 
     it 'includes the URL query parameters in the output HTML file name' do
-      
-      expect_any_instance_of(Aws::S3::Object).
-        to receive(:put)
 
       response = 
         menus_data(
@@ -74,7 +68,7 @@ describe "Lambda handler" do
           
       expect(response[:statusCode]).to eq 302
       expect(URI(response[:headers][:Location]).path).
-        to eq '/hakkasan-mayfair%3Fpassthrough%3DSIERRA'
+        to eq '/hakkasan-mayfair/index.html%3Fpassthrough%3DSIERRA'
 
     end
 

@@ -4,6 +4,9 @@ require 'logger-setup'
 $logger.level = Logger::FATAL
 $logger.level = Logger::DEBUG if ENV['DEBUG']
 
+require 'sam-parameter-environment'
+SamParameterEnvironment.load
+
 # Any time the tests are run, for any branch, they need to use
 # the same name for the stack.  Otherwise the S3 bucket name
 # and possibly other things will be generated from that and used
@@ -12,9 +15,6 @@ $logger.level = Logger::DEBUG if ENV['DEBUG']
 # in the CI environment.
 ENV['STACK_NAME'] = 'test'
 
-require 'sam-parameter-environment'
-SamParameterEnvironment.load
-
 # Mocking / stubbing
 require 'vcr'
 VCR.configure do |config|
@@ -22,6 +22,10 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
   config.default_cassette_options = { :record => :new_episodes }
+  config.preserve_exact_body_bytes do |http_message|
+    http_message.body.encoding.name == 'ASCII-8BIT' ||
+    !http_message.body.valid_encoding?
+  end
 end
 
 # Test coverage.

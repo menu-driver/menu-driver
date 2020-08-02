@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/index.html
+    body:
+      encoding: UTF-8
+      base64_string: 'H4sIAO7NJV8AA8vJL0rNVcgsKC7NBQCOdNdyCwAAAA==
+
+'
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - TGiokpxBPDY/xX6F2T3P2g==
+      Host:
+      - menu-driver-test.s3.amazonaws.com
+      X-Amz-Date:
+      - 20200801T201750Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEJ3//////////wEaCXVzLWVhc3QtMSJHMEUCIQDMtwXC6uwUuVV2DU0LQ8gqIMTUUbkKwRwbOmeXWop4zQIgTtFO3BDP7AGAhL88fpEVzY2Xqa4gQcmPjLdliFOC3fsqrQMIZRAAGgw0MjA4MzY0Mjg1NzEiDPl08537HpwGkODgkiqKA7Sxy92coXGMzSngeih8rh2l3zq6otcQfj18lDtMD1a1hbEvyMO/vPMm+8r3Wt/qQpktJPfaP8JEacc/CdJevU/7HpPaiV/ddWzQoFBbJcgEnhjcdM2QEdcbXIF7rUDtf5PJX0MZL7oPOPWfBg8RNT//kGIWtea/Hilpkrsf00G9nJc3RPNtrnW+Cc/r0jH0LW3TBqXYTJsp8YLWWoFRvxs1KJTu24WtwZ4YI++HM5wtD0XY5jNDLrvaj5TJu8X8G1N4xtXW3y9owhEpU0eEwBpUy/Dvile5SXZht20D+trcRJD5vxvwX0V1Dr1rG0VX0FDbBNAEHlsFfuN4vCxeZqTk2aGHVJuOA6s0OcskYFg5p1WwntSK/vsZ2Mm9SEqE5p+fa1BpgriHK/LMmnVaNqzvtvTHWqlNvPnsmmL0eyZt78DANby+Giitr4fzWm8wZ76HRMY2aAIKoX8pPFucG+bcMNotN7P+K08Rb8N8SUwtKnkIxHOHC/po/jnNjKEWps3NHSXqDB5pS3ww/KmW+QU6jgJHb3clnjHW1JQB/5vvd+mNKGPCKPN22XzjOOMDT8fpxjbo6DXAeQMDjcUEzQwa0dMKohxtGytNsIqdYyxb0VvDpnAZKSpT/40TT+I7NNIOWYean4TqV+BLY1K5pxByt214G5TBud5LkZGJtrOsellagf7FW8tWr0uolGiynldLjtyOagAGbbSlWQLy+wJwDL5mYU9OilIlcaxAerIPg3VWgqXK7Z37/RHN2J2Eq+gnYd/CYK1TL/Cbf9DMeG+t77BWwXsD9tgN9kunpVyuQuVaiDQucYqObXC8Ih7495ZlBOQze2XD3/4Ev9S9fN3/fYumDVzc+llmP1o5np60Zi/0IpYF8/5QYA/1VmVvK5k=
+      X-Amz-Content-Sha256:
+      - f9a2b1e5cf11abde41b3ffd17a24d6b9b6fccc533f1409c26a4f0a9e86a57e5c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNYST5MTMP/20200801/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=e271b25acf03cc38949dc54596a1682c1a6c1fcdfa7ab61b8a5a696f3c20f224
+      Content-Length:
+      - '31'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Amz-Request-Id:
+      - 8B3EB600378C2913
+      X-Amz-Id-2:
+      - BCO/44eoCoouhoV8KX4BzPQ0NjXylCvbJhIY2dAzRcPDjJBV/wPS5b3Rt7HeBB/+VckAcYyHnSA=
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Sat, 01 Aug 2020 20:17:49 GMT
+      Connection:
+      - close
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>menu-driver-test</BucketName><RequestId>8B3EB600378C2913</RequestId><HostId>BCO/44eoCoouhoV8KX4BzPQ0NjXylCvbJhIY2dAzRcPDjJBV/wPS5b3Rt7HeBB/+VckAcYyHnSA=</HostId></Error>
+  recorded_at: Sat, 01 Aug 2020 20:17:50 GMT
+recorded_with: VCR 6.0.0

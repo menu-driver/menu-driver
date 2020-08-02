@@ -10,7 +10,7 @@ task :generate, [:location_id] do |task, args|
   SinglePlatform.new(
     client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
     secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
-  ).generate_html_menus(location_id:args['location_id'],
+  ).publish_menu_content(location_id:args['location_id'],
     **args.extras.inject({}){|hash,value| hash[value.to_sym] = true; hash })
 
 end

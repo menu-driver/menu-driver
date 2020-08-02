@@ -69,10 +69,14 @@ ERB
     end
 
     before(:each) do
-      allow(File).to receive(:read).with('themes/alternate.theme/menus.html').and_return(alternate_template)
+      allow(File).to receive(:read).with('themes/alternate.theme/index.html').and_return(alternate_template)
+      allow(Dir).to receive(:glob).with('themes/**/*/').
+        and_return([
+          "themes/default.theme/",
+          "themes/alternate.theme/"])
     end
 
-    it 'uses a different theme template when a theme parameter is provided.', type: :feature do
+    it 'passes parameters into the template.', type: :feature do
 
       menus_html =
         @single_platform.generate_menus_html(
@@ -82,38 +86,6 @@ ERB
         )
         
       expect(menus_html).to have_selector('#passthrough', text:'SIERRA')
-    end
-
-  end
-
-  context 'theme switcher', :vcr do
-
-    let(:alternate_template) do
-      <<-ERB
-      <html>
-        <head>
-          <title>ALTERNATE TEMPLATE</title>
-        </head>
-        <body>
-          ALTERNATE TEMPLATE
-        </body>
-      </html>
-ERB
-    end
-
-    before(:each) do
-      allow(File).to receive(:read).with('themes/alternate.theme/menus.html').and_return(alternate_template)
-    end
-
-    it 'uses a different theme template when a theme parameter is provided.', type: :feature do
-
-      menus_html =
-        @single_platform.generate_menus_html(
-          location_id: 'hakkasan-mayfair',
-          theme:       'alternate'
-        )
-
-      expect(menus_html).to have_title('ALTERNATE TEMPLATE')
     end
 
   end
@@ -144,7 +116,7 @@ ERB
     end
 
     before(:each) do
-      allow(File).to receive(:read).with('themes/default.theme/menus.html').and_return(alternate_template)
+      allow(File).to receive(:read).with('themes/default.theme/index.html').and_return(alternate_template)
 
       @location_id = 'hakkasan-mayfair'
       @menus_html =
@@ -200,7 +172,7 @@ SCSS
     end
 
     before(:each) do
-      allow(File).to receive(:read).with('themes/default.theme/menus.html').and_return(alternate_template)
+      allow(File).to receive(:read).with('themes/default.theme/index.html').and_return(alternate_template)
       expect(File).to receive(:read).with('themes/default.theme/styles.scss').and_return(alternate_scss)
 
       @location_id = 'hakkasan-mayfair'
