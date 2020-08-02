@@ -3,6 +3,7 @@ require 'open-uri'
 # These are available to the ERB template code.
 require 'nokogiri'
 require 'sassc'
+require 'htmlcompressor'
 
 class SinglePlatform
 
@@ -15,9 +16,13 @@ class SinglePlatform
     # Get the HTML (ERB) template.
     template = Theme.new(args[:theme]).file('index.html')
 
-    renderer = ERB.new(template)
-
-    renderer.result(binding)
+    # Render output HTML.
+    renderer = ERB.new(template, nil, '-')
+    html = renderer.result(binding)
+    
+    # Compress it.
+    compressor = HtmlCompressor::Compressor.new
+    compressor.compress(html)    
 
   end
 

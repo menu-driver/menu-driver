@@ -10,7 +10,7 @@ describe "support for multiple themes" do
       )
   end
 
-  context 'theme switcher', :vcr do
+  context 'switcher', :vcr do
 
     let(:alternate_template) do
       <<-ERB
@@ -46,7 +46,7 @@ ERB
 
   end
   
-  context 'theme inheritance', :vcr do
+  context 'inheritance', :vcr do
     
     let(:alternate_template) do
       <<-ERB

@@ -8890,4 +8890,69 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Sun, 02 Aug 2020 00:13:17 GMT
+- request:
+    method: put
+    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/fonts.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAJD2Jl8AA91RS2+CQBi88yv2hlpxYVGMeClgSZo2xtja16XZIiBxeXR3
+        kZqm/727PEx7qufu4ZvMfPkmsxk4AATzJAMDqFxGeca1CAch+FQAaFmakKMN
+        1BtMCVbnnc74kYQ2yHKaYnJSqzCJd9wGY10/aduEFQQLC1bhQqqMBjYgeYBJ
+        r3XtD39xbR3GJcFU6iUlvR3nBbMhlHZsFDMuAgejIE8hg3t5AA+GCd/37tvT
+        4dmzOHXup+uHW37cTOjLalTlUYT6IoyIyntqTdW+TFJmSZBvQ43iLBaf2Vzo
+        4mm67vtDSQzTaHCCNDHMmiDX1cTwGuJZDS6cFmsdSRukW35DpuMGnWZpINTg
+        zGixdkZi0eJEon/VxPB9fzFXvhR4blN3RRhwism5ZU3PLaszBm5Otj9K63St
+        0/8qjbUH8GBBmnlM+1guq+oVMR2nzqz0ODJdHOHVY3Z9/U/q+wYCRH2zaAMA
+        AA==
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - rLKclkOCbN59lYH3YCkpig==
+      Host:
+      - menu-driver-test.s3.amazonaws.com
+      X-Amz-Date:
+      - 20200802T172328Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjELL//////////wEaCXVzLWVhc3QtMSJGMEQCID0JZp8Y5jaau6V9HzybJeoC6XGjYy5CduBk3+oZJavAAiBGZxnGBCh0fz/OLi9ybDA3lTZ6ZQSYJiDXGD16FAkbXiqtAwh7EAAaDDQyMDgzNjQyODU3MSIMMAyUbKQyqy6whvxdKooD0IRCj7LCwGEo0sJSM9rbsU12L5fA8dajDJoONEe0VugBboeXFDF45xnGfZJ7U9ETnnPeI7FYLPoPGncbgkEL9mt6AI2bU9TXCtiPmTmO83r1/C7+D5ZjeXgDcdTgeUMzR3oL4XGJ6hUx20iYeuGkAsD1foLA4iBBtpyQGIJYb20R2X0Pd80JoMk+IflVg3hPEGpPQZUkBybkSQjIAB3mf6m+A+JugOIAz6Abun8klOrIs2fsIgLlZFBQWFcJgCNJd5ub+OMYwMZQNOgsPlM4tcIoHu+PNsqdxVJ6N4wi6LnhR6iisFhJs3fORZ/BdKjnqvRu7/W2l1GKWDUYPCs/2AKpmT+xr4B0qoVo/zEsVAcWilruCQKBQQs7YcNbgID7WW6vMHDfB3bu9pYYrmfPahTUNOUX9029TiriiXRLv3OOCtuj6AwZEywM2gmWsPPBqAarql5Ie9ygnVKvYeSgLInuyBsGq2v86KvyIDBEnKIoWmUgw0vqyVeD01tGlgI6WXoc9tWCGS59DDCcipv5BTqPAjnQD//NOTqe8YY0CBESlY0+Tl0u2y/n1kqzeGzUnVPVRD9j8+BRecANLR6KUM1lYUVY2dHwbqGL6UV8860Q1hfeY473m3f/4zPRLVC41ue1pbaPJG9bDKKriiTIBNK7rFXWoOYOl5UDRKgGauWa1S2r4OjXSujpFpwMNUj9L93cBfG2uGvHGqN328w8O5UAggFs/kNKw1dX8wbzDxAvLC/WNW1bEPb/QvdTC5UBHD128yEGMooQ4Z1D0cwscYtX04LgVOrZqtzBaSe/HphU2LJvhQtN5xb3hD1r3g2zG7UtmsEVsLCtcuVNG/ZJCsYI8H60qx/dz0o6ytOdpUoWxRtj3aJHTfE+DPQRjvHTe+8=
+      X-Amz-Content-Sha256:
+      - 90f131ae144e150d8d2c2e85290469e1702499d7314e30a1437d973295e2c30c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNTGCJW7GN/20200802/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=6524aba7030f501a663427cc1b78c4c7a3c790337802f6c138181e366194765c
+      Content-Length:
+      - '361'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - CgAUIJuQ6CAcwCUVoqkz29NTlWaA3iIkjJ5usuvvBdB82hLAQiNfMDdh36w6smTQsfPelNxl3rU=
+      X-Amz-Request-Id:
+      - 5C1BBE0B60524EA0
+      Date:
+      - Sun, 02 Aug 2020 17:23:29 GMT
+      Etag:
+      - '"acb29c9643826cde7d9581f76029298a"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sun, 02 Aug 2020 17:23:28 GMT
 recorded_with: VCR 6.0.0
