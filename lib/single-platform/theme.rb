@@ -3,7 +3,7 @@ class SinglePlatform::Theme
   def initialize(theme)
     @theme_name =
       # Select the theme name.
-      theme || 'default'
+      theme || ENV['THEME'] || 'standard'
   end
 
   def folder

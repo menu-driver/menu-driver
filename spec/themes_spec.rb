@@ -8,6 +8,7 @@ describe "support for multiple themes" do
         client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
         secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
       )
+    ENV['THEME'] = nil
   end
 
   context 'switcher', :vcr do
@@ -29,7 +30,7 @@ ERB
       allow(File).to receive(:read).with('themes/alternate.theme/index.html').and_return(alternate_template)
       allow(Dir).to receive(:glob).with('themes/**/*/').
         and_return([
-          "themes/default.theme/",
+          "themes/standard.theme/",
           "themes/alternate.theme/"])
     end
 
@@ -39,6 +40,18 @@ ERB
         @single_platform.generate_menus_html(
           location_id: 'hakkasan-mayfair',
           theme:       'alternate'
+        )
+
+      expect(menus_html).to have_title('ALTERNATE TEMPLATE')
+    end
+
+    it 'uses a different theme template when a theme environment variable is provided.', type: :feature do
+
+      ENV['THEME'] = 'alternate'
+
+      menus_html =
+        @single_platform.generate_menus_html(
+          location_id: 'hakkasan-mayfair'
         )
 
       expect(menus_html).to have_title('ALTERNATE TEMPLATE')
@@ -62,11 +75,11 @@ ERB
     end
 
     before(:each) do
-      allow(File).to receive(:read).with('themes/default.theme/child.theme/index.html').and_return(alternate_template)
+      allow(File).to receive(:read).with('themes/standard.theme/child.theme/index.html').and_return(alternate_template)
       allow(Dir).to receive(:glob).with('themes/**/*/').
         and_return([
-          "themes/default.theme/",
-          "themes/default.theme/child.theme/"])
+          "themes/standard.theme/",
+          "themes/standard.theme/child.theme/"])
     end
 
     it 'uses a child theme template when a theme parameter is provided.', type: :feature do

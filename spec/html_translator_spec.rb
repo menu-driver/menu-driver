@@ -72,7 +72,7 @@ ERB
       allow(File).to receive(:read).with('themes/alternate.theme/index.html').and_return(alternate_template)
       allow(Dir).to receive(:glob).with('themes/**/*/').
         and_return([
-          "themes/default.theme/",
+          "themes/standard.theme/",
           "themes/alternate.theme/"])
     end
 
@@ -116,7 +116,7 @@ ERB
     end
 
     before(:each) do
-      allow(File).to receive(:read).with('themes/default.theme/index.html').and_return(alternate_template)
+      allow(File).to receive(:read).with('themes/standard.theme/index.html').and_return(alternate_template)
 
       @location_id = 'hakkasan-mayfair'
       @menus_html =
@@ -148,7 +148,7 @@ ERB
     <title><%= location_id %></title>
     <meta charset="UTF-8">
     <style>
-<%= SassC::Engine.new(File.read('themes/default.theme/styles.scss')).render %></style>
+<%= SassC::Engine.new(File.read('themes/standard.theme/styles.scss')).render %></style>
   </head>
   <body>
     The body is not the point in this one.
@@ -172,8 +172,8 @@ SCSS
     end
 
     before(:each) do
-      allow(File).to receive(:read).with('themes/default.theme/index.html').and_return(alternate_template)
-      expect(File).to receive(:read).with('themes/default.theme/styles.scss').and_return(alternate_scss)
+      allow(File).to receive(:read).with('themes/standard.theme/index.html').and_return(alternate_template)
+      expect(File).to receive(:read).with('themes/standard.theme/styles.scss').and_return(alternate_scss)
 
       @location_id = 'hakkasan-mayfair'
       @menus_html =
