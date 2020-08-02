@@ -1,3 +1,10 @@
+html {
+  font-size: 20px;
+}
+
+$base-font-size: 1rem;
+$base-line-height: 1.4 * $base-font-size;
+
 %serif-font {
   font-family: 'Spectral', serif;
   font-weight: 700;
@@ -22,9 +29,6 @@ $colors: (
 );
 
 $border-width: 0.1rem;
-
-$base-font-size: 1rem;
-$base-line-height: 1.2 * $base-font-size;
 
 $type-settings: (
   -1: (
