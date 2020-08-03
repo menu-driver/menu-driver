@@ -13,7 +13,9 @@ SamParameterEnvironment.load
 # in external API calls that will be mocked.  And then your tests
 # will fail if the stage name doesn't match when your tests run
 # in the CI environment.
-ENV['STACK_NAME'] = 'test'
+ENV['STACK'] = 'test'
+
+ENV['THEME'] = nil
 
 # Mocking / stubbing
 require 'vcr'

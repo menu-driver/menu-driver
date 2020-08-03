@@ -10,9 +10,9 @@ namespace :sam do
   task :deploy, [:stack] do |task, args|
 
     current_stack = ENV['STACK'] || args[:stack] || 'development'
-    
+
     # If there is a config file alredy then massage it to adjust it
-    # for the current STACK_NAME context.
+    # for the current STACK context.
     if File.exist? filename = 'samconfig.toml'
       # Read the SAM deployment configuration file into a hash.
       config = TOML.load_file(filename)
@@ -49,10 +49,10 @@ namespace :sam do
 
   namespace :local do
 
-    SamParameterEnvironment.load
-
     desc "Start the SAM Local HTTP server."
     task :start do
+      SamParameterEnvironment.load
+
       command = <<-EOC
         sam local start-api -p 8080 --docker-network menu-driver --parameter-overrides "Theme=#{ENV['THEME']},SinglePlatformClientID=#{ENV['SINGLE_PLATFORM_CLIENT_ID']},SinglePlatformClientSecret=#{ENV['SINGLE_PLATFORM_CLIENT_SECRET']},Stack=development" &
       EOC

@@ -12,7 +12,6 @@ module SamParameterEnvironment
       ]['parameter_overrides'].
       split(' ').each do |variable|
         parts = variable.split '='
-        next if parts[0].eql? 'Stack'
         ENV[parts[0].gsub(/(?<!^)[A-Z]/) do "_#$&" end.upcase] = parts[1]
       end
   end

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/index.html
     body:
       encoding: UTF-8
-      base64_string: 'H4sIAJjXJV8AA8vJL0rNVcgsKC7NBQCOdNdyCwAAAA==
+      base64_string: 'H4sIAA9uJ18AA8vJL0rNVcgsKC7NBQCOdNdyCwAAAA==
 
 '
     headers:
@@ -20,19 +20,19 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - ncBi/pGwdk6zes/HDuQW0g==
+      - YGhM1uqBGhGeRKg7rGfT0w==
       Host:
       - menu-driver-test.s3.amazonaws.com
       X-Amz-Date:
-      - 20200801T205904Z
+      - 20200803T015319Z
       X-Amz-Security-Token:
-      - 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
+      - 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
       X-Amz-Content-Sha256:
-      - 4c1e7ab223d4f6a8514c38d8712769cab8008038fca1a256972d9189cb0428c3
+      - 56913fe5fd66ef379daa513be1b795de322bc39f5d8dd7d3347205627934327b
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNTMBE5N65/20200801/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=9f44640f571e5362973ab86c0524e8b0a5b00e0908d6d863341bc536a4529a86
+        Signature=1359e448bbc4b5c69cd612756c20ee2ea7d8a4bc25ad2e473e8eb003c221b8d5
       Content-Length:
       - '31'
       Accept:
@@ -43,13 +43,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - J+y3D9Ebqj8g+5Whe/JMrAUZimH8WwCsAbYFnKIbMvP5V58XzEkCqsbUqSnl38HmhJP44XlpzFk=
+      - isLYebrcRooblt9Mx9l9l/pK9ACRwbtW3o1OUL0kJmxxy3PCjS1PHvaLjTrkvgYWGGgROiETHss=
       X-Amz-Request-Id:
-      - 5K0R4QER7R0R6G5J
+      - 27905EC52EEFF08F
       Date:
-      - Sat, 01 Aug 2020 20:59:05 GMT
+      - Mon, 03 Aug 2020 01:53:20 GMT
       Etag:
-      - '"9dc062fe91b0764eb37acfc70ee416d2"'
+      - '"60684cd6ea811a119e44a83bac67d3d3"'
       Content-Length:
       - '0'
       Server:
@@ -57,5 +57,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sat, 01 Aug 2020 20:59:04 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:19 GMT
 recorded_with: VCR 6.0.0

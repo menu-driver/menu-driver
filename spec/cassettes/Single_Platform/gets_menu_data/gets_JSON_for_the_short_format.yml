@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 02 Aug 2020 00:01:51 GMT
+      - Mon, 03 Aug 2020 01:53:20 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -115,5 +115,5 @@ http_interactions:
         bml0IjoiIiwiY2Fsb3JpZXMiOnsibWF4IjoiIiwibWluIjoiIn0sInByaWNl
         cyI6eyJtYXgiOiIiLCJtaW4iOjI3fSwib3JkZXJfbnVtIjowfV0sImF0dHJp
         YnV0ZXMiOnt9LCJwaG90b3MiOltdLCJhZGRpdGlvbnMiOltdfV19XX0=
-  recorded_at: Sun, 02 Aug 2020 00:01:51 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:20 GMT
 recorded_with: VCR 6.0.0

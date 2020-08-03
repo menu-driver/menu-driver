@@ -69,6 +69,8 @@ ERB
     end
 
     before(:each) do
+      allow(File).to receive(:exist?).with(anything)
+      allow(File).to receive(:exist?).with('themes/alternate.theme/index.html').and_return(true)
       allow(File).to receive(:read).with('themes/alternate.theme/index.html').and_return(alternate_template)
       allow(Dir).to receive(:glob).with('themes/**/*/').
         and_return([

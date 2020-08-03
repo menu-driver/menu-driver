@@ -4,7 +4,9 @@ class SinglePlatform
 
   def publish_file(file, contents)
     s3 = Aws::S3::Resource.new
-    s3_object = s3.bucket('menu-driver-' + ENV['STACK_NAME']).
+    bucket_name = [ENV['STACK'], ENV['DOMAIN']].join('.')
+    $logger.info "Publishing file \"#{file}\" in bucket: #{bucket_name}"
+    s3_object = s3.bucket(bucket_name).
       object(file)
     s3_object.put(body:gzip(contents),
       content_type: 'text/html',
@@ -30,22 +32,43 @@ class SinglePlatform
     s3_object = publish_file(output_file_name, menus_html)
     
     # Identify asset files and publish those also.
-    asset_filenames(location_id:location_id, **args).each do |asset_filename|
+    asset_files(location_id:location_id, **args).each do |asset_file|
       publish_file(
-        File.join(location_id, asset_filename),
-        File.read(File.join(Theme.new(args[:theme]).folder, asset_filename)))
+        # Destinaton S3 object key.
+        File.join(location_id, asset_file[:asset]),
+        # Source bytes.
+        File.read(asset_file[:file_path]))
     end
 
-    $logger.info "Public URL of generated menu: #{s3_object.public_url}"
+    bucket_name = [ENV['STACK'], ENV['DOMAIN']].join('.')
+    public_url = 
+      "https://#{bucket_name}.s3-website-us-east-1.amazonaws.com/#{location_id}"
+
+    $logger.info "Public URL of generated menu: #{public_url}"
 
     s3_object
 
   end
   
-  def asset_filenames(location_id:, **args)
-    Dir.children(theme_folder = Theme.new(args[:theme]).folder).
-      select{|child| !File.directory? File.join(theme_folder, child)}.
-        reject{|file| file == 'index.html' }
+  def asset_files(location_id:, **args)
+    published_files = {}
+    theme_folders = Theme.new(args[:theme]).folders
+
+    asset_filenames = []
+    theme_folders.each do |theme_folder|
+      Dir.children(theme_folder).select{|child| !File.directory? File.join(theme_folder, child)}.
+          reject{|file| file == 'index.html' }.each do |file|
+        # Only publish the descendant for any given file.
+        unless published_files[file]
+          asset_filenames << {
+            file_path: File.join(theme_folder, file),
+            asset: file
+          }
+          published_files[file] = true
+        end
+      end
+    end
+    asset_filenames
   end
 
 end

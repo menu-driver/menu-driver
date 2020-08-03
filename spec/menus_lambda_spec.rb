@@ -38,7 +38,7 @@ describe "Lambda handler" do
           
       expect(response[:statusCode]).to eq 302
       expect(URI(response[:headers][:Location]).path).
-        to eq '/hakkasan-mayfair/index.html'
+        to eq '/test.menus.hakkasangroup.com/hakkasan-mayfair/index.html'
 
     end
 
@@ -68,7 +68,7 @@ describe "Lambda handler" do
           
       expect(response[:statusCode]).to eq 302
       expect(URI(response[:headers][:Location]).path).
-        to eq '/hakkasan-mayfair/index.html%3Fpassthrough%3DSIERRA'
+        to eq '/test.menus.hakkasangroup.com/hakkasan-mayfair/index.html%3Fpassthrough%3DSIERRA'
 
     end
 

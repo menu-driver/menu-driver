@@ -23,7 +23,7 @@ Globals:
     Environment:
       Variables:
         DOMAIN_NAME: !Ref 'Domain'
-        STACK_NAME: !Ref 'Stack'
+        STACK: !Ref 'Stack'
         THEME: !Ref 'Theme'
         SINGLE_PLATFORM_CLIENT_ID: !Ref 'SinglePlatformClientId'
         SINGLE_PLATFORM_CLIENT_SECRET: !Ref 'SinglePlatformClientSecret'

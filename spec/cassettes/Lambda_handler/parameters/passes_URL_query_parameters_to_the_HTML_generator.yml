@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/index.html%3Fpassthrough=SIERRA
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/index.html%3Fpassthrough=SIERRA
     body:
       encoding: UTF-8
-      base64_string: 'H4sIAG8CJl8AAwMAAAAAAAAAAAA=
+      base64_string: 'H4sIAA5uJ18AAwMAAAAAAAAAAAA=
 
 '
     headers:
@@ -20,19 +20,19 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - l6DrS+ZDmF6yX8E2GsnCKQ==
+      - D1leAbOG+gNswwP8w3EpuQ==
       Host:
-      - menu-driver-test.s3.amazonaws.com
+      - s3.amazonaws.com
       X-Amz-Date:
-      - 20200802T000151Z
+      - 20200803T015318Z
       X-Amz-Security-Token:
-      - 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
+      - IQoJb3JpZ2luX2VjELr//////////wEaCXVzLWVhc3QtMSJIMEYCIQCKbvL790+dsEDJQmqmq1ypw8i8ibNKUaiwN0dYWWb02QIhAI6oF2VVfZFDoNrTQesNtIlO+wcTs8tqTxzIeicElH4gKrYDCIP//////////wEQABoMNDIwODM2NDI4NTcxIgy8FWPnms1Ysw7ax9sqigNd0ZHuYLYkAWgtdogBOf6nnR0g5HWUVPl2Y5+07A/XCu2rXqPXupJAnFbt2mWPDs0v5wxLvdI1odxz1xV4XJ0W5BMqD9J/PODXScJsNGsc10uDsXxnXXdnpiwsUWz1tCpeGWNOuDdk2nsGvO2TKpd22ZD+onWQ4cEi5prcqLjv/+abLhXCaJL5rcykW8sUOxx808RRezgZ4hjeiMwToLy1gD9Nxd6XtGj+XpZ/I9MJ011XEAsjCzcP4f6q4KOrBO5ZNOgJ+V7HndYFRD4cwsFaYDadvzxxMpHXNYzmFwmGcJdkKMAThjZaYvZ+BKjUHKH4m0zRSoG4XFdPAdYZJcEH7UYCxia4TN9e9o7A6hTF7wHTPl6RBJ4fvkG1KStS9vo1BVDbng+9bLFSFQX9HTrvobDuVStmJSvuJ9qGSTjbnG22eGUp3S3IjZbNxb1CIw2SxFtJCZh8qJFmoMdTGk03s66xmzAa8KeeXzEzv3u/i1qydJJpk1zaWWDka4RXvJWdjm5FTg9zjDHJMKm+nPkFOo0CkqwzxsuazQ7vqbUZkElFRgMq6Lkv/d7UB3wlx6G/UZ6FcWjQSs7+1Wq5swdNnT02GaT8qg0FNHs5TOBFv2p4rlOCjOHnTv3Tynu44uCfXs4JpwYaGFB20d8fCP80kbrLOeo2T27SBqM3yZM/JXkZALAJZXynJNSigQ1LBtL2aa2FUMrGurJHnXrbaSJuI0P3jEycc2pWSgTFcZ6OkXaP4s+9lMnt0aoVTD4dEY47GuxsYQwMF4eJFhIkH5eJnOV43erRN21XjxE/LSpeu3QjDWDa9Zr1fbGnDEWS2UhTbVBznI2x9sM+SrOpnZPzqxrr6uxsDXPPH/Wf6+o9K8z7yUS/LTj2sj7EWWOi7Lc=
       X-Amz-Content-Sha256:
-      - c7d84094d953c46695318e4dd7ac2ae268d98eeca581806b8fda751905a126af
+      - c2fe9c0e9e39ccade6ac97074d7ba2ddfc5e4d3e6f443f04d37fcfe36c24e707
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN7OYS5OVW/20200802/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=071cc3266764bfdfe543717ffb02ace537c5c6ca1ce3ea51f1ce1bec0ac0f447
+        Signature=879c494826c85c2311f62d8c5cbe8b6f08599468626c999537a328992a772725
       Content-Length:
       - '20'
       Accept:
@@ -43,13 +43,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - XAxqUpxviroNXfhSWDUMBHgc8cDy+8PVLXz2i9BPbkrZTJ6xWC+bC7D/Vmj42tZla+9XSsXmlOg=
+      - QT+1XlY9RpOoBbCWpyPacxAztCFOZ76LtPwAgbh0pB/3UW45jUqatAVlzuaIxA1DIszJqiJIq7s=
       X-Amz-Request-Id:
-      - DFF2F6A063730CF0
+      - 7C5C173AD44172E1
       Date:
-      - Sun, 02 Aug 2020 00:01:52 GMT
+      - Mon, 03 Aug 2020 01:53:19 GMT
       Etag:
-      - '"97a0eb4be643985eb25fc1361ac9c229"'
+      - '"0f595e01b386fa036cc303fcc37129b9"'
       Content-Length:
       - '0'
       Server:
@@ -57,14 +57,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 02 Aug 2020 00:01:51 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:18 GMT
 - request:
     method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/branded-dark-mode.scss
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/branded-dark-mode.scss
     body:
       encoding: UTF-8
       base64_string: |
-        H4sIAG8CJl8AA51U24rbMBB911cMNLBJWG8SNjQQv6TQ9z7sF8jWxHFXlhZZ
+        H4sIAA5uJ18AA51U24rbMBB911cMNLBJWG8SNjQQv6TQ9z7sF8jWxHFXlhZZ
         2hBC/r0j+RI5drdQG4w9Omeux7Nawg91sadSFWBP3MK5lBIyBKuLQqKAozYg
         uHmHSgsEhShqKG0N+qxA8QpfYLlis8xwJZJcS2328A03/k47c8bz98JoFyHW
         dL2+EqJC5b6yJj527DIcTXjE7/7+G6Bzs1lv1lsfIdNGoOnZu93uwdgxtttt
@@ -87,19 +87,19 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - seTchD8ew4fo1yRyjNhBuQ==
+      - la10i8kH6gmbI24AkRFQTw==
       Host:
-      - menu-driver-test.s3.amazonaws.com
+      - s3.amazonaws.com
       X-Amz-Date:
-      - 20200802T000151Z
+      - 20200803T015318Z
       X-Amz-Security-Token:
-      - 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
+      - IQoJb3JpZ2luX2VjELr//////////wEaCXVzLWVhc3QtMSJIMEYCIQCKbvL790+dsEDJQmqmq1ypw8i8ibNKUaiwN0dYWWb02QIhAI6oF2VVfZFDoNrTQesNtIlO+wcTs8tqTxzIeicElH4gKrYDCIP//////////wEQABoMNDIwODM2NDI4NTcxIgy8FWPnms1Ysw7ax9sqigNd0ZHuYLYkAWgtdogBOf6nnR0g5HWUVPl2Y5+07A/XCu2rXqPXupJAnFbt2mWPDs0v5wxLvdI1odxz1xV4XJ0W5BMqD9J/PODXScJsNGsc10uDsXxnXXdnpiwsUWz1tCpeGWNOuDdk2nsGvO2TKpd22ZD+onWQ4cEi5prcqLjv/+abLhXCaJL5rcykW8sUOxx808RRezgZ4hjeiMwToLy1gD9Nxd6XtGj+XpZ/I9MJ011XEAsjCzcP4f6q4KOrBO5ZNOgJ+V7HndYFRD4cwsFaYDadvzxxMpHXNYzmFwmGcJdkKMAThjZaYvZ+BKjUHKH4m0zRSoG4XFdPAdYZJcEH7UYCxia4TN9e9o7A6hTF7wHTPl6RBJ4fvkG1KStS9vo1BVDbng+9bLFSFQX9HTrvobDuVStmJSvuJ9qGSTjbnG22eGUp3S3IjZbNxb1CIw2SxFtJCZh8qJFmoMdTGk03s66xmzAa8KeeXzEzv3u/i1qydJJpk1zaWWDka4RXvJWdjm5FTg9zjDHJMKm+nPkFOo0CkqwzxsuazQ7vqbUZkElFRgMq6Lkv/d7UB3wlx6G/UZ6FcWjQSs7+1Wq5swdNnT02GaT8qg0FNHs5TOBFv2p4rlOCjOHnTv3Tynu44uCfXs4JpwYaGFB20d8fCP80kbrLOeo2T27SBqM3yZM/JXkZALAJZXynJNSigQ1LBtL2aa2FUMrGurJHnXrbaSJuI0P3jEycc2pWSgTFcZ6OkXaP4s+9lMnt0aoVTD4dEY47GuxsYQwMF4eJFhIkH5eJnOV43erRN21XjxE/LSpeu3QjDWDa9Zr1fbGnDEWS2UhTbVBznI2x9sM+SrOpnZPzqxrr6uxsDXPPH/Wf6+o9K8z7yUS/LTj2sj7EWWOi7Lc=
       X-Amz-Content-Sha256:
-      - ebde43eaa665411a796c3f0396e2ea394514dd33bf63b8ce72dab52ea790ca1f
+      - 915a4993129466939ddd6548baef7972e15ade11495f82db56848aec9790effd
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN7OYS5OVW/20200802/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=09a4d11da59be1cab6053f1ff0e695bc097113582681bacbf7aaed999e0a585b
+        Signature=4d4362d6cf9fac7a0128f5a9fcb71a69f74879646de01413fbeb7140a41b8fd9
       Content-Length:
       - '491'
       Accept:
@@ -110,13 +110,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - K2RDDPEUwhiyuZQIGf9eWtPHYlXz4jo+2UjnU8tR2DNGV28rlH9d0Jd+Y/HLcITBeO0eWP1yZ1M=
+      - c5MKMLUxBaTsdiKfd7xcLPa7IcooHShwEVrZTbFcxuiZsHd1rCq2D1rCrlauu1R5qz+L2N2I9BI=
       X-Amz-Request-Id:
-      - D317C81B1AFFF59B
+      - 346CD1023FF24C96
       Date:
-      - Sun, 02 Aug 2020 00:01:52 GMT
+      - Mon, 03 Aug 2020 01:53:19 GMT
       Etag:
-      - '"b1e4dc843f1ec387e8d724728cd841b9"'
+      - '"95ad748bc907ea099b236e009111504f"'
       Content-Length:
       - '0'
       Server:
@@ -124,14 +124,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 02 Aug 2020 00:01:51 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:18 GMT
 - request:
     method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/scripts.js
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/scripts.js
     body:
       encoding: UTF-8
       base64_string: |
-        H4sIAG8CJl8AA71VbW/bNhD+nl9x1YBGbhLVLdauSOYAXRp0BYy0mAMMQ9EP
+        H4sIAA5uJ18AA71VbW/bNhD+nl9x1YBGbhLVLdauSOYAXRp0BYy0mAMMQ9EP
         jHSyiNKkR1LO0iL/vXekbFOyg637UMMwzOPdc8+9UqGHhZD6SqymUn92MIHK
         lO0CtS/+btHezVBh6Y19rVSeabGCVoGSILLR2YHqjGekIY3+F2MStw74l22D
         sRLOv6siUNlasv/4KZ7I06y0RqlruUDTejKoWx3cgEN/0VpLXoh1Tqeo+cE4
@@ -164,19 +164,19 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - kEvzAehTisgy+bFQt9O1Gw==
+      - Xue2z7lvdIQenMVbHSQumw==
       Host:
-      - menu-driver-test.s3.amazonaws.com
+      - s3.amazonaws.com
       X-Amz-Date:
-      - 20200802T000151Z
+      - 20200803T015318Z
       X-Amz-Security-Token:
-      - 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
+      - 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
       X-Amz-Content-Sha256:
-      - 29e40d38ebfa4e52e99f395bc92209ccdc9a489c2f82d3db1c93129ca62a4ca8
+      - 2a5fb228db44aa957ccace476071e11cdcdda2765a0a59f4bec021ad326474ac
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN7OYS5OVW/20200802/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=17ee94d855b3938a422456a0ca1bd85d258d2693f8bddf767b5473e88e5eba6b
+        Signature=c6604e09fb2eed55c8f84390192c18d2426c37c7d8f6e8a9a5b94748f0c97676
       Content-Length:
       - '902'
       Accept:
@@ -187,13 +187,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - doNG60KaQw5XZDvfzlNUdNL6BRKBPM5DnDhbrSiZ6Xb5RxlfKDSEjvQ89dFsRlpJjHk9IXc3IZI=
+      - YHOiOk83JHA4CyFyjYsV4eJSSwer7zSlXWdckz6ABeoBwtrTKpCnXnFo0eSO78Rr6SHy/DIcLAE=
       X-Amz-Request-Id:
-      - 6A7D3DDF645370AB
+      - 843E4C48D16DC3FE
       Date:
-      - Sun, 02 Aug 2020 00:01:52 GMT
+      - Mon, 03 Aug 2020 01:53:19 GMT
       Etag:
-      - '"904bf301e8538ac832f9b150b7d3b51b"'
+      - '"5ee7b6cfb96f74841e9cc55b1d242e9b"'
       Content-Length:
       - '0'
       Server:
@@ -201,18 +201,18 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 02 Aug 2020 00:01:51 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:18 GMT
 - request:
     method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/reset.scss
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/reset.scss
     body:
       encoding: UTF-8
       base64_string: |
-        H4sIAG8CJl8AA2WPSw7CMAxE9z2FN2yqFMJ3Ec7AIVLFbSylSZUa8RN3xykI
-        IbEYyfLYz+NVDSeKNNgAE98CQsYJeQn1qvI8BHhUAG26NhPdKfZG6uwwN9I6
-        itOlyMVCAxs9SutZVbWC2rTYpYylsh1j/sNQ9JiJ54U2uZsCvxZtRFvRTrQX
-        HRSMClJQcH5HGWzuKRrQ5fponZtp+pvlgtR7NhBTlpdm/M92oEniljfLRMTZ
-        p6H/oK/NhRx7A2utFwXpPzR75iSzL8v+7zQsAQAA
+        H4sIAA5uJ18AA2WPSw4CIQyG95yiGzcT0PG5wDN4CCZ0hiYMGKbGV7y7HXRh
+        4uJLWuj/FVYNnCjR6CJMfI8IBSfkJTQrFXiM8FQAXb6ZiR6UBit18ViMHB3V
+        S6lGQ2M77HPBuXI9Y/nLUApYiGugy/6uIayFjbAVdsJeOGg4a8hRw+Wzd3Rl
+        oGShPUpzdt5XW+36nNhckYbAFlIu8v6q/0lHmtjUP80TCes9jcNXfTNX8hws
+        rNt2MSvD1+YunGX2DSNS2ToZAQAA
     headers:
       Content-Type:
       - text/html
@@ -225,21 +225,21 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - 7TmkdI8I2K5wM6JlLWB22g==
+      - Kz1arRI6I7xh9q0bX5dHwA==
       Host:
-      - menu-driver-test.s3.amazonaws.com
+      - s3.amazonaws.com
       X-Amz-Date:
-      - 20200802T000151Z
+      - 20200803T015318Z
       X-Amz-Security-Token:
-      - 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
+      - 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
       X-Amz-Content-Sha256:
-      - 940fe4c801135e24bb8309ca1c0b979a15e58cfa6f50ce28bbd30a1549858b16
+      - 4a3fff70db5627b7145567b6e1d294871cb6dafb6cdb88ef07e09eb61555aac8
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN7OYS5OVW/20200802/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=3abb1555a1ccd4abdb451099fbff3b6041ae1d33a1c9ba0a85d3adab9b7acdac
+        Signature=af91e9cf43f113b0b9ec93679daf954d6ffa927bfa756a103109f3845c30a459
       Content-Length:
-      - '210'
+      - '201'
       Accept:
       - "*/*"
   response:
@@ -248,13 +248,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - nJIRp5RNVtvrWtFZDbtUR31MWsvnaujo89kePkzClbuIAWuhn6jxi5nesziAgF/FoEN4bGzhhr0=
+      - 6b9cv+PJZ1RsbHUoIERvwX4bwuwgNBRwRUcO9nnEFr59M4mKsGg1avRJHucA8ODx4Hb/kd2PYwM=
       X-Amz-Request-Id:
-      - A8FB609669AA99BF
+      - A46E04F8D48947B5
       Date:
-      - Sun, 02 Aug 2020 00:01:52 GMT
+      - Mon, 03 Aug 2020 01:53:19 GMT
       Etag:
-      - '"ed39a4748f08d8ae7033a2652d6076da"'
+      - '"2b3d5aad123a23bc61f6ad1b5f9747c0"'
       Content-Length:
       - '0'
       Server:
@@ -262,54 +262,54 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 02 Aug 2020 00:01:51 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:18 GMT
 - request:
     method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/styles.scss
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/styles.scss
     body:
       encoding: UTF-8
       base64_string: |
-        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
-        Xzfvi4/pGQAA
+        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
+        BlnbjcaBwFq1BrR/AS9hFa8GGgAA
     headers:
       Content-Type:
       - text/html
@@ -322,21 +322,21 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - g9EzZzVxe7KvACvbiKc5lQ==
+      - dRJWUrLgt+TGDM+LCHFOcQ==
       Host:
-      - menu-driver-test.s3.amazonaws.com
+      - s3.amazonaws.com
       X-Amz-Date:
-      - 20200802T000151Z
+      - 20200803T015318Z
       X-Amz-Security-Token:
-      - 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
+      - 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
       X-Amz-Content-Sha256:
-      - 91a69314e3bf70bdf3fdee032067b81e1f8efa60494ee90010db9c3c2d85a114
+      - ee123fe9a50b38bf9871865c1872c27f3049683a6444b0d82b772b2900b775c3
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN7OYS5OVW/20200802/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=f8a4cada9c561cedcf6dd8f0617debe76cec08119f22f927749017b5407390c0
+        Signature=64bcbca0578e119723d7cf0dec34bdd6ae5d797393ccd199649b1988c86759ae
       Content-Length:
-      - '1809'
+      - '1821'
       Accept:
       - "*/*"
   response:
@@ -345,13 +345,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - BKS9rDHz+W0SkMTsYuCk9y3DpKxwWydz6KFct12AuFrri+15OU4t1H+lyL6o/nhIX0N5nzmXWEw=
+      - VBHuwHsypAJzQ9EsFFaUjOrSADS7XaGllTPvgirZYz0PKS2FXzDNcavA9vpBuaVQEpVRjPDEhN8=
       X-Amz-Request-Id:
-      - CADE5F3330B91B72
+      - B463BE89E3EDB02A
       Date:
-      - Sun, 02 Aug 2020 00:01:52 GMT
+      - Mon, 03 Aug 2020 01:53:19 GMT
       Etag:
-      - '"83d1336735717bb2af002bdb88a73995"'
+      - '"75125652b2e0b7e4c60ccf8b08714e71"'
       Content-Length:
       - '0'
       Server:
@@ -359,14 +359,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 02 Aug 2020 00:01:51 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:18 GMT
 - request:
     method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/fonts.scss
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/fonts.scss
     body:
       encoding: UTF-8
       base64_string: |
-        H4sIAJD2Jl8AA91RS2+CQBi88yv2hlpxYVGMeClgSZo2xtja16XZIiBxeXR3
+        H4sIAA5uJ18AA91RS2+CQBi88yv2hlpxYVGMeClgSZo2xtja16XZIiBxeXR3
         kZqm/727PEx7qufu4ZvMfPkmsxk4AATzJAMDqFxGeca1CAch+FQAaFmakKMN
         1BtMCVbnnc74kYQ2yHKaYnJSqzCJd9wGY10/aduEFQQLC1bhQqqMBjYgeYBJ
         r3XtD39xbR3GJcFU6iUlvR3nBbMhlHZsFDMuAgejIE8hg3t5AA+GCd/37tvT
@@ -387,19 +387,19 @@ http_interactions:
       Expect:
       - 100-continue
       Content-Md5:
-      - rLKclkOCbN59lYH3YCkpig==
+      - fgiMzdXimIdJgBpiOzm26g==
       Host:
-      - menu-driver-test.s3.amazonaws.com
+      - s3.amazonaws.com
       X-Amz-Date:
-      - 20200802T172328Z
+      - 20200803T015318Z
       X-Amz-Security-Token:
-      - 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
+      - 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
       X-Amz-Content-Sha256:
-      - 90f131ae144e150d8d2c2e85290469e1702499d7314e30a1437d973295e2c30c
+      - d2809ff31447a4a689ed0aa79394206f79cbf40bb6e666d66f1d1fa15051fc8c
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNTGCJW7GN/20200802/us-east-1/s3/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNRZJPW67R/20200803/us-east-1/s3/aws4_request,
         SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=6524aba7030f501a663427cc1b78c4c7a3c790337802f6c138181e366194765c
+        Signature=7c43ec4e52e5cadef5989d676347f2f8038c85611847cc41eacddc4bf5bf7903
       Content-Length:
       - '361'
       Accept:
@@ -410,13 +410,13 @@ http_interactions:
       message: OK
     headers:
       X-Amz-Id-2:
-      - vGY7itpADKB9EHihKzHla++0995FwqK5unp3TZoxJh2Xe+QTstAzx19+dtGNC2GaoHq5471JOrE=
+      - HCHqeTdonZlqJaq3z1yiitM7Q9C8ZHHuHdW5U1Ydl8qip0cAuAOi9u09ubRlSwszuAnhGHIcoSk=
       X-Amz-Request-Id:
-      - A2D4BF4788CFEBA8
+      - F5C5D5299AB28D42
       Date:
-      - Sun, 02 Aug 2020 17:23:29 GMT
+      - Mon, 03 Aug 2020 01:53:19 GMT
       Etag:
-      - '"acb29c9643826cde7d9581f76029298a"'
+      - '"7e088ccdd5e2988749801a623b39b6ea"'
       Content-Length:
       - '0'
       Server:
@@ -424,63 +424,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 02 Aug 2020 17:23:28 GMT
-- request:
-    method: put
-    uri: https://menu-driver-test.s3.amazonaws.com/hakkasan-mayfair/typography.scss
-    body:
-      encoding: UTF-8
-      base64_string: |
-        H4sIAAIDJ18AA8soyc1RqOZSUEjLzyvRLc6sSrVSMDIoqLDmquXiUklKLE7V
-        RZIxLErNtYYK52TmpepmpGamZ5QAJfRMFbQU0NRbAwDlzpzEXQAAAA==
-    headers:
-      Content-Type:
-      - text/html
-      Accept-Encoding:
-      - ''
-      User-Agent:
-      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
-      Content-Encoding:
-      - gzip
-      Expect:
-      - 100-continue
-      Content-Md5:
-      - M4ds+ABLfUm2qP1EngrJ1w==
-      Host:
-      - menu-driver-test.s3.amazonaws.com
-      X-Amz-Date:
-      - 20200802T181634Z
-      X-Amz-Security-Token:
-      - IQoJb3JpZ2luX2VjELL//////////wEaCXVzLWVhc3QtMSJHMEUCIQDmPAhS8OP+WRt84bbuMfgQ6IJ25pNWA58tK2BM2CyJiwIgCUWZQnOUx+AW1HOemYt9o7EVBbVmcCvT9LihAgrrIX4qrQMIexAAGgw0MjA4MzY0Mjg1NzEiDDmZBxUhwrmaA/FqbiqKA+yXwZr2JkBGhU1xreWyi/SvKodUOkoDVOayss3QoZc3hAGCEY7XViNiZSqmMcQ4JKt6dz6G8/XNivjgsLAa5rgjEo0vcaPhyxLZYAm02SrGZVvrDnHIQFYkycud847R4/MDj5wPJxQ6LDK9z1RTboGMs3RTZQJ+DKYdeXiNHT3Cm8zFY3WJm++KvfF3iCuB9MOK4dE7qZ+5EDKWELutG09Uo6yhdXLCV6vxo9PfMRdVh2ca5j61t8QMNdcs9WQahrmhxQPKc4gwNTtHfTKEpfUJMp/t8goYAol7YsEQVr7PybVkIFG3+BXQA2ZspNs3yxYr62djtonELVMsqS0uU4rVS+fIYSvfas86CK29RlxP2ehNpJyT+U2fxTXTL7y8VUWjPG2PjKa1LOEQgOvdrvpgipCuMMAa2UDwZddel1V8S3+XxFpTwFB+UyfDFbUuaSe8lwoM3sqgOQjg1PQEDXM5pB3+fMYzmIRqpWfuolK8WJgdvAMcH8CRuImsq42PphJW91BkF38AHNQwnIqb+QU6jgKpevI6/UqjpQMHIRlf73u2GvyKnV1Sw9/VJLNVT2IZm92JYD/73y1IO65ogy/rpXIdJn+EkOpZM3KjCp9NH3zpwJ9hNWB+P4qGWqoUESyrjO9jWjtQKSluzllU+nKjtNZP8OTe+6G1eIbx/lyvp7AJ3FwjxcVBMlcHFlC+ewjOHTSenpPqi6Da9wRZhUnEU1UzDVatNcy2c2QdtNhOvuLHXH9JK9VaF4bdvcpzCeih1P7bOMPZd5oAz6r/j1EbT3sbkaeJHVEVONy9k+KQUa3yXruC9NMdJD4T9SIbG1mI5xm3OBKvVPdXpsbimuweJQzBTvvNm5hB1JaJsNcwil93PDgLsQnhKlTTTbLQ5eo=
-      X-Amz-Content-Sha256:
-      - 43418437ba8505b6948a3775e433990e045d6aa4e45b069e4503570196a741b7
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNYI5HOX7Y/20200802/us-east-1/s3/aws4_request,
-        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
-        Signature=211d6c51a52902d92ce98574d5a0e379571ab6b7c143555bc12b9b11606b2010
-      Content-Length:
-      - '85'
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Amz-Id-2:
-      - bxZ/OIaxk+Cv/ZLrpOj4qFJJ4tQ3ICbYI+lptCJGvJ0TOWaDi6h+vUHbCVr/1M2hmLFdCynu/wQ=
-      X-Amz-Request-Id:
-      - 58429C19228C1C0A
-      Date:
-      - Sun, 02 Aug 2020 18:16:35 GMT
-      Etag:
-      - '"33876cf8004b7d49b6a8fd449e0ac9d7"'
-      Content-Length:
-      - '0'
-      Server:
-      - AmazonS3
-    body:
-      encoding: UTF-8
-      string: ''
-  recorded_at: Sun, 02 Aug 2020 18:16:34 GMT
+  recorded_at: Mon, 03 Aug 2020 01:53:18 GMT
 recorded_with: VCR 6.0.0
