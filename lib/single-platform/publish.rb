@@ -20,14 +20,8 @@ class SinglePlatform
 
     $logger.info "Storing HTML menu for location: #{location_id}"
 
-    # Build an output file name that includes any URL query parameters.
+    # TODO: Feature / parameter for overriding output file name.
     output_file_name = location_id + '/index.html'
-
-    if args.count > 0
-      uri = Addressable::URI.new
-      uri.query_values = args
-      output_file_name = [output_file_name, uri.query].join('?')
-    end
 
     s3_object = publish_file(output_file_name, menus_html)
     

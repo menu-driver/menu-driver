@@ -58,20 +58,6 @@ describe "Lambda handler" do
 
     end
 
-    it 'includes the URL query parameters in the output HTML file name' do
-
-      response = 
-        menus_data(
-          event:JSON.parse(
-            File.read('spec/lambda_events/location_id_hakkasan_mayfair_with_passthrough_parameter.json')),
-          context:{})
-          
-      expect(response[:statusCode]).to eq 302
-      expect(URI(response[:headers][:Location]).path).
-        to eq '/test.menus.hakkasangroup.com/hakkasan-mayfair/index.html%3Fpassthrough%3DSIERRA'
-
-    end
-
   end
 
 end
