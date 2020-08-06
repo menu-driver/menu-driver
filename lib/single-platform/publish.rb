@@ -33,6 +33,7 @@ class SinglePlatform
     
     # Identify asset files and publish those also.
     asset_files(location_id:location_id, **args).each do |asset_file|
+      $logger.debug "Using asset file \"#{asset_file[:asset]}\" from path \"#{asset_file[:file_path]}\""
       publish_file(
         # Destinaton S3 object key.
         File.join(location_id, asset_file[:asset]),
@@ -42,7 +43,7 @@ class SinglePlatform
 
     bucket_name = [ENV['STACK'], ENV['DOMAIN']].join('.')
     public_url = 
-      "https://#{bucket_name}.s3-website-us-east-1.amazonaws.com/#{location_id}"
+      "http://#{bucket_name}.s3-website-us-east-1.amazonaws.com/#{location_id}"
 
     $logger.info "Public URL of generated menu: #{public_url}"
 

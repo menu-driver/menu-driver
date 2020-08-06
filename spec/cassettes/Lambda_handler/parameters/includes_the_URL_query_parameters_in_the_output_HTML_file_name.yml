@@ -8689,4 +8689,344 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Mon, 03 Aug 2020 01:53:19 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/brand.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAJVLK18AA5VRwW6DMAy98xWWtsNWDbqp0g7lNPElgXgQlSaSCVQVyr8v
+        BGgToNOWSMSyn/3eM/sdfMmrroQsQVdMw0XUNeQIWpVljRy+FQFndIKz4ggS
+        kTcgdAPqIkGyMyaw20fPOTHJ40LVio7w9G7P4ZDO6ZwVp5JU6yHwY7gWcUbZ
+        rvtcdqvtc7jDYEUc6ZbPsiyNolzxK/QRQByHenpfn0k9xAZH/0D11BcI7j39
+        fn1z7GZlVhP66QODDjOVOkYvgb3Xobjm83HLqm0xUeLkcBIdkluaS7hoQXa3
+        6Lges20anHsCg5M6L+dgJrIfybpJxb9d/ZnIIdt64gGoxS0EYEnREqHUXu4X
+        McvZ4zH3cW/Ajp1ohEY+hJWyGx8CVmi7/IBkmixkhST0etr4mtGBsX/xB77H
+        h1e/AwAA
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - w6qKtWsX9v7X2lyG1V5FEg==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200806T001517Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEAEaCXVzLWVhc3QtMSJHMEUCIBNUoGYB687VSneq6u/TQQWsi5yHdJEM+VklOj4AZqj7AiEArzmrlVwsGKvDvy7ZawZtvSIFSHojpQAoL1NzTMM29oYqtgMIyf//////////ARAAGgw0MjA4MzY0Mjg1NzEiDOkf5oVcdQT+qQCghyqKA6UZ/nBPinrV+4dYvOFNV3ukM1XNQ8t71ifmRJvJNnXliXwbcExItUCsjQ43S3gc8aQvpNKD6xuNcVABFzew8LM4VaPaH8nUsj7XQbQmhiszoiyIUKxSZnic+2d351rTzyUewk9aD0S/ELsQv+4vcxqcHh6kYUzGMcMdsaM6bG5hS9XVfRdH7G0hwylLbbLuVcwE33EN6fNp+XOBN+bChgOciC1VGnl9Cla5a8B5zLxU5TU7i0yUXN8GGKb1yH4yQsruxbksGY/PvAK8AidDLeUvx1QoWxQ5vq73cBUI9psppVAa+lupFkPEH/SvD15OOC8mRTjaCOBJZDJ61UxLlrXgot5VJ6/pXhv6QTkSZB5fmvhgI3f1UARM6xaeKgqIWxWhFATMEK9MVrxuJ4q3bSWG48sJKlRxRGAnVWjv3uUltGpBha1mtdaM744QN0WG8eePZ0d3B7e7Sz8v9JGcrVjMCB8ue38JYduHFZVIxqoMrmC9QQt7QMywh0X+C50DZEt4x4N6M2jxxAowybmr+QU6jgJpVtZgJYORfo8/2TqqKk4Bo5t/0SuwAozcK7fpz9a9aHktpuSCl1GHJ4gBCvs7qXkZ8Mor4dId24bPwjLIjEwSDbZWALnxgjQk8PkS9zSuX179JMR7WBO9EcXDSkLdy6M50d7MouqJ++T1gQ09ygLQ3goNz9bi7Gjg2QEsnhx2XsFatyGnIAG4EsQHsav79NXbmCmZu2Iac5Sq4fLdOFHG2A5K1qV3xpmiKEqqo3b1Wu0OGszcBkXNAQki0WrW9wkK98OW9tPJsXTk+QW/A9D6Gv8xWiLZimo58nD8ShR5U7liB/6ECFIUXnecBOtviegCu8nhoQt7/TtiN+vHdj7q6aR/6Ec+O0cFr/TvUhw=
+      X-Amz-Content-Sha256:
+      - 10a6db88889b26c0b2d2bbd9f9dc959f466a147a51b0813611a2ead8fd4132f7
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN75MQZQWS/20200806/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=1fd5aeb3428514d8d2f4a688d8a2172b9bc36ffa853074db5fdb86db59a09489
+      Content-Length:
+      - '321'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - jo8GIHqUJq8w1AnS74OO/mH6yw+DYD6QE55Lgp0xGfnZh7nkBw4jrq/8nR8suE6rU+z2qlaybIY=
+      X-Amz-Request-Id:
+      - C5219E9449A7BA23
+      Date:
+      - Thu, 06 Aug 2020 00:15:18 GMT
+      Etag:
+      - '"c3aa8ab56b17f6fed7da5c86d55e4512"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 06 Aug 2020 00:15:17 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/light-mode.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAJVLK18AA5VTTW+rMBC88ytWag9tpCQ9VJFeuPRJ795Df4HBW/CrsSvb
+        BKGI/96NwZQPp0ovCNmz49nZ2f0G/qrWlUIV4ErmoBFSQobgdFFI5PCuDXBm
+        PqDSHEEhcgvCWdCNAsUq3MFmn9xXqOptrqU2WymK0h0hkyz/SIcbi7lWxNLO
+        MXeHwyFAMoIXRteKzzFNKRwSKNOGo1nUZ09/np6f0yTJNG/hnADsN/BPg9Ju
+        aICaQovgy+y8Ga+8rxj7Y/x/bak7lEiq6KfShrpmxuhGtkOFJzvCfWZYUJvS
+        8bKDEbG8SJMuUezk9f6iiNC19EUAUgw/AGyX18aQ2PEkzjrxLx2AXRK+HUlK
+        yIk310rsfaotkmNNqeHT4DtOU0AxIVvh9Q0knlBeXHmpkAsGDz3WDnOyeUk+
+        HsHP69ELvPQchgWw3a6Tc3dexalLp+hraTr/ELY5w7WwBYr4/cgRzeI5ElFf
+        0V0mt/O83IgTOdn37o/GoQ1zOjHzsDblMUxsPdhJQVz1d+1EXqhbSx7hu8t2
+        TzJ1m8DxmUw7p6ubX+vCqzQ9J7SaPLwUcruU7puDo82N+FxQx6ii8YmQTpcH
+        IOzzL2z26HGjZzsd3+rr4//B2JjgfuG/ALdDBrv7BQAA
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - tegtTiyEF4mBbdwUR+/hTA==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200806T001517Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEAEaCXVzLWVhc3QtMSJHMEUCIBNUoGYB687VSneq6u/TQQWsi5yHdJEM+VklOj4AZqj7AiEArzmrlVwsGKvDvy7ZawZtvSIFSHojpQAoL1NzTMM29oYqtgMIyf//////////ARAAGgw0MjA4MzY0Mjg1NzEiDOkf5oVcdQT+qQCghyqKA6UZ/nBPinrV+4dYvOFNV3ukM1XNQ8t71ifmRJvJNnXliXwbcExItUCsjQ43S3gc8aQvpNKD6xuNcVABFzew8LM4VaPaH8nUsj7XQbQmhiszoiyIUKxSZnic+2d351rTzyUewk9aD0S/ELsQv+4vcxqcHh6kYUzGMcMdsaM6bG5hS9XVfRdH7G0hwylLbbLuVcwE33EN6fNp+XOBN+bChgOciC1VGnl9Cla5a8B5zLxU5TU7i0yUXN8GGKb1yH4yQsruxbksGY/PvAK8AidDLeUvx1QoWxQ5vq73cBUI9psppVAa+lupFkPEH/SvD15OOC8mRTjaCOBJZDJ61UxLlrXgot5VJ6/pXhv6QTkSZB5fmvhgI3f1UARM6xaeKgqIWxWhFATMEK9MVrxuJ4q3bSWG48sJKlRxRGAnVWjv3uUltGpBha1mtdaM744QN0WG8eePZ0d3B7e7Sz8v9JGcrVjMCB8ue38JYduHFZVIxqoMrmC9QQt7QMywh0X+C50DZEt4x4N6M2jxxAowybmr+QU6jgJpVtZgJYORfo8/2TqqKk4Bo5t/0SuwAozcK7fpz9a9aHktpuSCl1GHJ4gBCvs7qXkZ8Mor4dId24bPwjLIjEwSDbZWALnxgjQk8PkS9zSuX179JMR7WBO9EcXDSkLdy6M50d7MouqJ++T1gQ09ygLQ3goNz9bi7Gjg2QEsnhx2XsFatyGnIAG4EsQHsav79NXbmCmZu2Iac5Sq4fLdOFHG2A5K1qV3xpmiKEqqo3b1Wu0OGszcBkXNAQki0WrW9wkK98OW9tPJsXTk+QW/A9D6Gv8xWiLZimo58nD8ShR5U7liB/6ECFIUXnecBOtviegCu8nhoQt7/TtiN+vHdj7q6aR/6Ec+O0cFr/TvUhw=
+      X-Amz-Content-Sha256:
+      - 72bb61633ef16a902d31a523dee1bf4b4f1838c05857d78611bf6ae78cf9a0b9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN75MQZQWS/20200806/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=235a976ded999dd7d7cddc25f4bee9f65cc9a26e170106cb6a951375b2d8eecb
+      Content-Length:
+      - '483'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - m9jLtl9xM1acmTiiQ7VKxDRMavwPHck8yO7Q4ExLleEx3s3opQkLOsyOH5YzuBpoggTwj3QKnro=
+      X-Amz-Request-Id:
+      - BD28D24D04D1AC6C
+      Date:
+      - Thu, 06 Aug 2020 00:15:18 GMT
+      Etag:
+      - '"b5e82d4e2c841789816ddc1447efe14c"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 06 Aug 2020 00:15:17 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/typography.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAJVLK18AA5WR3U7DIBiGz7mK72Amzgjpj6amTYy3Use3QbLSBnBOTe9d
+        Slel2GzuqAk879M3L8I2e/giANtWWWrkJ5aQJd2xIj0hq9faIA1uUo1NdTre
+        S4VUoNwJ6y7YA9xBxFeDodUcNX2X3IoSEvboDWRlPzqkBq2VamdKuHUNaDp+
+        Z10SVgyRe38+++WfFg5ZD1yyoEmvdCxVSVme5//0uDGyyZUtuori6UoXWbvh
+        WIPqjXItD6j9u73g0aLicGNqZdyiWm79CzgWQGDNT1xIBhBAP4BeC8/AVN3g
+        JX7CR4wZ3FjZqih9xjA6guSUYNJiE+Rj3xnjr9UHOZqNlt3MPs/Ha8WS/qeo
+        H0jVh0uz9OQbd2TERk0DAAA=
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - kS3/UJOGSS4FnZgMEzacyw==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200806T001517Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEAEaCXVzLWVhc3QtMSJHMEUCIBNUoGYB687VSneq6u/TQQWsi5yHdJEM+VklOj4AZqj7AiEArzmrlVwsGKvDvy7ZawZtvSIFSHojpQAoL1NzTMM29oYqtgMIyf//////////ARAAGgw0MjA4MzY0Mjg1NzEiDOkf5oVcdQT+qQCghyqKA6UZ/nBPinrV+4dYvOFNV3ukM1XNQ8t71ifmRJvJNnXliXwbcExItUCsjQ43S3gc8aQvpNKD6xuNcVABFzew8LM4VaPaH8nUsj7XQbQmhiszoiyIUKxSZnic+2d351rTzyUewk9aD0S/ELsQv+4vcxqcHh6kYUzGMcMdsaM6bG5hS9XVfRdH7G0hwylLbbLuVcwE33EN6fNp+XOBN+bChgOciC1VGnl9Cla5a8B5zLxU5TU7i0yUXN8GGKb1yH4yQsruxbksGY/PvAK8AidDLeUvx1QoWxQ5vq73cBUI9psppVAa+lupFkPEH/SvD15OOC8mRTjaCOBJZDJ61UxLlrXgot5VJ6/pXhv6QTkSZB5fmvhgI3f1UARM6xaeKgqIWxWhFATMEK9MVrxuJ4q3bSWG48sJKlRxRGAnVWjv3uUltGpBha1mtdaM744QN0WG8eePZ0d3B7e7Sz8v9JGcrVjMCB8ue38JYduHFZVIxqoMrmC9QQt7QMywh0X+C50DZEt4x4N6M2jxxAowybmr+QU6jgJpVtZgJYORfo8/2TqqKk4Bo5t/0SuwAozcK7fpz9a9aHktpuSCl1GHJ4gBCvs7qXkZ8Mor4dId24bPwjLIjEwSDbZWALnxgjQk8PkS9zSuX179JMR7WBO9EcXDSkLdy6M50d7MouqJ++T1gQ09ygLQ3goNz9bi7Gjg2QEsnhx2XsFatyGnIAG4EsQHsav79NXbmCmZu2Iac5Sq4fLdOFHG2A5K1qV3xpmiKEqqo3b1Wu0OGszcBkXNAQki0WrW9wkK98OW9tPJsXTk+QW/A9D6Gv8xWiLZimo58nD8ShR5U7liB/6ECFIUXnecBOtviegCu8nhoQt7/TtiN+vHdj7q6aR/6Ec+O0cFr/TvUhw=
+      X-Amz-Content-Sha256:
+      - d80e980766dd5ac04462e5bf89119536fc8f602ed60fdd69bc5dae09d3fa557b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN75MQZQWS/20200806/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=ab9c677e64c3cc8fcdca402ac7d1ac23c92dabd68a6658eec37d2aab86e6954c
+      Content-Length:
+      - '287'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - gWUPpttl85oAGsEvzIKdaOno8Pt2mY114XRPtT4dbmmiMmg93bKlSvNWfQ+nbAQwsqxGUFWozPE=
+      X-Amz-Request-Id:
+      - 0F74F7272DB63144
+      Date:
+      - Thu, 06 Aug 2020 00:15:18 GMT
+      Etag:
+      - '"912dff509386492e059d980c13369ccb"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 06 Aug 2020 00:15:17 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/layout.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        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
+        avf/gjBZc9t4BTr/B45EkqAYFAAA
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - gRVYnLb9GLIxLVSVAHMl3g==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200806T001517Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEAEaCXVzLWVhc3QtMSJHMEUCIBNUoGYB687VSneq6u/TQQWsi5yHdJEM+VklOj4AZqj7AiEArzmrlVwsGKvDvy7ZawZtvSIFSHojpQAoL1NzTMM29oYqtgMIyf//////////ARAAGgw0MjA4MzY0Mjg1NzEiDOkf5oVcdQT+qQCghyqKA6UZ/nBPinrV+4dYvOFNV3ukM1XNQ8t71ifmRJvJNnXliXwbcExItUCsjQ43S3gc8aQvpNKD6xuNcVABFzew8LM4VaPaH8nUsj7XQbQmhiszoiyIUKxSZnic+2d351rTzyUewk9aD0S/ELsQv+4vcxqcHh6kYUzGMcMdsaM6bG5hS9XVfRdH7G0hwylLbbLuVcwE33EN6fNp+XOBN+bChgOciC1VGnl9Cla5a8B5zLxU5TU7i0yUXN8GGKb1yH4yQsruxbksGY/PvAK8AidDLeUvx1QoWxQ5vq73cBUI9psppVAa+lupFkPEH/SvD15OOC8mRTjaCOBJZDJ61UxLlrXgot5VJ6/pXhv6QTkSZB5fmvhgI3f1UARM6xaeKgqIWxWhFATMEK9MVrxuJ4q3bSWG48sJKlRxRGAnVWjv3uUltGpBha1mtdaM744QN0WG8eePZ0d3B7e7Sz8v9JGcrVjMCB8ue38JYduHFZVIxqoMrmC9QQt7QMywh0X+C50DZEt4x4N6M2jxxAowybmr+QU6jgJpVtZgJYORfo8/2TqqKk4Bo5t/0SuwAozcK7fpz9a9aHktpuSCl1GHJ4gBCvs7qXkZ8Mor4dId24bPwjLIjEwSDbZWALnxgjQk8PkS9zSuX179JMR7WBO9EcXDSkLdy6M50d7MouqJ++T1gQ09ygLQ3goNz9bi7Gjg2QEsnhx2XsFatyGnIAG4EsQHsav79NXbmCmZu2Iac5Sq4fLdOFHG2A5K1qV3xpmiKEqqo3b1Wu0OGszcBkXNAQki0WrW9wkK98OW9tPJsXTk+QW/A9D6Gv8xWiLZimo58nD8ShR5U7liB/6ECFIUXnecBOtviegCu8nhoQt7/TtiN+vHdj7q6aR/6Ec+O0cFr/TvUhw=
+      X-Amz-Content-Sha256:
+      - 9ab37ab59c55384957c2a0aa90e8e07d7cc1879ec32c2615f344dd538072f494
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN75MQZQWS/20200806/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=b86155cd5624bed60cd317b40dc988150c29ddf8538187a171a92d9dc8398016
+      Content-Length:
+      - '1371'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - L1yKka1vDVFxxgcMCIraG2OiNP8l3BE8fMZ0bsyRnq/myMhL30J4x318keR0OcX+Uv2MZ1kvgTE=
+      X-Amz-Request-Id:
+      - 2D918A9C8417EAA6
+      Date:
+      - Thu, 06 Aug 2020 00:15:18 GMT
+      Etag:
+      - '"8115589cb6fd18b2312d5495007325de"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 06 Aug 2020 00:15:17 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/header.html
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAJVLK18AA7PJSE1MSS2y41JQsEnJLLOzUbVVyMlPTizJzM+Lz0xRULWz
+        0QeJw+RTKxJzC3JSFSDaFIpLStPS9BQUilNzUpNLFHygOnUUUkuSgcIlGam5
+        qVYKIENd/cKi1UM8XH1d1WMRptroQ+0HAJeDEFGIAAAA
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - DP0Cv46CVAzDy0FllCHDQA==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200806T001517Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEAEaCXVzLWVhc3QtMSJHMEUCIBNUoGYB687VSneq6u/TQQWsi5yHdJEM+VklOj4AZqj7AiEArzmrlVwsGKvDvy7ZawZtvSIFSHojpQAoL1NzTMM29oYqtgMIyf//////////ARAAGgw0MjA4MzY0Mjg1NzEiDOkf5oVcdQT+qQCghyqKA6UZ/nBPinrV+4dYvOFNV3ukM1XNQ8t71ifmRJvJNnXliXwbcExItUCsjQ43S3gc8aQvpNKD6xuNcVABFzew8LM4VaPaH8nUsj7XQbQmhiszoiyIUKxSZnic+2d351rTzyUewk9aD0S/ELsQv+4vcxqcHh6kYUzGMcMdsaM6bG5hS9XVfRdH7G0hwylLbbLuVcwE33EN6fNp+XOBN+bChgOciC1VGnl9Cla5a8B5zLxU5TU7i0yUXN8GGKb1yH4yQsruxbksGY/PvAK8AidDLeUvx1QoWxQ5vq73cBUI9psppVAa+lupFkPEH/SvD15OOC8mRTjaCOBJZDJ61UxLlrXgot5VJ6/pXhv6QTkSZB5fmvhgI3f1UARM6xaeKgqIWxWhFATMEK9MVrxuJ4q3bSWG48sJKlRxRGAnVWjv3uUltGpBha1mtdaM744QN0WG8eePZ0d3B7e7Sz8v9JGcrVjMCB8ue38JYduHFZVIxqoMrmC9QQt7QMywh0X+C50DZEt4x4N6M2jxxAowybmr+QU6jgJpVtZgJYORfo8/2TqqKk4Bo5t/0SuwAozcK7fpz9a9aHktpuSCl1GHJ4gBCvs7qXkZ8Mor4dId24bPwjLIjEwSDbZWALnxgjQk8PkS9zSuX179JMR7WBO9EcXDSkLdy6M50d7MouqJ++T1gQ09ygLQ3goNz9bi7Gjg2QEsnhx2XsFatyGnIAG4EsQHsav79NXbmCmZu2Iac5Sq4fLdOFHG2A5K1qV3xpmiKEqqo3b1Wu0OGszcBkXNAQki0WrW9wkK98OW9tPJsXTk+QW/A9D6Gv8xWiLZimo58nD8ShR5U7liB/6ECFIUXnecBOtviegCu8nhoQt7/TtiN+vHdj7q6aR/6Ec+O0cFr/TvUhw=
+      X-Amz-Content-Sha256:
+      - 64bd44fc5d833117666ce79c1a4e1f40249c9195fd323def2ccbaf66143a4d29
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMN75MQZQWS/20200806/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=91ba85f8d7bad9d00fb0028664855411b4b85b22a6bfa8f0bc2ebe195c9d97ed
+      Content-Length:
+      - '123'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - F+ffEEHD2Mad6qLq5FZIk4TBySy1mThZDXeZ2hrBc7F7VRNaT84LNvi4JPZXyaK+W4E27uv92wU=
+      X-Amz-Request-Id:
+      - D7CBFA55DB5FCCC0
+      Date:
+      - Thu, 06 Aug 2020 00:15:18 GMT
+      Etag:
+      - '"0cfd02bf8e82540cc3cb41659421c340"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 06 Aug 2020 00:15:17 GMT
 recorded_with: VCR 6.0.0

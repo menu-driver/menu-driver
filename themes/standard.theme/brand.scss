@@ -1,0 +1,40 @@
+/* Anything that will be toggled for dark mode needs its own name. */
+$brand-color: #000033;
+$brand-background-color: #e1e1e1;
+$menu-color: #000033;
+$menu-background-color: #e6e6e6;
+$border-color: #CCC;
+
+body {
+  --brand-color: #{$brand-color};
+  --brand-background-color: #{$brand-background-color};
+  --menu-color: #{$menu-color};
+  --menu-background-color: #{$menu-background-color};
+  --border-color: #{$border-color};
+  color: var(--brand-color);
+  background-color: var(--brand-background-color);
+}
+.menu-driver {
+  .menu {
+    color: var(--menu-color);
+    background-color: var(--menu-background-color);
+    border-color: var(--border-color);
+  }
+
+  nav {
+    background-color: var(--brand-background-color);
+    border-color: var(--border-color);
+  
+    ul {
+      li {
+        a.current {
+          background-color: var(--border-color);
+        }
+        a, a:visited, a:hover, a:active {
+          color: inherit;
+        }
+      }
+    }
+  
+  }
+}

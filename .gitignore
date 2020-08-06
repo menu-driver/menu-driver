@@ -7,5 +7,6 @@ coverage/**/*
 .bundle/**/*
 samconfig.toml
 themes/**/*/
+!themes/standard.theme/
 !themes/default.theme/
 .gitmodules

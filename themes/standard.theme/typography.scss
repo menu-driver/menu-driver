@@ -1,0 +1,58 @@
+html {
+  font-size: 20px;
+}
+
+$base-font-size: 1rem;
+$base-line-height: 1.4 * $base-font-size;
+
+$border-width: 0.5rem;
+
+$type-settings: (
+  -1: (
+    font-size: 0.75rem,
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: 1rem,
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: 1.333rem,
+    line-height: $base-line-height * 2
+  ),
+  2: (
+    font-size: 1.778rem,
+    line-height: $base-line-height * 2
+  )
+);
+
+.menu-driver {
+  @extend %sans-serif-font;
+
+  header {
+    @extend %serif-font;
+  }
+
+  .menu > .name {
+    @extend %serif-font;
+  }
+  .menu {
+    .section > .name {
+        @extend %serif-font;
+    }
+    .section {
+      .item {
+        .name {
+          @extend %serif-font;
+        }
+        .description {
+          @extend %sans-serif-font;
+        }
+      }
+    }
+  }
+
+  nav {
+    @extend %serif-font;
+  }
+}

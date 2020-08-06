@@ -1,0 +1,66 @@
+/* Anything that will be toggled for dark mode needs its own name. */
+$menu-color-light: black;
+$menu-secondary-color-light: #666;
+$menu-background-color-light: white;
+$border-color-light: #b09044;
+
+body {
+  /* Do not toggle these colors for dark mode. */
+  /* Dark mode adjusts elements more narrowly. */
+  color: $brand-color;
+  background-color: $brand-background-color;
+}
+nav {
+  background-color: $brand-background-color;
+
+  ul {
+    li {
+      a.current {
+        background-color: $border-color;
+      }
+    }
+  }
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: light) {
+  
+  body {
+    --menu-color-light: #{$menu-color-light};
+    --menu-secondary-color-light: #{$menu-secondary-color-light};
+    --menu-background-color-light: #{$menu-background-color-light};
+    --border-color-light: #{$border-color-light};
+  }
+
+  .menu-driver {
+    .menu {
+      color: var(--menu-color-light);
+      background-color: var(--menu-background-color-light);
+      border-color: var(--border-color-light);
+      .name {
+        color: var(--menu-color-light);
+        border-bottom-color: var(--border-color-light);
+      }
+      .section {
+        .name {
+          color: var(--menu-color-light);
+        }
+        .description {
+          color: var(--menu-secondary-color-light);
+        }
+      }
+    }
+  }
+  nav {
+    border-color: var(--border-color-light);
+
+    ul {
+      li {
+        a.current {
+          background-color: var(--border-color-light);
+        }
+      }
+    }
+  
+  }
+}
