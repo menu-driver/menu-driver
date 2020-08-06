@@ -230,7 +230,7 @@ body {
     align-items: flex-start;
 
     nav {
-      min-width: 30%;
+      min-width: 10rem;
       top: 0;
       height: 100%;
       white-space: unset;
@@ -245,7 +245,7 @@ body {
       ul {
         li {
           display: list-item;
-          @include type-setting(-1);
+          @include type-setting(0);
           padding-left: 0;
           padding-bottom: $base-line-height / 2;
         }

@@ -9,7 +9,7 @@ $border-width: 0.5rem;
 
 $type-settings: (
   -1: (
-    font-size: 0.75rem,
+    font-size: 0.8rem,
     line-height: $base-line-height
   ),
   0: (
@@ -17,11 +17,11 @@ $type-settings: (
     line-height: $base-line-height
   ),
   1: (
-    font-size: 1.333rem,
+    font-size: 1.3rem,
     line-height: $base-line-height * 2
   ),
   2: (
-    font-size: 1.778rem,
+    font-size: 1.6rem,
     line-height: $base-line-height * 2
   )
 );
