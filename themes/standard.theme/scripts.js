@@ -37,19 +37,18 @@ function setCurrentNav(setScrollPosition=false) {
       }
 
       if(setScrollPosition) {
-        console.log("SCROLLING!");
         let nav = link.parentNode.parentNode.parentNode;
-        console.log("Setting to: " + (link.parentNode.offsetLeft - nav.offsetLeft));
+        console.log("Scrolling to: " + (link.parentNode.offsetLeft - nav.offsetLeft- 28));
         if(window.innerWidth >= 768) {
           nav.scrollTo({
-            top: link.parentNode.offsetTop - nav.offsetTop,
+            top: link.parentNode.offsetTop - nav.offsetTop - 28,
             left: 0,
             behavior: 'smooth'
           });
         } else {
           nav.scrollTo({
             top: 0,
-            left: link.parentNode.offsetLeft - nav.offsetLeft,
+            left: link.parentNode.offsetLeft - nav.offsetLeft - 28,
             behavior: 'smooth'
           });
         }

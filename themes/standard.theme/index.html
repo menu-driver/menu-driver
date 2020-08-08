@@ -34,9 +34,11 @@
       </div>
       <% end %>
 
-      <%= ERB.new(Theme.new(args[:theme]).file('header.html'), nil, nil, '_sub02').result(binding) %>
+      <%= ERB.new(Theme.new(args[:theme]).file('header.html'), nil, nil, 'header').result(binding) %>
       
       <div class="menu-content">
+
+        <%= ERB.new(Theme.new(args[:theme]).file('hamburger.html'), nil, nil, 'hamburger').result(binding) %>
   
         <nav class="menu-nav">
           <ul class="menus">
