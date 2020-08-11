@@ -1,0 +1,13 @@
+container { padding-left: 2rem; padding-right: 2rem; }
+
+html { height: 100%; }
+
+body { background-color: #e1e1e1; }
+
+body .navbar { background-color: #000033; }
+
+body main { height: 100%; background-color: #fAfAfA; padding: 1rem 0 2rem 0; }
+
+body main .jumbotron { background-color: #e6e6e6; margin: 1rem 0 0 0; }
+
+/*# sourceMappingURL=styles.css.map */

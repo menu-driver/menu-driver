@@ -10,3 +10,8 @@ themes/**/*/
 !themes/standard.theme/
 !themes/default.theme/
 .gitmodules
+
+docs-src/.sass-cache
+docs-src/.jekyll-cache
+docs-src/.jekyll-metadata
+docs-src/vendor

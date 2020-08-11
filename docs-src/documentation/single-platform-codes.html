@@ -1,0 +1,92 @@
+---
+title: Single Platform Codes
+description: Special codes you can embed in Single Platform data to unlock special Menu Driver features.
+layout: standard
+---
+
+<h1>Single Platform Codes</h1>
+
+<p class="lead">
+You can embed special text codes in your Single Platform data to unlock special features in your Menu Driver menus.
+</p>
+
+<h2>Categories</h2>
+
+<p>
+Single Platform's menu data is structured with many menus per location, many sections per menu, many items per section, and many price choices per item.
+</p>
+
+<p>
+You can organize the menus for a location into categories by adding the category to the name of the menu in square brackets: "<code>Menu Name [Food]</code>".  For example, consider these menus:
+</p>
+
+<ul>
+  <li>Appetizers</li>
+  <li>Salads</li>
+  <li>Entrees</li>
+  <li>Deserts</li>
+  <li>White Wines</li>
+  <li>Red Wines</li>
+  <li>Champagnes</li>
+  <li>Spirits</li>
+</ul>
+
+<p>
+You can group those menus into "Food" and "Drinks" by changing the menu names to:
+</p>
+
+<ul>
+  <li>Appetizers [Food]</li>
+  <li>Salads [Food]</li>
+  <li>Entrees [Food]</li>
+  <li>Deserts [Food]</li>
+  <li>White Wines [Drinks]</li>
+  <li>Red Wines [Drinks]</li>
+  <li>Champagnes [Drinks]</li>
+  <li>Spirits [Drinks]</li>
+</ul>
+
+<p>
+Then you will be able to use the <code>categories</code> variable in your menu templates:
+</p>
+
+<pre><code>{% escape %}  <ul class="categories">
+  <% for category in categories %>
+    <li>
+      category: <%= category.name %>
+      <ul>
+      <% for menu in menus %>
+        <li>
+          menu: <%= menu.name %>
+        </li>
+      <% end %>
+      </ul>
+    </li>
+  <% end %>
+  </ul>
+{% endescape %}</code></pre>
+
+<h2>Languages</h2>
+
+<p>
+Indicate the language of a restaurant menu in Single Platform by indicating the ISO 639-1 language code for the language in curly brackets.  For example, "<code>Menu Name {en}</code>" for English, or "<code>Menu Name {ar}</code>" for Arabic.
+</p>
+
+<p>
+You can combine the codes for categories and languages:
+</p>
+
+<ul>
+  <li>Appetizers [Food] {en}</li>
+  <li>Aperitivos [Comida] {es}</li>
+  <li>Entrees [Food] {en}</li>
+  <li>Entradas [Comida] {es}</li>
+  <li>Red Wines [Drink] {en}</li>
+  <li>Vinos Tintos [Bebidas] {es}</li>
+  <li>White Wines [Drink] {en}</li>
+  <li>Vinos Blancos [Bebidas] {es}</li>
+</ul>
+
+<p>
+Menu Driver will group the categories under a <code>languages</code> varible for your menu templates, so that you can display only the categories appropriate to the current language.
+</p>

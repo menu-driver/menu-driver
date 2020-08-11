@@ -1,0 +1,33 @@
+---
+---
+
+$brand-color: #000033;
+$brand-background-color: #e1e1e1;
+$site-background-color: #fAfAfA;
+$menu-color: #000033;
+$menu-background-color: #e6e6e6;
+$border-color: #CCC;
+
+container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+html {
+  height: 100%;
+}
+body {
+  background-color: $brand-background-color;
+  .navbar {
+    background-color: $brand-color;
+  }
+  main {
+    height: 100%;
+    background-color: $site-background-color;
+    padding: 1rem 0 2rem 0;
+    .jumbotron {
+      background-color: $menu-background-color;
+      margin: 1rem 0 0 0;
+    }
+  }
+}

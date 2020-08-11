@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Single Platform Codes</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<meta name="theme-color" content="#563d7c">
+
+<link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container">
+  <a class="navbar-brand" href="..//index.html">Menu Driver</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usage</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Quick start</a>
+          <a class="dropdown-item" href="#">Command line</a>
+          <a class="dropdown-item" href="#">AWS Lambda</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Standard Theme</a>
+          <a class="dropdown-item" href="#">Theme inheritance</a>
+          <a class="dropdown-item" href="../documentation/single-platform-codes.html">Single Platform Codes</a>
+        </div>
+      </li>
+    </ul>
+    <!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    -->
+  </div>
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+  <h1>Single Platform Codes</h1>
+
+<p class="lead">
+You can embed special text codes in your Single Platform data to unlock special features in your Menu Driver menus.
+</p>
+
+<h2>Categories</h2>
+
+<p>
+Single Platform's menu data is structured with many menus per location, many sections per menu, many items per section, and many price choices per item.
+</p>
+
+<p>
+You can organize the menus for a location into categories by adding the category to the name of the menu in square brackets: "<code>Menu Name [Food]</code>".  For example, consider these menus:
+</p>
+
+<ul>
+  <li>Appetizers</li>
+  <li>Salads</li>
+  <li>Entrees</li>
+  <li>Deserts</li>
+  <li>White Wines</li>
+  <li>Red Wines</li>
+  <li>Champagnes</li>
+  <li>Spirits</li>
+</ul>
+
+<p>
+You can group those menus into "Food" and "Drinks" by changing the menu names to:
+</p>
+
+<ul>
+  <li>Appetizers [Food]</li>
+  <li>Salads [Food]</li>
+  <li>Entrees [Food]</li>
+  <li>Deserts [Food]</li>
+  <li>White Wines [Drinks]</li>
+  <li>Red Wines [Drinks]</li>
+  <li>Champagnes [Drinks]</li>
+  <li>Spirits [Drinks]</li>
+</ul>
+
+<p>
+Then you will be able to use the <code>categories</code> variable in your menu templates:
+</p>
+
+<pre><code>  &lt;ul class="categories"&gt;
+  &lt;% for category in categories %&gt;
+    &lt;li&gt;
+      category: &lt;%= category.name %&gt;
+      &lt;ul&gt;
+      &lt;% for menu in menus %&gt;
+        &lt;li&gt;
+          menu: &lt;%= menu.name %&gt;
+        &lt;/li&gt;
+      &lt;% end %&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;% end %&gt;
+  &lt;/ul&gt;
+</code></pre>
+
+<h2>Languages</h2>
+
+<p>
+Indicate the language of a restaurant menu in Single Platform by indicating the ISO 639-1 language code for the language in curly brackets.  For example, "<code>Menu Name {en}</code>" for English, or "<code>Menu Name {ar}</code>" for Arabic.
+</p>
+
+<p>
+You can combine the codes for categories and languages:
+</p>
+
+<ul>
+  <li>Appetizers [Food] {en}</li>
+  <li>Aperitivos [Comida] {es}</li>
+  <li>Entrees [Food] {en}</li>
+  <li>Entradas [Comida] {es}</li>
+  <li>Red Wines [Drink] {en}</li>
+  <li>Vinos Tintos [Bebidas] {es}</li>
+  <li>White Wines [Drink] {en}</li>
+  <li>Vinos Blancos [Bebidas] {es}</li>
+</ul>
+
+<p>
+Menu Driver will group the categories under a <code>languages</code> varible for your menu templates, so that you can display only the categories appropriate to the current language.
+</p>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

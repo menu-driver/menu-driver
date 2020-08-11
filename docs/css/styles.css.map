@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "styles.css",
+	"sources": [
+		"styles.scss"
+	],
+	"sourcesContent": [
+		"$brand-color: #000033;\n$brand-background-color: #e1e1e1;\n$site-background-color: #fAfAfA;\n$menu-color: #000033;\n$menu-background-color: #e6e6e6;\n$border-color: #CCC;\n\ncontainer {\n  padding-left: 2rem;\n  padding-right: 2rem;\n}\n\nhtml {\n  height: 100%;\n}\nbody {\n  background-color: $brand-background-color;\n  .navbar {\n    background-color: $brand-color;\n  }\n  main {\n    height: 100%;\n    background-color: $site-background-color;\n    padding: 1rem 0 2rem 0;\n    .jumbotron {\n      background-color: $menu-background-color;\n      margin: 1rem 0 0 0;\n    }\n  }\n}"
+	],
+	"names": [],
+	"mappings": "AAOA,AAAA,SAAS,CAAC,EACR,YAAY,EAAE,IAAI,EAClB,aAAa,EAAE,IAAI,GACpB;;AAED,AAAA,IAAI,CAAC,EACH,MAAM,EAAE,IAAI,GACb;;AACD,AAAA,IAAI,CAAC,EACH,gBAAgB,EAfO,OAAO,GA4B/B;;AAdD,AAEE,IAFE,CAEF,OAAO,CAAC,EACN,gBAAgB,EAlBN,OAAO,GAmBlB;;AAJH,AAKE,IALE,CAKF,IAAI,CAAC,EACH,MAAM,EAAE,IAAI,EACZ,gBAAgB,EApBI,OAAO,EAqB3B,OAAO,EAAE,aAAa,GAKvB;;AAbH,AASI,IATA,CAKF,IAAI,CAIF,UAAU,CAAC,EACT,gBAAgB,EArBE,OAAO,EAsBzB,MAAM,EAAE,UAAU,GACnB"
+}
