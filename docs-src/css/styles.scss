@@ -8,6 +8,34 @@ $menu-color: #000033;
 $menu-background-color: #e6e6e6;
 $border-color: #CCC;
 
+/* latin */
+@font-face {
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Karla'), local('Karla-Regular'), url(https://fonts.gstatic.com/s/karla/v13/qkBbXvYC6trAT7RVLtyU5rZP.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Spectral';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Spectral Bold'), local('Spectral-Bold'), url(https://fonts.gstatic.com/s/spectral/v6/rnCs-xNNww_2s0amA9uCt23BafaPWnII.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+%serif-font {
+  font-family: 'Spectral', serif;
+  font-weight: 700;
+}
+%sans-serif-font {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
 container {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -15,11 +43,13 @@ container {
 
 html {
   height: 100%;
+  @extend %sans-serif-font;
 }
 body {
   background-color: $brand-background-color;
   .navbar {
     background-color: $brand-color;
+    @extend %serif-font;
   }
   main {
     height: 100%;
@@ -29,5 +59,8 @@ body {
       background-color: $menu-background-color;
       margin: 1rem 0 0 0;
     }
+  }
+  h1, h2, h3, h4, h5 {
+    @extend %serif-font;
   }
 }
