@@ -9029,4 +9029,62 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Thu, 06 Aug 2020 00:15:18 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/hamburger.html
+    body:
+      encoding: UTF-8
+      base64_string: 'H4sIAPHyLl8AAwMAAAAAAAAAAAA=
+
+'
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-linux aws-sdk-s3/1.75.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - jpRmbGVebVT2JaGQ9XtZQg==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200808T184609Z
+      X-Amz-Security-Token:
+      - IQoJb3JpZ2luX2VjEEMaCXVzLWVhc3QtMSJHMEUCICAZa3KNNqvIQ7ZSW4OvueWQ/PtekdO/Gp2Fq1qX4O2mAiEA36/YdDMPmo+yzfgfMkT9w+kGmhTHvhsvb5Zb50hsnbsqrAMIHBAAGgw0MjA4MzY0Mjg1NzEiDGvBm1hC5WUmdQkXUSqJA0BvlRMdbRIq7d63KFs53NhSv0YUw23pqpfMszIAnJccC96lM1CFWzLh62mqYQ7kV9SUzXusJXbQELwXueycWlwv+ZqzHJFj/NaexOhjxlEjS9fHwoY3mZccuviKAVUq5ajvWOqDC6LCcYenLJTdx9z09qKcc15epl/bg41fhrIkxJ6cXxLnOhV0q6s0fVNsgNanFV2YMG9SkZr7GmmNz6AJ36vIvDjO1JDPYrRAfYIJwOPIrEeUY2bTYMPMGsp1nPzQNKaanMa/UOP9ceTOdxPt2mwj4JjYkiihQ/vjGJTlLX1VhuqeJTNQH2NUGVGhwXt2uEy5U/u80NqAOpYiLshgnKTW3jSyvbzuOlrsO3gQk8tbuNTH1ku3TcEdl7vTYtJqlCRdPlO232ktr7F2ejI4TBJK2Mz20XnBc8X0JmqHltVbRGFKGHTb06Ig5Ud12he+WSDkAw+UqcO6nZgcAq/2Myw2yn5F8wgDDf63Hts2e3aWZg5JUits5qmOPB+VDFG3Elw4236q7zD+yrv5BTqOApjMuG8R5ZsbEkho5dEtaB5Jlxzto/qgeksXWdXqKJTiic+IcKOTYTKZkdX6RrpQTie4dhmOBf0a3cSnFVcJl6jY0OFeblvfbF7N8jHG72xv2gHuJ+KF7M3FuR7Zq6fxw6LpBzpPlMMlpXBhdGls6nGRlIz04+mywBw67ScEtsQpYzV7gTJ2FGMOUMgPS/kz5QIHyWSA+nrshIAnEDv+xr1FHTLBlUGLBlIiQ5UnB7x679zZA7Rgot4JEEwHPB6WD4+3F0WJk2asA8Pr6DnXUg1YrKmHgk7yh9ma2cbCMiv1xYCWxjBgs8gDNuR6/CdHrtZXUekV3W7YmhAunfQhEun8OO0VA9Jt2d23zVs6Eg==
+      X-Amz-Content-Sha256:
+      - 2c1b0cd16a489a93f49d25cde8c4ccf4b3257e8324462b92c6d96d1b56dfd40a
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=ASIAWD66OJMNV5SXZMF5/20200808/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-security-token,
+        Signature=54818a21e1fe0d17d241876ec3a9fba977336e0ee7374693ef367b578bcb1022
+      Content-Length:
+      - '20'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - "+h59qx6DTR+R25b6Py2pBmQ2tj0mS7Nc3KQuIEAH7pDfCk6enYKcntanNRnyFBoU4mSi0S+Cqe0="
+      X-Amz-Request-Id:
+      - DE9DF02D70AB0C6E
+      Date:
+      - Sat, 08 Aug 2020 18:46:10 GMT
+      Etag:
+      - '"8e94666c655e6d54f625a190f57b5942"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 08 Aug 2020 18:46:09 GMT
 recorded_with: VCR 6.0.0
