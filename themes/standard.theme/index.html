@@ -26,7 +26,7 @@
 
     <div class="menu-driver">
 
-      <% if args[:'vertical-grid'] %> 
+      <% if args[:'vertical_grid'] %> 
       <div class="baseline-grid">
         <% 200.times do %>
           <div class="guide"></div>
@@ -82,7 +82,7 @@
                           <% unless choice.name.nil? || choice.name.strip.empty? -%>
                             <div class="name"><%= choice.name %></div>
                           <% end %>
-                          <div class="price"><%- if(args[:'high-prices']) -%> 
+                          <div class="price"><%- if(args[:'high_prices']) -%> 
   <%= choice.prices['min'] * 2 -%>
                             <%- else -%>
   <%= choice.prices['min'] -%>

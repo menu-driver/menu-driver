@@ -15,6 +15,10 @@ class SinglePlatform
 
     response = HTTParty.get(api_url)
     
+    unless response.code.eql? 200
+      raise Error.new(response.body)
+    end
+    
     # $logger.debug "Single Platform API response: #{response.ai}"
     # $logger.debug "Single Platform raw data: #{response.body}"
 

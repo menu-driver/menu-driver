@@ -102,6 +102,12 @@ configuration information stored in your ````samconfig.toml```` without using an
 
 Give it the location in the brackets as a Rake argument.
 
+### Use the CLI
+
+For more flexibility, the command-line interface `menudriver` provides parameters that are connected to features in the Standard Theme.
+
+    bundle exec exe/menudriver generate hakkasan-mayfair --theme=hakkasan.theme --vertical-grid
+
 #### Invoke the Lambda function through SAM Local
 
 Invoke individual Lambda functions using the canned Lambda events in the specs:
@@ -134,6 +140,6 @@ To run the tests:
 
 To run an individual spec:
 
-    rspec spec/single_platform_spec.rb -e "gets JSON through an HTTP request" -f d
+    rspec spec/single_platform_spec.rb -e "gets JSON through an HTTP request"
 
 That runs the same `MenusDataFunction` that's invoked in above examples through SAM Local, both triggered as a function with an event passed to it through a JSON file, and also accessed through HTTP.  Running the spec through RSpec calls the same code for getting the same menu data for the same location, but it also checks the result.  The actual HTTP call to the actual API is mocked through VCR, so it won't really call the Single Platform API.
