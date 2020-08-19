@@ -5,7 +5,7 @@ require "menudriver/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "menudriver"
-  spec.version       = Menudriver::VERSION
+  spec.version       = MenuDriver::VERSION
   spec.authors       = ["Ryan Alyn Porter"]
   spec.email         = ["rap@endymion.com"]
 

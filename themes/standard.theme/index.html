@@ -42,8 +42,8 @@
   
         <nav class="menu-nav">
           <ul class="menus">
-          <% for menu in menus %>
-            <li>
+          <% for menu in data.menus %>
+            <li <% if menu.language.eql?('ar') %>class="rtl"<% end %>>
               <a href="#m<%= menu.id %>" data-menu="menu-<%= menu.id %>"><%= menu.name %></a>
             </li>
           <% end %>
@@ -51,8 +51,13 @@
         </nav>
   
         <ul class="menus">
-        <% for menu in menus %>
-          <li class="menu" id="menu-<%= menu.id %>">
+        <% for menu in data.menus %>
+          <li id="menu-<%= menu.id %>"
+            <% if menu.language.eql?('ar') %>
+             class="menu rtl" dir="rtl"
+            <% else %>
+              class="menu"
+            <% end %> >
             <a class="anchor" id="m<%= menu.id %>"></a>
             <div class="name"><%= menu.name %></div>
             <div class="description"><%= menu.description %></div>

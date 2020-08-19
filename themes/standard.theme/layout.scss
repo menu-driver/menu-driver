@@ -120,6 +120,22 @@ body {
       }
     }
   }
+  .menu.rtl {
+    text-align: right;
+
+    .section {
+      .item {
+        .about {
+          padding-right: 0;
+          padding-left: $base-line-height;
+          .description {
+            margin-right: 0;
+            margin-left: $base-line-height;
+          }
+        }
+      }
+    }
+  }
   
   .baseline-grid {
     position: absolute;
@@ -176,7 +192,7 @@ body {
       flex-wrap: nowrap;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: 0 ($base-line-height * 2) 0 0;
       
       li {
         display: inline;
@@ -185,6 +201,9 @@ body {
         a:link {
           text-decoration: none;
         }
+      }
+      li.rtl {
+        text-align: right;
       }
     }
   }
@@ -221,6 +240,16 @@ body {
     }
     .item:nth-child(odd) {
       padding-right: 1.5 * $base-line-height;
+    }
+  }
+  .menu.rtl .items {
+    .item:nth-child(even) {
+      padding-left: 0;
+      padding-right: 1.5 * $base-line-height;
+    }
+    .item:nth-child(odd) {
+      padding-right: 0;
+      padding-left: 1.5 * $base-line-height;
     }
   }
 }
