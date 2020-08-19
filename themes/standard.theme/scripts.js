@@ -112,15 +112,19 @@ fullheight(elements);
    preferred language is Arabic (a right-to-left language)
    and if the viewport is narrow enough to be showing the
    horizontally-scrolling navigation. */
-if (/^en\b/.test(navigator.language)) {
+if (/^ar\b/.test(navigator.language)) {
   menusArray = Array.prototype.slice.call(mainSections)
   let firstRTLMenu = menusArray.find(element => element.classList.contains('rtl'));
   console.log('first RTL menu: ' + firstRTLMenu)
   if(typeof firstRTLMenu != 'undefined') {
     console.log('Scrolling to first RTL menu at: ' + firstRTLMenu.offsetTop)
     let nav = document.querySelectorAll("nav")[0]
+    let offset = 84;
+    if(window.innerWidth >= 768) {
+      offset= 56
+    }
     window.scrollTo({
-      top: firstRTLMenu.offsetTop + 28,
+      top: firstRTLMenu.offsetTop + offset,
       left: 0
     });
   }
