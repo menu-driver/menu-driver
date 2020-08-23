@@ -1,11 +1,16 @@
-let mainNavLinks = document.querySelectorAll("nav ul li a");
-let mainSections = document.querySelectorAll(".menus .menu");
+let baseLineHeight = 28;
 
 let lastId;
 let cur = [];
 let navScrollTimeout;
 
 function setCurrentNav(setScrollPosition=false) {
+  let mainNavLinks = document.querySelectorAll("nav.menu-nav ul li a");
+  
+  // Exclude any nav links that are hidden.
+  mainNavLinks = Array.from(mainNavLinks).
+    filter(link => link.parentElement.style.display != "none")
+
   console.log("setCurrentNav: " + setScrollPosition);
   
   let fromTop = window.scrollY;
@@ -21,11 +26,11 @@ function setCurrentNav(setScrollPosition=false) {
     if(typeof mainNavLinks[i+i] != 'undefined') {
       let nextMenu = document.querySelector(
         "#" + mainNavLinks[i+1].getAttribute("data-menu"));
-      positionOfBottomOfMenu = nextMenu.offsetTop;
+      positionOfBottomOfMenu = nextMenu.offsetTop - 4 * baseLineHeight;
     }
 
     if (
-      menu.offsetTop <= fromTop &&
+      (menu.offsetTop - 4 * baseLineHeight) <= fromTop &&
       positionOfBottomOfMenu > fromTop
     ) {
 
@@ -42,7 +47,7 @@ function setCurrentNav(setScrollPosition=false) {
         navScrollTimeout =
           setTimeout(() => {
               setCurrentNav(true);
-            }, 500);
+            }, 1000);
       }
 
       if(setScrollPosition) {
@@ -102,7 +107,8 @@ function fullheight(elements) {
 
 /* Do it when. */
 window.onresize = function(event){
- fullheight(elements);
+  fullheight(elements);
+  reorientCategories();
 }
 
 /* Do it now. */
@@ -113,6 +119,7 @@ fullheight(elements);
    and if the viewport is narrow enough to be showing the
    horizontally-scrolling navigation. */
 if (/^ar\b/.test(navigator.language)) {
+  let mainSections = document.querySelectorAll(".menus .menu");
   menusArray = Array.prototype.slice.call(mainSections)
   let firstRTLMenu = menusArray.find(element => element.classList.contains('rtl'));
   console.log('first RTL menu: ' + firstRTLMenu)
@@ -129,3 +136,56 @@ if (/^ar\b/.test(navigator.language)) {
     });
   }
 }
+
+// Categories.
+let elementsArray = document.querySelectorAll("nav.category-nav ul li");
+elementsArray.forEach(function(link) {
+  link.addEventListener('click', function() {
+    showCurrentCategory(link.getAttribute("data-category"));
+    
+    // Remove 'current' from classes of other category links.
+    document.querySelectorAll("nav.category-nav ul li").
+      forEach(function(link) {
+        link.classList.remove("current")
+      });
+    link.classList.add("current");
+  });
+});
+
+function showCurrentCategory(category) {
+  let listItems =
+    Array.from(document.querySelectorAll("nav.menu-nav .menus li")).concat(
+    Array.from(document.querySelectorAll(".menus .menu")));
+  listItems.forEach(function(menu) {
+    console.log('category: ' + menu.getAttribute("data-category") + ', innerText: ' + category)
+    if(menu.getAttribute("data-category") == category ||
+       typeof(category) == 'undefined') {
+      menu.classList.remove("hidden-category");
+    } else {
+      menu.classList.add("hidden-category");
+    }
+  });
+  setCurrentNav();  
+}
+
+function reorientCategories() {
+  let categoryNav = document.getElementById("category-nav")
+  let categoryNavStyles = getComputedStyle(categoryNav, 'display');
+
+  // If the category nav is not visible then show all menus.
+  if(categoryNavStyles.getPropertyValue('display') == 'none') {
+    // Show all categories.
+    showCurrentCategory()
+
+  // If it is visible then make sure that the menus and menu navigation items
+  // that are showing reflect the current category selection.
+  } else {
+    // If there is a 'current' category nav then show / hide the appropriate menus.
+    let currentNavs = document.querySelectorAll("nav.category-nav ul li.current");
+    // (There should only be one.)
+    currentNavs.forEach(function(nav){
+      showCurrentCategory(nav.getAttribute("data-category"))
+    })
+  }
+}
+reorientCategories();

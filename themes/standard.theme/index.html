@@ -39,11 +39,24 @@
       <div class="menu-content">
 
         <%= ERB.new(Theme.new(args[:theme]).file('hamburger.html'), nil, nil, 'hamburger').result(binding) %>
-  
+
+        <% if data.categories.size > 1 %>
+        <nav id="category-nav" class="category-nav">
+          <ul class="categories">
+          <% data.categories.each_with_index do |category, index| %>
+            <li data-category="<%= category %>"
+              <% if index.zero? %>class="current"<% end %>
+              ><a href="#"><%= category %></a></li>
+          <% end %>
+          </ul>
+        </nav>
+        <% end %>
+
         <nav class="menu-nav">
           <ul class="menus">
           <% for menu in data.menus %>
-            <li <% if menu.language.eql?('ar') %>class="rtl"<% end %>>
+            <li data-category="<%= menu[:category] %>"
+              <% if menu.language.eql?('ar') %>class="rtl"<% end %>>
               <a href="#m<%= menu.id %>" data-menu="menu-<%= menu.id %>"><%= menu.name %></a>
             </li>
           <% end %>
@@ -52,7 +65,7 @@
   
         <ul class="menus">
         <% for menu in data.menus %>
-          <li id="menu-<%= menu.id %>"
+          <li id="menu-<%= menu.id %>" data-category="<%= menu[:category] %>"
             <% if menu.language.eql?('ar') %>
              class="menu rtl" dir="rtl"
             <% else %>

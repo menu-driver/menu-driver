@@ -136,7 +136,10 @@ body {
       }
     }
   }
-  
+  .menu.hidden-category {
+    display: none;
+  }
+
   .baseline-grid {
     position: absolute;
     top: 0;
@@ -170,30 +173,20 @@ body {
     }
   }
 
-  nav {
-    white-space: nowrap;
-    display: flex;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    height: $base-line-height * 3;
-    margin-left: -$base-line-height;
-    margin-right: -$base-line-height;
-    border-width: 0;
-    border-style: solid;
+  nav.category-nav, nav.menu-nav {
     padding-top: 1 * $base-line-height;
     padding-bottom: 2 * $base-line-height - $border-width;
-    border-bottom-width: $border-width;
-    @include type-setting(0);
-    overflow: auto;
-    margin-bottom: $base-line-height;
-
+    border-width: 0;
+    border-style: solid;
+    
     ul {
+      min-width: 100%;
+      align-content: space-around;
+      display: flex;
       flex-wrap: nowrap;
       list-style: none;
       margin: 0;
-      padding: 0 ($base-line-height * 2) 0 0;
-      
+
       li {
         display: inline;
         list-style-type: none;
@@ -205,7 +198,45 @@ body {
       li.rtl {
         text-align: right;
       }
+      li.hidden-category {
+        display: none;
+      }
+      li:last-child {
+        padding-right: $base-line-height;
+      }
     }
+    ul::before, ul::after {
+      content: '';  /* Insert pseudo-element */
+      margin: auto; /* Make it push flex items to the center */
+    }
+  }
+  nav.category-nav {
+    // margin-left: -$base-line-height;
+    // margin-right: -$base-line-height;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: space-around;
+    }
+  }
+  nav.menu-nav  {
+    white-space: nowrap;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: $base-line-height * 3;
+    // margin-left: -$base-line-height;
+    // margin-right: -$base-line-height;
+    border-width: 0;
+    border-style: solid;
+    padding-top: 1 * $base-line-height;
+    padding-bottom: 2 * $base-line-height - $border-width;
+    border-bottom-width: $border-width;
+    @include type-setting(0);
+    overflow: auto;
+    margin-bottom: $base-line-height;
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -259,6 +290,14 @@ body {
     display: flex;
     align-items: flex-start;
 
+    nav#category-nav {
+      display: none;
+    }
+    nav.menu-nav {
+      ul {
+        display: block;
+      }
+    }
     nav {
       min-width: 10rem;
       top: 0;
