@@ -124,6 +124,8 @@
 
       </div><!-- .menu-content -->
 
+    <%= ERB.new(Theme.new(args[:theme]).file('cookie-notice.html'), nil, nil, 'cookieNotice').result(binding) %>
+
     </div><!-- .menu-driver -->
 
     <script defer src="scripts.js"></script>

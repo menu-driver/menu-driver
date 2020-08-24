@@ -1,0 +1,20 @@
+<div id="cookie-notice" class="visible">
+  We use cookies to improve your experience on our site and to show you relevant advertising.
+  <a id="cookie-notice-button" href="javascript:void(0);" title="Main Menu" class="toggle">
+      okay
+    </a>
+</div>
+
+<script>
+  document.getElementById('cookie-notice-button').onclick = function() {
+    var cookieNotice = document.getElementById('cookie-notice')
+    if(cookieNotice.classList.contains('visible')) {
+      cookieNotice.classList.remove('visible')
+    } else {
+      cookieNotice.classList.add('visible')
+    }
+}
+  window.addEventListener("click", event => {
+    document.getElementById('cookie-notice').className = "";
+  });
+</script>

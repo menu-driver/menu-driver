@@ -178,6 +178,8 @@ body {
     padding-bottom: 2 * $base-line-height - $border-width;
     border-width: 0;
     border-style: solid;
+    margin-left: -$base-line-height;
+    margin-right: -$base-line-height;
     
     ul {
       min-width: 100%;
@@ -211,8 +213,7 @@ body {
     }
   }
   nav.category-nav {
-    // margin-left: -$base-line-height;
-    // margin-right: -$base-line-height;
+    border-bottom-width: $border-width;
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -227,8 +228,6 @@ body {
     top: 0;
     z-index: 1;
     height: $base-line-height * 3;
-    // margin-left: -$base-line-height;
-    // margin-right: -$base-line-height;
     border-width: 0;
     border-style: solid;
     padding-top: 1 * $base-line-height;
@@ -255,6 +254,44 @@ body {
       position: relative;
       top: - ($base-line-height * 5);
     }
+  }
+
+  #cookie-notice {
+    @extend %sans-serif-font;
+    @include type-setting(-1);
+    text-align: justify;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+    background-color: var(--menu-background-color);
+    margin:0;
+    padding: 0 $base-line-height 0 $base-line-height;
+    opacity: 0;
+    pointer-events: none;
+  
+    border: 0;
+    border-top-color: var(--border-color);
+    border-top-width: var(--border-width);
+    border-top-style: solid;
+  
+    a, a:visited {
+      color: var(--menu-background-color);
+      background-color: var(--menu-color);
+      text-decoration: none;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      float: right;
+      line-height: 1.2 * $base-font-size;
+      margin-top: ($base-line-height - (1.2 * $base-font-size)) / 2;
+    }
+  }
+  #cookie-notice.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -317,6 +354,9 @@ body {
           @include type-setting(0);
           padding-left: 0;
           padding-bottom: $base-line-height / 2;
+        }
+        li:last-child {
+          padding-right: unset;
         }
       }
     }
