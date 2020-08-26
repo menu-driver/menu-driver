@@ -2,13 +2,13 @@ require 'erb'
 
 class SinglePlatform
 
-  def fetch_menus_data_from_api(location_id:, **args)
+  def fetch_location_data_from_api(location_id:, **args)
     
     $logger.info "Fetching menu data from Single Platform API."
     
     # Construct a signed URL and send an HTTP request to the API.
     api_url = build_signed_url(
-      uri_path:"/locations/#{location_id}/menus/",
+      uri_path:"/locations/#{location_id}/all/",
       **args)
 
     $logger.debug "Single Platform API URL: #{api_url}"

@@ -33,14 +33,14 @@ Resources:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       CodeUri: ./
-      Handler: lambda.menus_data
+      Handler: lambda.generate_location
       Runtime: ruby2.5
       Policies: AmazonS3FullAccess
       Events:
         Data:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /menus_data
+            Path: /generate_location
             Method: get
 
   MenusBucket:
@@ -71,8 +71,8 @@ Outputs:
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   DataApi:
-    Description: "API Gateway endpoint URL for Prod stage for menus_data function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/menus_data/"
+    Description: "API Gateway endpoint URL for Prod stage for generate_location function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/generate_location/"
   MenusBucket:
     Description: "S3 bucket for storing generated restaurant menu HTML and assets"
     Value: !GetAtt MenusBucket.Arn

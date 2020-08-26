@@ -8,7 +8,7 @@ describe "Lambda handler" do
     it 'requires a location_id parameter' do
 
       response = 
-        menus_data(
+        generate_location(
           event:JSON.parse(
             File.read('spec/lambda_events/no_location_id.json')),
           context:{})
@@ -31,7 +31,7 @@ describe "Lambda handler" do
     it 'redirects to the HTML menu on S3 after generating it' do
 
       response = 
-        menus_data(
+        generate_location(
           event:JSON.parse(
             File.read('spec/lambda_events/location_id_hakkasan_mayfair.json')),
           context:{})
@@ -51,7 +51,7 @@ describe "Lambda handler" do
       expect_any_instance_of(SinglePlatform).
         to receive(:generate_menus_html).with(hash_including(:passthrough => 'SIERRA'))
 
-      menus_data(
+      generate_location(
         event:JSON.parse(
           File.read('spec/lambda_events/location_id_hakkasan_mayfair_with_passthrough_parameter.json')),
         context:{})

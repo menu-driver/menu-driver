@@ -104,7 +104,7 @@ ERB
         
           <div class="from-template">From the template.</div>
 
-          <% for menu in menus %>
+          <% for menu in data.menus %>
             <div class="menu" id="<%= menu.id %>">
               <%= menu.name %>
             </div>

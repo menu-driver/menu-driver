@@ -14,28 +14,12 @@ describe "Single Platform" do
 
     it 'gets JSON through an HTTP request' do
 
-      menus = @single_platform.fetch_menus_data_from_api(
+      data = @single_platform.fetch_location_data_from_api(
         location_id:'hakkasan-mayfair')
 
-      expect(menus.count).to eq 17
-      expect(menus.first.name).to eq 'A la Carte'
-      expect(menus.first.sections.count).to eq 11
-
-    end
-
-    it 'gets JSON for the "short" format' do
-
-      menus = @single_platform.fetch_menus_data_from_api(
-        location_id: 'hakkasan-mayfair',
-        
-        # Added this extra parameter.
-        format:      'short'
-      )
-
-      # The "Short Menu".
-      # http://docs.singleplatform.com/spv3/publisher_api/
-      expect(menus.count).to eq 1
-      expect(menus.first.name).to eq 'A la Carte'
+      expect(data.menus.count).to eq 17
+      expect(data.menus.first.name).to eq 'A la Carte'
+      expect(data.menus.first.sections.count).to eq 11
 
     end
 

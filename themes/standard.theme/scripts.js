@@ -189,3 +189,21 @@ function reorientCategories() {
   }
 }
 reorientCategories();
+
+function showImage(image_id) {
+  console.log("Showing image: " + image_id);
+  
+  let imagePanel = document.getElementById("menu-item-image-panel").innerHTML =
+  
+'<img class="lg-object lg-image" ' +
+'src="https://photos.singleplatform.com/w_640/' + image_id +
+'.jpg" sizes="100vw" srcset="https://photos.singleplatform.com/w_320/' + image_id +
+'.jpg 320w,https://photos.singleplatform.com/w_640/' + image_id +
+'.jpg 640w,https://photos.singleplatform.com/w_1280/' + image_id +
+'.jpg 1280w,https://photos.singleplatform.com/w_1920/' + image_id +
+'.jpg 1920w,https://photos.singleplatform.com/w_2400/' + image_id +
+'.jpg 2400w,https://photos.singleplatform.com/w_4800/' + image_id +
+'.jpg 4800w,">';
+
+  document.getElementById("menu-item-image").classList.add('visible');
+}

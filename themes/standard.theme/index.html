@@ -4,8 +4,8 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><%= location_id %></title>
-    <meta name="description" content="Menus for <%= location_id %>">
+    <title><%= data.location_name %> Menus</title>
+    <meta name="description" content="<%= data.location_name %> Menus">
 
     <style>
 <%= SassC::Engine.new(
@@ -21,6 +21,8 @@
 ).render
 %>
     </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   </head>
   <body>
 
@@ -87,7 +89,18 @@
                 <% for item in section.items -%>
                   <li class="item<%= ' multiple-prices' if item.choices.count > 1 %>" id="item-<%= item.id %>">
                     <div class="about">
-                      <% unless item.name.nil? || item.name.strip.empty? %><div class="name"><%= item.name %></div><% end %>
+
+                      <% unless item.name.nil? || item.name.strip.empty? %>
+                      <div class="name">
+                        <%= item.name %>
+
+                        <% if item.photos.size > 0 %>
+                          <% photo_id = item.photos.first.photo_id %>
+                          <a onclick="showImage('<%= photo_id %>');"><i class="fas fa-camera"></i></a>
+                        <% end %>
+                      </div>
+                      <% end %>
+                      
                       <% unless item.description.nil? || item.description.strip.empty? %>
                         <div class="description"><%= item.description %></div>
                       <% end %>
@@ -126,8 +139,14 @@
 
     <%= ERB.new(Theme.new(args[:theme]).file('cookie-notice.html'), nil, nil, 'cookieNotice').result(binding) %>
 
+    <%= ERB.new(Theme.new(args[:theme]).file('image.html'), nil, nil, 'image').result(binding) %>
+
     </div><!-- .menu-driver -->
 
     <script defer src="scripts.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <%= ERB.new(Theme.new(args[:theme]).file('tracking.html'), nil, nil, 'tracking').result(binding) %>
   </body>
 </html>

@@ -4,7 +4,7 @@ require 'addressable/uri'
 require 'erb'
 
 # AWS Lambda function handler.
-def menus_data(event:, context:)
+def generate_location(event:, context:)
 
   $logger.info 'Starting HTML menu generation...'
 

@@ -4,7 +4,7 @@ module MenuDriver
   
   class Data
     
-    attr_accessor :location, :menus_data
+    attr_accessor :location_data
   
     def initialize params = {}
       params.each { |key, value| send "#{key}=", value }
@@ -17,8 +17,24 @@ module MenuDriver
       detectLanguage
     end
 
+    # Basic data access functions.
+    
+    def location_name
+      location_data.location.name
+    end
+    
+    def menus
+      location_data.menus
+    end
+
+    def categories
+      menus.map{|menu| menu[:category] || 'Other'}.uniq
+    end
+
+    # Utility functions.
+
     def detectCategories
-      self.menus_data.each do |menu|
+      menus.each do |menu|
         if(match = /(^[^\-]+)\-([^\-]+$)/.match(menu.name))
           menu.category = match[1]
           menu.name = match[2]
@@ -29,8 +45,8 @@ module MenuDriver
     def detectLanguage
       client = Aws::Comprehend::Client.new()
       
-      self.menus_data = 
-        self.menus_data.map do |menu|
+      self.location_data.menus = 
+        menus.map do |menu|
         
           # Detect the language.
           menu_text =
@@ -56,14 +72,6 @@ module MenuDriver
             'language' => resp.languages.first.language_code
           })
         end
-    end
-
-    def menus
-      menus_data
-    end
-
-    def categories
-      menus_data.map{|menu| menu[:category] || 'Other'}.uniq
     end
 
   end
