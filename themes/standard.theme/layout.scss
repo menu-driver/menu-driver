@@ -309,14 +309,17 @@ body {
     align-items: center;
     transition: 1s;
     transition-timing-function: ease-in-out;
-    color: var(--menu-color);
-    background-color: var(--menu-background-color);
+    color: var(--menu-background-color);
+    background-color: var(--menu-color);
     #close-icon {
       position: fixed;
       top: 0px;
       padding-top: 1rem;
       right: 0px;
       padding-right: 1rem;
+      z-index: 3;
+  
+      color: var(--menu-background-color);
     }
   }
   #menu-item-image.visible {
