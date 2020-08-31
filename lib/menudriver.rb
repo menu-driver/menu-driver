@@ -20,6 +20,8 @@ module MenuDriver
     desc "generate [location]", "generate restaurant menu HTML data for the location"
     option :theme, :type => :string, :desc => 'name (not path) of theme folder for ERB HTML templates.'
     option :vertical_grid, :type => :boolean, :default => false, :desc => 'Show the vertical rhythym with horizontal lines showing the line height.'
+    option :cache, :type => :boolean, :default => false, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
+    option :data_file, :type => :string, :desc => 'file name for JSON menu data file'
     def generate(location)
       puts ColorizedString[' Generating HTML menus for location: '].black.on_light_blue + ' ' + location
 
