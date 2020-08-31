@@ -7,7 +7,7 @@
     <title><%= data.location_name %> Menus</title>
     <meta name="description" content="<%= data.location_name %> Menus">
 
-    <style>
+    <style class="embed">
 <%= SassC::Engine.new(
   ERB.new(
     File.read('themes/standard.theme/styles.scss'),
@@ -143,9 +143,9 @@
 
     </div><!-- .menu-driver -->
 
-    <script defer src="scripts.js"></script>
+    <script class="embed" defer src="scripts.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link class="embed" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
     <%= ERB.new(Theme.new(args[:theme]).file('tracking.html'), nil, nil, 'tracking').result(binding) %>
   </body>
