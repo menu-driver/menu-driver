@@ -6,13 +6,13 @@ let navScrollTimeout;
 
 function setCurrentNav(setScrollPosition=false) {
   let mainNavLinks = document.querySelectorAll("nav.menu-nav ul li a");
-  
+
   // Exclude any nav links that are hidden.
   mainNavLinks = Array.from(mainNavLinks).
-    filter(link => link.parentElement.style.display != "none")
+    filter(link => !link.parentElement.classList.contains('hidden-category') )
 
   console.log("setCurrentNav: " + setScrollPosition);
-  
+
   let fromTop = window.scrollY;
 
   for (let i = 0; i < mainNavLinks.length; i++) {
@@ -42,7 +42,7 @@ function setCurrentNav(setScrollPosition=false) {
           console.log("clearing");
           clearTimeout(navScrollTimeout);
           navScrollTimeout = null;
-        } 
+        }
         console.log("setting");
         navScrollTimeout =
           setTimeout(() => {
@@ -142,7 +142,7 @@ let elementsArray = document.querySelectorAll("nav.category-nav ul li");
 elementsArray.forEach(function(link) {
   link.addEventListener('click', function() {
     showCurrentCategory(link.getAttribute("data-category"));
-    
+
     // Remove 'current' from classes of other category links.
     document.querySelectorAll("nav.category-nav ul li").
       forEach(function(link) {
@@ -165,7 +165,7 @@ function showCurrentCategory(category) {
       menu.classList.add("hidden-category");
     }
   });
-  setCurrentNav();  
+  setCurrentNav();
 }
 
 function reorientCategories() {
@@ -192,9 +192,9 @@ reorientCategories();
 
 function showImage(image_id) {
   console.log("Showing image: " + image_id);
-  
+
   let imagePanel = document.getElementById("menu-item-image-panel").innerHTML =
-  
+
 '<img class="lg-object lg-image" ' +
 'src="https://photos.singleplatform.com/w_640/' + image_id +
 '.jpg" sizes="100vw" srcset="https://photos.singleplatform.com/w_320/' + image_id +
