@@ -3,7 +3,7 @@ require 'erb'
 class SinglePlatform
 
   def fetch_location_data_from_api(location_id:, **args)
-    
+
     $logger.info "Fetching menu data from Single Platform API."
 
     cache_folder_name = 'cache'
@@ -23,20 +23,20 @@ class SinglePlatform
       end
 
     unless raw_json
-      
+
       # Construct a signed URL and send an HTTP request to the API.
       api_url = build_signed_url(
         uri_path:"/locations/#{location_id}/all/",
         **args)
-  
+
       $logger.debug "Single Platform API URL: #{api_url}"
-  
+
       response = HTTParty.get(api_url)
 
       unless response.code.eql? 200
         raise response.body
       end
-      
+
       raw_json = JSON.parse(response.body).to_dot.data.to_json
 
     end
