@@ -4,7 +4,7 @@ module MenuDriver
 
   class Data
 
-    attr_accessor :location_data
+    attr_accessor :location_data, :category
 
     def initialize params = {}
       params.each { |key, value| send "#{key}=", value }
@@ -28,18 +28,22 @@ module MenuDriver
     end
 
     def menus
-      location_data.menus
+      menus = location_data.menus
+      menus.select{|menu| menu[:category].eql? category } if category
+      menus
     end
 
     def categories
-      menus.map{|menu| menu[:category] || 'Other'}.uniq
+      categories = menus.map{|menu| menu[:category] || 'Other'}.uniq
+      categories = [category] if category
+      categories
     end
 
     # Utility functions.
 
     def detectCategories
       menus.each do |menu|
-        if(match = /(^[^\-]+)\-(.+$)/.match(menu.name))
+        if(match = /(^[^\-]+)\s+\-\s+(.+$)/.match(menu.name))
           menu.category = match[1]
           menu.name = match[2]
         end

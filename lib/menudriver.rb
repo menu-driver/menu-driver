@@ -12,7 +12,7 @@ module MenuDriver
   class Error < StandardError; end
 
   class CLI < Thor
-    
+
     def self.exit_on_failure?
       true
     end
@@ -22,12 +22,13 @@ module MenuDriver
     option :vertical_grid, :type => :boolean, :default => false, :desc => 'Show the vertical rhythym with horizontal lines showing the line height.'
     option :cache, :type => :boolean, :default => false, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
     option :data_file, :type => :string, :desc => 'file name for JSON menu data file'
+    option :category, :type => :string, :default => nil, :desc => 'name of a category for generating a one-category menu'
     def generate(location)
       puts ColorizedString[' Generating HTML menus for location: '].black.on_light_blue + ' ' + location
 
       begin
         SamParameterEnvironment.load
-  
+
         SinglePlatform.new(
           client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
           secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']

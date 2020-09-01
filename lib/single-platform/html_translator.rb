@@ -17,7 +17,9 @@ class SinglePlatform
 
     # Wrap the data in functionality.  For things like
     # detecting the dominant language.
-    data = MenuDriver::Data.new(location_data: raw_data)
+    options = {}
+    options.merge!(category: args[:category]) unless args[:category].empty?
+    data = MenuDriver::Data.new(options.merge(location_data: raw_data))
 
     # Get the HTML (ERB) template.
     template = Theme.new(args[:theme]).file('index.html')
@@ -25,10 +27,10 @@ class SinglePlatform
     # Render output HTML.
     renderer = ERB.new(template, nil, '-')
     html = renderer.result(binding)
-    
+
     # Compress it.
     compressor = HtmlCompressor::Compressor.new
-    compressor.compress(html)    
+    compressor.compress(html)
 
   end
 

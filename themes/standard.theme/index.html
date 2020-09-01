@@ -44,7 +44,7 @@
 
         <%= ERB.new(Theme.new(args[:theme]).file('hamburger.html'), nil, nil, 'hamburger').result(binding) %>
 
-        <% if data.categories.size > 1 %>
+        <% if data.categories.size > 0 %>
         <nav id="category-nav" class="category-nav">
           <ul class="categories">
           <% data.categories.each_with_index do |category, index| %>
