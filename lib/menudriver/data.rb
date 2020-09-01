@@ -1,16 +1,16 @@
 require 'aws-sdk-comprehend'
 
 module MenuDriver
-  
+
   class Data
-    
+
     attr_accessor :location_data
-  
+
     def initialize params = {}
       params.each { |key, value| send "#{key}=", value }
       process
     end
-    
+
     # Transform the menus, to change or add anything necessary.
     def process
       detectCategories
@@ -18,11 +18,15 @@ module MenuDriver
     end
 
     # Basic data access functions.
-    
+
     def location_name
       location_data.location.name
     end
-    
+
+    def location_description
+      location_data.location.description
+    end
+
     def menus
       location_data.menus
     end
@@ -41,13 +45,13 @@ module MenuDriver
         end
       end
     end
- 
+
     def detectLanguage
       client = Aws::Comprehend::Client.new()
-      
-      self.location_data.menus = 
+
+      self.location_data.menus =
         menus.map do |menu|
-        
+
           # Detect the language.
           menu_text =
             [
@@ -67,7 +71,7 @@ module MenuDriver
               end.join(' ')
             ].join(' ')
           resp = client.detect_dominant_language({text: menu_text[0..2500]})
-  
+
           menu.merge({
             'language' => resp.languages.first.language_code
           })

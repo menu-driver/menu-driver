@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><%= data.location_name %> Menus</title>
-    <meta name="description" content="<%= data.location_name %> Menus">
+    <% unless data.location_description.empty? -%>
+    <meta name="description" content="<%= data.location_description %> Menus">
+    <%- end %>
 
     <style class="embed">
 <%= SassC::Engine.new(
@@ -14,7 +16,7 @@
       nil, nil, '_sub01'
   ).result(binding),
   {
-    style: :compressed, 
+    style: :compressed,
     load_paths: Theme.new(args[:theme]).
       folders.map{|folder| File.join(Dir.pwd, folder) }
   }
@@ -28,7 +30,7 @@
 
     <div class="menu-driver">
 
-      <% if args[:'vertical_grid'] %> 
+      <% if args[:'vertical_grid'] %>
       <div class="baseline-grid">
         <% 200.times do %>
           <div class="guide"></div>
@@ -37,7 +39,7 @@
       <% end %>
 
       <%= ERB.new(Theme.new(args[:theme]).file('header.html'), nil, nil, 'header').result(binding) %>
-      
+
       <div class="menu-content">
 
         <%= ERB.new(Theme.new(args[:theme]).file('hamburger.html'), nil, nil, 'hamburger').result(binding) %>
@@ -64,7 +66,7 @@
           <% end %>
           </ul>
         </nav>
-  
+
         <ul class="menus">
         <% for menu in data.menus %>
           <li id="menu-<%= menu.id %>" data-category="<%= menu[:category] %>"
@@ -76,7 +78,7 @@
             <a class="anchor" id="m<%= menu.id %>"></a>
             <div class="name"><%= menu.name %></div>
             <div class="description"><%= menu.description %></div>
-            
+
             <ul class="sections">
             <% for section in menu.sections -%>
               <li class="section" id="section-<%= section.id %>">
@@ -84,7 +86,7 @@
                 <% unless section.description.nil? || section.description.strip.empty? %>
                   <div class="description"><%= section.description %></div>
                 <% end %>
-      
+
                 <ul class="items">
                 <% for item in section.items -%>
                   <li class="item<%= ' multiple-prices' if item.choices.count > 1 %>" id="item-<%= item.id %>">
@@ -100,12 +102,12 @@
                         <% end %>
                       </div>
                       <% end %>
-                      
+
                       <% unless item.description.nil? || item.description.strip.empty? %>
                         <div class="description"><%= item.description %></div>
                       <% end %>
                     </div>
-    
+
                     <% if item.choices.count > 0 -%>
                     <ul class="choices">
                       <% for choice in item.choices -%>
@@ -113,7 +115,7 @@
                           <% unless choice.name.nil? || choice.name.strip.empty? -%>
                             <div class="name"><%= choice.name %></div>
                           <% end %>
-                          <div class="price"><%- if(args[:'high_prices']) -%> 
+                          <div class="price"><%- if(args[:'high_prices']) -%>
   <%= choice.prices['min'] * 2 -%>
                             <%- else -%>
   <%= choice.prices['min'] -%>
@@ -122,15 +124,15 @@
                       <% end %>
                     </ul>
                     <% end %>
-    
+
                   </li>
                 <% end %>
                 </ul>
-                
+
               </li>
             <% end %>
             </ul>
-            
+
           </li>
         <% end %>
         </ul>
