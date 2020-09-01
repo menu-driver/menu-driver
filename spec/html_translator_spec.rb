@@ -19,7 +19,7 @@ describe "HTML translator" do
     end
 
     it 'has the location ID in the HTML page title', type: :feature do
-      expect(@menus_html).to have_title(@location_id)
+      expect(@menus_html).to have_title('Hakkasan Mayfair Menus')
     end
 
     it 'creates HTML element for each menu', type: :feature do
@@ -33,7 +33,7 @@ describe "HTML translator" do
     it 'includes the menu name as an HTML element', type: :feature do
       expect(@menus_html).to have_selector('.menu .name', text: 'A la Carte')
     end
-    
+
     it 'includes the menu section ID as the HTML ID for a menu section', type: :feature do
       expect(@menus_html).to have_selector('.menu .section#section-33726089')
     end
@@ -86,7 +86,7 @@ ERB
           theme:         'alternate',
           'passthrough': 'SIERRA'
         )
-        
+
       expect(menus_html).to have_selector('#passthrough', text:'SIERRA')
     end
 
@@ -101,7 +101,7 @@ ERB
           <title><%= location_id %></title>
         </head>
         <body>
-        
+
           <div class="from-template">From the template.</div>
 
           <% for menu in data.menus %>
@@ -109,7 +109,7 @@ ERB
               <%= menu.name %>
             </div>
           <% end %>
-          
+
           <%= Nokogiri::HTML(open("https://hakkasangroup.com/")).css('footer').to_s %>
 
         </body>

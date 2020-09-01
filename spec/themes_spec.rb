@@ -60,9 +60,9 @@ ERB
     end
 
   end
-  
+
   context 'inheritance', :vcr do
-    
+
     let(:alternate_template) do
       <<-ERB
       <html>
@@ -112,7 +112,7 @@ ERB
           theme:       'child'
         )
 
-      expect(menus_html).to have_title('hakkasan-mayfair')
+      expect(menus_html).to have_title('Hakkasan Mayfair Menus')
 
     end
 
@@ -135,11 +135,11 @@ ERB
             client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
             secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
           )
-      
+
       object = Aws::S3::Resource.new.bucket('menu-driver-test').object('example')
       allow(single_platform).to receive(:publish_file).with(anything, anything).and_return(object)
       expect(single_platform).to receive(:publish_file).with('hakkasan-mayfair/scripts.js', anything).and_return(object)
-          
+
       single_platform.publish_menu_content(
         location_id: 'hakkasan-mayfair',
         theme:       'child')
