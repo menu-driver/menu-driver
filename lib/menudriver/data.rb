@@ -20,7 +20,7 @@ module MenuDriver
     # Basic data access functions.
 
     def location_name
-      location_data.location.name
+      location_data.location.name.gsub(/\s*test\s*location\s*/i,'')
     end
 
     def location_description
