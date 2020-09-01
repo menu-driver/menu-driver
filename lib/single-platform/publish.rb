@@ -20,31 +20,34 @@ class SinglePlatform
 
     $logger.info "Storing HTML menu for location: #{location_id}"
 
+    location_name = location_id
+    location_name += "-#{args[:category].downcase}" if args[:category]
+
     # TODO: Feature / parameter for overriding output file name.
-    output_file_name = location_id + '/index.html'
+    output_file_name = location_name + '/index.html'
 
     s3_object = publish_file(output_file_name, menus_html)
-    
+
     # Identify asset files and publish those also.
-    asset_files(location_id:location_id, **args).each do |asset_file|
+    asset_files(location_id:location_name, **args).each do |asset_file|
       $logger.debug "Using asset file \"#{asset_file[:asset]}\" from path \"#{asset_file[:file_path]}\""
       publish_file(
         # Destinaton S3 object key.
-        File.join(location_id, asset_file[:asset]),
+        File.join(location_name, asset_file[:asset]),
         # Source bytes.
         File.read(asset_file[:file_path]))
     end
 
     bucket_name = [ENV['STACK'], ENV['DOMAIN']].join('.')
-    public_url = 
-      "http://#{bucket_name}.s3-website-us-east-1.amazonaws.com/#{location_id}"
+    public_url =
+      "http://#{bucket_name}.s3-website-us-east-1.amazonaws.com/#{location_name}"
 
     $logger.info "Public URL of generated menu: #{public_url}"
 
     s3_object
 
   end
-  
+
   def asset_files(location_id:, **args)
     published_files = {}
     theme_folders = Theme.new(args[:theme]).folders
