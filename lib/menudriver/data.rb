@@ -35,7 +35,7 @@ module MenuDriver
 
     def detectCategories
       menus.each do |menu|
-        if(match = /(^[^\-]+)\-([^\-]+$)/.match(menu.name))
+        if(match = /(^[^\-]+)\-(.+$)/.match(menu.name))
           menu.category = match[1]
           menu.name = match[2]
         end
