@@ -7,7 +7,7 @@ http_interactions:
       encoding: UTF-8
       base64_string: 'H4sIAA5uJ18AAwMAAAAAAAAAAAA=
 
-'
+        '
     headers:
       Content-Type:
       - text/html
@@ -772,7 +772,7 @@ http_interactions:
       encoding: UTF-8
       base64_string: 'H4sIABwXLF8AAwMAAAAAAAAAAAA=
 
-'
+        '
     headers:
       Content-Type:
       - text/html
@@ -830,7 +830,7 @@ http_interactions:
       encoding: UTF-8
       base64_string: 'H4sIAPDyLl8AAwMAAAAAAAAAAAA=
 
-'
+        '
     headers:
       Content-Type:
       - text/html
@@ -945,4 +945,180 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Mon, 24 Aug 2020 20:07:27 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test./hakkasan-mayfair/index.html
+    body:
+      encoding: UTF-8
+      base64_string: 'H4sIAM5jTl8AAwMAAAAAAAAAAAA=
+
+        '
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - 4t7SBB6k9QLnDwMLiU1LFQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200901T150758Z
+      X-Amz-Content-Sha256:
+      - b1abda1fadec6b1268a1a4fc07cae9583b0c86756c9f944ddae9b90168947aaa
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20200901/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=8a573a6174b5542dafc0947a6c2a55f129a7cd90644e3983642927bce5e33b3b
+      Content-Length:
+      - '20'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Amz-Request-Id:
+      - 60DF4B2495C762CE
+      X-Amz-Id-2:
+      - kAHpWJe3bpZi5Zq7/ZOQFAa4e+h4Azmh52qSm2hSrLNzXnspN2fraYEwJfc2MHCg/OycYJNolwE=
+      Content-Type:
+      - application/xml
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 01 Sep 2020 15:07:57 GMT
+      Connection:
+      - close
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?>
+        <Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>test.</BucketName><RequestId>60DF4B2495C762CE</RequestId><HostId>kAHpWJe3bpZi5Zq7/ZOQFAa4e+h4Azmh52qSm2hSrLNzXnspN2fraYEwJfc2MHCg/OycYJNolwE=</HostId></Error>
+  recorded_at: Tue, 01 Sep 2020 15:07:58 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/image.html
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAGpkTl8AA42PzwrCMAyH73uK0Mu2Q+sLbD0IHgRfomuzEeyfsXYDEd/d
+        rupFEDwlkC9ffukMbUCmZw79yimh4+TUhExWAB2VkbYhIicdPANtVYw9G1WE
+        UfFEDiOT3YFktfM/ZHxWHu3OZUBW71J1US80p48T3YCm3DVBr1mRxITpZHFv
+        j7ezaeovb92K4LUlfYUextXrRME3LdyzA2BTCxQsD/83ltXSi5LrQjGJBV3Y
+        sKk3ijTYQj3yG6/88glQFvnERAEAAA==
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - a4Tb1BXKSD1MEO0PzCk3yQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200901T151034Z
+      X-Amz-Content-Sha256:
+      - 6512b6b6f7e146767809dc90637fa49aac5e1bea38e98694466e0e60debeefd7
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20200901/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=6382df26dedbf613818551c2ff171560fa8796d1652ea18440b33f03cb2c0120
+      Content-Length:
+      - '202'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - 0zYiwtemJCrceZhj3Go6zmd0SqHAKfe1ajo8pAaSulCJuO2vuKycjTXiHLFgosq3S4kWbsTefEQ=
+      X-Amz-Request-Id:
+      - 4BC05ACCC3948629
+      Date:
+      - Tue, 01 Sep 2020 15:10:35 GMT
+      Etag:
+      - '"6b84dbd415ca483d4c10ed0fcc2937c9"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 01 Sep 2020 15:10:34 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/tracking.html
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAGpkTl8AA7NR1NVV8MwrTi0qUajMLy1ScM/PT89JVQhJTFfwTcxLTE8t
+        UkjOzytJzMwDsvKBqCQDyCgpSkzOzsxLB8qlpCoARVL1FHR17QAAVC87TgAA
+        AA==
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - 49muwMW6WGuUpn4eGJemkQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20200901T151034Z
+      X-Amz-Content-Sha256:
+      - 30fb5e711cc26e2e3600b3b3ebd7f6342db4efd18ae516e110f0d668b8570a1d
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20200901/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=861a81246eb6eef5248b78a07998851e763cd3df8544a4a9cfd629ae19407c1d
+      Content-Length:
+      - '91'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - iI1Fn52nd64sbG5M6zOM+U2Z6w2wiJihhBMtHU+UtOxVtIUdBSo+EBCjssza3Twi5oTLy2Oi/ng=
+      X-Amz-Request-Id:
+      - A9D0462E31960098
+      Date:
+      - Tue, 01 Sep 2020 15:10:35 GMT
+      Etag:
+      - '"e3d9aec0c5ba586b94a67e1e1897a691"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 01 Sep 2020 15:10:34 GMT
 recorded_with: VCR 6.0.0
