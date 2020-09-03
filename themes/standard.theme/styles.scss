@@ -3,6 +3,7 @@
 @import 'fonts';
 @import 'layout';
 @import 'brand';
+@import 'print';
 <% if args[:'light-mode'] %>
   @import 'light-mode';
 <% end %>

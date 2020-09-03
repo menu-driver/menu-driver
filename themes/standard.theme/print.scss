@@ -1,0 +1,26 @@
+@media print {
+  *, body {
+    --brand-color: black;
+    --brand-secondary-color: black;
+    --brand-background-color: white;
+    --menu-color: black;
+    --menu-background-color: white;
+    --border-color: #CCC;
+
+    font-size: 80%;
+  }
+  .menu-driver {
+    nav, nav.menu-nav {
+      display: none;
+    }
+    .menu {
+      page-break-after: always;
+    }
+    header, footer {
+      display: none;
+    }
+    #cookie-notice {
+      display: none;
+    }
+  }
+}
