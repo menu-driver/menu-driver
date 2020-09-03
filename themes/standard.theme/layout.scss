@@ -84,12 +84,12 @@ body {
         @include type-setting(0);
         margin-bottom: $base-line-height;
         display: flex;
-        
+
         .about {
           flex: 1 100%;
           padding-right: $base-line-height;
           margin-bottom: 0;
-            
+
           .name, .description, .choices {
             margin-bottom: 0;
           }
@@ -112,7 +112,7 @@ body {
       .item.multiple-prices {
         flex-wrap: wrap;
         @include type-setting(-1);
-        
+
         .choices {
           width: 100%;
           margin-top: $base-line-height;
@@ -151,23 +151,23 @@ body {
     pointer-events: none;
     opacity: 0.25;
   }
-  
+
   .guide {
     margin-bottom: 5 * $base-line-height;
-    
-    &, &:before, &:after {    
+
+    &, &:before, &:after {
       height: $base-line-height;
       width: 100%;
       outline: 3px dashed grey;
     }
-    
+
     &:before, &:after {
       content: '';
       display: block;
       position: absolute;
       top: 200%;
     }
-    
+
     &:after {
       top: 400%;
     }
@@ -180,7 +180,7 @@ body {
     border-style: solid;
     margin-left: -$base-line-height;
     margin-right: -$base-line-height;
-    
+
     ul {
       min-width: 100%;
       align-content: space-around;
@@ -272,12 +272,12 @@ body {
     padding: 0 $base-line-height 0 $base-line-height;
     opacity: 0;
     pointer-events: none;
-  
+
     border: 0;
     border-top-color: var(--border-color);
     border-top-width: var(--border-width);
     border-top-style: solid;
-  
+
     a, a:visited {
       color: var(--menu-background-color);
       background-color: var(--menu-color);
@@ -293,7 +293,7 @@ body {
     opacity: 1;
     pointer-events: auto;
   }
-  
+
   #menu-item-image {
     position: fixed;
     top: 0px;
@@ -318,7 +318,7 @@ body {
       right: 0px;
       padding-right: 1rem;
       z-index: 3;
-  
+
       color: var(--menu-background-color);
     }
   }

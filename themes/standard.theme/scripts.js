@@ -11,8 +11,6 @@ function setCurrentNav(setScrollPosition=false) {
   mainNavLinks = Array.from(mainNavLinks).
     filter(link => !link.parentElement.classList.contains('hidden-category') )
 
-  console.log("setCurrentNav: " + setScrollPosition);
-
   let fromTop = window.scrollY;
 
   for (let i = 0; i < mainNavLinks.length; i++) {
@@ -35,15 +33,12 @@ function setCurrentNav(setScrollPosition=false) {
     ) {
 
       if(!link.classList.contains("current")) {
-        console.log("moving cursor");
         link.classList.add("current");
 
         if(navScrollTimeout) {
-          console.log("clearing");
           clearTimeout(navScrollTimeout);
           navScrollTimeout = null;
         }
-        console.log("setting");
         navScrollTimeout =
           setTimeout(() => {
               setCurrentNav(true);
@@ -52,7 +47,6 @@ function setCurrentNav(setScrollPosition=false) {
 
       if(setScrollPosition) {
         let nav = link.parentNode.parentNode.parentNode;
-        console.log("Scrolling to: " + (link.parentNode.offsetLeft - nav.offsetLeft- 28));
         if(window.innerWidth >= 768) {
           nav.scrollTo({
             top: link.parentNode.offsetTop - nav.offsetTop - 28,
@@ -119,12 +113,12 @@ fullheight(elements);
    and if the viewport is narrow enough to be showing the
    horizontally-scrolling navigation. */
 if (/^ar\b/.test(navigator.language)) {
+  console.log("Web browser prefers Arabic.");
   let mainSections = document.querySelectorAll(".menus .menu");
   menusArray = Array.prototype.slice.call(mainSections)
   let firstRTLMenu = menusArray.find(element => element.classList.contains('rtl'));
-  console.log('first RTL menu: ' + firstRTLMenu)
   if(typeof firstRTLMenu != 'undefined') {
-    console.log('Scrolling to first RTL menu at: ' + firstRTLMenu.offsetTop)
+    console.log("Scrolling to first RTL menu at: " + firstRTLMenu.offsetTop)
     let nav = document.querySelectorAll("nav")[0]
     let offset = 84;
     if(window.innerWidth >= 768) {
@@ -139,25 +133,30 @@ if (/^ar\b/.test(navigator.language)) {
 
 // Categories.
 let elementsArray = document.querySelectorAll("nav.category-nav ul li");
-elementsArray.forEach(function(link) {
-  link.addEventListener('click', function() {
-    showCurrentCategory(link.getAttribute("data-category"));
+let locationHasCategories =
+  Array.from(document.querySelectorAll("nav.menu-nav .menus li")).
+    filter(menu => menu.getAttribute("data-category") &&
+      !(menu.getAttribute("data-category") === "") ).length > 0;
+if(locationHasCategories) {
+  elementsArray.forEach(function(link) {
+    link.addEventListener('click', function() {
+      showCurrentCategory(link.getAttribute("data-category"));
 
-    // Remove 'current' from classes of other category links.
-    document.querySelectorAll("nav.category-nav ul li").
-      forEach(function(link) {
-        link.classList.remove("current")
-      });
-    link.classList.add("current");
+      // Remove 'current' from classes of other category links.
+      document.querySelectorAll("nav.category-nav ul li").
+        forEach(function(link) {
+          link.classList.remove("current")
+        });
+      link.classList.add("current");
+    });
   });
-});
+}
 
 function showCurrentCategory(category) {
   let listItems =
     Array.from(document.querySelectorAll("nav.menu-nav .menus li")).concat(
     Array.from(document.querySelectorAll(".menus .menu")));
   listItems.forEach(function(menu) {
-    console.log('category: ' + menu.getAttribute("data-category") + ', innerText: ' + category)
     if(menu.getAttribute("data-category") == category ||
        typeof(category) == 'undefined') {
       menu.classList.remove("hidden-category");
@@ -169,6 +168,7 @@ function showCurrentCategory(category) {
 }
 
 function reorientCategories() {
+  if(!locationHasCategories) { return; }
   let categoryNav = document.getElementById("category-nav")
   let categoryNavStyles = getComputedStyle(categoryNav, 'display');
 
@@ -206,4 +206,22 @@ function showImage(image_id) {
 '.jpg 4800w,">';
 
   document.getElementById("menu-item-image").classList.add('visible');
+}
+
+// Feature: Hide image icons on menu.
+let searchParams = new URLSearchParams(window.location.search)
+let itemImagesParamName = 'item-images'
+if(searchParams.has(itemImagesParamName)){
+  let itemImages = searchParams.get(itemImagesParamName)
+  console.log("URL parameter: item-images: " + itemImages);
+  if(itemImages == 'false') {
+    console.log("Appending style to hide .item-images-link elements.");
+    var style = document.createElement('style');
+    style.innerHTML = `
+      .item-image-link {
+        display: none;
+      }
+    `;
+    document.head.appendChild(style);
+  }
 }

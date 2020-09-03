@@ -29,11 +29,12 @@ module MenuDriver
 
     def menus
       menus = location_data.menus
-      menus.select{|menu| menu[:category].eql? category } if category
+      menus = menus.select{|menu| menu[:category].eql? category } if category
       menus
     end
 
     def categories
+      return [] unless menus.any?{|menu| menu[:category] }
       categories = menus.map{|menu| menu[:category] || 'Other'}.uniq
       categories = [category] if category
       categories
@@ -42,7 +43,7 @@ module MenuDriver
     # Utility functions.
 
     def detectCategories
-      menus.each do |menu|
+      location_data.menus.each do |menu|
         if(match = /(^[^\-]+)\s+\-\s+(.+$)/.match(menu.name))
           menu.category = match[1]
           menu.name = match[2]

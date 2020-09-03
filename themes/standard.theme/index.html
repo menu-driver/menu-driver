@@ -98,7 +98,10 @@
 
                         <% if item.photos.size > 0 %>
                           <% photo_id = item.photos.first.photo_id %>
-                          <a onclick="showImage('<%= photo_id %>');"><i class="fas fa-camera"></i></a>
+                          <%# TODO: https://fontawesome.com/how-to-use/on-the-web/other-topics/accessibility %>
+                          <a class="item-image-link"
+                            onclick="showImage('<%= photo_id %>');"><i
+                            class="fas fa-camera"></i></a>
                         <% end %>
                       </div>
                       <% end %>
