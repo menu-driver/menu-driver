@@ -6,6 +6,8 @@ module MenuDriver
 
     attr_accessor :location_data, :category
 
+    @@default_category_name = 'General'
+
     def initialize params = {}
       params.each { |key, value| send "#{key}=", value }
       process
@@ -47,6 +49,8 @@ module MenuDriver
         if(match = /(^[^\-]+)\s+\-\s+(.+$)/.match(menu.name))
           menu.category = match[1]
           menu.name = match[2]
+        else
+          menu.category = @@default_category_name
         end
       end
     end
