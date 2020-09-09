@@ -180,6 +180,7 @@ body {
     border-style: solid;
     margin-left: -$base-line-height;
     margin-right: -$base-line-height;
+    white-space: nowrap;
 
     ul {
       min-width: 100%;
@@ -214,10 +215,9 @@ body {
   }
   nav.category-nav {
     border-bottom-width: $border-width;
+    overflow: auto;
     ul {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
       align-content: space-around;
     }
   }
