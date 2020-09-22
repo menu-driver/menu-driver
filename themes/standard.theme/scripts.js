@@ -4,12 +4,28 @@ let lastId;
 let cur = [];
 let navScrollTimeout;
 
+function desktopMode() {
+  return window.innerWidth >= 768
+}
+
+let categoriesElementsArray = document.querySelectorAll("nav.category-nav ul li");
+let locationHasCategories = categoriesElementsArray.length > 0;
+
+// Set the 'current' menu in the nav to reflect the current scroll position.
 function setCurrentNav(setScrollPosition=false) {
+  // Don't do this for multi-category locations.  The behavior is more
+  // app-like for those locations: you can't scroll from one menu to the next.
+  if(!locationHasCategories){ return; }
+
   let mainNavLinks = document.querySelectorAll("nav.menu-nav ul li a");
 
-  // Exclude any nav links that are hidden.
+  // Exclude any nav links that are hidden,
+  // or that link to menus that are hidden.
   mainNavLinks = Array.from(mainNavLinks).
-    filter(link => !link.parentElement.classList.contains('hidden-category') )
+    filter(link => !link.parentElement.classList.contains('hidden') )
+  // mainNavLinks = mainNavLinks.filter(link =>
+  //   !document.querySelector("#" + link.getAttribute("data-menu")).
+  //     classList.contains('hidden') )
 
   let fromTop = window.scrollY;
 
@@ -20,14 +36,23 @@ function setCurrentNav(setScrollPosition=false) {
       document.querySelector(
         "#" + link.getAttribute("data-menu"));
 
+    // Is the menu for this link visible?
+    let hidden =
+      document.querySelector("#" + link.getAttribute("data-menu")).
+        classList.contains('hidden')
+
     let positionOfBottomOfMenu = menu.offsetTop + menu.offsetHeight;
-    if(typeof mainNavLinks[i+i] != 'undefined') {
+    // Adjust the bottom position to match the start position of the next
+    // menu, if the next menu is visible.
+    if(typeof mainNavLinks[i+1] != 'undefined') {
       let nextMenu = document.querySelector(
         "#" + mainNavLinks[i+1].getAttribute("data-menu"));
-      positionOfBottomOfMenu = nextMenu.offsetTop - 4 * baseLineHeight;
+      if(!nextMenu.classList.contains('hidden')) {
+        positionOfBottomOfMenu = nextMenu.offsetTop - (2 * baseLineHeight);
+      }
     }
-
     if (
+      !hidden && // No invisible menu should ever be 'current'.
       (menu.offsetTop - 4 * baseLineHeight) <= fromTop &&
       positionOfBottomOfMenu > fromTop
     ) {
@@ -47,14 +72,15 @@ function setCurrentNav(setScrollPosition=false) {
 
       if(setScrollPosition) {
         let nav = link.parentNode.parentNode.parentNode;
-        if(window.innerWidth >= 768) {
-          nav.scrollTo({
+        let scroller = nav.getElementsByTagName('ul')[0]
+        if(desktopMode()) {
+          scroller.scrollTo({
             top: link.parentNode.offsetTop - nav.offsetTop - 28,
             left: 0,
             behavior: 'smooth'
           });
         } else {
-          nav.scrollTo({
+          scroller.scrollTo({
             top: 0,
             left: link.parentNode.offsetLeft - nav.offsetLeft - 28,
             behavior: 'smooth'
@@ -68,45 +94,21 @@ function setCurrentNav(setScrollPosition=false) {
   }
 }
 
-/* Do it when... */
 window.addEventListener("scroll", event => {
   setCurrentNav();
 });
 
-/* Do it now. */
 setCurrentNav();
 
-/* Set height of menu list for wide screens so that it can scroll. */
-var elements = document.getElementsByClassName('menu-nav');
-var windowheight = window.innerHeight + "px";
-
-fullheight(elements);
-function fullheight(elements) {
-  /* This 1024 must match the breakpoint in the CSS for going
-     from a top nav to a side nav. */
-  if(window.innerWidth >= 768) {
-    for(let el in elements){
-      if(elements.hasOwnProperty(el)){
-        elements[el].style.height = windowheight;
-      }
-    }
-  } else {
-    for(let el in elements){
-      if(elements.hasOwnProperty(el)){
-        elements[el].style.height = null;
-      }
-    }
+let previousWidth = window.innerWidth;
+window.onresize = function(event){
+  if(window.innerWidth != previousWidth) {
+    reorientCategories();
+    orientScrollThumbs('category-nav')
+    orientScrollThumbs('menu-nav')
+    previousWidth = window.innerWidth;
   }
 }
-
-/* Do it when. */
-window.onresize = function(event){
-  fullheight(elements);
-  reorientCategories();
-}
-
-/* Do it now. */
-fullheight(elements);
 
 /* Push the scroll position to the right if the user's
    preferred language is Arabic (a right-to-left language)
@@ -132,13 +134,8 @@ if (/^ar\b/.test(navigator.language)) {
 }
 
 // Categories.
-let elementsArray = document.querySelectorAll("nav.category-nav ul li");
-let locationHasCategories =
-  Array.from(document.querySelectorAll("nav.menu-nav .menus li")).
-    filter(menu => menu.getAttribute("data-category") &&
-      !(menu.getAttribute("data-category") === "") ).length > 0;
 if(locationHasCategories) {
-  elementsArray.forEach(function(link) {
+  categoriesElementsArray.forEach(function(link) {
     link.addEventListener('click', function() {
       showCurrentCategory(link.getAttribute("data-category"));
 
@@ -150,21 +147,67 @@ if(locationHasCategories) {
       link.classList.add("current");
     });
   });
+
+  // Add a class to the entire menu so that styles can target only menus
+  // with categories.
+  document.getElementById("menu-driver").classList.add('has-categories');
 }
 
 function showCurrentCategory(category) {
   let listItems =
-    Array.from(document.querySelectorAll("nav.menu-nav .menus li")).concat(
-    Array.from(document.querySelectorAll(".menus .menu")));
+    Array.from(document.querySelectorAll("nav.menu-nav .menus li"));
+  let didSetCurrentMenu = false;
   listItems.forEach(function(menu) {
     if(menu.getAttribute("data-category") == category ||
        typeof(category) == 'undefined') {
-      menu.classList.remove("hidden-category");
+      menu.classList.remove("hidden");
+
+      // Reset the 'current' menu after changing categories.
+      let navigationLink = menu.getElementsByTagName('a')[0]
+      if(typeof navigationLink !== 'undefined') {
+
+        if(!didSetCurrentMenu &&
+          !navigationLink.classList.contains("category_header")) {
+          navigationLink.click();
+          didSetCurrentMenu = true;
+        } else {
+          navigationLink.classList.remove("current");
+        }
+      }
     } else {
-      menu.classList.add("hidden-category");
+      menu.classList.add("hidden");
     }
   });
   setCurrentNav();
+  orientScrollThumbs('category-nav')
+  orientScrollThumbs('menu-nav')
+}
+
+function showCurrentMenu(id) {
+  // ONLY hide non-current menus if there is more than one category.
+  if(!locationHasCategories){ return; }
+
+  // Show / hide menus.
+  let listItems =
+    Array.from(document.querySelectorAll(".menus .menu"));
+  listItems.forEach(function(menu) {
+    if(menu.id == "menu-" + id) {
+      menu.classList.remove("hidden");
+    } else {
+      menu.classList.add("hidden");
+    }
+  });
+
+  // Set the 'current' menu navigation link.
+  let navItems = Array.from(document.querySelectorAll("nav.menu-nav ul li a"))
+  navItems.forEach(function(link) {
+    if(link.getAttribute("data-menu").substring(5) == id &&
+      !link.classList.contains('category_header')) {
+      link.classList.add("current")
+    } else {
+      link.classList.remove("current")
+    }
+  })
 }
 
 function reorientCategories() {
@@ -224,4 +267,54 @@ if(searchParams.has(itemImagesParamName)){
     `;
     document.head.appendChild(style);
   }
+}
+
+function scrollNavRight(nav) {
+  // Scroll the UL under the specified nav.
+  let scroller = document.getElementById(nav).getElementsByTagName('ul')[0]
+  scroller.scrollTo({
+    top: 0,
+    left: scroller.scrollLeft + (scroller.scrollWidth / 2),
+    behavior: 'smooth'
+  });
+}
+function scrollNavLeft(nav) {
+  // Scroll the UL under the specified nav.
+  let scroller = document.getElementById(nav).getElementsByTagName('ul')[0]
+  scroller.scrollTo({
+    top: 0,
+    left: scroller.scrollLeft - (scroller.scrollWidth / 2),
+    behavior: 'smooth'
+  });
+}
+// Figure out which of the left / right scroll thumbs should be visible based
+// on the current scroll position of the nav, and make the right ones visible.
+function orientScrollThumbs(nav) {
+  let scroller = document.getElementById(nav).getElementsByTagName('ul')[0]
+  let leftButton = document.getElementById(nav).getElementsByClassName('left')[0]
+  if(scroller.scrollLeft > baseLineHeight) {
+    leftButton.style.display = 'flex'
+  } else {
+    leftButton.style.display = 'none'
+  }
+  let rightButton = document.getElementById(nav).getElementsByClassName('right')[0]
+  if(scroller.scrollLeft < (scroller.scrollWidth - scroller.clientWidth)) {
+    rightButton.style.display = 'flex'
+  } else {
+    rightButton.style.display = 'none'
+  }
+}
+orientScrollThumbs('category-nav')
+orientScrollThumbs('menu-nav')
+
+// Click the default 'current' menu to trigger the onclick that will
+// hide the other menus, only for multiple-category locations shown through
+// mobile viewports.
+if(location.hash !== undefined && location.hash.length > 1) {
+  showCurrentMenu(location.hash.substring(2))
+} else {
+  // Show the one that was marked 'current' by default in the HTML.
+  showCurrentMenu(
+    document.querySelectorAll("nav.menu-nav a.current")[0].
+      getAttribute('data-menu').substring(5))
 }

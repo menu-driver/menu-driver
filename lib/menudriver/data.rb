@@ -29,6 +29,10 @@ module MenuDriver
       location_data.location.description
     end
 
+    def location_website
+      location_data.location.website
+    end
+
     def menus
       menus = location_data.menus
       menus = menus.select{|menu| menu[:category].eql? category } if category

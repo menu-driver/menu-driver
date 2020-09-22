@@ -28,7 +28,7 @@
   </head>
   <body>
 
-    <div class="menu-driver">
+    <div class="menu-driver" id="menu-driver">
 
       <% if args[:'vertical_grid'] %>
       <div class="baseline-grid">
@@ -44,27 +44,78 @@
 
         <%= ERB.new(Theme.new(args[:theme]).file('hamburger.html'), nil, nil, 'hamburger').result(binding) %>
 
-        <% if data.categories.size > 0 %>
-        <nav id="category-nav" class="category-nav">
-          <ul class="categories">
-          <% data.categories.each_with_index do |category, index| %>
-            <li data-category="<%= category %>"
-              <% if index.zero? %>class="current"<% end %>
-              ><a href="#"><%= category %></a></li>
-          <% end %>
-          </ul>
-        </nav>
+          <div id="category-nav-thumb">
+            <a class="scroll-thumb" href="#">
+              <svg class="scroll-thumb top" viewBox="-1 -1 2 2">
+                <polygon points="0,-1 0.8660266282,0.4999978793 -0.8660266282,0.4999978793" />
+              </svg>
+            </a>
+          </div>
+
+          <% if data.categories.size > 1 %>
+
+          <nav id="category-nav" class="category-nav">
+            <a class="scroll-thumb left" href="#"
+              style="display: none;" onclick='scrollNavLeft("category-nav")' >
+              <svg class="scroll-thumb" viewBox="-1 -1 2 2">
+                <polygon points="-1,0 0.4999978793,0.8660266282 0.4999978793,-0.8660266282" />
+              </svg>
+            </a>
+            <ul class="categories" onscroll="orientScrollThumbs('category-nav')">
+            <% data.categories.each_with_index do |category, index| %>
+              <li data-category="<%= category %>"
+                <% if index.zero? %>class="current"<% end %>
+                ><a href="#"><%= category %></a></li>
+            <% end %>
+            </ul>
+            <a class="scroll-thumb right" href="#"
+              style="display: none;" onclick='scrollNavRight("category-nav")'>
+              <svg viewBox="-1 -1 2 2">
+                <polygon points="1,0 -0.4999978793,0.8660266282 -0.4999978793,-0.8660266282" />
+              </svg>
+            </a>
+          </nav>
+
+        <% else %>
+          <nav id="category-nav" class="category-nav collapsed">
+          </nav>
         <% end %>
 
         <nav id="menu-nav" class="menu-nav">
-          <ul class="menus">
-          <% for menu in data.menus %>
-            <li data-category="<%= menu[:category] %>"
-              <% if menu.language.eql?('ar') %>class="rtl"<% end %>>
-              <a href="#m<%= menu.id %>" data-menu="menu-<%= menu.id %>"><%= menu.name %></a>
+          <a class="scroll-thumb left" href="#"
+            style="display: none;" onclick='scrollNavLeft("menu-nav")'>
+            <svg class="scroll-thumb" viewBox="-1 -1 2 2">
+              <polygon points="-1,0 0.4999978793,0.8660266282 0.4999978793,-0.8660266282" />
+            </svg>
+          </a>
+          <ul class="menus" onscroll="orientScrollThumbs('menu-nav')">
+          <% grouped_menus = data.menus.group_by(&:category); currentHasBeenSet = false %>
+          <% grouped_menus.keys.each do |category| %>
+            <li data-category="<%= category %>"
+              class="category_header">
+              <a href="#m<%= grouped_menus[category].first.id %>"
+                class="category_header"
+                data-menu="menu-<%= grouped_menus[category].first.id %>"
+                onclick="showCurrentMenu('<%= grouped_menus[category].first.id %>');"><%= category %></a>
             </li>
+            <% grouped_menus[category].each do |menu| %>
+              <li data-category="<%= menu[:category] %>"
+                class="<% if menu.language.eql?('ar') %>rtl <% end %>">
+                <a href="#m<%= menu.id %>" data-menu="menu-<%= menu.id %>"
+                  class="<% unless currentHasBeenSet %>current <%; currentHasBeenSet = true; end %>"
+                  onclick="showCurrentMenu('<%= menu.id %>');"><%= menu.name %></a>
+              </li>
+            <% end %>
           <% end %>
           </ul>
+          <a class="scroll-thumb right" href="#"
+            style="display: none;" onclick='scrollNavRight("menu-nav")'>
+            <svg viewBox="-1 -1 2 2">
+              <polygon points="1,0 -0.4999978793,0.8660266282 -0.4999978793,-0.8660266282" />
+            </svg>
+          </a>
+
+          <%= ERB.new(Theme.new(args[:theme]).file('legend.html'), nil, nil, 'tracking').result(binding) %>
         </nav>
 
         <ul class="menus">
@@ -76,16 +127,21 @@
               class="menu"
             <% end %> >
             <a class="anchor" id="m<%= menu.id %>"></a>
-            <div class="name"><%= menu.name %></div>
-            <div class="description"><%= menu.description %></div>
+            <% unless menu.name.nil? || menu.name.strip.empty? %><div class="name"><%= menu.name %></div><% end %>
+            <div class="meta">
+              <% unless menu.description.nil? || menu.description.strip.empty? %><div class="description"><%= menu.description %></div><% end %>
+              <% unless menu.footnote.nil? || menu.footnote.strip.empty? %><div class="footnote"><%= menu.footnote %></div><% end %>
+            </div>
 
             <ul class="sections">
             <% for section in menu.sections -%>
               <li class="section" id="section-<%= section.id %>">
-                <% unless section.name.nil? || section.name.strip.empty? %><div class="name"><%= section.name %></div><% end %>
-                <% unless section.description.nil? || section.description.strip.empty? %>
-                  <div class="description"><%= section.description %></div>
-                <% end %>
+                <div class="meta">
+                  <% unless section.name.nil? || section.name.strip.empty? %><div class="name"><%= section.name %></div><% end %>
+                  <% unless section.description.nil? || section.description.strip.empty? %>
+                    <div class="description"><%= section.description %></div>
+                  <% end %>
+                </div>
 
                 <ul class="items">
                 <% for item in section.items -%>
@@ -141,6 +197,8 @@
         </ul>
 
       </div><!-- .menu-content -->
+
+    <%= ERB.new(Theme.new(args[:theme]).file('footer.html'), nil, nil, 'tracking').result(binding) %>
 
     <%= ERB.new(Theme.new(args[:theme]).file('cookie-notice.html'), nil, nil, 'cookieNotice').result(binding) %>
 

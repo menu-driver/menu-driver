@@ -8,20 +8,28 @@ $base-line-height: 1.4 * $base-font-size;
 $border-width: 0.5rem;
 
 $type-settings: (
+  -2: (
+    font-size: 0.6rem,
+    line-height: $base-line-height
+  ),
   -1: (
     font-size: 0.8rem,
     line-height: $base-line-height
   ),
   0: (
-    font-size: 1rem,
+    font-size: 0.9rem,
     line-height: $base-line-height
   ),
   1: (
-    font-size: 1.3rem,
-    line-height: $base-line-height * 2
+    font-size: 1rem,
+    line-height: $base-line-height
   ),
   2: (
-    font-size: 1.6rem,
+    font-size: 1.2rem,
+    line-height: $base-line-height * 2
+  ),
+  3: (
+    font-size: 1.4rem,
     line-height: $base-line-height * 2
   )
 );
@@ -37,7 +45,7 @@ $type-settings: (
     @extend %serif-font;
   }
   .menu {
-    .section > .name {
+    .section > .meta > .name {
         @extend %serif-font;
     }
     .section {
