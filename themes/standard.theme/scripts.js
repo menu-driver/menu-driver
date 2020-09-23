@@ -231,7 +231,6 @@ function reorientCategories() {
     })
   }
 }
-reorientCategories();
 
 function showImage(image_id) {
   console.log("Showing image: " + image_id);
