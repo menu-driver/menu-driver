@@ -55,7 +55,7 @@
           <% if data.categories.size > 1 %>
 
           <nav id="category-nav" class="category-nav">
-            <a class="scroll-thumb left" href="#"
+            <a class="scroll-thumb left" href="javascript:void();"
               style="display: none;" onclick='scrollNavLeft("category-nav")' >
               <svg class="scroll-thumb" viewBox="-1 -1 2 2">
                 <polygon points="-1,0 0.4999978793,0.8660266282 0.4999978793,-0.8660266282" />
@@ -65,10 +65,10 @@
             <% data.categories.each_with_index do |category, index| %>
               <li data-category="<%= category %>"
                 <% if index.zero? %>class="current"<% end %>
-                ><a href="#"><%= category %></a></li>
+                ><a href="javascript:void();"><%= category %></a></li>
             <% end %>
             </ul>
-            <a class="scroll-thumb right" href="#"
+            <a class="scroll-thumb right" href="javascript:void();"
               style="display: none;" onclick='scrollNavRight("category-nav")'>
               <svg viewBox="-1 -1 2 2">
                 <polygon points="1,0 -0.4999978793,0.8660266282 -0.4999978793,-0.8660266282" />
@@ -82,7 +82,7 @@
         <% end %>
 
         <nav id="menu-nav" class="menu-nav">
-          <a class="scroll-thumb left" href="#"
+          <a class="scroll-thumb left" href="javascript:void();"
             style="display: none;" onclick='scrollNavLeft("menu-nav")'>
             <svg class="scroll-thumb" viewBox="-1 -1 2 2">
               <polygon points="-1,0 0.4999978793,0.8660266282 0.4999978793,-0.8660266282" />
@@ -108,7 +108,7 @@
             <% end %>
           <% end %>
           </ul>
-          <a class="scroll-thumb right" href="#"
+          <a class="scroll-thumb right" href="javascript:void();"
             style="display: none;" onclick='scrollNavRight("menu-nav")'>
             <svg viewBox="-1 -1 2 2">
               <polygon points="1,0 -0.4999978793,0.8660266282 -0.4999978793,-0.8660266282" />
