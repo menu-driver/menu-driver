@@ -15,7 +15,7 @@ let locationHasCategories = categoriesElementsArray.length > 0;
 function setCurrentNav(setScrollPosition=false) {
   // Don't do this for multi-category locations.  The behavior is more
   // app-like for those locations: you can't scroll from one menu to the next.
-  if(!locationHasCategories){ return; }
+  // if(!locationHasCategories){ return; }
 
   let mainNavLinks = document.querySelectorAll("nav.menu-nav ul li a");
 
@@ -303,7 +303,7 @@ function orientScrollThumbs(nav) {
     rightButton.style.display = 'none'
   }
 }
-orientScrollThumbs('category-nav')
+if(locationHasCategories){ orientScrollThumbs('category-nav') }
 orientScrollThumbs('menu-nav')
 
 // Click the default 'current' menu to trigger the onclick that will

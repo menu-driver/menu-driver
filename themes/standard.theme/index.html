@@ -25,6 +25,8 @@
     </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+    <%= ERB.new(Theme.new(args[:theme]).file('head.html'), nil, nil, 'head').result(binding) %>
   </head>
   <body>
 
@@ -52,7 +54,7 @@
             </a>
           </div>
 
-          <% if data.categories.size > 1 %>
+          <% if data.named_categories.size > 0 %>
 
           <nav id="category-nav" class="category-nav">
             <a class="scroll-thumb left" href="javascript:void();"
@@ -88,16 +90,18 @@
               <polygon points="-1,0 0.4999978793,0.8660266282 0.4999978793,-0.8660266282" />
             </svg>
           </a>
-          <ul class="menus" onscroll="orientScrollThumbs('menu-nav')">
+          <ul class="menus <% if data.named_categories.size > 0 %>has-categories<% end %>" onscroll="orientScrollThumbs('menu-nav')">
           <% grouped_menus = data.menus.group_by(&:category); currentHasBeenSet = false %>
           <% grouped_menus.keys.each do |category| %>
-            <li data-category="<%= category %>"
-              class="category_header">
-              <a href="#m<%= grouped_menus[category].first.id %>"
-                class="category_header"
-                data-menu="menu-<%= grouped_menus[category].first.id %>"
-                onclick="showCurrentMenu('<%= grouped_menus[category].first.id %>');"><%= category %></a>
-            </li>
+            <% if data.named_categories.size > 1 %>
+              <li data-category="<%= category %>"
+                class="category_header">
+                <a href="#m<%= grouped_menus[category].first.id %>"
+                  class="category_header"
+                  data-menu="menu-<%= grouped_menus[category].first.id %>"
+                  onclick="showCurrentMenu('<%= grouped_menus[category].first.id %>');"><%= category %></a>
+              </li>
+            <% end %>
             <% grouped_menus[category].each do |menu| %>
               <li data-category="<%= menu[:category] %>"
                 class="<% if menu.language.eql?('ar') %>rtl <% end %>">
@@ -198,13 +202,13 @@
 
       </div><!-- .menu-content -->
 
-    <%= ERB.new(Theme.new(args[:theme]).file('footer.html'), nil, nil, 'tracking').result(binding) %>
-
     <%= ERB.new(Theme.new(args[:theme]).file('cookie-notice.html'), nil, nil, 'cookieNotice').result(binding) %>
 
     <%= ERB.new(Theme.new(args[:theme]).file('image.html'), nil, nil, 'image').result(binding) %>
 
     </div><!-- .menu-driver -->
+
+    <%= ERB.new(Theme.new(args[:theme]).file('footer.html'), nil, nil, 'tracking').result(binding) %>
 
     <script class="embed" defer src="scripts.js"></script>
 

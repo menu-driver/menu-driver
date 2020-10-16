@@ -41,7 +41,16 @@ module MenuDriver
 
     def categories
       return [] unless menus.any?{|menu| menu[:category] }
-      categories = menus.map{|menu| menu[:category] || 'Other'}.uniq
+      categories = menus.map{|menu| menu[:category] || @@default_category_name}.uniq
+      categories = [category] if category
+      categories
+    end
+
+    def named_categories
+      return [] unless menus.any?{|menu| menu[:category] }
+      categories = menus.select{|menu|
+        !menu[:category].eql? @@default_category_name}.map{|menu|
+          menu[:category]}.uniq
       categories = [category] if category
       categories
     end
