@@ -30,7 +30,7 @@
   </head>
   <body>
 
-    <div class="menu-driver" id="menu-driver">
+    <div class="menu-driver<% if data.named_categories.size > 0 %> has-categories<% end %>" id="menu-driver">
 
       <% if args[:'vertical_grid'] %>
       <div class="baseline-grid">
@@ -90,7 +90,7 @@
               <polygon points="-1,0 0.4999978793,0.8660266282 0.4999978793,-0.8660266282" />
             </svg>
           </a>
-          <ul class="menus <% if data.named_categories.size > 0 %>has-categories<% end %>" onscroll="orientScrollThumbs('menu-nav')">
+          <ul class="menus" onscroll="orientScrollThumbs('menu-nav')">
           <% grouped_menus = data.menus.group_by(&:category); currentHasBeenSet = false %>
           <% grouped_menus.keys.each do |category| %>
             <% if data.named_categories.size > 1 %>
