@@ -51,11 +51,14 @@ body {
     text-align: center;
   }
 
-  .menu > .name {
+  .menu > .name, .category > .category_name {
     @include type-setting(3);
     text-align: center;
   }
-  .menu {
+  .category {
+    display: none;
+  }
+  .menu, .category {
     padding: $base-line-height - $border-width;
     border-style: solid;
     border-width: $border-width;
@@ -113,6 +116,21 @@ body {
               margin: 0;
               min-width: $base-line-height;
             }
+          }
+        }
+      }
+      .additions {
+        margin-bottom: $base-line-height;
+        .addition {
+          display: flex;
+          .name {
+            flex: 1 100%;
+            margin-right: $base-line-height;
+            @include type-setting(0);
+          }
+          .price {
+            margin: 0;
+            min-width: $base-line-height;
           }
         }
       }

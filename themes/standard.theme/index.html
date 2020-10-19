@@ -123,80 +123,109 @@
         </nav>
 
         <ul class="menus">
-        <% for menu in data.menus %>
-          <li id="menu-<%= menu.id %>" data-category="<%= menu[:category] %>"
-            <% if menu.language.eql?('ar') %>
-             class="menu rtl" dir="rtl"
-            <% else %>
-              class="menu"
-            <% end %> >
-            <a class="anchor" id="m<%= menu.id %>"></a>
-            <% unless menu.name.nil? || menu.name.strip.empty? %><div class="name"><%= menu.name %></div><% end %>
-            <div class="meta">
-              <% unless menu.description.nil? || menu.description.strip.empty? %><div class="description"><%= menu.description %></div><% end %>
-              <% unless menu.footnote.nil? || menu.footnote.strip.empty? %><div class="footnote"><%= menu.footnote %></div><% end %>
-            </div>
+        <% data.menus.group_by(&:category).each do |category_group| %>
 
-            <ul class="sections">
-            <% for section in menu.sections -%>
-              <li class="section" id="section-<%= section.id %>">
-                <div class="meta">
-                  <% unless section.name.nil? || section.name.strip.empty? %><div class="name"><%= section.name %></div><% end %>
-                  <% unless section.description.nil? || section.description.strip.empty? %>
-                    <div class="description"><%= section.description %></div>
-                  <% end %>
-                </div>
+          <li class="category">
+            <h1 class="category_name"><%= category_group[0] %></h1>
+          </li>
 
-                <ul class="items">
-                <% for item in section.items -%>
-                  <li class="item<%= ' multiple-prices' if item.choices.count > 1 %>" id="item-<%= item.id %>">
-                    <div class="about">
+          <% for menu in category_group[1] %>
 
-                      <% unless item.name.nil? || item.name.strip.empty? %>
-                      <div class="name">
-                        <%= item.name %>
+            <li id="menu-<%= menu.id %>" data-category="<%= menu[:category] %>"
+              <% if menu.language.eql?('ar') %>
+               class="menu rtl" dir="rtl"
+              <% else %>
+                class="menu"
+              <% end %> >
+              <a class="anchor" id="m<%= menu.id %>"></a>
 
-                        <% if item.photos.size > 0 %>
-                          <% photo_id = item.photos.first.photo_id %>
-                          <%# TODO: https://fontawesome.com/how-to-use/on-the-web/other-topics/accessibility %>
-                          <a class="item-image-link"
-                            onclick="showImage('<%= photo_id %>');"><i
-                            class="fas fa-camera"></i></a>
+              <% unless menu.name.nil? || menu.name.strip.empty? %><div class="name"><%= menu.name %></div><% end %>
+              <div class="meta">
+                <% unless menu.description.nil? || menu.description.strip.empty? %><div class="description"><%= menu.description %></div><% end %>
+                <% unless menu.footnote.nil? || menu.footnote.strip.empty? %><div class="footnote"><%= menu.footnote %></div><% end %>
+              </div>
+
+              <ul class="sections">
+              <% for section in menu.sections -%>
+                <li class="section" id="section-<%= section.id %>">
+                  <div class="meta">
+                    <% unless section.name.nil? || section.name.strip.empty? %><div class="name"><%= section.name %></div><% end %>
+                    <% unless section.description.nil? || section.description.strip.empty? %>
+                      <div class="description"><%= section.description %></div>
+                    <% end %>
+                  </div>
+
+                  <ul class="items">
+                  <% for item in section.items -%>
+                    <li class="item<%= ' multiple-prices' if item.choices.count > 1 %>" id="item-<%= item.id %>">
+                      <div class="about">
+
+                        <% unless item.name.nil? || item.name.strip.empty? %>
+                        <div class="name">
+                          <%= item.name %>
+
+                          <% if item.photos.size > 0 %>
+                            <% photo_id = item.photos.first.photo_id %>
+                            <%# TODO: https://fontawesome.com/how-to-use/on-the-web/other-topics/accessibility %>
+                            <a class="item-image-link"
+                              onclick="showImage('<%= photo_id %>');"><i
+                              class="fas fa-camera"></i></a>
+                          <% end %>
+                        </div>
+                        <% end %>
+
+                        <% unless item.description.nil? || item.description.strip.empty? %>
+                          <div class="description"><%= item.description %></div>
                         <% end %>
                       </div>
+
+                      <% if item.choices.count > 0 -%>
+                      <ul class="choices">
+                        <% for choice in item.choices -%>
+                          <li class="choice">
+                            <% unless choice.name.nil? || choice.name.strip.empty? -%>
+                              <div class="name"><%= choice.name %></div>
+                            <% end %>
+                            <div class="price"><%- if(args[:'high_prices']) -%>
+    <%= choice.prices['min'] * 2 -%>
+                              <%- else -%>
+    <%= choice.prices['min'] -%>
+                            <%- end -%></div>
+                          </li>
+                        <% end %>
+                      </ul>
                       <% end %>
 
-                      <% unless item.description.nil? || item.description.strip.empty? %>
-                        <div class="description"><%= item.description %></div>
-                      <% end %>
-                    </div>
+                    </li>
 
-                    <% if item.choices.count > 0 -%>
-                    <ul class="choices">
-                      <% for choice in item.choices -%>
-                        <li class="choice">
-                          <% unless choice.name.nil? || choice.name.strip.empty? -%>
-                            <div class="name"><%= choice.name %></div>
+                    <% if item.additions.count > 0 -%>
+                    <li>
+                    <ul class="additions">
+                      <% for addition in item.additions -%>
+                        <li class="addition">
+                          <% unless addition.name.nil? || addition.name.strip.empty? -%>
+                            <div class="name"><%= addition.name %></div>
                           <% end %>
                           <div class="price"><%- if(args[:'high_prices']) -%>
-  <%= choice.prices['min'] * 2 -%>
+  <%= addition.prices['min'] * 2 -%>
                             <%- else -%>
-  <%= choice.prices['min'] -%>
+  <%= addition.prices['min'] -%>
                           <%- end -%></div>
                         </li>
                       <% end %>
                     </ul>
+                    </li>
                     <% end %>
 
-                  </li>
-                <% end %>
-                </ul>
+                  <% end %>
+                  </ul>
 
-              </li>
-            <% end %>
-            </ul>
+                </li>
+              <% end %>
+              </ul>
 
-          </li>
+            </li>
+          <% end %>
         <% end %>
         </ul>
 

@@ -46,17 +46,13 @@ $type-settings: (
   }
   .menu {
     .section > .meta > .name {
-        @extend %serif-font;
+      @extend %serif-font;
     }
-    .section {
-      .item {
-        .name {
-          @extend %serif-font;
-        }
-        .description {
-          @extend %sans-serif-font;
-        }
-      }
+    .section > .items > .item > .about > .name {
+      @extend %serif-font;
+    }
+    .section > .items > .item > .about > .description {
+      @extend %sans-serif-font;
     }
   }
 
