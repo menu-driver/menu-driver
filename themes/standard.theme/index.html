@@ -9,7 +9,7 @@
 
     <% unless data.location_description.empty? -%>
       <meta name="description" content="<%= data.location_description %> Menus">
-      <meta property="og:description" content="Offering tour packages for individuals or groups.">
+      <meta property="og:description" content="<%= data.location_description %>">
     <%- end %>
 
     <% unless data.main_image.nil? %>
