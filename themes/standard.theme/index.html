@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><%= data.location_name %> Menus</title>
+    <meta property="og:title" content="<%= data.location_name %> Menus">
+
     <% unless data.location_description.empty? -%>
-    <meta name="description" content="<%= data.location_description %> Menus">
+      <meta name="description" content="<%= data.location_description %> Menus">
+      <meta property="og:description" content="Offering tour packages for individuals or groups.">
     <%- end %>
+
+    <% unless data.main_image.nil? %>
+      <meta property="og:image" content="<%= data.main_image %>">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image:alt" content="<%= data.location_description %> Menus">
+    <% end %>
 
     <style class="embed">
 <%= SassC::Engine.new(

@@ -100,6 +100,15 @@ module MenuDriver
         end
     end
 
+    def main_image
+      if (main_image =
+        location_data.photos.select{|photo| photo.main_image }.first)
+        main_image.url
+      else
+        nil
+      end
+    end
+
   end
 
 end
