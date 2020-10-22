@@ -134,9 +134,11 @@
         <ul class="menus">
         <% data.menus.group_by(&:category).each do |category_group| %>
 
-          <li class="category">
-            <h1 class="category_name"><%= category_group[0] %></h1>
-          </li>
+          <% if data.named_categories.size > 0 %>
+            <li class="category">
+              <h1 class="category_name"><%= category_group[0] %></h1>
+            </li>
+          <% end %>
 
           <% for menu in category_group[1] %>
 
@@ -246,7 +248,7 @@
 
     </div><!-- .menu-driver -->
 
-    <%= ERB.new(Theme.new(args[:theme]).file('footer.html'), nil, nil, 'tracking').result(binding) %>
+    <span id="menu_page_footer"><%= ERB.new(Theme.new(args[:theme]).file('footer.html'), nil, nil, 'tracking').result(binding) %></span>
 
     <script class="embed" defer src="scripts.js"></script>
 
