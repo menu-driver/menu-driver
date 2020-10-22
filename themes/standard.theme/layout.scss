@@ -496,9 +496,9 @@ body {
         }
       }
       .legend {
-        @include type-setting(-1);
+        @include type-setting(-2);
         div {
-          @include type-setting(-1);
+          @include type-setting(-2);
         }
         ul {
           padding-top: 0;

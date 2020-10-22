@@ -39,6 +39,9 @@ $type-settings: (
 
   header {
     @extend %serif-font;
+    .category_header {
+      @extend %serif-font;
+    }
   }
 
   .menu > .name {
@@ -58,5 +61,8 @@ $type-settings: (
 
   nav {
     @extend %serif-font;
+    .legend {
+      @extend %sans-serif-font;
+    }
   }
 }

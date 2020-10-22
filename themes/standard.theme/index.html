@@ -215,7 +215,7 @@
                       <% for addition in item.additions -%>
                         <li class="addition">
                           <% unless addition.name.nil? || addition.name.strip.empty? -%>
-                            <div class="name"><%= addition.name %></div>
+                            <span class="add">&#65291;</span><div class="name"><%= addition.name %></div>
                           <% end %>
                           <div class="price"><%- if(args[:'high_prices']) -%>
   <%= addition.prices['min'] * 2 -%>
