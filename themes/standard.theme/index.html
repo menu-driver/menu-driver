@@ -128,7 +128,9 @@
             </svg>
           </a>
 
-          <%= ERB.new(Theme.new(args[:theme]).file('legend.html'), nil, nil, 'tracking').result(binding) %>
+          <div class="legend top">
+            <%= ERB.new(Theme.new(args[:theme]).file('legend.html'), nil, nil, 'tracking').result(binding) %>
+          </div>
         </nav>
 
         <ul class="menus">
@@ -245,6 +247,10 @@
     <%= ERB.new(Theme.new(args[:theme]).file('cookie-notice.html'), nil, nil, 'cookieNotice').result(binding) %>
 
     <%= ERB.new(Theme.new(args[:theme]).file('image.html'), nil, nil, 'image').result(binding) %>
+
+    <div class="legend bottom">
+      <%= ERB.new(Theme.new(args[:theme]).file('legend.html'), nil, nil, 'tracking').result(binding) %>
+    </div>
 
     </div><!-- .menu-driver -->
 
