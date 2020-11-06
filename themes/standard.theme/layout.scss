@@ -489,6 +489,14 @@ body {
   }
 }
 @media only screen and (min-width: 768px) {
+  .menu-driver .menu-content {
+    nav.menu-nav {
+      ul {
+        padding: 0;
+      }
+    }
+  }
+
   .menu-driver.has-categories .menu-content {
     nav.menu-nav {
       ul {

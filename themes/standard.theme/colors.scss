@@ -3,11 +3,21 @@ $brand-primary-light-color: white;
 $brand-secondary-color: #CCC;
 $brand-accent-color: white;
 
+/* By default, the border color is set to one of the brand colors.
+   You can select a different brand color if you like, or you can specify
+   a fifth color here.
+   Hint: Set it to the same color that you're setting as the background
+   color if you don't want a border.  The width of the border is a factor
+   in all of the layout calculations, so it's better to set it as the same
+   color as the background than to remove it. */
+$border-color: $brand-primary-light-color;
+
 body {
   --brand-primary-dark-color: #{$brand-primary-light-color};
   --brand-primary-light-color: #{$brand-primary-dark-color};
   --brand-secondary-color: #{$brand-secondary-color};
   --brand-accent-color: #{$brand-accent-color};
+  --border-color: #{$border-color};
 
   color: #{$brand-primary-dark-color};
   background-color: #{$brand-primary-light-color};
