@@ -18168,4 +18168,357 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Tue, 01 Sep 2020 15:10:34 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/legend.html
+    body:
+      encoding: UTF-8
+      base64_string: 'H4sIAGC6oV8AAwMAAAAAAAAAAAA=
+
+        '
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - EfDwBN2fwqVRrGcZGVdyJQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20201103T201528Z
+      X-Amz-Content-Sha256:
+      - 945f1a66aff2886e8bb8b53f96ebd463cf15cf7de96676480a38b1e38fc5bc2c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201103/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=2ca778e899782fc82c20ee2dd2cd7a5eadceb391a1df41995f0c17b706a3aa0f
+      Content-Length:
+      - '20'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - vk548KUvB72QHJGpX2yS8AM8sjzhf5DTFwbl74XE0cWksOwSK/HBnz4zks41hJAF1CHFWPmw+AQ=
+      X-Amz-Request-Id:
+      - 9F7AFC9F18E0E9EA
+      Date:
+      - Tue, 03 Nov 2020 20:15:30 GMT
+      Etag:
+      - '"11f0f004dd9fc2a551ac671919577225"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 Nov 2020 20:15:28 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/.DS_Store
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAGC6oV8AA+2YTW7CMBBGv0mziNSNl136Al30BhaCE3ABAqlKBTSIv3V2
+        XJuJ5hNKFZDaFQjmRdaL5Rk72cSeAJDBvvoAAoACZhxxkYKtR0aLNZ3jHRU2
+        +MYBn5fn6tHmRqw0/gf7X/kb7e0w17t2dKu9OUos9Cq1V2r8l8bUmrWutrPl
+        tK6X8sdFHcdxHOeJ4XZZvN72MRzHuUPsbG5OdGMWjmd03skJdKQT3ZiFcRmd
+        0wUd6EgnujHzoyUsPoQrCysUCXSk079e2XGehhdTaPf/Ea7W/47jPDCSD8fD
+        Ac4FQY92r43aJt2kK4eAzH4WvnXiIp3oxuwHAce5FSfNa0c2BBgAAA==
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - LlkBR4MHx9VnwdHmz6XDmQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20201103T201528Z
+      X-Amz-Content-Sha256:
+      - 2d932e9474601a42e1ac8f4e32f276bf21f266da725e35eed43f84e8c98f6489
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201103/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=4099919a097ac7c355859d3601ce1a2b403ad26c1b4ebf7138f179033313b1e0
+      Content-Length:
+      - '265'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - yC0qnWHJo+BY8K0KjmajAjJjmeA+bl5qk3R9iFaeO7ZdRHW5bRx6rg/TSxl9bC/4oQtq7CBJudc=
+      X-Amz-Request-Id:
+      - C92A0DFE08B93076
+      Date:
+      - Tue, 03 Nov 2020 20:15:30 GMT
+      Etag:
+      - '"2e5901478307c7d567c1d1e6cfa5c399"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 Nov 2020 20:15:29 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/colors.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAGG6oV8AA42PQQ7CIBBF95yCxG7ZGOLCLjnJMGBLWsGMNaYhvXtxURRb
+        Tbfw3uT9ShN4I27krkCjMECdwNAHOvPD8SSlvNSsKpneNe2wQM/WDTYjd4vB
+        mxe03FBK5V9AtP7bZDqYkUfGuRB/WuLviKnekIvIlf0+Xcjr/Lg9rLDKWVn5
+        fE58EnbWaMCuofBIxL71E5sBZHLYPsYBAAA=
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - QyBEtfBA2I+N/O8nKPoYZQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20201103T201529Z
+      X-Amz-Content-Sha256:
+      - c06cd99aca1be62db57ef134b3ba527f71a8c1813803571d17f27d42a42fbbb8
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201103/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=71c25b8b3bf93e898764c3162591aa49edac1be4d1c758792295fa59af0556b2
+      Content-Length:
+      - '161'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - Y6hCgOWA9itaAt/J8puIYoskkmE6KkxJ5aleO5nwA/Ms3j7JvEQORS0oGrPWv2F7rKnawwmymwA=
+      X-Amz-Request-Id:
+      - D24D47500F1262C9
+      Date:
+      - Tue, 03 Nov 2020 20:15:30 GMT
+      Etag:
+      - '"432044b5f040d88f8dfcef2728fa1865"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 Nov 2020 20:15:29 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/print.scss
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAGG6oV8AA4VU3c6iMBC99ymauJvoxhITbzZ4872JKe0IE9sOKUU/dsO7
+        b4uCILhe8NPOmTM/PdMvAwoFKx1az/6uGPu1YxmppvtnjPPMCau4JE0uZZkW
+        8nKcWCqQZJVwTY9ZHw6HKSQLTrmj+slzK9BDDzJg68UAneG//B3iA31GToF7
+        MXW2M1nPK/wDKfu9/xnxbXiSjlQ5vIJ7dKEAoYYFYw+qq3CbSX+2xwdgntEY
+        +2od3Dx8ey405jZlEqwH11vOGr65QgfSI0Ur6drY3mqEy9GGQr0nk7IfmaiA
+        a7TAC8C88D0u0ZTTUEXvl7J9D2ifQClipBH4Y9GDcyFMVrsc3I7VesSgsCq1
+        aFJmycLU6/624rqLr/sJDKuQCuQUBNDtrMdL7ovaZEOMhQh35o6xGnAD5VJ2
+        WSj+cnxp0tDc/dMysJysMDCiYuwLrdS1AuabEoKEvUebbw7b4wjznrh97ehC
+        uqVQKnAuub8jntGlZ3SV57JArWay+CynOZ8lvxmTbicJ5xB0A+LCMziTC0Mn
+        9E001YwuntVuseiJBp/Xxqit7yZv8aIY+00uiYfIR3vbWXs9lZOu9wfyup+E
+        +8YkptYeSw08XLQSqolYap3IgmbbbyM9W7UglVhoUqBSYJfErTGcTcxoaf7W
+        kuiCwMMxhmw+TVV8zkQ+zvn9m9w/p5sTZRjU3riOOZ3i+Z/6ra4pHE3URFDW
+        5RFrFqldtat/9U1rbaIGAAA=
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - c/8yBXSANU8+FvIK2V6BPQ==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20201103T201529Z
+      X-Amz-Content-Sha256:
+      - bb34ab2028e6622829aabe425838d7da293be6679b35ae379f9d299c662703a0
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201103/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=b5a9d769a46f4243aad46f20b63fd119cf5bbdab804795f4d8086e0d39094a32
+      Content-Length:
+      - '557'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - VJrTYBK8QF7iPeATEe9CSW1wgBRAAiEXpk2W3aqOxDzryAk5raRyLxGUTRbqUv5TnS1EEPtw9dM=
+      X-Amz-Request-Id:
+      - B1A33A39E232B481
+      Date:
+      - Tue, 03 Nov 2020 20:15:31 GMT
+      Etag:
+      - '"73ff32057480354f3e16f20ad95e813d"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 Nov 2020 20:15:29 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/head.html
+    body:
+      encoding: UTF-8
+      base64_string: 'H4sIAGG6oV8AAwMAAAAAAAAAAAA=
+
+        '
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - 4mCUscOxPKzy4Zf1F3u1Rw==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20201103T201529Z
+      X-Amz-Content-Sha256:
+      - 7a3cd84d03d332e1efebf0a9f4d6a02e1775f7a42c70cbcfba863e8344a898fb
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201103/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=e3214a558fede8423cefc3369a0d02bf18c5687abf630422bf31969a16a9b923
+      Content-Length:
+      - '20'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - eEK1vz6j6iGFN1uJjq0aAHHdlWLMhPSxk6sjoaCYsJ7bdn65xvybZl1xwB/gbKsS6XfYGVNwVLA=
+      X-Amz-Request-Id:
+      - 8F5991F1B660716A
+      Date:
+      - Tue, 03 Nov 2020 20:15:31 GMT
+      Etag:
+      - '"e26094b1c3b13cacf2e197f5177bb547"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 Nov 2020 20:15:30 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/footer.html
+    body:
+      encoding: UTF-8
+      base64_string: 'H4sIAGK6oV8AAwMAAAAAAAAAAAA=
+
+        '
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - fQATd/l7ZIy6HKqRVDj4bw==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20201103T201530Z
+      X-Amz-Content-Sha256:
+      - a5d966d105f8b6a59632f7c344fe31a96d202070a61183058f7f02b1359288ae
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201103/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=8cedcf2551249604893588e191dc52485713dbb66b3d23e6012fb5ce0bc3601d
+      Content-Length:
+      - '20'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - zxdfTWa4xlj4ULhjmJezpKEPzvwJXoA8KUbtZd+soll5dPPjImDd916+gFpzdWnxW/JxEVfi/lg=
+      X-Amz-Request-Id:
+      - 3D48EF2C092145D5
+      Date:
+      - Tue, 03 Nov 2020 20:15:33 GMT
+      Etag:
+      - '"7d001377f97b648cba1caa915438f86f"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 Nov 2020 20:15:31 GMT
 recorded_with: VCR 6.0.0

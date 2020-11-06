@@ -17,9 +17,9 @@ describe "Single Platform" do
       data = @single_platform.fetch_location_data_from_api(
         location_id:'hakkasan-mayfair')
 
-      expect(data.menus.count).to eq 17
-      expect(data.menus.first.name).to eq 'A la Carte'
-      expect(data.menus.first.sections.count).to eq 11
+      expect(data.menus.count).to eq 18
+      expect(data.menus.first.name).to eq 'Signature Menus - Shou'
+      expect(data.menus.first.sections.count).to eq 5
 
     end
 
@@ -34,9 +34,9 @@ describe "Single Platform" do
       data = @single_platform.fetch_location_data_from_api(
         location_id:'hakkasan-mayfair', 'cache':true)
 
-      expect(data.menus.count).to eq 17
-      expect(data.menus.first.name).to eq 'A la Carte'
-      expect(data.menus.first.sections.count).to eq 11
+      expect(data.menus.count).to eq 18
+      expect(data.menus.first.name).to eq 'Signature Menus - Shou'
+      expect(data.menus.first.sections.count).to eq 5
 
     end
 
