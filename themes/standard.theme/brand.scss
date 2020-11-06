@@ -1,37 +1,100 @@
-/* Anything that will be toggled for dark mode needs its own name. */
-$brand-color: #000033;
-$brand-secondary-color: #000033;
-$brand-background-color: #e1e1e1;
-$menu-color: #000033;
-$menu-background-color: #e6e6e6;
-$border-color: #CCC;
-$border-width: 0.05rem;
+$border-width: 0.05rem !global;
 
-body {
-  --brand-color: #{$brand-color};
-  --brand-background-color: #{$brand-background-color};
-  --menu-color: #{$menu-color};
-  --menu-background-color: #{$menu-background-color};
-  --border-color: #{$border-color};
-  --border-width: #{$border-width};
-  color: var(--brand-color);
-  background-color: var(--brand-background-color);
-}
 .menu-driver {
+
+  header {
+    @extend %sans-serif-font;
+    text-transform: uppercase;
+    .logo {
+      margin-left: $base-line-height;
+    }
+    a {
+      line-height: 1rem;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      margin: 0;
+    }
+    .location {
+      flex: 1;
+      svg {
+        height: $base-line-height * 2;
+        margin-top: -.8rem;
+        .cls-1 {
+          fill: var(--brand-accent-color);
+        }
+      }
+    }
+    .hamburger {
+      margin-right: $base-line-height;
+      width: $base-line-height;
+      padding-top: 8px;
+      margin-left: 1.4rem;
+      .toggle span {
+          background: var(--brand-primary-dark-color);
+          display: block;
+          margin: 5px 0;
+          height: 2px;
+          width: 100%;
+      }
+    }
+  }
+
   .menu {
-    color: var(--menu-color);
-    background-color: var(--menu-background-color);
-    border-color: var(--border-color);
+    color: var(--brand-primary-dark-color);
+    background-color: var(--brand-primary-light-color);
+    border-color: var(--brand-secondary-color);
+    .name {
+      color: var(--brand-primary-dark-color);
+      text-align: left;
+      margin-bottom: - $border-width;
+      border-bottom: $border-width solid var(--brand-secondary-color);
+    }
+    .description {
+      color: var(--brand-secondary-color);
+    }
+    .section {
+      .name {
+        color: var(--brand-color);
+        border: unset;
+      }
+    }
+    .section + .section {
+      padding-top: $base-line-height - $border-width;
+      border-top: $border-width solid var(--border-secondary-color);
+    }
+  }
+  .menu.rtl {
+    text-align: right;
+
+    .name {
+      text-align: right;
+    }
+  }
+
+  .guide {
+    &, &:before, &:after {
+      outline: 3px dotted white;
+    }
   }
 
   nav {
-    background-color: var(--brand-background-color);
-    border-color: var(--border-color);
+    background-color: var(--brand-primary-light-color);
+    border-color: var(--brand-secondary-color);
+    border-bottom-width: $border-width;
+    margin-bottom: 0;
+
+    .scroll-thumb svg {
+      fill: var(--brand-accent-color);
+    }
 
     ul {
       li {
-        a.current {
-          background-color: var(--border-color);
+        a.current, a:visited.current {
+          color: var(--brand-accent-color);
+          background-color: unset;
+          border-bottom: $border-width solid var(--brand-accent-color);
         }
         a, a:visited, a:hover, a:active {
           color: inherit;
@@ -41,16 +104,141 @@ body {
       // <a> within it.  TODO: Make that more consistent and DRY these styles.
       li.current {
         a, a:visited {
-          background-color: var(--border-color);
+          color: var(--brand-secondary-color);
+          background-color: unset;
+          border-bottom: $border-width solid var(--brand-secondary-color);
         }
       }
     }
 
-    .scroll-thumb {
-      svg {
-        fill: var(--brand-background-color);
+  }
+
+  .menu {
+    a.anchor {
+      display: block;
+      position: relative;
+      // top: - ($base-line-height * 3);
+    }
+  }
+
+  nav.menu-nav, nav.category-nav {
+    border-style: solid;
+    border-top: $border-width;
+    border-bottom-color: var(--brand-secondary-color);
+    border-bottom-width: $border-width;
+    border-bottom-style: solid;
+    margin-left: unset;
+    margin-right: unset;
+  }
+  nav.category-nav {
+    margin-bottom: 0;
+  }
+
+  padding-left: 0;
+  padding-right: 0;
+
+  .menu-content {
+    #hamburger-menu {
+      pointer-events: none;
+      @extend %serif-font;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      background-color: $brand-primary-light-color;
+      z-index: 2;
+      transition: 1s;
+      transition-timing-function: ease-in-out;
+      padding-left: $base-line-height;
+      opacity: 0;
+      pointer-events: none;
+
+      li {
+        a, a:visited {
+          color: $brand-primary-dark-color;
+          text-decoration: none;
+        }
+        padding-bottom: $base-line-height;
+      }
+    }
+    #hamburger-menu.active {
+      pointer-events: auto;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  #cookie-notice {
+    color: var(--brand-primary-dark-color);
+    background-color: var(--brand-primary-light-color);
+    border-color: var(--brand-secondary-color);
+    border-top-width: $border-width;
+    .button {
+      color: var(--brand-primary-light-color);
+      background-color: var(--brand-primary-dark-color);
+      border-color: var(--brand-secondary-color);
+      a, a:visited {
+        color: var(--brand-primary-light-color);
+        background-color: var(--brand-primary-dark-color);
       }
     }
   }
 
+  .legend {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu-driver {
+    padding-left: $base-line-height;
+    padding-right: $base-line-height;
+    header {
+      margin-bottom: $base-line-height;
+      .hamburger {
+        margin-left: 0;
+      }
+    }
+    .menu-content {
+      nav.menu-nav {
+        border: 0;
+      }
+    }
+    .menu {
+      a.anchor {
+        display: block;
+        position: relative;
+        // top: - ($base-line-height * 3);
+      }
+    }
+    .legend {
+      display: block;
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .menu-driver {
+    .menu {
+      border-width: .2rem;
+      padding: $base-line-height - .2rem;
+    }
+
+    nav {
+      margin-bottom: $base-line-height;
+    }
+
+    .guide {
+      &, &:before, &:after {
+        outline: 3px dotted #777;
+      }
+    }
+  }
+}
+
+
+@media print {
+  nav {
+    display: none;
+  }
 }

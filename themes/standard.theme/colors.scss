@@ -1,0 +1,14 @@
+$brand-primary-dark-color: #26444f;
+$brand-primary-light-color: white;
+$brand-secondary-color: #CCC;
+$brand-accent-color: white;
+
+body {
+  --brand-primary-dark-color: #{$brand-primary-light-color};
+  --brand-primary-light-color: #{$brand-primary-dark-color};
+  --brand-secondary-color: #{$brand-secondary-color};
+  --brand-accent-color: #{$brand-accent-color};
+
+  color: #{$brand-primary-dark-color};
+  background-color: #{$brand-primary-light-color};
+}

@@ -44,6 +44,18 @@ body {
 
 .menu-driver {
   padding: $base-line-height;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  .menu-content {
+    margin-bottom: 0;
+
+    .menus {
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 
   header {
     @include type-setting(3);
@@ -234,7 +246,7 @@ body {
       list-style: none;
       margin: 0;
       padding-top: $base-line-height;
-      padding-bottom: $base-line-height - $border-width;
+      padding-bottom: $base-line-height;
 
       li {
         display: inline;
@@ -298,14 +310,13 @@ body {
     border-bottom-width: $border-width;
     overflow: auto;
     margin-top: -$base-line-height;
-    margin-bottom: $base-line-height;
   }
 
   .menu {
     a.anchor {
       display: block;
       position: relative;
-      top: - ($base-line-height * 5);
+      top: - ($base-line-height * 4);
     }
   }
 
@@ -575,7 +586,7 @@ body {
         min-height: $base-line-height;
       }
       a.anchor {
-        top: - ($base-line-height * 2);
+        top: - ($base-line-height * 3);
       }
     }
     .scroll-thumb, #category-nav-thumb {

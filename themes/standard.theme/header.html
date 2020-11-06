@@ -1,4 +1,21 @@
 <header>
-  <div><%= location_id %></div>
-  <div>example header stuff.  select Location, etc.  theme: <%= ENV['THEME'] %></div>
+  <div class="hamburger">
+    <a id="hamburger-button" href="javascript:void(0);" title="Main Menu" class="toggle">
+      <span></span><span></span><span></span>
+    </a>
+  </div>
+  <div class="location"><%= data.location_name %></div>
 </header>
+
+<script>
+  document.getElementById('hamburger-button').onclick = function() {
+    var hamburgerMenu = document.getElementById('hamburger-menu')
+    var className = ' ' + hamburgerMenu.className + ' ';
+    hamburgerMenu.className = ~className.indexOf(' active ') ?
+                         className.replace(' active ', ' ') :
+                         hamburgerMenu.className + ' active';
+}
+  window.addEventListener("scroll", event => {
+    document.getElementById('hamburger-menu').className = "";
+  });
+</script>
