@@ -25,7 +25,16 @@ $border-width: 0.05rem !global;
           fill: var(--brand-accent-color);
         }
       }
+      $a-tags: 'a, a:active, a:hover, a:visited';
+      $a-tags-hover: 'a:active, a:hover';
+      #{$a-tags} {
+        color: $brand-primary-dark-color;
+        text-decoration: none;
+      }
+      #{$a-tags-hover} {
+        color: $brand-primary-dark-color;
     }
+  }
     .hamburger {
       margin-right: $base-line-height;
       width: $base-line-height;
