@@ -47,7 +47,6 @@ describe "HTML translator" do
     end
 
     it 'includes the menu section item ID as the HTML ID for a menu section item', type: :feature do
-
       expect(@menus_html).to have_selector('.menu .section .item#item-189551749')
     end
 
@@ -184,6 +183,23 @@ SCSS
 
     it 'includes CSS generated from include SCSS in the output HTML', type: :feature do
       expect(@menus_html).to include(".menu .section .item .name {\n  color: red; }")
+    end
+
+  end
+
+  context 'category parameter', :vcr do
+
+    it 'filters out all but one category from the generated menu.', type: :feature do
+
+      location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(
+          location_id:location_id,
+          category: 'Drinks')
+
+      expect(@menus_html).to have_selector('.menu .name', text: 'Cocktails')
+      expect(@menus_html).not_to have_selector('.menu .name', text: 'A la Carte')
+
     end
 
   end
