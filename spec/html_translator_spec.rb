@@ -189,7 +189,7 @@ SCSS
 
   context 'category parameter', :vcr do
 
-    it 'filters out all but one category from the generated menu.', type: :feature do
+    it 'filters out all but one category from the generated web menus.', type: :feature do
 
       location_id = 'hakkasan-mayfair'
       @menus_html =
@@ -197,8 +197,74 @@ SCSS
           location_id:location_id,
           category: 'Drinks')
 
-      expect(@menus_html).to have_selector('.menu .name', text: 'Cocktails')
-      expect(@menus_html).not_to have_selector('.menu .name', text: 'A la Carte')
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Spirits')
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Non-Alcoholic')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'A la Carte')
+
+    end
+
+  end
+
+  context 'include_menus parameter', :vcr do
+
+    it 'filters out all but one named menu from the generated web menus.', type: :feature do
+
+      location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(
+          location_id:location_id,
+          include_menus: 'Cocktails')
+
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 1)
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Spirits')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Non-Alcoholic')
+
+    end
+
+    it 'filters out all but a list of comma-separated named menus from the generated web menus.', type: :feature do
+
+      location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(
+          location_id:location_id,
+          include_menus: 'Cocktails,Spirits')
+
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 2)
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Spirits')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Non-Alcoholic')
+
+    end
+
+    it 'filters out all but one menu ID from the generated web menus.', type: :feature do
+
+      location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(
+          location_id:location_id,
+          include_menus: '3984521')
+
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 1)
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Spirits')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Non-Alcoholic')
+
+    end
+
+    it 'filters out all but a list of comma-separated named menus from the generated web menus.', type: :feature do
+
+      location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(
+          location_id:location_id,
+          include_menus: '3984521,3720826')
+
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 2)
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
+      expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Spirits')
+      expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Non-Alcoholic')
 
     end
 

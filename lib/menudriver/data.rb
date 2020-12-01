@@ -4,7 +4,7 @@ module MenuDriver
 
   class Data
 
-    attr_accessor :location_data, :category
+    attr_accessor :location_data, :category, :include_menus
 
     @@default_category_name = 'General'
 
@@ -35,7 +35,13 @@ module MenuDriver
 
     def menus
       menus = location_data.menus
-      menus = menus.select{|menu| menu[:category].eql? category } if category
+      if include_menus
+        menus = menus.select do |menu|
+          include_menus.downcase.include?(menu.name.downcase) ||
+          include_menus.downcase.include?(menu.id.to_s)
+        end
+      end
+      menus = menus.select{|menu| menu.category.eql? category } if category
       menus
     end
 

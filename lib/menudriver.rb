@@ -23,6 +23,7 @@ module MenuDriver
     option :cache, :type => :boolean, :default => false, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
     option :data_file, :type => :string, :desc => 'file name for JSON menu data file'
     option :category, :type => :string, :default => nil, :desc => 'name of a category for generating a one-category menu'
+    option :include_menus, :type => :string, :default => nil, :desc => 'include only menus matching this comma-separated string of names or IDs'
     def generate(location)
       puts ColorizedString[' Generating HTML menus for location: '].black.on_light_blue + ' ' + location
 
