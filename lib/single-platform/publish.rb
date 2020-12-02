@@ -19,9 +19,11 @@ class SinglePlatform
     menus_html = generate_menus_html({:location_id => location_id}.merge(args))
 
     $logger.info "Storing HTML menu for location: #{location_id}"
+    $logger.info "Output name: #{args[:name]}"
 
     location_name = location_id
     location_name += "-#{args[:category].downcase}" if args[:category]
+    location_name = args[:name] if args[:name]
 
     # TODO: Feature / parameter for overriding output file name.
     output_file_name = location_name + '/index.html'

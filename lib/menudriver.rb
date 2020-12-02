@@ -18,12 +18,13 @@ module MenuDriver
     end
 
     desc "generate [location]", "generate restaurant menu HTML data for the location"
+    option :name, :type => :string, :desc => 'output folder name (defaults to the location)'
     option :theme, :type => :string, :desc => 'name (not path) of theme folder for ERB HTML templates.'
     option :vertical_grid, :type => :boolean, :default => false, :desc => 'Show the vertical rhythym with horizontal lines showing the line height.'
     option :cache, :type => :boolean, :default => false, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
     option :data_file, :type => :string, :desc => 'file name for JSON menu data file'
     option :category, :type => :string, :default => nil, :desc => 'name of a category for generating a one-category menu'
-    option :include_menus, :type => :string, :default => nil, :desc => 'include only menus matching this comma-separated string of names or IDs'
+    option :menu, :type => :string, :default => nil, :desc => 'include only menus matching this comma-separated string of names or IDs'
     def generate(location)
       puts ColorizedString[' Generating HTML menus for location: '].black.on_light_blue + ' ' + location
 
@@ -34,7 +35,8 @@ module MenuDriver
           client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
           secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
         ).publish_menu_content(
-          location_id:location,
+          location_id: location,
+          name: options[:name] || location,
           **options.transform_keys { |key| key.to_sym })
       rescue => exception
         puts ColorizedString[' ERROR '].black.on_red + ' ' + exception.ai
