@@ -18,7 +18,7 @@ class SinglePlatform
     # Wrap the data in functionality.  For things like
     # detecting the dominant language.
     data = MenuDriver::Data.new(
-      args.select{|arg| [:category, :include_menus].include? arg }.
+      args.select{|arg| [:category, :menu].include? arg }.
       merge(location_data: raw_data))
 
     # Get the HTML (ERB) template.
