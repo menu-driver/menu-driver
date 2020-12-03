@@ -24,7 +24,9 @@ module MenuDriver
     end
 
     def menu_options(menu_name)
-      self.data.select{|entry| entry[0].eql? menu_name}.first[1]
+      entry = self.data.select{|entry| entry[0].eql? menu_name}.first
+      return nil unless entry
+      entry[1]
     end
 
   end

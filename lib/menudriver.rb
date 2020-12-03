@@ -1,4 +1,5 @@
 require "menudriver/version"
+require "menudriver/options-files"
 
 require 'thor'
 require 'colorized_string'
@@ -28,6 +29,16 @@ module MenuDriver
     def generate(location)
       puts ColorizedString[' Generating HTML menus for location: '].black.on_light_blue + ' ' + location
 
+      all_options = options.dup
+      if options_from_files = MenuDriver::OptionsFiles.new.menu_options(location)
+        $logger.info "Options from files: #{options_from_files}"
+        all_options.merge! options_from_files
+        if options_from_files['location']
+          all_options['output_file'] = location
+          location = options_from_files['location']
+        end
+      end
+
       begin
         SamParameterEnvironment.load
 
@@ -36,8 +47,8 @@ module MenuDriver
           secret:    ENV['SINGLE_PLATFORM_CLIENT_SECRET']
         ).publish_menu_content(
           location_id: location,
-          name: options[:name] || location,
-          **options.transform_keys { |key| key.to_sym })
+          name: all_options[:name] || location,
+          **all_options.transform_keys { |key| key.to_sym })
       rescue => exception
         puts ColorizedString[' ERROR '].black.on_red + ' ' + exception.ai
         puts ColorizedString[' trace '].black.on_red

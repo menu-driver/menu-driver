@@ -1,9 +1,9 @@
 class SinglePlatform::Theme
-  
+
   def initialize(theme)
     @theme_name =
       # Select the theme name.
-      theme || ENV['THEME'] || 'standard'
+      theme + '.theme' || ENV['THEME'] || 'standard.theme'
   end
 
   def folder
