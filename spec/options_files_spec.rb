@@ -40,6 +40,10 @@ describe "Options Files" do
       expect(@options_files.menu_names). to include 'test-location-B'
     end
 
+    pending 'loads the options for each location' do
+      error
+    end
+
   end
 
 end
