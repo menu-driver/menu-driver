@@ -7644,4 +7644,1135 @@ http_interactions:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9378670454025269}]}'
   recorded_at: Tue, 01 Dec 2020 23:05:44 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Diamond A symbol of purity, bringing love and clarity £148
+        per person; available for parties of two or more   Small eat  Supreme dim
+        sum phoenix eye lobster; abalone and chicken shui mai, Prunier caviar; royal
+        king crab dover sole, black truffle Hakkasan signature Peking duck pancake,
+        baby cucumber, spring onion Main  Grilled Chilean seabass in honey  Szechuan
+        style lobster Thai basil, Shaoxing rice wine Wok-fry venison with charcoal
+        grilled bone marrow  Second course of Peking duck choice of XO sauce, ginger
+        and spring onion or black bean sauce Side  Seasonal vegetable ''vg''  Spring
+        onion and egg fried rice ''v''  Dessert  Spiky lemon ''g'' yuzu crémeux, calamansi,
+        almond cake"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170831Z
+      X-Amz-Content-Sha256:
+      - 3523b56423449b15bacc98a722c3e64b5357cafad35caa5921223311230dbbec
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=08196662dc75a27e93a587757e9e18576f651c8fe73a2e8d7f6e1cae20cd2e74
+      Content-Length:
+      - '694'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - e5f91fc6-5f84-46b8-a9ef-3e318f5e0ddc
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:31 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9448235034942627}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:31 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Sapphire Signifying wisdom and royalty, protection and good
+        fortune £98 per person; available for parties of two or more   Small eat  Classic
+        steamed dim sum langoustine har gau, Prunier caviar; halibut shui mai, water
+        chestnut; king crab, peppercorn sauce; wild mushroom ''vg'' Crispy duck salad
+        pomelo, pine nut, shallot Main  Spicy prawn ''g'' almond Crispy citrus chicken
+        with kumquat seven spice dip, citrus sauce Sesame crusted halibut spring onion,
+        elderflower tea sauce Stir-fry baby broccoli and preserved olive ''vg'' crispy
+        seaweed, pine nut Side  Seasonal vegetable ''vg''  Steamed jasmine rice ''vg''  Dessert  Date
+        and sake ''v'' date sponge, sake custard, tonka ice cream"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170831Z
+      X-Amz-Content-Sha256:
+      - a13dc4c3f5f45e99b02fb93d4d31b36c793f33110eba82d33ca92d5fb6e6a233
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=0061ca91ff06af6f11baeff4dcdbe3999018e5f58e20b99a6328e48bf755c38e
+      Content-Length:
+      - '686'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d9d0cb1a-a369-464b-a107-9e2bd81a26b3
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:31 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9578827023506165}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:31 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Ruby Representing nobility, purity and passion £78 per person;
+        available for parties of two or more; 12noon to 5pm   Small eat  Dim sum trio
+        scallop shui mai; har gau; king crab, peppercorn sauce Crispy duck salad pomelo,
+        pine nut, shallot Main  Wok-fried venison with fennel  Roasted chicken in
+        satay sauce  Szechuan halibut pepper king soy sauce Side  Seasonal vegetable
+        ''vg''  Steamed jasmine rice ''vg''  Dessert  The Rocher ''g'' manjari mousse,
+        peanut praline, kumquat marmalade"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170831Z
+      X-Amz-Content-Sha256:
+      - 7639bcbbc7ddfc05bf822c6ee53dbf4ca9da5962b46f77b8570f17a0be93ebbe
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=dc513fbfd3bd497707c8312aca13cc1df1120ef7db34efb95e5a27bb6b75bae5
+      Content-Length:
+      - '491'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 04a665cd-98e1-45e3-b8cf-d528ff7cb602
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:31 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9576675295829773}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:31 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Opal Bringing loyalty and faithfulness, closeness and passion
+        £78 per person; available for parties of two or more   Small eat  Vegan dim
+        sum ''vg'' golden squash, lily bulb; black pepper, purple sweet potato; sugar
+        snap, edamame; wild mushroom, black truffle bean curd wrap Crispy bean curd
+        peel and basil cress salad ''vg'' mango, onion, yuzu dressing Main  Stir-fry
+        black pepper yellow bean ''vg'' sugar snap Homemade purple sweet potato tofu
+        ''vg'' shimeji mushroom Stir-fry sugar snap pea ''vg'' courgette, yam bean,
+        eryngii mushroom, fried tofu Side  Seasonal vegetable ''vg''  Olive glutinous
+        rice ''vg''  Dessert  Date and sake ''v'' date sponge, sake custard, tonka
+        ice cream"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170831Z
+      X-Amz-Content-Sha256:
+      - bc2214787e1bf1a5796b204c0d78b9e48f9b3be71b978cef21959daf9a1ee135
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=575b0d60f05d9f3e1503857ffeb0eb9727d4cdfccef0b82518d88de11d5a9a0c
+      Content-Length:
+      - '680'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d6cde889-1139-4698-85d1-5e88f4c054c3
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9275269508361816}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:32 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"A la Carte  Supreme  Hakkasan signature Peking duck ''s''
+        Whole duck, pancakes, second course, choice of XO sauce, black bean sauce
+        or ginger and spring onion. The award-winning Irish duck produces a tender
+        duck full of flavour and consistent in quality. This unique duck is the secret
+        to the success of our supreme signature Peking duck dish, with its succulent
+        meat and crispy skin Hakkasan supreme seafood platter Two tiers of fresh seafood
+        on ice, including Carlingford oysters, tiger prawns, a lobster mango salad,
+        hamachi ceviche, hand-dived scallop crudo and abalone salad. Served with a
+        goji berry cocktail sauce, sesame mustard sauce and Asian mignonette Soup  Royal
+        sweetcorn soup lobster, gai lan Hot and sour soup chicken, shiitake mushroom,
+        pomelo Vegetarian sweetcorn soup ''v''  Dim sum  Classic steamed dim sum langoustine
+        har gau with Prunier caviar; halibut shui mai with water chestnut; king crab
+        with peppercorn sauce; wild mushroom ''vg'' Supreme dim sum phoenix eye lobster;
+        abalone and chicken shui mai with Prunier caviar; royal king crab; dover sole
+        with black truffle Classic baked dim sum king crab and white asparagus croquette;
+        baked abalone and chicken puff; spring vegetable and black truffle Vegan dim
+        sum ''vg'' golden squash and lily bulb; black pepper and purple sweet potato;
+        sugar snap and edamame; wild mushroom with black truffle bean curd wrap Small
+        eat  24 hours slow roasted Iberico pork char siu Black garlic glaze, crackling,
+        mustard dressing. With rich, dark meat, the Iberico black pig has earned a
+        reputation as the ''Wagyu'' of the pork world. The extreme marbling of fat
+        gives the pork a sweet, buttery flavour and a delicate texture, elevating
+        dishes to new heights Sesame prawn toast crispy seaweed, enoki mushroom Salt
+        and pepper squid  Golden fried soft shell crab red chilli Crispy silken tofu
+        ''vg'' Szechuan pepper Morel mushroom and vegetable spring roll ''v'' edamame,
+        osmanthus fragrance Salad  Crispy duck salad ''s'' with pomelo, pine nut and
+        shallot Crispy bean curd peel and basil cress salad ''vg'' mango, onion, yuzu
+        dressing Fish  Roasted silver cod in honey ''s'' Champagne and honey Grilled
+        Chilean seabass in honey ''s''  Steamed Chilean seabass ''g'' soy sauce or
+        black bean sauce Sesame crusted halibut spring onion, eldeflower tea sauce;
+        The Greenland halibut is found in the cold waters of the North Atlantic and
+        Arctic Ocean. Appreciated for its snowy-white flesh and delicate, soft texture,
+        this fish is a highly sought-after delicacy. Seafood  Crisp"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170832Z
+      X-Amz-Content-Sha256:
+      - 5a6c3a1f95a41ed8613a16a282a5aed41ed54cec13183ea2e17c91b08a61651b
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=f94464ed4b8bd22bde194383e17028d88227320f1bd786d76d25a2a7ea07731d
+      Content-Length:
+      - '2512'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 668b30be-3cd6-429a-9784-d4605f60e297
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9746204614639282}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:32 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Cocktails Experience romance, trust, captivation and passion.
+        Lose yourself in the journey. Captivation  Innovative mixology, bold flavours,
+        spice. Succumb to magnetism, charm and beauty.  The Far East \"The air begins
+        to change: lighter, fresher, full of energy.\" Kaffir lime infused Belvedere
+        vodka, pear, Akashi-Tai umeshu, lemon Smoky Negroni \"Everything is at stake.\"
+        Suntory Hakushu Distiller''s Reserve whisky, Akashi–Tai umeshu, Campari, Cocchi
+        Vermouth di Torino, Ardbeg 10 yrs mist The Rising Phoenix \"Rising from the
+        ashes, stronger, smarter and more powerful.\" Belvedere vodka, Vida mezcal,
+        yuzu cordial, lime Romance  Sensual, floral and aromatic. Let the love story
+        unfold.  Lychee Martini \"She''s electric, radiant as the moon, the stars,
+        the sun.\" Belvedere vodka, lychee, lime and orange cream bitters Ruby Tang
+        \"Even from afar, he can tell she is beautiful.\" Hendrick''s gin, HK Baijiu,
+        lychee, pomegranate and rose water Yu Garden \"The scent of flowers from gardens
+        a thousand miles away.\" Tanqueray no. Ten gin, lily flower, rose and lavender
+        honey, lemon Strawberry Goji Martini \"A sweet escape from reality awaits.\"
+        Tanqueray no. Ten gin, strawberry, lemon, yuzu sake, pineapple and goji berry
+        Trust  Elegant, classical, signature. Discover faith and emotion.  Silk and
+        Shadow \"Taken by temptation, he opens the secret door. The journey isn''t
+        over yet.\" Toasted coconut infused Diplomatico Planas rum, fresh espresso,
+        Bourdeaux Distilling company cold brew coffee liqueur, macadamia and almond
+        The Hakka \"To him, she was the most prized possession. The only one.\" Belvedere
+        vodka, Akashi–Tai sake, lychee, lime, coconut, passion fruit Pink Mojito \"Your
+        prize? Everything.\" Don Julio Reposado tequila, mint, lime and cranberry
+        Passion  Fiery, intense, intimate. Give into ardent love.  Mistress of Deception
+        \"Obscured by the shadows, she glides across the city.\" Belvedere vodka,
+        Aperol and passionfruit reduction, Moët & Chandon Grand Vintage Rosé 2012
+        Champagne, pomegranate Oolong Ceremony \"Together in perfect harmony. A place
+        where time stands still.\" Tanqueray no.Ten gin, oolong tea cordial, Cocchi
+        vermouth di Torino, orange bitters."}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170832Z
+      X-Amz-Content-Sha256:
+      - 2426f0dc03b533b8f0644d769d945ba667b71c683b603e6d1c12c0abc00bab93
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=32544bed83f355ccddf1ebbc1cebb6781e0a1abb01b90ef8d7471b218175c8e1
+      Content-Length:
+      - '2200'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 634c8aad-935b-4558-8e69-a4db38e23816
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9378670454025269}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:32 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Spirits  Aperitif  Absinthe la Fee 68%  Antica Formula 16.5%  Aperol
+        11%  Campari 25%  Cocchi Americano 16.5%  Cocchi Americano Rosa 16.5%  Cocchi
+        Vermouth di Torino 16%  Cynar 16.5%  Noilly Prat Dry 18%  Pernod 40%  Ricard
+        45%  Sipsmith London Cup 29%  The Gibson Casoni Amarotto Liqueur 29%  The
+        Gibson Casoni Figs and Cherries Liqueur 21%  Beer and Cider  Asahi Super Dry,
+        Japan 5.2%  Big Drop Pale Ale, England 0.5%  Maison Sassy Cidre Rosé, France
+        3%  House spirit  Belvedere Vodka 40%  Tanqueray no. Ten Gin 47.3%  Diplomático
+        Mantuano Rum 40%  Buffalo Trace Bourbon 40%  Johnnie Walker Black Label Whisky
+        12 years old 40%  Don Julio Reposado Tequila 38%  Hennessy VSOP Privilege
+        40%  Mixers  Spirit Selection  Spirits are also available in 25ml measures
+        All spirits by the bottle are served with a choice of three mixers – 600ml
+        each Vodka - Czech  Babička 40%  Vodka - France  Cîroc 40%  Fair Quinoa 40%  Grey
+        Goose 40%  Grey Goose L''Orange 40%  Sauvelle 40%  Vodka - The Netherlands  Ketel
+        One 40%  Ketel One Citroen 40%  Vodka - Poland  Belvedere Citrus 40%  Belvedere
+        Pink Grapefruit 40%  Konik''s Tail 40%  Potocki 40%  Vestal 40%  Zubrówka
+        Bison Grass 40%  Vodka - Russia  Beluga Gold 40%  Stolichnaya Elit 42%  Vodka
+        - Sweden  Cariel Vanilla 37.5%  Other Spirits  Hong Kong Baijiu 43%  Tequila  Don
+        Fulano Blanco 40%  Don Fulano Reposado 40%  Don Julio Reposado 38%  Don Julio
+        Blanco 38%  Don Julio Añejo 38%  El Tesoro Reposado 40%  Enemigo 89 Añejo
+        Cristalino 40%  Gran Centenario Añejo 38%  Herradura Directo de Alambique
+        Blanco 55%  Herradura Reposado 40%  Herradura Añejo 40%  Jose Cuervo Reserva
+        De La Familia 38%  Maestro Dobel Diamond 40%  Patrón Blanco 40%  Patrón Reposado
+        40%  Patrón Añejo 40%  Patrón XO Café 35%  Siete Leguas Añejo 38%  Tapatio
+        Blanco 40%  Tapatio Reposado 38%  Casamigos Tequila Blanco 40%  Casamigos
+        Tequila Reposado 40%  Casamigos Tequila Anejo 40%  Mezcal  Del Maguey Chichicapa
+        48%  Del Maguey Vida 42%  Casamigos Mezcal 40%  Sotol  Hacienda de Chihuahua
+        Sotol Blanco 38%  Rum - Barbados  Doorly''s XO 40%  Foursquare Spiced 37.5%  Mount
+        Gay Black Barrel 43%  Plantation 3 Stars 41.2%  R.L. Seale''s 10 yrs 43%  Plantation
+        Barbados XO 40%  Rum - Bermuda  Gosling''s Family Reserve Old Rum 45%  Rum
+        - Cuba  Bacardi 8 yrs 40%  Havana Club 7 yrs 40%  Havana Club 15 yrs 40%  Matusalem
+        15 yrs 40%  Rum - Guatemala  Zacapa 23 yrs 40%  Rum - Guyana  El Dorado 3
+        yrs 40%  El Dorado 15 yrs 43%  Rum - Haiti  Barbancourt 15 yrs 43%  Rum -
+        Jamaica  Appleton Estate S"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170832Z
+      X-Amz-Content-Sha256:
+      - 92d55da8a510f6211ab5599aed415304d8808b99974406b06fa8a22883f0c4f4
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=136de3ae908f3fed457221a500990fbd11cd1c39dbf01bb27127b8500294a4ad
+      Content-Length:
+      - '2530'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - d190a635-9b55-49d2-b171-7e8fb536f829
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '114'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.5153687000274658},{"LanguageCode":"es","Score":0.24144230782985687}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:32 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Non-Alcoholic A curated collection of non-alcoholic drinks
+        inspired by distinctive ingredients and influenced by the cultures of both
+        near and far. Kombucha  Real Kombucha Dry Dragon 330ml Buckinghamshire, England
+        Fruit Blend  Kowloon Cooler strawberry, raspberry, blackberry, lychee, apple,
+        cranberry and lemonade Gavati Refresher lemongrass, raspberry, peach, guava,
+        elderflower and lemon Coco Passion coconut, passion fruit, almond and coconut
+        water Green Nile kiwi, ginger, coriander, lychee and apple Juice Infusion  Salted
+        grapefruit, lychee and yuzu 100ml  Mango, yuzu and sesame 100ml  Water  Tau
+        Still 750ml Wales Tau Sparkling 750ml Wales"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170832Z
+      X-Amz-Content-Sha256:
+      - 312daef47f6d9fadc8c2ee5cb474f3a0ba7bba943c68f85c469f8d04547e0a04
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=8ced71c2ed419887e567f1f26dddc0497acbce57c209fcf971e17dfa19ba4ba4
+      Content-Length:
+      - '659'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 2886bb0f-0303-4b15-bf22-fd48cb388d75
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9507215619087219}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:32 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"By the Glass and Carafe  Sparkling by the Glass  NV Louis
+        Roederer Brut Premier ''125ml'' Champagne, France 2010 Dom Pérignon ''125ml''
+        Champagne, France NV Ruinart Blanc de Blancs Brut ''125ml'' Champagne, France
+        2012 Moët & Chandon Grand Vintage Rosé ''125ml'' Champagne, France White by
+        the Glass  2018 Verdejo ''Viña Sanzo'', Rodríguez Sanzo ''175ml'' Rueda, Spain
+        2017 Viognier ''LER'' Yalumba ''175ml'' South Australia, Australia 2018 Sauvignon
+        Blanc, Cable Bay Marlborough ''175ml'' Marlborough, New Zealand 2017 Chablis
+        1er Cru ''Les Fourneaux'', Alain Gautheron ''175ml'' Burgundy, France 2012
+        Corton-Charlemagne ''Grand Cru'' Bonneau du Martray ''125ml'' Burgundy, France
+        2016 Chassagne-Montrachet 1er Cru ''Les Vergers'', Phillipe Colin ''125ml''
+        Burgundy, France 2015 Blanc Fumé de Pouilly ''Silex'', Dagueneau ''125ml''
+        Loire, France Rosé by the Glass  2019 Rosa dei Frati, Cà dei Frati ''175ml''
+        Lombardy, Italy 2019 Clos Mireille, Domaines Ott ''125ml'' Provence, France
+        Red by the Glass  2016 Damascà, Tenute Fiorebelli ''175ml'' Veneto, Italy
+        2018 Carmenère ''Maray'' Tabalí ''175ml'' Limarí, Chile 2015 Merlot ''Claypot''
+        Laibach ''175ml'' Stellenbosch, South Africa 2015 Chateau Manoir du Gravoux,
+        Cotes de Castillon ''175ml'' Bordeaux, France 2015 Gevrey-Chambertin, Claude
+        Dugat ''125ml'' Burgundy, France 2006 Château Lynch Bages, Pauillac ''125ml''
+        Bordeaux, France 2013 Tignanello, Antinori ''125ml'' San Casciano in Val di
+        Pesa Orchard by the Glass  NV Sparkling Shiraz, Patritti South Australia,
+        Australia Sweet and Fortified by the Glass  2018 Riesling ''Cordon Cut'',
+        M. Horrocks ''70ml'' Clare Valley, Australia 2017 Icewine Vidal, Peller ''70ml''
+        Niagara, Canada 2015 Gewürztraminer VT, Cave de Turckheim ''70ml'' Alsace,
+        France 2011 l''Ancienne Cure ''L''Abbaye'' ''70ml'' Monbazillac, France 2010
+        Tokaji Aszú ''5 Puttonyos'', Oremus ''70ml'' Tokaj, Hungary 2013 Torcolato,
+        Maculan ''70ml'' Veneto, Italy 2008 Vin Santo, Isole e Olena ''70ml'' Tuscany,
+        Italy 15yo Boal, Henriques & Henriques ''70ml'' Madeira, Portugal 10yo Tawny,
+        Ramos Pintos ''70ml'' Douro, Portugal 1985 Fonseca ''70ml'' Douro, Portugal
+        2003 Château d''Yquem, 1er Cru Classe ''70ml'' Sauternes, France Sake by the
+        Carafe  Dassai ''23'', Junmai Daiginjo ''175ml'' Yamauchi, Japan Dewazakura
+        ''Izumi Judan'', Ginjo ''175ml'' Yamagata, Japan Daishichi, Junmai Kimoto
+        ''175ml'' Fukushima, Japan Tamagawa ''Kinsho'', Daiginjo ''175ml'' Kyoto,
+        Japan White by the Carafe  2018 Verdejo ''Viña Sanzo'', Rodríguez Sanzo ''500ml''
+        Rueda 2017 Viognier ''LER'' Yalumba ''500ml'' South Australia, Australia 2018
+        Sauvignon B"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170832Z
+      X-Amz-Content-Sha256:
+      - 417b40c045fe514c41321865cd060dc0deb31b51e2b9baeb5c0f64821278c3f8
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=a3742b984c7ed654743431c7b866bdd4339c1c3d36c1b886157975a0db50eb6e
+      Content-Length:
+      - '2530'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 25e1c617-9ce8-41b0-a304-ea89dcbe8d6a
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '115'
+      Date:
+      - Thu, 03 Dec 2020 17:08:33 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.34487539529800415},{"LanguageCode":"fr","Score":0.20732805132865906}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:33 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Champagne  Champagne and Sparkling  2010 Dom Pérignon Champagne,
+        France 2008 Dom Perignon Luminous Champagne, France 2012 Perrier-Jouët ''Belle
+        Epoque'' Champagne, France 2002 Cristal, Louis Roederer Champagne, France
+        2012 Cristal, Louis Roederer Champagne, France 1998 Krug ''Clos du Mesnil''
+        Champagne, France 2005 Tattinger ''Comtes de Champagne'' Champagne, France
+        2006 Salon Champagne, France NV Krug ''Grande Cuvée'' Champagne, France NV
+        Louis Roederer Brut Premier Champagne, France NV Ruinart Blanc de Blancs Brut
+        Champagne, France NV Rathfinny Blanc de Blancs Brut East Sussex, England NV
+        Nyetimber ''Classic Cuvée'' West Sussex, England 2014 Digby Vintage Rosé Kent,
+        England NV Ruinart Brut Rosé Champagne, France 2012 Moët & Chandon Grand Vintage
+        Rosé Champagne, France NV Laurent-Perrier Cuvée Rosé Champagne, France 2012
+        Cristal Rosé, Louis Roederer Champagne, France 2006 Dom Pérignon Rosé Champagne,
+        France NV Prosecco di Valdobbiadene Cartizze, Bertiol Veneto, Italy"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170833Z
+      X-Amz-Content-Sha256:
+      - 9ddef060e977624d53eef2439492fa828e27b708125b2e1f4ed35ce96e3156d9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=dad0f07d9011c4b51630a1e0411f5480789a8a4c29dd76a8e87ca6e92dcd8c12
+      Content-Length:
+      - '996'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 4816221c-c26f-439c-abed-dbe015498897
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '113'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.4750002920627594},{"LanguageCode":"fr","Score":0.2677450180053711}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:33 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"White  White: Old World  France: Burgundy  Premier Crus  2017
+        Nathalie & Gilles Fèvre, Vaulorent Chablis 2018 Julien Brocard, Côte de Léchet
+        Chablis 2017 Alain Gautheron, Les Fourneaux Chablis 2015 François Raveneau,
+        Butteaux Chablis 2015 François Raveneau, Forêt Chablis 2015 Comtes Lafon,
+        Goutte d''Or Meursault 2010 Domaine Leflaive, Les Folatières Puligny-Montrachet
+        2017 Etienne Sauzet, La Garenne Puligny-Montrachet 2017 Philippe Colin, Les
+        Vergers Chassagne-Montrachet 2018 Olivier Leflaive, Bonneveaux Montagny Grand
+        Crus: Ultimate Burgundy  2018 Billaud-Simon, Vaudesir Chablis 2009 Bonneau
+        du Martray Corton Charlemagne 2012 Bonneau du Martray Corton-Charlemagne 2014
+        Philippe Morey Bâtard-Montrachet 2017 Domaine Leflaive Bienvenues-Bâtard-Montrachet
+        Villages  2016 Etienne Sauzet, La Tufera Bourgogne 2009 Coche-Dury Bourgogne
+        2013 Domaine Leflaive Bourgogne 2017 Vallet Frères Pernand-Vergelesses 2010
+        Coche-Dury, Les Enseignères Puligny-Montrachet 2014 Domaine Leflaive Puligny
+        Montrachet 2018 Domaine Leflaive Pouilly-Fuissé Pouilly-Fuissé 2016 Domaine
+        Leflaive Mâcon-Verzé Mâcon-Verzé White: Old World  France: Regional  Loire
+        Valley  2018 La Dilettante'', Catherine & Pierre Breton Vouvray 2015 Blanc
+        Fumé de Pouilly ''Silex'', Dagueneau Pouilly-Fumé 2015 Blanc Fumé de Pouilly
+        ''Pur Sang'', Dagueneau Pouilly-Fumé 2014 Blanc Fumé de Pouilly ''Astéroïde'',
+        Dagueneau Pouilly-Fumé 2018 Terre de St-Louis, P. & N. Reverdy Sancerre 2018
+        Le Monts Damnés, F. Cotat Sancerre 2015 Jadis, Henri Bourgeois Sancerre Alsace  2013
+        Riesling ''Clos Ste Hune'', Trimbach Haut-Rhin 2018 Pinot Blanc ''Granit de
+        la Vallée'', Cave de Turckheim Haut-Rhin Rhone Valley  2017 Pagus Luminis,
+        Louis Chèze Condrieu Bordeaux and Southern France  2014 Le Soula Blanc, Gérard
+        Gauby Roussillon 2018 Mas De Daumas Gassac Languedoc White: Old World  Italy,
+        Spain and the rest of Europe  Italy  2019 Gavi di Gavi ''Montessora'', Giustiniana
+        Piedmont 2015 Chardonnay ''Piodilei'', Pio Cesare Piedmont 2013 Bianco Trebež,
+        Dario Prinčič Friuli 2010 Ribolla ''Anfora'', Josko Gravner Friuli 2018 Pinot
+        Grigio, La Tunella Friuli 2019 Pinot Grigio, Livio Felluga Friuli 2017 Vintage
+        Tunina, Jermann Friuli 2018 Friulano, Specogna Friuli 2018 Cervaro della Sala,
+        Antinori Umbria 2018 Pecorino ''Civitas'', Lunaria Orsogna Abruzzo Spain and
+        Portugal  2018 Verdejo ''Viña Sanzo'', Rodríguez Sanzo Rueda, Spain 2018 Ekam,
+        Castell d''Encus Catalonia, Spain 2018 Albariño ''Marinero'', Terras Gauda
+        Rías Baixas, Spain 1986 Gran Reserva ''Castillo Ygay'',"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170833Z
+      X-Amz-Content-Sha256:
+      - 540db605cfca717e31eec420e643f87801a50f3490b13bbcbb491b2c35a1743f
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=444b070de312266726d879a508f61f3a0cab76f03545047bd4942c8bdc3be97e
+      Content-Length:
+      - '2548'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 3c7c4509-b5ff-4fad-b8cd-bbee033df525
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '114'
+      Date:
+      - Thu, 03 Dec 2020 17:08:32 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"fr","Score":0.4291488826274872},{"LanguageCode":"en","Score":0.15998242795467377}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:33 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Red  Red  France: Burgundy  Premier Cru  2016 Georges Lignier
+        Morey-St-Denis 2007 Comte Georges de Vogüé, Les Amoureuses Chambolle-Musigny
+        2011 Prieur Roch, Vougeot Vougeot 2009 Méo Camuzet, Aux Boudots Nuits-St-Georges
+        2012 Domaine Tortochot, Lavaux St. Jacques Gevrey-Chambertin Grand Crus: Ultimate
+        Burgundy  2015 Bruno Clair Chambertin Clos De Bèze 2013 Domaine Ponsot Griotte-Chambertin
+        2013 Domaine Chantal Remy Latricieres-Chambertin 2002 Domaine des Lambrays
+        Clos des Lambrays 2004 Dujac Bonnes-Mares 2013 Comte Georges de Vogüé Bonnes-Mares
+        2016 Château de Marsannay Clos de Vougeot 2012 Jean Grivot Echezeaux 2009
+        Domaine de la Romanée-Conti Richebourg 2005 Domaine de la Romanée-Conti Richebourg
+        2014 Domaine de la Romanée-Conti Romanée-St-Vivant 2014 Méo Camuzet ''Perrières''
+        Corton 2012 Bonneau du Martray Corton Villages  2013 Jean-Louis Trapet, Cuvée
+        Ostrea Gevrey-Chambertin 2015 Drouhin-Laroze Gevrey-Chambertin 2014 Claude
+        Dugat Gevrey-Chambertin 2011 Coche Dury Auxey-Duresses Red  France: Regional  Loire
+        Valley  2011 ''Les Clos'', Clos Rougeard Saumur Champigny Beaujolais  2017
+        ''Côte du Py'', Jean Foillard Morgon Northern Rhône  2014 La Sizeranne, M.
+        Chapoutier Hermitage 2018 Equinoxe, Graillot-Schmittel Crozes-Hermitage 2014
+        Francois de Tournon, Delas Saint-Joseph Southern Rhône  2016 Le Bouquet Des
+        Garrigues, Le Clos du Caillou Côtes du Rhône 2015 Télégramme, Vieux Télégraphe
+        Châteauneuf-du-Pape 2008 Château de Beaucastel Châteauneuf-du-Pape 2016 Domaine
+        de Marcoux Châteauneuf-du-Pape Languedoc  2013 Domaine de la Grange des Pères
+        Vin de Pays de l''Hérault 2016 Pica Broca, Château Sauvageonne Languedoc Red  France:
+        Bordeaux  Left Bank  2014 Château de Pez St-Estèphe 2006 Lynch Bages, 5ème
+        Cru Classé Pauillac 2009 Pichon-Longueville Comtesse de Lalande, 2ème Cru
+        Classé Pauillac 2005 Ducru-Beaucaillou 2ème Cru Classé St-Julien 2011 Haut-Bailly
+        Pessac-Léognan 2001 Palmer, 3ème Cru Classé Margaux 2008 Palmer, 3ème Cru
+        Classé Margaux 2001 Ducru-Beaucaillou 2ème Cru Classé St-Julien 2015 Smith
+        Haut Lafitte Pessac-Léognan First Growths  1996 Lafite-Rothschild, 1er Cru
+        Classé Pauillac 1996 Mouton-Rothschild, 1er Cru Classé Pauillac 2004 Mouton-Rothschild,
+        1er Cru Classé Pauillac 2006 Mouton-Rothschild, 1er Cru Classé Pauillac 1982
+        Latour, 1er Cru Classé Pauillac 1996 Latour, 1er Cru Classé Pauillac 1986
+        Margaux, 1er Cru Classé Margaux 1996 Margaux, 1er Cru Classé Margaux Right
+        Bank  2011 La Conseillante Pomerol 2000 La Conseillante Pomerol 1998 L''Evangile
+        Pomerol"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170833Z
+      X-Amz-Content-Sha256:
+      - b27ebe6580dc14fd17fd204d75214183c04f0334b37ed2fdb7a64648d4d45fa9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=bf1002fff0861f3d3f6750063dedbf9a13b0362b5551296e0c82a508dbc17c36
+      Content-Length:
+      - '2566'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 86bbe718-b227-4f7a-b985-302931598f13
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:33 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"fr","Score":0.7401064038276672}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:33 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Rosé  Rosé  2019 Clos Mireille, Domaines Ott Provence, France
+        2019 Rock Angel, Château d''Esclans Provence, France 2019 Rosa dei Frati,
+        Cà dei Frati Lombardy, Italy 2018 Rose of Virginia, Charles Melton Barossa
+        Valley, Australia"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170833Z
+      X-Amz-Content-Sha256:
+      - 93d4744104e3886cc3a506baceb1f1e46a76851d166ef3ac28393425a59d9c12
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=1266b053092c2138483676fa493eb575b3ce9f9ce480d8eb69010f20d4ddb319
+      Content-Length:
+      - '242'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - a5674374-2b9b-47dd-a2ae-b211cb34ad9a
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '115'
+      Date:
+      - Thu, 03 Dec 2020 17:08:33 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"fr","Score":0.33829179406166077},{"LanguageCode":"en","Score":0.24833881855010986}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:33 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Sake and Others  Orchard  2018 Sparkling Donauriesling, Loimer
+        Niederösterreich, Austria NV Sparkling Shiraz, Pattriti South Australia Sake  Dassai
+        ''Beyond'', Junmai Daiginjo ''720ml'' Yamaguchi, Japan Tatenokawa ''Komyo'',
+        Yamadanishiki, Junmai Daiginjo ''720ml'' Yamagata, Japan Tedorigawa ''Mangekyo
+        Kaleidoscope'', Daiginjo ''720ml'' Ishikawa, Japan Masumi ''Yumedono'', Daiginjo
+        ''720ml'' Nagano, Japan Niizawa ''Zankyo Super 7'', Junmai Daiginjo Miyagi,
+        Japan Tatenokawa \"8\" Ultra Kyokugen, Junmai Daiginjo ''720ml'' Yamagata,
+        Japan Shirakabegura ''Mio'', Sparkling ''300ml'' Hyogo, Japan Hakutsuru ''Sayuri'',
+        Nigori ''300ml'' Hyogo, Japan Gassan No Yuki ''Dewa 33'', Junmai Ginjo ''300ml''
+        Yamagata, Japan Dewazakura ''Omachi'', Junmai Ginjo ''720ml'' Yamagata, Japan
+        Tosatsuru ''Azure'', Ginjo ''720ml'' Kochi, Japan Dewazakura ''Izumi Judan'',
+        Ginjo ''720ml'' Yamagata, Japan Dassai ''23'', Junmai Daiginjo ''720ml'' Yamaguchi,
+        Japan Kamoizumi Shusen ''Three Dots'', Junmai ''900ml'' Hiroshima, Japan Masumi
+        ''Okuden Kantsukuri'', Junmai ''720ml'' Nagano, Japan Akashi-Tai Kuro ''Black'',
+        Honjōzō ''720ml'' Hyogo, Japan Daishichi, Junmai Kimoto ''720ml'' Fukushima,
+        Japan Tamagawa ''Kinsho'', Daiginjo ''720ml'' Kyoto, Japan Sweet and Fortified  2018
+        Riesling ''Cordon Cut'', M. Horrocks ''375ml'' Clare Valley, Australia 2017
+        Icewine Vidal, Peller ''375ml'' Niagara, Canada 2015 Gewürztraminer VT, Cave
+        de Turckheim ''500ml'' Alsace, France 2011 l''Ancienne Cure ''L''Abbaye''
+        ''375ml'' Monbazillac, France 2010 Tokaji Aszú ''5 Puttonyos'', Oremus ''500ml''
+        Tokaj, Hungary 2003 Château d''Yquem, 1er Cru Classé Supérieur ''375ml'' Sauternes,
+        France 2013 Torcolato, Maculan ''375ml'' Veneto, Italy 2008 Vin Santo, Isole
+        e Olena ''375ml'' Tuscany, Italy 15yo Boal, Henriques & Henriques ''375ml''
+        Madeira, Portugal 10yo Tawny, Ramos Pintos ''375ml'' Douro, Portugal 1985
+        Fonseca ''750ml'' Douro, Portugal Special formats  NV Louis Roederer Brut
+        Premier ''magnum'' Champagne, France NV Louis Roederer Brut Premier ''jeroboam''
+        Champagne, France 2008 Dom Pérignon ''magnum'' Champagne, France 2009 Cristal,
+        Louis Roederer ''magnum'' Champagne, France 2002 Cristal Rosé, Louis Roederer
+        ''magnum'' Champagne, France 1999 Cristal, Louis Roederer ''jeroboam'' Champagne,
+        France NV Laurent-Perrier Cuvée Rosé ''magnum'' Champagne, France NV Ruinart
+        Brut Rosé ''magnum'' Champagne, France 2016 Chablis 1er Cru ''Montmains'',
+        JM Brocard ''magnum'' Burgundy, France 2015 Chablis Grand Cru ''Bougros'',
+        W. Fèvre ''magnum'' Burgundy, France 2012 Corton Charlemagne Grand Cru, Bonneau
+        du Martray ''magnum'' Burgundy, France 201"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170833Z
+      X-Amz-Content-Sha256:
+      - 02a32a800b0147ba84713e4da348e67ad1f28509c087971c6708bcbdc4dc99dc
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=24f2679e2cdb356f32409be3d6764307e0603140ad798595fbda7b2850a05c57
+      Content-Length:
+      - '2528'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 8354b283-5ee1-4cfb-a7b6-920ad9af3df1
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '115'
+      Date:
+      - Thu, 03 Dec 2020 17:08:34 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.33278414607048035},{"LanguageCode":"fr","Score":0.14889326691627502}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:34 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Dessert  Dessert  Spiky lemon ''g'' yuzu cremeux, calamansi,
+        almond cake The Rocher ''g'' Manjari mousse, peanut praline, kumquat marmelade
+        Date and Sake ''v'' date sponge soaked in sake syrup, orange cream, sake custard,
+        tonka ice cream Fruit market ''vg'' seasonal vegan dessert The Platter 3 miniature
+        spiky lemon ''g'', miniature date and sake ''v'', miniature chocolate souffle
+        ''v'' The Platter 5 miniature spiky lemon ''g'', miniature date and sake ''v'',
+        miniature chocolate souffle ''v'', miniature the rocher ''g'', miniature apple
+        and cassis Selection of ice creams and sorbet ''v'' "}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170834Z
+      X-Amz-Content-Sha256:
+      - b533123b5b3009685e1b3d0488b22516f0c054ee72eeba9f07ee731862c6f1dd
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=7a34f8c6685eb9e4129883454cb3aa03b75ac7a15cb87f3286f632da74dc7d80
+      Content-Length:
+      - '581'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 17c016a5-f76f-49bd-86a6-690080cd72c1
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:34 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9277076721191406}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:34 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"After-Dinner Drinks  Coffee Coffee beans from Mozzo, United
+        Kingdom; Decaffeinated coffee available upon request Espresso  Double espresso  Cappuccino  Caffè
+        latte  Macchiato  Hot chocolate  Liqueur Coffee £7 Tuscan Coffee Tuaca vanilla
+        liqueur and caramel with coffee and steamed milk Spiced Coffee Foursquare
+        spiced rum and gingerbread with coffee and steamed milk Hazelnut Arabica Frangelico
+        and Heering coffee liqueur with coffee and steamed milk Café Pacifico Bailey''s
+        cream liqueur and coconut rum with coffee and steamed milk After Dinner Cocktail  Oolong
+        Ceremony \"Together in perfect harmony. A place where time stands still.\"
+        Tanqueray no.Ten gin, oolong tea cordial, Cocchi vermouth di Torino, orange
+        bitters. Silk and Shadow \"Taken by temptation, he opens the secret door.
+        The journey isn''t over yet.\" Toasted coconut infused Diplomatico Planas
+        rum, fresh espresso, Bourdeaux Distilling company cold brew coffee liqueur,
+        macadamia and almond Smoky Negroni \"Everything is at stake.\" Suntory Hakushu
+        Distiller''s Reserve whisky, Akashi–Tai umeshu, Campari, Cocchi Vermouth di
+        Torino, Ardbeg 10 yrs mist Blue Tea  Tie Kuan Yin Oolong, Fujian, China  Classical
+        Oriental Beauty, Taipei, Taiwan  High Mountain Oolong, Taipei, Taiwan  Green
+        Tea  Dragon''s Well green tea, Taipei, Taiwan  Dark Tea  Puer Tuo Cha, Yunnan,
+        China  Flower Tea  Chun Hao Jasmine Green Tea, Fujian, China  Orchid Pao Chung
+        Cha, Taipei, Taiwan  White Tea  White Peony, Taipei, Taiwan  Darjeeling Tea
+        Darjeeling First Flush Darjeeling, Castleton, India  Assam Tea  First Flush
+        Assam, Banaspaty, India  Blended Tea  Earl Grey  Herbal Tea  Chamomile  Mint  Digestif  Chartreuse
+        Green 55%  Chartreuse Yellow 40%  Cointreau 40%  Drambuie 40%  Fernet Branca
+        40%  Grand Marnier 40%  Jägermeister 35%  Kummel 39%  Limoncello Evangelista
+        32%  Sambuca Ramazotti (White) 38%  Strega 40%  Calvados  Château du Breuil
+        40%  Domaine A Camut Pays D''Auge 6 ans 40%  Domaine L Dupont Pays D''Auge
+        17 ans 42%  Grappa  Bepi Tosolini Tocai en Susino Barrique 40%  Marolo Grappa
+        di Moscato Après 5 yrs 42%  Marolo Grappa di Brunello 44%  Cognac  Courvoisier
+        Exclusif 40%  Courvoisier XO 40%  Delamain XO 40%  Hennessy VSOP Privilege
+        40%  Hennessy XO 40%  Hine Rare VSOP 40%  Hine Antique XO 40%  Martell Cordon
+        Bleu 40%  Martell XO 40%  Ragnaud-Sabourin VSOP Premier Cru 40%  Rémy Martin
+        VSOP 40%  Rémy Martin XO 40%  Armagnac  Baron de Sigognac Bas Armagnac 20
+        ans d''âge 40%  Clés des Ducs XO 40%  Janneau XO 40%  Spirit Selection Spirits
+        are al"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170834Z
+      X-Amz-Content-Sha256:
+      - 5726a1406315b23036395359441b6a4e58d46abcd2403fa5f6493870d260e63c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=a31c1e7d9c3e537d39e296b8dd3c57b4bc701e8b20f10a7e0cb978519de54ffc
+      Content-Length:
+      - '2530'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - ac1fb667-165d-4d81-95c8-32c341c33805
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:34 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.7746453881263733}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:34 GMT
+- request:
+    method: post
+    uri: https://comprehend.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"Text":"Hakkasan at Home  Festive  Amaryllis festive menu A selection
+        of Hakkasan signature dishes along with your choice of wine. Includes Crispy
+        duck salad, Supreme dim sum platter to start, Grilled Chilean seabass in honey,
+        Szechuan style lobster, Wok-fry venison and a side of seasonal vegetables
+        and steamed jasmine rice Classic baked dim sum baked abalone and chicken puff,
+        spring vegetable and black truffle, venison puff Szechuan style lobster Thai
+        basil, Shaoxing rice wine Wok-fry venison  King crab glass noodle with XO
+        sauce shiitake mushroom, sweet cabbage, red chilli Set menus  Taste of Hakkasan
+        choice of dim sum (3 pieces), choice of main course, seasonal vegetables and
+        steamed jasmine rice Orchid menu dim sum trio, beef in black bean sauce, spicy
+        prawn, roasted chicken in satay sauce, seasonal vegetables and steamed jasmine
+        rice Hibiscus menu classic steamed dim sum, crispy duck salad, stir-fry rib
+        eye beef with merlot, roasted silver cod, black truffle roasted duck, seasonal
+        vegetables and steamed jasmine rice Soup  Vegetarian sweetcorn soup ''v''  Royal
+        sweetcorn soup lobster, gai lan Hot and sour soup chicken, shiitake mushroom,
+        pomelo Dim sum  Classic steamed dim sum langoustine har gau with Prunier caviar,
+        halibut shui mai with water chestnut, king crab with peppercorn, wild mushroom
+        dumpling ''vg'' Supreme dim sum phoenix eye lobster dumpling, abalone and
+        chicken shui mai with Prunier caviar, royal king crab dumpling, Dover sole
+        with black truffle Vegan dim sum ''vg'' golden squash and lily bulb crystal
+        dumpling, black pepper and purple sweet potato dumpling, sugar snap and edamame
+        dumpling, wild mushroom with black truffle beancurd wrap Classic baked dim
+        sum baked abalone and chicken puff, spring vegetable and black truffle, venison
+        puff Small eat and salad  Sesame prawn toast crispy seaweed, enoki mushroom
+        Morel mushroom and vegetable spring roll ''v'' edamame, osmanthus fragrance
+        Crispy duck salad pomelo, pine nut and shallot Crispy bean curd peel and basil
+        cress salad ''vg'' mango, onion, yuzu dressing Spicy soft shell crab almond,
+        red chilli Supreme  Hakkasan signature Peking duck whole duck prepared two
+        ways: first course with pancakes, baby cucumber and spring onion; second course
+        wok-fried in black bean sauce Hakkasan signature Peking duck with Prunier
+        caviar whole duck prepared two ways: first course with pancakes, Prunier caviar,
+        baby cucumber and spring onion; second course wok-fried in black bean sauce
+        Fish and seafood  Roasted silver cod champagn"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.1
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-comprehend/1.36.0
+      X-Amz-Target:
+      - Comprehend_20171127.DetectDominantLanguage
+      Host:
+      - comprehend.us-east-1.amazonaws.com
+      X-Amz-Date:
+      - 20201203T170834Z
+      X-Amz-Content-Sha256:
+      - 4d80d23c362720ece3375ada2020c36ef668bb171d573076203c51a71a69ac9c
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20201203/us-east-1/comprehend/aws4_request,
+        SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=9830a8154f51612faf6697376b79681c10d488c287b4c25cc77fe28544239e2d
+      Content-Length:
+      - '2512'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 9fc00412-5826-4013-93f6-04a7aaae4b15
+      Content-Type:
+      - application/x-amz-json-1.1
+      Content-Length:
+      - '64'
+      Date:
+      - Thu, 03 Dec 2020 17:08:34 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Languages":[{"LanguageCode":"en","Score":0.9633747935295105}]}'
+  recorded_at: Thu, 03 Dec 2020 17:08:34 GMT
 recorded_with: VCR 6.0.0

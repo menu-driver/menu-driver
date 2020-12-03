@@ -206,7 +206,7 @@ SCSS
 
   end
 
-  context 'include_menus parameter', :vcr do
+  context 'menu parameter', :vcr do
 
     it 'filters out all but one named menu from the generated web menus.', type: :feature do
 
@@ -214,7 +214,7 @@ SCSS
       @menus_html =
         @single_platform.generate_menus_html(
           location_id:location_id,
-          include_menus: 'Cocktails')
+          menu: 'Cocktails')
 
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 1)
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
@@ -229,7 +229,7 @@ SCSS
       @menus_html =
         @single_platform.generate_menus_html(
           location_id:location_id,
-          include_menus: 'Cocktails,Spirits')
+          menu: 'Cocktails,Spirits')
 
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 2)
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
@@ -244,7 +244,7 @@ SCSS
       @menus_html =
         @single_platform.generate_menus_html(
           location_id:location_id,
-          include_menus: '3984521')
+          menu: '3984521')
 
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 1)
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
@@ -259,7 +259,7 @@ SCSS
       @menus_html =
         @single_platform.generate_menus_html(
           location_id:location_id,
-          include_menus: '3984521,3720826')
+          menu: '3984521,3720826')
 
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', count: 2)
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Cocktails')
