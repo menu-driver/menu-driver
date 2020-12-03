@@ -36,12 +36,17 @@ describe "Options Files" do
 
     it 'recursively locates all options files in the themes folder' do
       expect(@options_files.data.size).to be 2
-      expect(@options_files.menu_names). to include 'test-location'
-      expect(@options_files.menu_names). to include 'test-location-B'
+      expect(@options_files.menu_names).to include 'test-location'
+      expect(@options_files.menu_names).to include 'test-location-B'
     end
 
-    pending 'loads the options for each location' do
-      error
+    it 'loads the options for each location' do
+      expect(@options_files.
+        menu_options('test-location')['theme']).to eq 'standard'
+      expect(@options_files.
+        menu_options('test-location-B')['theme']).to eq 'child'
+      expect(@options_files.
+        menu_options('test-location-B')['location']).to eq 'test-location'
     end
 
   end

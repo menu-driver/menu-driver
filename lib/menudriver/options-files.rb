@@ -23,6 +23,10 @@ module MenuDriver
       self.data.map{|entry| entry.first }
     end
 
+    def menu_options(menu_name)
+      self.data.select{|entry| entry[0].eql? menu_name}.first[1]
+    end
+
   end
 
 end
