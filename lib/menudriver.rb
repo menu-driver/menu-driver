@@ -21,6 +21,7 @@ module MenuDriver
     desc "generate [location]", "generate restaurant menu HTML data for the location"
     option :name, :type => :string, :desc => 'output folder name (defaults to the location)'
     option :theme, :type => :string, :desc => 'name (not path) of theme folder for ERB HTML templates.'
+    option :stack, :type => :string, :desc => 'The name of the CloudFront stack that was used to generate the S3 bucket where you want to deploy output. Example: "production".  Default: "staging".', :default => 'staging'
     option :vertical_grid, :type => :boolean, :default => false, :desc => 'Show the vertical rhythym with horizontal lines showing the line height.'
     option :cache, :type => :boolean, :default => false, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
     option :data_file, :type => :string, :desc => 'file name for JSON menu data file'
@@ -41,6 +42,10 @@ module MenuDriver
 
       begin
         SamParameterEnvironment.load
+
+        # Always use the stack specified by the CLI option (default: staging)
+        # instead of the one specified in the samconfig.toml file for AWS Lambda.
+        ENV['STACK'] = options['stack']
 
         SinglePlatform.new(
           client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],

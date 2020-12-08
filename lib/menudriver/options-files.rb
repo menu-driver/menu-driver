@@ -13,7 +13,9 @@ module MenuDriver
 
     def load_options_files
       Dir.glob('themes/**/*.{yml,yaml}').each do |file|
-        YAML.load(File.read(file)).each do |name|
+        entries = YAML.load(File.read(file))
+        next unless entries
+        entries.each do |name|
           self.data.push(name)
         end
       end
