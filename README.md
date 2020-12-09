@@ -6,7 +6,7 @@ A tool for generating web menus from structured menu data and branded templates.
 
 Menu Driver connects to a data source, like Single Platform, and generates all of the HTML, CSS and Javascript necessary for presenting an interactive web representation of the restaurant menus.
 
-![Menu Driver Overall](https://raw.githubusercontent.com/menu-driver/menu-driver/production/docs/images/Menu Driver Overall.png)
+![Menu Driver Overall](https://raw.githubusercontent.com/menu-driver/menu-driver/production/docs/images/Menu_Driver_Overall.png)
 
 The output is static and doesn't require a back end, and can be served from a fast, reliable and inexpensive static web host like Amazon S3.  The web menus are aimed especially at mobile users in the restaurants, but they're also intended for desktop and tablet viewers of the restaurant web site.
 
