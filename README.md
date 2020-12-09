@@ -1,8 +1,24 @@
 # Menu Driver
 
-Serverless microservice built with Ruby for hosting web restaurant menus based on data from the Single Platform API.
-
 [![Coverage Status](https://coveralls.io/repos/github/VenueDriver/menu-driver/badge.svg?branch=production)](https://coveralls.io/github/VenueDriver/menu-driver?branch=production)
+
+A tool for generating web menus from structured menu data and branded templates.  Originally developed by Hakkasan Group in response to the COVID-19 pandemic for creating high-performance, accessible web menus for use with QR codes in restaurants.
+
+Menu Driver connects to a data source, like Single Platform, and generates all of the HTML, CSS and Javascript necessary for presenting an interactive web representation of the restaurant menus.
+
+![Menu Driver Overall](https://raw.githubusercontent.com/menu-driver/menu-driver/production/docs/images/Menu Driver Overall.png)
+
+The output is static and doesn't require a back end, and can be served from a fast, reliable and inexpensive static web host like Amazon S3.  The web menus are aimed especially at mobile users in the restaurants, but they're also intended for desktop and tablet viewers of the restaurant web site.
+
+## CLI
+
+The simplest way to run Menu Driver is with the CLI tool:
+
+    menudriver generate restaurant-1 --theme=our-awesome-resataurants
+
+## Serverless Microservice
+
+You can also run it in the cloud in AWS Lambda, so that you can enable restaurant marketers to update menus for themselves.  While you still maintain and operate the code that they use.
 
 ## Development
 
@@ -37,16 +53,16 @@ SAM will ask you a series of questions so that it can build a configuration file
 You should see something like this:
 
     $ sam deploy -g
-    
+
     Configuring SAM deploy
     ======================
-    
+
             Looking for samconfig.toml :  Found
             Reading default arguments  :  Success
-    
+
             Setting default arguments for 'sam deploy'
             =========================================
-            Stack Name [menu-driver-development]: 
+            Stack Name [menu-driver-development]:
 
 The stack name will be pre-filled for you.  You don't want to override that.  Every time you run the Rake task to deploy, Ruby logic will set up the stack name and S3 prefix values and also the parameter override for the "Stack" parameter.  Anything you specify here will be overwritten by that process.
 
@@ -56,8 +72,8 @@ You will reach a point where it will ask you for the value for the Stack paramet
 
         Setting default arguments for 'sam deploy'
         =========================================
-        Stack Name [menu-driver-test]: 
-        AWS Region [us-east-1]: 
+        Stack Name [menu-driver-test]:
+        AWS Region [us-east-1]:
         Parameter Stack []:
 
 Plese type `development`.  I wish that I could pre-fill that for you but the guided deployment feature of SAM doesn't seem to have a way to do that.  Sorry.  For future deployments, Ruby logic in the `sam:deploy` Rake task will automatically update the stack name in the configuration file based on the `STACK` environment variable, or passed as an argument.
@@ -66,8 +82,8 @@ After that, it will ask you for your Single Platform secrets:
 
         Setting default arguments for 'sam deploy'
         =========================================
-        Stack Name [menu-driver-development]: 
-        AWS Region [us-east-1]: 
+        Stack Name [menu-driver-development]:
+        AWS Region [us-east-1]:
         Parameter Stack []: development
         Parameter SinglePlatformClientID []:
 
