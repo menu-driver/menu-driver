@@ -317,3 +317,10 @@ if(location.hash !== undefined && location.hash.length > 1) {
     document.querySelectorAll("nav.menu-nav a.current")[0].
       getAttribute('data-menu').substring(5))
 }
+
+$(document).ready(function(){
+  $('#nav-icon').click(function(){
+    $(this).toggleClass('open');
+    $('.nav-overlay').toggleClass('show');
+  });
+});
