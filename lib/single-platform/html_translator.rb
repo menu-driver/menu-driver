@@ -22,11 +22,20 @@ class SinglePlatform
       merge(location_data: raw_data))
 
     # Get the HTML (ERB) template.
-    template = Theme.new(args[:theme]).file('index.html')
+    theme = Theme.new(args[:theme])
+    template = theme.file('index.html')
 
     # Render output HTML.
     renderer = ERB.new(template, nil, '-')
     html = renderer.result(binding)
+
+    # Perform short-code substitutions.
+    file = theme.file('codes.yml')
+    if file && (codes = YAML.load(file))
+      codes.each do |code|
+        html.gsub! /#{code[0]}/, code[1]
+      end
+    end
 
     # Compress it.
     compressor = HtmlCompressor::Compressor.new

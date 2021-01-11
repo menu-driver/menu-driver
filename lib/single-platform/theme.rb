@@ -29,6 +29,7 @@ class SinglePlatform::Theme
     folder = folders.select do |folder|
       File.exist?(File.join([folder, file_name]))
     end.first
+    return nil if folder.nil?
     File.read(File.join([folder, file_name]))
   end
 

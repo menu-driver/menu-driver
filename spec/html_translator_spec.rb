@@ -3,6 +3,12 @@ require_relative '../lib/single-platform'
 
 describe "HTML translator" do
 
+  let(:codes) do
+    <<-YAML
+"'v'": '&#x24CB;'
+YAML
+  end
+
   before(:all) do
     @single_platform = SinglePlatform.new(
         client_id: ENV['SINGLE_PLATFORM_CLIENT_ID'],
@@ -118,6 +124,7 @@ ERB
 
     before(:each) do
       allow(File).to receive(:read).with('themes/standard.theme/index.html').and_return(alternate_template)
+      allow(File).to receive(:read).with('themes/standard.theme/codes.yml').and_return('')
 
       @location_id = 'hakkasan-mayfair'
       @menus_html =
@@ -175,6 +182,7 @@ SCSS
     before(:each) do
       allow(File).to receive(:read).with('themes/standard.theme/index.html').and_return(alternate_template)
       expect(File).to receive(:read).with('themes/standard.theme/styles.scss').and_return(alternate_scss)
+      allow(File).to receive(:read).with('themes/standard.theme/codes.yml').and_return('')
 
       @location_id = 'hakkasan-mayfair'
       @menus_html =
@@ -266,6 +274,23 @@ SCSS
       expect(@menus_html).to have_selector('ul.menus > li.menu > .name', text: 'Spirits')
       expect(@menus_html).not_to have_selector('ul.menus > li.menu > .name', text: 'Non-Alcoholic')
 
+    end
+
+  end
+
+  context 'substitutes short codes', :vcr do
+
+    before(:each) do
+      @location_id = 'hakkasan-mayfair'
+      @menus_html =
+        @single_platform.generate_menus_html(location_id:@location_id)
+      allow(File).to receive(:read).with('themes/standard.theme/codes.yml').
+        and_return(codes)
+    end
+
+    it 'replaces a short code with an expansion', type: :feature do
+      expect(@menus_html).to include '&#x24CB;'
+      expect(@menus_html).not_to include "'v'"
     end
 
   end
