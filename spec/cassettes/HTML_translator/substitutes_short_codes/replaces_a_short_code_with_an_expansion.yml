@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://publishing-api.singleplatform.com/locations/hakkasan-mayfair/all/?client=c3sbrpbtkbs5gverurfkxpemc&signature=FSdCm/u6i0OBHLm7qlTYPOZhWHU=&theme=alternate
+    uri: https://publishing-api.singleplatform.com/locations/hakkasan-mayfair/all/?client=c3sbrpbtkbs5gverurfkxpemc&signature=yEpu97hPhE1j3OHAri1fQvHDOVs=
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Jan 2021 20:58:00 GMT
+      - Mon, 11 Jan 2021 20:36:31 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -7687,7 +7687,7 @@ http_interactions:
         Oi0wLjE0NDc4LCJsYXRpdHVkZSI6NTEuNTEwMjksIm5laWdoYm9yaG9vZCI6
         Ik1heWZhaXIiLCJjcm9zc19zdHJlZXQiOiIxNyBCcnV0b24gU3RyZWV0Iiwi
         ZGlyZWN0aW9ucyI6IiJ9LCJfaWQiOiIxMzkyNDE3In19fQ==
-  recorded_at: Mon, 11 Jan 2021 20:58:00 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:31 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -7714,13 +7714,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205800Z
+      - 20210111T203631Z
       X-Amz-Content-Sha256:
       - 4a93e225a2bf1960b588774741af8b9fa4784789cb9c64415b674508d3426f5e
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=cfb52529e682508ea7db1b7327057efeb63c8f31e176734930d8124691f780d8
+        Signature=a3bf12dbb51e230a7c178f9cdb8a59c1853b338d591f7afc45e4a85641553666
       Content-Length:
       - '634'
       Accept:
@@ -7731,17 +7731,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 3eaa4ea8-0461-45bc-89b3-31ff8d2abc81
+      - 7fb17d03-01ea-4793-917f-996a92f99c5a
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '63'
       Date:
-      - Mon, 11 Jan 2021 20:58:00 GMT
+      - Mon, 11 Jan 2021 20:36:31 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.947463870048523}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:00 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:32 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -7769,13 +7769,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205800Z
+      - 20210111T203632Z
       X-Amz-Content-Sha256:
       - 3523b56423449b15bacc98a722c3e64b5357cafad35caa5921223311230dbbec
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=f1fcd1633e3b7e5a3046cb4079a7396b7b5e52614e27adbd451a5b684d3cb011
+        Signature=299632fff4f5dda936425f464ab094e170405df9e17e8d51c79857b4b64128b4
       Content-Length:
       - '694'
       Accept:
@@ -7786,17 +7786,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 798a5f72-ed88-45d4-bf85-cc3d1cc5bf52
+      - c845396b-9163-4b45-b588-2ac5fa081c79
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:00 GMT
+      - Mon, 11 Jan 2021 20:36:32 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9448235034942627}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:01 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:32 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -7823,13 +7823,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205801Z
+      - 20210111T203632Z
       X-Amz-Content-Sha256:
       - a13dc4c3f5f45e99b02fb93d4d31b36c793f33110eba82d33ca92d5fb6e6a233
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=fcc9acf03458c9937c6ef81f35bd92209f9ec353f1bfd1fdf4eded4f76e900d6
+        Signature=0625b3123291b00f1560579fa55019e7b1c769397e00cb054cf6320d6880ad9a
       Content-Length:
       - '686'
       Accept:
@@ -7840,17 +7840,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 678acdac-c88c-4c7c-9b04-4ebc210d9fee
+      - 1357b195-35a0-4041-b402-72b0a8187f5d
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:00 GMT
+      - Mon, 11 Jan 2021 20:36:31 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9578827023506165}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:01 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:32 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -7875,13 +7875,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205801Z
+      - 20210111T203632Z
       X-Amz-Content-Sha256:
       - 7639bcbbc7ddfc05bf822c6ee53dbf4ca9da5962b46f77b8570f17a0be93ebbe
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=8d242a4722454e05238e79370379b9d438d717f01bfb58ac1a744285c8499d08
+        Signature=d473f3e3bf0d761b457d0141eda68c9f53a25ed75e2512f8212bcd9c6a8479f7
       Content-Length:
       - '491'
       Accept:
@@ -7892,17 +7892,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 60dd545a-61d1-488f-8209-99affb0bc3c0
+      - 857de02b-fa6f-48fa-8756-168ed02d19a3
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:00 GMT
+      - Mon, 11 Jan 2021 20:36:32 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9576675295829773}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:01 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:32 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -7930,13 +7930,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205801Z
+      - 20210111T203632Z
       X-Amz-Content-Sha256:
       - bc2214787e1bf1a5796b204c0d78b9e48f9b3be71b978cef21959daf9a1ee135
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=e4e1d30253986febd77aba0284bb9358c26d713c9af95cb2c293f892a173ab4e
+        Signature=68598c8715287c807ae6f71c626d89e4f5219748823a7573941bdc4714bc75e9
       Content-Length:
       - '680'
       Accept:
@@ -7947,17 +7947,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 3c203f21-62c3-4e9c-8b74-67304ff8f4c0
+      - c4f4975a-c6e6-4250-a50a-abbc1800bead
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:01 GMT
+      - Mon, 11 Jan 2021 20:36:33 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9275269508361816}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:01 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:33 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -7985,13 +7985,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205801Z
+      - 20210111T203633Z
       X-Amz-Content-Sha256:
       - d5598ab32f36a46ab193cec50ea227886e024d4f7c4f42ee86d6d485ed66084a
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=02c8e310e173955c82eafabe35634fcb873435e0d9f342705114f052b7a7339b
+        Signature=6f2d305c0fb67256964fc2579c31db0c1138ae42cf7ac085b518754c0d825fd2
       Content-Length:
       - '723'
       Accept:
@@ -8002,17 +8002,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 3592b9cc-9000-4d36-ad06-ff0aa824170c
+      - 152f8e57-49c8-48d5-bcfa-52afc376fd1e
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:02 GMT
+      - Mon, 11 Jan 2021 20:36:33 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9274908304214478}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:02 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:33 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8063,13 +8063,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205802Z
+      - 20210111T203633Z
       X-Amz-Content-Sha256:
       - 5a6c3a1f95a41ed8613a16a282a5aed41ed54cec13183ea2e17c91b08a61651b
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=9f69583a11940555e9617a38e5fab4f9d3c8bfc3eb152b59d4437a2e37de018c
+        Signature=a222176542a1472efcef6161c1fa7ddd6eb4bc13d6e93034d3d6822f8a6cfcdb
       Content-Length:
       - '2512'
       Accept:
@@ -8080,17 +8080,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 5e0e55ac-c500-4e8c-b296-c3db6aaa088d
+      - 6ca40d52-f276-443d-aaa9-116d6bf26374
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:02 GMT
+      - Mon, 11 Jan 2021 20:36:33 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9746204614639282}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:02 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:33 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8137,13 +8137,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205802Z
+      - 20210111T203633Z
       X-Amz-Content-Sha256:
       - 063e99edae44087180bf18224e65d412d23c4b5c865f69c82d279033268b5a3f
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=7d0d9818f57136e5b4a4ae6783adb0fbd84ef59fc0ecd979141aeea5f54a508b
+        Signature=c6cbb5fcb4a734ec3c7b790c3ba6cc9c506fa1a265aea1d99784f882a4b72c14
       Content-Length:
       - '2199'
       Accept:
@@ -8154,17 +8154,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - af192724-4646-48f0-9f6e-86d2392795df
+      - 805693df-860a-4493-b9e4-3facd96988a3
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:02 GMT
+      - Mon, 11 Jan 2021 20:36:33 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9376645684242249}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:02 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:33 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8215,13 +8215,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205802Z
+      - 20210111T203633Z
       X-Amz-Content-Sha256:
       - 92d55da8a510f6211ab5599aed415304d8808b99974406b06fa8a22883f0c4f4
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=e2a9d63872ebaf41c2ec7acc73af92d3ba5ce9ac39629eb46a5b05047fd4f7d8
+        Signature=40eb94c9349ac42805983bea221aeb74a5382ff5ebca72b5f676a0b758a85eb3
       Content-Length:
       - '2530'
       Accept:
@@ -8232,17 +8232,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 5e984de1-a842-47fd-8f18-75a7810338e7
+      - b5e23bba-bd9a-4eb0-94e5-0b0433b78849
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '114'
       Date:
-      - Mon, 11 Jan 2021 20:58:02 GMT
+      - Mon, 11 Jan 2021 20:36:34 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.5153687000274658},{"LanguageCode":"es","Score":0.24144230782985687}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:03 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:34 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8269,13 +8269,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205803Z
+      - 20210111T203634Z
       X-Amz-Content-Sha256:
       - 312daef47f6d9fadc8c2ee5cb474f3a0ba7bba943c68f85c469f8d04547e0a04
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=5b3e0bb130272ca6717c55f23479d8bda80dbb08280a37f1177a4520ca872aff
+        Signature=b0c3d9b74cf5059eb5f022ea584619f6c56a57e1ce1a9b7540243229db9c2cd3
       Content-Length:
       - '659'
       Accept:
@@ -8286,17 +8286,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 4fa227bc-ed14-4ac5-bda1-b81bd303ea5f
+      - 2847dcb0-e44b-4ed4-90d3-9cee4db56c7e
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:02 GMT
+      - Mon, 11 Jan 2021 20:36:33 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9507215619087219}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:03 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:34 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8349,13 +8349,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205803Z
+      - 20210111T203634Z
       X-Amz-Content-Sha256:
       - 6288f5f906f04c9f8d709e3810517c195783fa3d30b4b1db428d957834c23357
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=6f46b34a3f4da5c5a875957053596a3f5a6778cf9e2731eba66cffc10688b913
+        Signature=7eca274ae6ea5168eb07896bd5d9bec184a2d44b1451365f713a287d8bfcc880
       Content-Length:
       - '2530'
       Accept:
@@ -8366,17 +8366,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 9fc20067-a6e8-425c-be24-6d327c5fbdbb
+      - 456966be-a801-400c-b50c-aa753c79297b
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '114'
       Date:
-      - Mon, 11 Jan 2021 20:58:03 GMT
+      - Mon, 11 Jan 2021 20:36:34 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.3421955406665802},{"LanguageCode":"fr","Score":0.20632383227348328}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:03 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:34 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8407,13 +8407,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205803Z
+      - 20210111T203634Z
       X-Amz-Content-Sha256:
       - 9ddef060e977624d53eef2439492fa828e27b708125b2e1f4ed35ce96e3156d9
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=42fe8c8587c4b02964c02c468694112dbde8ae7de0f8343fb7370b20e9c0fed8
+        Signature=ceae90f8305eaf07f153a970af7accfb2f5eff739ddb0f768735002d91e090f7
       Content-Length:
       - '996'
       Accept:
@@ -8424,17 +8424,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - db885439-ba69-4800-b67d-92f84966fda6
+      - e9be6d86-2433-48aa-b150-50647e1fcfb6
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '113'
       Date:
-      - Mon, 11 Jan 2021 20:58:02 GMT
+      - Mon, 11 Jan 2021 20:36:34 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.4750002920627594},{"LanguageCode":"fr","Score":0.2677450180053711}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:03 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:34 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8485,13 +8485,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205803Z
+      - 20210111T203634Z
       X-Amz-Content-Sha256:
       - 79d5b0d4c3620af035848f7af8ac7860c844cc86029e068a78804d4cfae546dc
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=83327865ded80e5e273d4b317328d9b2ac25a9ecd94badeb2386d660fcf16815
+        Signature=2b51c146d27346a2a9c72ce35cddf94be319c6e753e5c9f3ff0018652b964b39
       Content-Length:
       - '2547'
       Accept:
@@ -8502,17 +8502,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 5e37f85e-f9db-490d-a320-f69458aba2fa
+      - 40ddb136-b023-4f91-b6a8-41ed781aec83
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '113'
       Date:
-      - Mon, 11 Jan 2021 20:58:03 GMT
+      - Mon, 11 Jan 2021 20:36:35 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"fr","Score":0.4387534558773041},{"LanguageCode":"en","Score":0.1632087230682373}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:04 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:35 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8563,13 +8563,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205804Z
+      - 20210111T203635Z
       X-Amz-Content-Sha256:
       - 0360240d220d40574e1e925c1b95fcfe67bd650ea3a5bd23083ee09189fc8dc6
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=d49f4cc65c4e748c5a9aa89c01fbcdfef3c4607aecb89d24b06420c743b5cf67
+        Signature=1b676966aca56a3fb414ffca0e0c674f891e83d4f73030a136f6164c53a5cc26
       Content-Length:
       - '2564'
       Accept:
@@ -8580,17 +8580,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 4f5651bf-b6bc-486d-a8a4-a8a570f744e4
+      - 346126d6-6763-46e6-9feb-9e8cf1d0d038
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:04 GMT
+      - Mon, 11 Jan 2021 20:36:35 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"fr","Score":0.7186465859413147}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:04 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:35 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8612,13 +8612,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205804Z
+      - 20210111T203635Z
       X-Amz-Content-Sha256:
       - 93d4744104e3886cc3a506baceb1f1e46a76851d166ef3ac28393425a59d9c12
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=8a70e82bb021a47a1398744c3a09a83ff2c6ceac1364750c82bfc91d05945b2f
+        Signature=fea32b869acbdfb08149f2720c60edb293ba0f31a4933bc5eb14f36e2c905882
       Content-Length:
       - '242'
       Accept:
@@ -8629,17 +8629,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 15da33ac-25be-41db-95c8-98d4276c6e84
+      - d2c27bb8-7fde-4146-bfa0-72d4c46cd4d1
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '115'
       Date:
-      - Mon, 11 Jan 2021 20:58:04 GMT
+      - Mon, 11 Jan 2021 20:36:35 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"fr","Score":0.33829179406166077},{"LanguageCode":"en","Score":0.24833881855010986}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:04 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:35 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8691,13 +8691,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205804Z
+      - 20210111T203635Z
       X-Amz-Content-Sha256:
       - f0ee5214c170a9ffd30531a72e6e5c4b7d625d0065c3cd3cf27be334aa16866e
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=fb88473f10c67b6719436c9587754e95003ae91dc50a227b6c0406a4f16d6f8b
+        Signature=a2139d9265f3db0302781b4092e2ccdd6635d07e4f7224c00d38008807adbd14
       Content-Length:
       - '2528'
       Accept:
@@ -8708,17 +8708,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 9ee97657-43d2-48c0-950e-8f90b8e46170
+      - 8d9b8b70-3bb9-426f-b5bf-aac52e4882ad
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '114'
       Date:
-      - Mon, 11 Jan 2021 20:58:03 GMT
+      - Mon, 11 Jan 2021 20:36:35 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.3299182653427124},{"LanguageCode":"fr","Score":0.14880628883838654}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:04 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:35 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8744,13 +8744,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205804Z
+      - 20210111T203635Z
       X-Amz-Content-Sha256:
       - b533123b5b3009685e1b3d0488b22516f0c054ee72eeba9f07ee731862c6f1dd
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=95c7c547fcbdd2efb2771e6a4d7c3e1985e8dda0c584a99dd7fbe48b93a0129b
+        Signature=1dc8610f60fbacb76ee28df5087679941791053ef191f7faca184f9631dad91d
       Content-Length:
       - '581'
       Accept:
@@ -8761,17 +8761,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - d28065d4-ac2d-4abe-888d-41015c1560de
+      - cba5ea03-0cf0-427a-8d35-bdf34462a374
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:04 GMT
+      - Mon, 11 Jan 2021 20:36:35 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9277076721191406}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:05 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:36 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8822,13 +8822,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205805Z
+      - 20210111T203636Z
       X-Amz-Content-Sha256:
       - 5726a1406315b23036395359441b6a4e58d46abcd2403fa5f6493870d260e63c
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=7fe1c6652a1476b21d9a78d5eb3a779095b233265adda9b636b4fd3828d46d34
+        Signature=5cbcbba5483fe2c8cc43de6e8ec0a3e8766b69e8c65147c09e5dfb7f35452c13
       Content-Length:
       - '2530'
       Accept:
@@ -8839,17 +8839,17 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - a5b187d5-27d4-4179-a811-d4ac91033ca5
+      - 4bf5525c-f33c-4575-96ca-215b9f515ad1
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:04 GMT
+      - Mon, 11 Jan 2021 20:36:35 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.7746453881263733}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:05 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:36 GMT
 - request:
     method: post
     uri: https://comprehend.us-east-1.amazonaws.com/
@@ -8900,13 +8900,13 @@ http_interactions:
       Host:
       - comprehend.us-east-1.amazonaws.com
       X-Amz-Date:
-      - 20210111T205805Z
+      - 20210111T203636Z
       X-Amz-Content-Sha256:
       - 4d80d23c362720ece3375ada2020c36ef668bb171d573076203c51a71a69ac9c
       Authorization:
       - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/comprehend/aws4_request,
         SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=029e8dc89ea27b3022157640dbe14da27180279499b9e809d91abe55c6eebb1a
+        Signature=4e5e1431b0be1c269ddcf57666ce8f7ca8eb03ff0d6da7c4bbe10526bf978c07
       Content-Length:
       - '2512'
       Accept:
@@ -8917,15 +8917,15 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - efc5e5cb-63ee-4f44-a1ad-de62cc41592b
+      - c8338635-7e21-4518-8dd2-c6c8344648ac
       Content-Type:
       - application/x-amz-json-1.1
       Content-Length:
       - '64'
       Date:
-      - Mon, 11 Jan 2021 20:58:05 GMT
+      - Mon, 11 Jan 2021 20:36:36 GMT
     body:
       encoding: UTF-8
       string: '{"Languages":[{"LanguageCode":"en","Score":0.9633747935295105}]}'
-  recorded_at: Mon, 11 Jan 2021 20:58:05 GMT
+  recorded_at: Mon, 11 Jan 2021 20:36:36 GMT
 recorded_with: VCR 6.0.0

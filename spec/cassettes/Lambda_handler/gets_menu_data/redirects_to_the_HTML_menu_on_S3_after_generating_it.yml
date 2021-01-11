@@ -18577,4 +18577,60 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Tue, 01 Dec 2020 15:47:08 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/codes.yml
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIANW2/F8AA1NSL1NXslJQV1OuMDJxdrJW51JSL0uHCRmmGRsbgsXSEaqc
+        nIEiAJgwamg4AAAA
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - wt8RYoPcPaZIjpb905LIQw==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20210111T203637Z
+      X-Amz-Content-Sha256:
+      - c5bebadbfdf8a2ad337ebd2115df90dd12a00e5bcc4f10b73bb20ff5c9010bef
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210111/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=f3e03ed647eba401b6720cf0302639080412d6aaf16ed8d9f822d8e4bc6a24db
+      Content-Length:
+      - '57'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - Va+wNimgS5FAl1RGw9S2RSfoZ10xa1s5nB/Ni1VZ+PWOp0GtNf3cAShpEFk/oWkUWzadQ8oszvU=
+      X-Amz-Request-Id:
+      - B317043625F4BA41
+      Date:
+      - Mon, 11 Jan 2021 20:36:38 GMT
+      Etag:
+      - '"c2df116283dc3da6488e96fdd392c843"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Mon, 11 Jan 2021 20:36:37 GMT
 recorded_with: VCR 6.0.0

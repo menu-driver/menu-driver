@@ -17,6 +17,8 @@ ENV['STACK'] = 'test'
 
 ENV['THEME'] = nil
 
+ENV['AWS_REGION'] = 'us-east-1'
+
 # Mocking / stubbing
 require 'vcr'
 VCR.configure do |config|
