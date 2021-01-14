@@ -35,7 +35,6 @@ module MenuDriver
         $logger.info "Options from files: #{options_from_files}"
         all_options.merge! options_from_files
         if options_from_files['location']
-          all_options['output_file'] = location
           location = options_from_files['location']
         end
       end

@@ -12,6 +12,7 @@ class SinglePlatform
   def generate_menus_html(location_id:, **args)
 
     $logger.info "Generating HTML menu file for location: #{location_id}"
+    $logger.debug "Current working directory: #{Dir.pwd}"
 
     raw_data = fetch_location_data_from_api(location_id:location_id, **args)
 

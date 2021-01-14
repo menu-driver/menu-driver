@@ -44,7 +44,7 @@ AWS to work on this code.
 
 To use SAM to set up development resources in the cloud:
 
-    sam build && rake sam:deploy
+    sam build --use-container && rake sam:deploy
 
 You won't have a value in your `samconfig.toml` SAM [configuration file](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html) for the `s3_bucket`, so the Rake task will invoke the ["guided"](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html) deployment feature in `sam deploy`.
 
@@ -95,7 +95,7 @@ SAM should deploy to the `menu-driver-development` stack in CloudFormation.  Mor
 
 Or, to build first:
 
-    sam build && rake sam:deploy
+    sam build --use-container && rake sam:deploy
 
 ### Deploying other stacks
 
@@ -112,7 +112,7 @@ or:
 #### Directly
 
 You can generate menu HTML and store it on S3 using the Single Platform
-configuration information stored in your ````samconfig.toml```` without using any SAM or Lambda stuff.  You have to do a SAM build every time you want to see different output if you run the code through SAM Local.  If all that you really want is to generate HTML while you're working on menu templates, then run the HTML generation code directly with this Rake task:
+configuration information stored in your ````samconfig.toml```` without using any SAM or Lambda stuff.  You have to do a SAM build with `sam build --use-container` every time you want to see different output if you run the code through SAM Local.  If all that you really want is to generate HTML while you're working on menu templates, then run the HTML generation code directly with this Rake task:
 
     rake generate[hakkasan-mayfair]
 

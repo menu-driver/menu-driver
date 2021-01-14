@@ -22,7 +22,7 @@ Globals:
     MemorySize: 256
     Environment:
       Variables:
-        DOMAIN_NAME: !Ref 'Domain'
+        DOMAIN: !Ref 'Domain'
         STACK: !Ref 'Stack'
         THEME: !Ref 'Theme'
         SINGLE_PLATFORM_CLIENT_ID: !Ref 'SinglePlatformClientId'
@@ -35,7 +35,9 @@ Resources:
       CodeUri: ./
       Handler: lambda.generate_location
       Runtime: ruby2.5
-      Policies: AmazonS3FullAccess
+      Policies:
+        - AmazonS3FullAccess
+        - ComprehendBasicAccessPolicy: {}
       Events:
         Data:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

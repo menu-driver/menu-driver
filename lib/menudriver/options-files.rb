@@ -13,6 +13,7 @@ module MenuDriver
 
     def load_options_files
       Dir.glob('themes/**/*.{yml,yaml}').each do |file|
+        $logger.debug "Found options file: #{file}"
         entries = YAML.load(File.read(file))
         next unless entries
         entries.each do |name|
