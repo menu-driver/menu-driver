@@ -1586,4 +1586,61 @@ http_interactions:
       encoding: UTF-8
       string: ''
   recorded_at: Mon, 11 Jan 2021 20:36:38 GMT
+- request:
+    method: put
+    uri: https://s3.amazonaws.com/test.menus.hakkasangroup.com/hakkasan-mayfair/options.yml
+    body:
+      encoding: UTF-8
+      base64_string: |
+        H4sIAKGwAGAAA4XMsQ2AMAxE0T5TZAEvkG3OOMhRcECAhbI9DZSE7qT/dIpa
+        caCRoc8oewoxplOz5RT1aeEdpGgXOm0LpjyWYCdRcBkzWRVjQSTO+Lkxty9z
+        A6DeJE/hAAAA
+    headers:
+      Content-Type:
+      - text/html
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby3/3.104.3 ruby/2.5.0 x86_64-darwin19 aws-sdk-s3/1.78.0
+      Content-Encoding:
+      - gzip
+      Expect:
+      - 100-continue
+      Content-Md5:
+      - EdcNDIoeiI7HcTszGuZdbA==
+      Host:
+      - s3.amazonaws.com
+      X-Amz-Date:
+      - 20210114T205913Z
+      X-Amz-Content-Sha256:
+      - 93fae2c133e797933d130ddd9dfe17ee44b7cac29e1bc2b66edfb2cbf6328586
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAWD66OJMN62KHW3UO/20210114/us-east-1/s3/aws4_request,
+        SignedHeaders=content-encoding;content-md5;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=9813488ca129d43bc0ef6a9825db8b47f482214e534cd9dc58c627d931c9d364
+      Content-Length:
+      - '99'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amz-Id-2:
+      - naVvzxNhucQvOc9itHlO/iT0y1gjhimlAcW8jygZTtooxg5TsTJ4cCj4szqn32F5qUxDD4Drbis=
+      X-Amz-Request-Id:
+      - 1XATDJ6QFX8Q2XBY
+      Date:
+      - Thu, 14 Jan 2021 20:59:16 GMT
+      Etag:
+      - '"11d70d0c8a1e888ec7713b331ae65d6c"'
+      Content-Length:
+      - '0'
+      Server:
+      - AmazonS3
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Thu, 14 Jan 2021 20:59:14 GMT
 recorded_with: VCR 6.0.0
