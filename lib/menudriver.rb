@@ -20,23 +20,25 @@ module MenuDriver
 
     desc "generate [location]", "generate restaurant menu HTML data for the location"
     option :name, :type => :string, :desc => 'output folder name (defaults to the location)'
+    option :name, :type => :string, :desc => 'override the output location name.'
     option :theme, :type => :string, :desc => 'name (not path) of theme folder for ERB HTML templates.'
     option :stack, :type => :string, :desc => 'The name of the CloudFront stack that was used to generate the S3 bucket where you want to deploy output. Example: "production".  Default: "staging".', :default => 'staging'
-    option :vertical_grid, :type => :boolean, :default => false, :desc => 'Show the vertical rhythym with horizontal lines showing the line height.'
-    option :cache, :type => :boolean, :default => false, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
+    option :vertical_grid, :type => :boolean, :desc => 'Show the vertical rhythym with horizontal lines showing the line height.'
+    option :cache, :type => :boolean, :aliases => :c, :desc => 'Cache the menu data from the API and use it next time if available.'
     option :data_file, :type => :string, :desc => 'file name for JSON menu data file'
     option :category, :type => :string, :default => nil, :desc => 'name of a category for generating a one-category menu'
     option :menu, :type => :string, :default => nil, :desc => 'include only menus matching this comma-separated string of names or IDs'
     def generate(location)
       puts ColorizedString[' Generating HTML menus for location: '].black.on_light_blue + ' ' + location
 
-      all_options = options.dup
       if options_from_files = MenuDriver::OptionsFiles.new.menu_options(location)
-        $logger.info "Options from files: #{options_from_files}"
-        all_options.merge! options_from_files
-        if options_from_files['location']
+        $logger.debug "Options from command line: #{options}"
+        $logger.debug "Options from files: #{options_from_files}"
+        all_options = options_from_files.merge options.dup
+        if all_options['location']
           location = options_from_files['location']
         end
+        $logger.info "Options: #{all_options}"
       end
 
       begin
