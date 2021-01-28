@@ -5,6 +5,7 @@ $border-width: 0.05rem !global;
   header {
     @extend %sans-serif-font;
     text-transform: uppercase;
+    margin-bottom: 0;
     .logo {
       margin-left: $base-line-height;
     }
@@ -53,12 +54,9 @@ $border-width: 0.05rem !global;
     color: var(--brand-primary-dark-color);
     background-color: var(--brand-primary-light-color);
     border-color: var(--border-color);
-    .name {
-      color: var(--brand-primary-dark-color);
-      text-align: left;
-      margin-bottom: - $border-width;
-      border-bottom: $border-width solid var(--brand-secondary-color);
-    }
+    padding-top: 0;
+    border-top-width: 0;
+    margin-top: $base-line-height * 2;
     .description {
       color: var(--brand-secondary-color);
     }
@@ -66,12 +64,32 @@ $border-width: 0.05rem !global;
       .name {
         color: var(--brand-color);
         border: unset;
+        @include type-setting(0);
+        margin: 0;
       }
+    }
+    .section > .name {
+      margin: 0;
+    }
+    .section > .meta > .description {
+      font-style: italic;
     }
     .section + .section {
       padding-top: $base-line-height - $border-width;
       border-top: $border-width solid var(--border-secondary-color);
     }
+  }
+  .menu > .name, .category > .category_name {
+    color: var(--brand-secondary-color);
+    text-align: left;
+    margin-bottom: - $border-width;
+    border-bottom: $border-width solid var(--border-color);
+  }
+  .category > .category_name {
+    margin-bottom: 2rem;
+  }
+  .menu > .description {
+    font-style: italic;
   }
   .menu.rtl {
     text-align: right;
@@ -87,26 +105,31 @@ $border-width: 0.05rem !global;
     }
   }
 
-  nav {
+  nav.category-nav, nav.menu-nav {
     background-color: var(--brand-primary-light-color);
-    border-color: var(--brand-secondary-color);
+    border-color: var(--brand-primary-light-color);
     border-bottom-width: $border-width;
     margin-bottom: 0;
+    line-height: $base-line-height - $border-width;
+    align-items: flex-end;
 
     .scroll-thumb svg {
       fill: var(--brand-accent-color);
     }
 
     ul {
+      background-color: var(--brand-background-color);
+      padding-bottom: 0;
+
       li {
         a.current, a:visited.current {
           color: var(--brand-accent-color);
           background-color: unset;
           border-bottom: $border-width solid var(--brand-accent-color);
         }
-        a, a:visited, a:hover, a:active {
-          color: inherit;
-        }
+        // a, a:visited, a:hover, a:active {
+        //   color: inherit;
+        // }
       }
       // The category navigation puts the 'current' class on the <li> instead of the
       // <a> within it.  TODO: Make that more consistent and DRY these styles.
@@ -117,8 +140,37 @@ $border-width: 0.05rem !global;
           border-bottom: $border-width solid var(--brand-secondary-color);
         }
       }
+      // Skip the underline for the category name if it's a single-category menu.
+      li.current:only-child a, a:visited {
+        border-bottom: 0;
+      }
     }
 
+  }
+  #category-nav-thumb {
+    background-color: var(--brand-primary-light-color);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  nav, #category-nav-thumb {
+    .scroll-thumb {
+      svg {
+        fill: var(--brand-secondary-color);
+      }
+    }
+  }
+  nav.category-nav {
+    z-index: 3;
+  }
+  nav.menu-nav {
+    top: $base-line-height;
+    padding-bottom: $base-line-height;
+    margin-bottom: $base-line-height;
+    box-shadow: 0px 6px 20px -6px var(--border-dark-color);
+  }
+  .menus {
+    margin-top: -$base-line-height;
   }
 
   .menu {
@@ -132,7 +184,7 @@ $border-width: 0.05rem !global;
   nav.menu-nav, nav.category-nav {
     border-style: solid;
     border-top: $border-width;
-    border-bottom-color: var(--brand-secondary-color);
+    border-bottom-color: var(--brand-primary-light-color);
     border-bottom-width: $border-width;
     border-bottom-style: solid;
     margin-left: unset;
@@ -197,6 +249,56 @@ $border-width: 0.05rem !global;
     display: none;
   }
 }
+
+.wide_only {
+  display: none;
+}
+.menu-driver {
+  header {
+    a {
+      text-decoration-line: none;
+    }
+    .wide_only, .location {
+      padding-left: 0;
+      // white-space: nowrap;
+    }
+    .wide_nav {
+      flex: 1;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+      white-space: nowrap;
+    }
+    li {
+      font-weight: 600;
+      display: inline;
+      list-style-type: none;
+      padding-left: $base-line-height;
+      border-width: 0;
+      a {
+        margin-top: -1rem;
+      }
+      a.btn-reservations {
+        padding-top: 14px;
+        padding-bottom: 13px;
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+    }
+  }
+  .fa-camera {
+    opacity: 0.5;
+  }
+  #menu-item-image {
+    color: var(--menu-color);
+    background-color: var(--menu-background-color);
+    z-index: 5;
+    #close-icon {
+      color: var(--menu-color);
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .menu-driver {
     padding-left: $base-line-height;
