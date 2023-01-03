@@ -45,7 +45,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '~> 0.16.1'
   spec.add_development_dependency 'coveralls', '~> 0.8.23'
   
-  spec.add_dependency 'httparty', '~> 0.18.1'
+  spec.add_dependency 'httparty', '>= 0.18.1', '< 0.22.0'
   spec.add_dependency 'hash_dot', '~> 2.4', '>= 2.4.2'
   spec.add_dependency 'aws-sdk-s3', '~> 1.75'
   spec.add_dependency 'awesome_print', '~> 2.0.0.pre2'
